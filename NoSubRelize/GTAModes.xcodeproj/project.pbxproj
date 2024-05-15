@@ -28,6 +28,7 @@
 		1223238D2BF4980400582349 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1223238C2BF4980400582349 /* OpenSans-Bold.ttf */; };
 		1223238F2BF4981500582349 /* OpenSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1223238E2BF4981500582349 /* OpenSans-Medium.ttf */; };
 		122323912BF4982300582349 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 122323902BF4982300582349 /* OpenSans-Regular.ttf */; };
+		122323932BF4B28000582349 /* MegastarCustomDropBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122323922BF4B27F00582349 /* MegastarCustomDropBarView.swift */; };
 		1236D39D2BEB5A5A007B0D69 /* ACTUALMAP17p26p7K.png in Resources */ = {isa = PBXBuildFile; fileRef = 1236C9DA2BEB58AD007B0D69 /* ACTUALMAP17p26p7K.png */; };
 		1236D39E2BEB5A5A007B0D69 /* ACTUALMAP16p5p7K.png in Resources */ = {isa = PBXBuildFile; fileRef = 1236C9DB2BEB58AD007B0D69 /* ACTUALMAP16p5p7K.png */; };
 		1236D39F2BEB5A5A007B0D69 /* ACTUALMAP1p33p7K.png in Resources */ = {isa = PBXBuildFile; fileRef = 1236C9DC2BEB58AE007B0D69 /* ACTUALMAP1p33p7K.png */; };
@@ -2653,6 +2654,7 @@
 		1223238C2BF4980400582349 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		1223238E2BF4981500582349 /* OpenSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Medium.ttf"; sourceTree = "<group>"; };
 		122323902BF4982300582349 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		122323922BF4B27F00582349 /* MegastarCustomDropBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarCustomDropBarView.swift; sourceTree = "<group>"; };
 		1236C9DA2BEB58AD007B0D69 /* ACTUALMAP17p26p7K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ACTUALMAP17p26p7K.png; sourceTree = "<group>"; };
 		1236C9DB2BEB58AD007B0D69 /* ACTUALMAP16p5p7K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ACTUALMAP16p5p7K.png; sourceTree = "<group>"; };
 		1236C9DC2BEB58AE007B0D69 /* ACTUALMAP1p33p7K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ACTUALMAP1p33p7K.png; sourceTree = "<group>"; };
@@ -5522,6 +5524,7 @@
 			children = (
 				2C7F39F32A7BF09800F575F7 /* ActualHeaderView.swift */,
 				120EEE5E2B8C916600BE6D3F /* ActualHeaderViewNew.swift */,
+				122323922BF4B27F00582349 /* MegastarCustomDropBarView.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -10867,6 +10870,7 @@
 				2CA95FF82A84D4210039343E /* ActualCheatsObject.swift in Sources */,
 				12D432282BDC268100BD1EC7 /* ActualChecklistChecker.swift in Sources */,
 				2C45A53D2A76A7800023B3A8 /* ActualChecklistModel.swift in Sources */,
+				122323932BF4B28000582349 /* MegastarCustomDropBarView.swift in Sources */,
 				2C7F39F42A7BF09800F575F7 /* ActualHeaderView.swift in Sources */,
 				2C2A20762A7286EC002A6D3C /* ActualProjectFlowCoordinator3862.swift in Sources */,
 				12F217F02B85D41100BCE63B /* Extension.swift in Sources */,

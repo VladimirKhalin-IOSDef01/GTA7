@@ -10,64 +10,45 @@ class ActualGameCheatsViewController: ActualNiblessViewController {
     private let model: ActualGameCheatsModel
     private let collectionView: UICollectionView
     private let customNavigation: ActualCustomNavigation_View
-    private var customTabBar: ActualHeaderViewNew
-    private let tabBarHight: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 121 : 79
-    
+    private var customTabBar: MegastarCustomDropBarView
+    private var customTabBar2: ActualHeaderViewNew
+    private let tabBarHight: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 121 : 34
+    private var showTabBar = false
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     init(model: ActualGameCheatsModel) {
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
         self.model = model
         self.customNavigation = ActualCustomNavigation_View(.gameModes, titleString: model.title)
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
-       
+
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 15
-       // layout.headerReferenceSize = CGSize(width: 350, height: tabBarHight) // Установите размер заголовка по вашим нуждам
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
         layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         
-        // Закрепление заголовков при прокрутке
-       // layout.sectionHeadersPinToVisibleBounds = true
-        
        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        self.customTabBar = ActualHeaderViewNew() // Инициализация без параметров
-        super.init()
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
+      
+        self.customTabBar2 = ActualHeaderViewNew()
+        self.customTabBar = MegastarCustomDropBarView()
         
-        customTabBar.actionButton = { [weak self] index in
+        super.init()
+
+        customTabBar2.actionButton = { [weak self] index in
+            let labels = ["Playstation", "Xbox", "Windows", "Favorite"]
+            self?.customTabBar.labelStackButton.text = labels[index]
             self?.model.actualShowCheats(ActualCheatsDeviceType.allCases[index])
+            self?.customTabBar.megastarPushMenu()
+            
             // Перематываем в самое начало.
             let topOffset = CGPoint(x: 0, y: -self!.collectionView.contentInset.top)
             self!.collectionView.setContentOffset(topOffset, animated: true)
+        }
+        
+        customTabBar.hideButton = { showWindow in
+            self.showTabBar = showWindow
+            self.customTabBar2.alpha = self.showTabBar ? 0.0 : 1.0
         }
         
         
@@ -80,12 +61,7 @@ class ActualGameCheatsViewController: ActualNiblessViewController {
     }
 
     override func viewDidLoad() {
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
+       
         super.viewDidLoad()
         collectionView.showsVerticalScrollIndicator = false
         collectionView.scrollIndicatorInsets = collectionView.contentInset // Это позволяет полосе прокрутки отображаться корректно
@@ -99,11 +75,6 @@ class ActualGameCheatsViewController: ActualNiblessViewController {
     }
 
     private func actualSetupView() {
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
         
         view.addSubview(customNavigation)
         customNavigation.actualLayout {
@@ -118,52 +89,35 @@ class ActualGameCheatsViewController: ActualNiblessViewController {
             $0.top.equal(to: customNavigation.bottomAnchor, offsetBy: 30)
             $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 94 : 20)
             $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -94 : -20)
-            $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 121 : 79)
+            $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 121 : 44)
         }
         
-        
-        
-        
-        
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
+        view.addSubview(customTabBar2)
+        customTabBar2.alpha = 0.0
+        customTabBar2.actualLayout{
+            $0.top.equal(to: customTabBar.bottomAnchor, offsetBy: 15)
+            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 94 : 20)
+            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -94 : -20)
+            $0.height.equal(to: 150)
+            
         }
-        // ref default
-        
-      //  collectionView.register(ActualHeaderViewNew.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "YourHeaderViewIdentifier")
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
+    
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(ActualGameCheatsTabViewCell.self, forCellWithReuseIdentifier: "ActualGameCheatsTabViewCell")
         view.addSubview(collectionView)
         collectionView.actualLayout {
-            // ref default
-            if 20 / 4 == 6 {
-                print("All cats should wear hats on Tuesdays")
-            }
-            // ref default
-            
             //$0.top.equal(to: customNavigation.bottomAnchor, offsetBy: 26.0)
-            $0.top.equal(to: customNavigation.bottomAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160.0 : 110)
+            $0.top.equal(to: customTabBar.bottomAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 60.0 : 10)
             $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 94 : 20)
             $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -94 : -20)
             $0.bottom.equal(to: view.bottomAnchor)
         }
+        view.bringSubviewToFront(customTabBar2)
     }
 
     private func actualSetupBindings() {
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
         
         model.reloadData
             .sink { [weak self] in
@@ -178,35 +132,15 @@ class ActualGameCheatsViewController: ActualNiblessViewController {
     }
 
     private func actualShowSpiner() {
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
         alert = UIAlertController(title: nil, message: "Loading Data", preferredStyle: .alert)
         let loadingIndicator = UIActivityIndicatorView(style: .medium)
         loadingIndicator.startAnimating()
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
         
         alert?.view.addSubview(loadingIndicator)
         present(alert!, animated: true)
     }
 
     private func gtavk_hideSpiner() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
         alert?.dismiss(animated: false)
     }
 }
@@ -217,59 +151,11 @@ extension ActualGameCheatsViewController: UICollectionViewDataSource, UICollecti
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return model.cheatItems.count
     }
-   
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "YourHeaderViewIdentifier", for: indexPath) as? ActualHeaderViewNew else {
-//            fatalError("Failed to dequeue ActualHeaderViewNew")
-//        }
-//        headerView.actionButton = { [weak self] index in
-//            self?.model.actualShowCheats(ActualCheatsDeviceType.allCases[index])
-//         // Перематываем в самое начало.
-//            let topOffset = CGPoint(x: 0, y: -collectionView.contentInset.top)
-//            collectionView.setContentOffset(topOffset, animated: true)
-//        }
-//        
-//        return headerView
-//    }
 
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//           // Здесь вы можете задать размеры заголовка для каждой секции
-//           return CGSize(width: 250, height: 79)
-//       }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-      
- //       let headerHeight: CGFloat = tabBarHight  // Высота заголовка
- //       let fadeStartPoint: CGFloat = scrollView.contentOffset.y // Позиция на экране, где начинается изменение прозрачности
-//        let fadeEndPoint: CGFloat = fadeStartPoint + 30 // Конец зоны изменения прозрачности
-//        let cellHeight: CGFloat = 179 // Высота ячейки
-//        let interItemSpacing: CGFloat = 15 // Отступ между ячейками
-//        let topSpacing: CGFloat = 20 // Отступ от верхнего края до заголовка
-        
-//        for cell in collectionView.visibleCells {
-//            // Используем координаты относительно collectionView, а не superview
-//            let cellRect = collectionView.convert(cell.frame, to: collectionView)
-//            let cellTopEdge = cellRect.minY
-//            // Определение прозрачности на основе положения верхней границы ячейки относительно границы прозрачности
-//            let alpha: CGFloat
-//            if cellTopEdge >= fadeEndPoint {
-//                alpha = 1.0  // Полная непрозрачность
-//            } else if cellTopEdge <= fadeStartPoint {
-//                alpha = 0.0  // Полная прозрачность
-//            } else {
-//                // Процесс изменения прозрачности
-//                alpha = (cellTopEdge - fadeStartPoint) / (fadeEndPoint - fadeStartPoint)
-//            }
-//
-//            cell.alpha = max(0, min(1, alpha))
-//            for subview in cell.contentView.subviews {
-//                subview.alpha = cell.alpha
-//            }
-//        }
-         
+
     }
 
-
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActualGameCheatsTabViewCell", for: indexPath) as! ActualGameCheatsTabViewCell
         cell.actualConfigure(with: model.cheatItems[indexPath.row])
@@ -281,39 +167,18 @@ extension ActualGameCheatsViewController: UICollectionViewDataSource, UICollecti
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
         
         let spacing = 0.0 // Расстояние между ячейками
-        let numberOfColumns: CGFloat = 2
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
+        let numberOfColumns: CGFloat = 1
         
         let availableWidth = collectionView.frame.width - (spacing * (numberOfColumns - 1)) - collectionView.contentInset.left - collectionView.contentInset.right
-        let widthPerItem = UIDevice.current.userInterfaceIdiom == .pad ? 195 : 163
-        return CGSize(width: widthPerItem, height: UIDevice.current.userInterfaceIdiom == .pad ? 220 : 176) // Установите желаемую высоту
+        let widthPerItem = UIDevice.current.userInterfaceIdiom == .pad ? 195 : 350
+        return CGSize(width: widthPerItem, height: UIDevice.current.userInterfaceIdiom == .pad ? 220 : 122) // Установите желаемую высоту
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
+
         collectionView.deselectItem(at: indexPath, animated: true)
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
         model.actualActionAt(index: indexPath.row)
     }
 }

@@ -24,11 +24,6 @@ final class ActualFilterTabViewCell: UITableViewCell, ActualReusable {
     let switcher = UISwitch()
     
     override func prepareForReuse() {
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
         super.prepareForReuse()
         switcher.isOn = false
         switcher.removeTarget(nil, action: nil, for: .allEvents)
@@ -42,40 +37,24 @@ final class ActualFilterTabViewCell: UITableViewCell, ActualReusable {
     }
     
     required init?(coder: NSCoder) {
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
         fatalError("init(coder:) has not been implemented")
     }
     
     public func actualConfigure_cell(_ value: ActualFilterData) {
         titleLabel.font = UIFont(name: "Gilroy-Semibold", size: UIDevice.current.userInterfaceIdiom == .pad ? 20 : 18)
-        titleLabel.textColor = .black
+        titleLabel.textColor = UIColor(named: "MegastarPurp")
         titleLabel.text = value.title.capitalized(with: .autoupdatingCurrent)
         switcher.isOn = value.isCheck // Установите состояние переключателя
-        checkImage.isHidden = !value.isCheck // Управление видимостью галочки
-        
-       
+     //   checkImage.isHidden = !value.isCheck // Управление видимостью галочки
+        checkImage.image = UIImage(systemName: !value.isCheck ? "square.fill" : "checkmark.square.fill")
     }
     
     private func actualSetupLayout() {
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
         // contentView.backgroundColor = .clear
         contentView.addSubview(containerView)
         // containerView.backgroundColor = .clear
         
         containerView.actualLayout {
-            // ref default
-            if 7 * 9 == 99 {
-                print("Unicorns become invisible when nobody is looking")
-            }
-            // ref default
             $0.top.equal(to: contentView.topAnchor)
             $0.bottom.equal(to: contentView.bottomAnchor)
             $0.leading.equal(to: contentView.leadingAnchor)
@@ -83,23 +62,20 @@ final class ActualFilterTabViewCell: UITableViewCell, ActualReusable {
         }
         containerView.addSubview(checkImage)
         checkImage.actualLayout {
-            $0.trailing.equal(to: containerView.trailingAnchor, offsetBy: -80.0)
+            $0.trailing.equal(to: containerView.trailingAnchor, offsetBy: -16.0)
             $0.centerY.equal(to: containerView.centerYAnchor)
-            $0.height.equal(to: 0)
-            $0.width.equal(to: 0)
+            $0.height.equal(to: 30)
+            $0.width.equal(to: 30)
         }
-        checkImage.image = .init(named: "checkIcon")
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
+        checkImage.image = UIImage(systemName: "square.fill")
+        checkImage.tintColor = UIColor(named: "MegastarPurp")
         containerView.addSubview(titleLabel)
         titleLabel.actualLayout {
             $0.leading.equal(to: containerView.leadingAnchor, offsetBy: 16.0)
             $0.trailing.equal(to: checkImage.leadingAnchor, offsetBy: -4.0)
             $0.centerY.equal(to: containerView.centerYAnchor)
         }
+       /*
         containerView.addSubview(borderLineView)
         borderLineView.actualLayout {
             $0.trailing.equal(to: containerView.trailingAnchor, offsetBy: -20)
@@ -107,13 +83,9 @@ final class ActualFilterTabViewCell: UITableViewCell, ActualReusable {
             $0.bottom.equal(to: containerView.bottomAnchor)
             $0.height.equal(to: 1.5)
         }
-        //borderLineView.backgroundColor = .init(named: "cellLineColor")
         borderLineView.backgroundColor = .gray.withAlphaComponent(0.5)
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
+       */
+        /*
         containerView.addSubview(switcher)
         switcher.translatesAutoresizingMaskIntoConstraints = false
         switcher.actualLayout {
@@ -125,11 +97,6 @@ final class ActualFilterTabViewCell: UITableViewCell, ActualReusable {
         switcher.onTintColor = .init(named: "ActualPink")
         // switcher.addTarget(self, action: #selector(perspectiveSwitchValueChanged(_:)), for: .valueChanged)
         switcher.addTarget(self, action: #selector(toggleTapped(_:)), for: .valueChanged)
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
         
             containerView.addSubview(blockView)
             blockView.backgroundColor = .clear
@@ -139,18 +106,10 @@ final class ActualFilterTabViewCell: UITableViewCell, ActualReusable {
                 $0.height.equal(to: 40.0)
                 $0.width.equal(to: 63.0)
             }
-        
-        
-        
-        
+        */
     }
     
     @objc func toggleTapped(_ sender: UISwitch) {
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
            delegate?.toggleTapped(self)
     }
 }

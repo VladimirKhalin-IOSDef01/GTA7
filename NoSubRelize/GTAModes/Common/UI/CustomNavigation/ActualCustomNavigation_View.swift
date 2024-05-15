@@ -48,12 +48,13 @@ extension ActualCustomNavigation_View {
         case .gameSelect:
             gtavk_addLeftButton(UIImage(named: "ActualNBleft") ?? UIImage())
             gta_addClearButton()
-            gtavk_addTitle("Cheats")
+            gtavk_addTitle("Version menu")
             //  gtavk_addTitle("")
             
         case .gameModes:
             gtavk_addLeftButton(UIImage(named: "ActualNBleft") ?? UIImage())
-            gtavk_addFilterButton()
+            gta_addClearButton()
+           // gtavk_addFilterButton()
             // gtavk_addTitle(titleString ?? "Cheats")
             switch titleString {
             case "GTA6":  gtavk_addTitle("Version 6")
@@ -100,11 +101,12 @@ extension ActualCustomNavigation_View {
     private func gtavk_addFilterButton() {
        
         rightButton.actualLayout {
-            $0.trailing.equal(to: self.trailingAnchor)
-            $0.top.equal(to: self.topAnchor, offsetBy: -5)
-            $0.bottom.equal(to: self.bottomAnchor)
+            $0.leading.equal(to: self.leadingAnchor, offsetBy: 40)
+           // $0.top.equal(to: self.topAnchor, offsetBy: 0)
+           // $0.bottom.equal(to: self.bottomAnchor)
+            $0.centerY.equal(to: self.centerYAnchor)
             $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 44 : 34.0)
-            $0.width.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 47 : 37.0)
+            $0.width.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 47 : 29.0)
         }
         
         rightButton.setImage(UIImage(named: "ActualFilter"), for: .normal)
@@ -123,13 +125,13 @@ extension ActualCustomNavigation_View {
         leftButton.actualLayout {
             $0.leading.equal(to: self.leadingAnchor, offsetBy: 5)
             $0.top.equal(to: self.topAnchor, offsetBy: 5)
-            $0.bottom.equal(to: self.bottomAnchor, offsetBy: -5)
-            $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 44 : 29.0)
-            $0.width.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 35 : 27)
+            $0.bottom.equal(to: self.bottomAnchor, offsetBy: 0)
+            $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 44 : 31.0)
+            $0.width.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 35 : 26)
         }
        // leftButton.setImage(image, for: .normal)
        // if UIDevice.current.userInterfaceIdiom == .pad {
-            actualSetupIpadButton(_image: "ActualNBleft", buttonName: "leftButton")
+            actualSetupIpadButton(_image: "MegastarBack", buttonName: "leftButton")
       //  }
         leftButton.addTarget(self, action: #selector(gtavk_leftBarButton_Tapped), for: .touchUpInside)
     }
@@ -140,10 +142,11 @@ extension ActualCustomNavigation_View {
         titleLabel.actualLayout {
            // $0.leading.equal(to: leftButton.trailingAnchor, offsetBy: 15)
            // $0.trailing.equal(to: rightButton.leadingAnchor, offsetBy: -15)
-            $0.trailing.equal(to: rightButton.trailingAnchor)
-            $0.centerY.equal(to: leftButton.centerYAnchor)
+            $0.trailing.equal(to: self.trailingAnchor)
+            $0.centerY.equal(to: self.centerYAnchor)
         }
-        titleLabel.text = title.capitalized
+        titleLabel.text = title
+       // titleLabel.text = title.capitalized
         titleLabel.font = UIFont(name: "OpenSans-SemiBold", size: UIDevice.current.userInterfaceIdiom == .pad ? 46 : 32)
         titleLabel.textColor = .white
     }

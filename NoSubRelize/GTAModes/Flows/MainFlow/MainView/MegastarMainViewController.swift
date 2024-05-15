@@ -30,7 +30,7 @@ class MegastarMainViewController: ActualNiblessViewController {
        
         view.addSubview(customNavigation)
         customNavigation.actualLayout {
-            $0.top.equal(to: view.safeAreaLayoutGuide.topAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 70.0 : 35)
+            $0.top.equal(to: view.safeAreaLayoutGuide.topAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 70.0 : 25)
             $0.centerX.equal(to: view.centerXAnchor, offsetBy: 20.0)
            // $0.leading.equal(to: view.leadingAnchor, offsetBy: 20.0)
             $0.trailing.equal(to: view.trailingAnchor, offsetBy: -20.0)
@@ -44,7 +44,7 @@ class MegastarMainViewController: ActualNiblessViewController {
         tableView.tag = 1
       
         tableView.actualLayout {
-            $0.top.equal(to: customNavigation.bottomAnchor, offsetBy: 10)
+            $0.top.equal(to: customNavigation.bottomAnchor, offsetBy: 20)
             $0.leading.equal(to: view.leadingAnchor, offsetBy: 20.0)
             $0.trailing.equal(to: view.trailingAnchor, offsetBy: -20.0)
             $0.bottom.equal(to: view.bottomAnchor, offsetBy: -20)

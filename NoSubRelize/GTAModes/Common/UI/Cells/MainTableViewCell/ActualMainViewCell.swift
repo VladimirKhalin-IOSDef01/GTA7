@@ -38,7 +38,7 @@ final class ActualMainViewCell: UITableViewCell, ActualReusable {
     
     public func actualConfigure(_ value: ActualMainItem, fontSize: CGFloat, isLock: Bool) {
         //titleLabel.text = value.title.uppercased() + "→"
-        titleLabel.text = value.title + ""
+        titleLabel.text = value.title
         backgroundImageView.contentMode = .scaleAspectFill
         titleLabel.font = UIFont(name: "OpenSans-SemiBold", size: fontSize)
         titleLabel.textColor = .white

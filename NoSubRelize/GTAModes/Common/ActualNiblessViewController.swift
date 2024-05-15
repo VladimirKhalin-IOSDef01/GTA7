@@ -7,9 +7,9 @@ open class ActualNiblessViewController: UIViewController {
     private lazy var waterBackground: UIImageView = {
         let waterBack = UIImageView()
         if  UIDevice.current.userInterfaceIdiom == .pad {
-            waterBack.image = UIImage(named: "ActualBackgroubd")
+            waterBack.image = UIImage(named: "MegastarBGbig")
         } else {
-            waterBack.image = UIImage(named: "WaterBackground")
+            waterBack.image = UIImage(named: "MegastarBGsmall")
         }
         waterBack.contentMode = .scaleToFill
         waterBack.translatesAutoresizingMaskIntoConstraints = false

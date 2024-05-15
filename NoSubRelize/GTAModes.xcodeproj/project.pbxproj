@@ -23,6 +23,11 @@
 		120EEE592B88B08B00BE6D3F /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 120EEE582B88B08B00BE6D3F /* Gilroy-Regular.ttf */; };
 		120EEE5B2B88CCF400BE6D3F /* ActualModesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120EEE5A2B88CCF400BE6D3F /* ActualModesInfoViewController.swift */; };
 		120EEE5F2B8C916600BE6D3F /* ActualHeaderViewNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120EEE5E2B8C916600BE6D3F /* ActualHeaderViewNew.swift */; };
+		122323892BF48A8F00582349 /* MegastarMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122323882BF48A8F00582349 /* MegastarMainViewController.swift */; };
+		1223238B2BF497F000582349 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1223238A2BF497F000582349 /* OpenSans-SemiBold.ttf */; };
+		1223238D2BF4980400582349 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1223238C2BF4980400582349 /* OpenSans-Bold.ttf */; };
+		1223238F2BF4981500582349 /* OpenSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1223238E2BF4981500582349 /* OpenSans-Medium.ttf */; };
+		122323912BF4982300582349 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 122323902BF4982300582349 /* OpenSans-Regular.ttf */; };
 		1236D39D2BEB5A5A007B0D69 /* ACTUALMAP17p26p7K.png in Resources */ = {isa = PBXBuildFile; fileRef = 1236C9DA2BEB58AD007B0D69 /* ACTUALMAP17p26p7K.png */; };
 		1236D39E2BEB5A5A007B0D69 /* ACTUALMAP16p5p7K.png in Resources */ = {isa = PBXBuildFile; fileRef = 1236C9DB2BEB58AD007B0D69 /* ACTUALMAP16p5p7K.png */; };
 		1236D39F2BEB5A5A007B0D69 /* ACTUALMAP1p33p7K.png in Resources */ = {isa = PBXBuildFile; fileRef = 1236C9DC2BEB58AE007B0D69 /* ACTUALMAP1p33p7K.png */; };
@@ -2643,6 +2648,11 @@
 		120EEE582B88B08B00BE6D3F /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Regular.ttf"; sourceTree = "<group>"; };
 		120EEE5A2B88CCF400BE6D3F /* ActualModesInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualModesInfoViewController.swift; sourceTree = "<group>"; };
 		120EEE5E2B8C916600BE6D3F /* ActualHeaderViewNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualHeaderViewNew.swift; sourceTree = "<group>"; };
+		122323882BF48A8F00582349 /* MegastarMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarMainViewController.swift; sourceTree = "<group>"; };
+		1223238A2BF497F000582349 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		1223238C2BF4980400582349 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		1223238E2BF4981500582349 /* OpenSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Medium.ttf"; sourceTree = "<group>"; };
+		122323902BF4982300582349 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		1236C9DA2BEB58AD007B0D69 /* ACTUALMAP17p26p7K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ACTUALMAP17p26p7K.png; sourceTree = "<group>"; };
 		1236C9DB2BEB58AD007B0D69 /* ACTUALMAP16p5p7K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ACTUALMAP16p5p7K.png; sourceTree = "<group>"; };
 		1236C9DC2BEB58AE007B0D69 /* ACTUALMAP1p33p7K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ACTUALMAP1p33p7K.png; sourceTree = "<group>"; };
@@ -5375,6 +5385,7 @@
 				2C2A207A2A729267002A6D3C /* ActualMainViewController.swift */,
 				2C2A207E2A72927E002A6D3C /* ActualMainModel.swift */,
 				12F217F42B85FCE200BCE63B /* ActualMainViewControllerNew.swift */,
+				122323882BF48A8F00582349 /* MegastarMainViewController.swift */,
 				120EEE452B86673100BE6D3F /* ActualProjectModelConteiner3862.swift */,
 			);
 			path = MainView;
@@ -8065,6 +8076,10 @@
 		2CBFE4482A77CE6A00A50257 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				1223238A2BF497F000582349 /* OpenSans-SemiBold.ttf */,
+				1223238C2BF4980400582349 /* OpenSans-Bold.ttf */,
+				1223238E2BF4981500582349 /* OpenSans-Medium.ttf */,
+				122323902BF4982300582349 /* OpenSans-Regular.ttf */,
 				12D4321E2BDBE3EF00BD1EC7 /* Gilroy-Heavy.ttf */,
 				120EEE4B2B87187900BE6D3F /* GilroyLight.ttf */,
 				120EEE582B88B08B00BE6D3F /* Gilroy-Regular.ttf */,
@@ -8310,6 +8325,7 @@
 				1236DD4F2BEB5A5B007B0D69 /* ACTUALMAP23p4p7K.png in Resources */,
 				1236D4E72BEB5A5A007B0D69 /* ACTUALMAP24p35p7K.png in Resources */,
 				1236D4D62BEB5A5A007B0D69 /* ACTUALMAP17p33p7K.png in Resources */,
+				1223238B2BF497F000582349 /* OpenSans-SemiBold.ttf in Resources */,
 				1236DB3A2BEB5A5B007B0D69 /* ACTUALMAP36p9p7K.png in Resources */,
 				1236D69A2BEB5A5A007B0D69 /* ACTUALMAP31p17p7K.png in Resources */,
 				1236DA872BEB5A5B007B0D69 /* ACTUALMAP16p21p6K.png in Resources */,
@@ -8678,6 +8694,7 @@
 				1236DA7D2BEB5A5B007B0D69 /* ACTUALMAP25p40p7K.png in Resources */,
 				1236D6FE2BEB5A5A007B0D69 /* ACTUALMAP16p18p6K.png in Resources */,
 				1236D8F32BEB5A5B007B0D69 /* ACTUALMAP22p1p7K.png in Resources */,
+				122323912BF4982300582349 /* OpenSans-Regular.ttf in Resources */,
 				1236D8562BEB5A5B007B0D69 /* ACTUALMAP30p20p7K.png in Resources */,
 				1236DA472BEB5A5B007B0D69 /* ACTUALMAP27p18p7K.png in Resources */,
 				1236DB702BEB5A5B007B0D69 /* ACTUALMAP38p34p7K.png in Resources */,
@@ -9004,6 +9021,7 @@
 				1236DC1D2BEB5A5B007B0D69 /* ACTUALMAP1p2p7K.png in Resources */,
 				1236DC352BEB5A5B007B0D69 /* ACTUALMAP5p14p6K.png in Resources */,
 				1236D4612BEB5A5A007B0D69 /* ACTUALMAP39p40p7K.png in Resources */,
+				1223238F2BF4981500582349 /* OpenSans-Medium.ttf in Resources */,
 				1236D6822BEB5A5A007B0D69 /* ACTUALMAP27p26p7K.png in Resources */,
 				1236D5B52BEB5A5A007B0D69 /* ACTUALMAP34p34p7K.png in Resources */,
 				1236D4452BEB5A5A007B0D69 /* ACTUALMAP8p6p5K.png in Resources */,
@@ -10022,6 +10040,7 @@
 				1236D9F92BEB5A5B007B0D69 /* ACTUALMAP2p9p7K.png in Resources */,
 				1236D69B2BEB5A5A007B0D69 /* ACTUALMAP1p4p6K.png in Resources */,
 				1236D96F2BEB5A5B007B0D69 /* ACTUALMAP4p15p6K.png in Resources */,
+				1223238D2BF4980400582349 /* OpenSans-Bold.ttf in Resources */,
 				1236D94A2BEB5A5B007B0D69 /* ACTUALMAP9p3p5K.png in Resources */,
 				1236DA112BEB5A5B007B0D69 /* ACTUALMAP19p5p6K.png in Resources */,
 				1236DADD2BEB5A5B007B0D69 /* ACTUALMAP32p38p7K.png in Resources */,
@@ -10876,6 +10895,7 @@
 				12097A782BA56D5600DACBED /* ActualCheckListCustomSwitcher.swift in Sources */,
 				2C1CA42D2A8E70B200C89F79 /* ActualServicesManager.swift in Sources */,
 				2C2A207B2A729267002A6D3C /* ActualMainViewController.swift in Sources */,
+				122323892BF48A8F00582349 /* MegastarMainViewController.swift in Sources */,
 				12097A722BA4B09700DACBED /* ActualAllertController.swift in Sources */,
 				2C1CA4712A8E714F00C89F79 /* ActualProjectConfiguration3862.swift in Sources */,
 				2C2A20C02A756AE0002A6D3C /* ActualGSModel.swift in Sources */,

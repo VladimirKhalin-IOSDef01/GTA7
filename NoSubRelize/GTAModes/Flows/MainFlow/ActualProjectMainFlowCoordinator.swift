@@ -23,21 +23,10 @@ final class ActualProjectMainFlowCoordinator: NSObject, ActualProjectFlowCoordin
     //MARK: Start View Controlle
     
     func actualCreateFlow() -> UIViewController {
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
         let model = ActualMainModel(navigationHandler: self as ActualMainModelNavigationHandler)
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        let controller = ActualMainViewControllerNew(model: model)
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
+       // let controller = ActualMainViewControllerNew(model: model)     // ТЕСТ ЗАМЕНА GTA7
+        let controller = MegastarMainViewController(model: model)
         rootViewController = controller
-        
         return controller
     }
 }
@@ -45,18 +34,8 @@ final class ActualProjectMainFlowCoordinator: NSObject, ActualProjectFlowCoordin
 extension ActualProjectMainFlowCoordinator: ActualMainModelNavigationHandler {
     
     func actualMainModelDidRequestToModes(_ model: ActualMainModel) {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
+    
         let modelScreen = ActualMainModel(navigationHandler: self as ActualMainModelNavigationHandler)
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
         let model = ActualGameModesModel(navigationHandler: self as ActualModesModelNavHandler)
         let controller = ActualModesViewController(model: model, modelScreen: modelScreen)
         presentedViewController = controller
@@ -64,20 +43,9 @@ extension ActualProjectMainFlowCoordinator: ActualMainModelNavigationHandler {
     }
     
     func actualMainModelDidRequestToModesInfo(_ model: ActualMainModel) {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
         let model = ActualGameModesModel(navigationHandler: self as ActualModesModelNavHandler)
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
         let controller = ActualModesInfoViewController(model: model)
         presentedViewController = controller
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
         rootViewController?.navigationController?.pushViewController(controller, animated: true)
     }
     

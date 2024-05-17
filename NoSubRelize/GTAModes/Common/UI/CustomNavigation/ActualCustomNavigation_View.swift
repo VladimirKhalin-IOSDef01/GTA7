@@ -90,7 +90,7 @@ extension ActualCustomNavigation_View {
             $0.top.equal(to: self.topAnchor)
             $0.bottom.equal(to: self.bottomAnchor)
             $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 44 : 32.0)
-            $0.width.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 44 : 39.0)
+            $0.width.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 39 : 39.0)
         }
         
         rightButton.setImage(UIImage(named: ""), for: .normal)
@@ -99,14 +99,14 @@ extension ActualCustomNavigation_View {
     }
     
     private func gtavk_addFilterButton() {
-       
+        rightButton.contentMode = .scaleAspectFit
         rightButton.actualLayout {
-            $0.leading.equal(to: self.leadingAnchor, offsetBy: 40)
+            $0.leading.equal(to: self.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 60 : 40)
            // $0.top.equal(to: self.topAnchor, offsetBy: 0)
            // $0.bottom.equal(to: self.bottomAnchor)
             $0.centerY.equal(to: self.centerYAnchor)
-            $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 44 : 34.0)
-            $0.width.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 47 : 29.0)
+            $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 46 : 34.0)
+            $0.width.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 42 : 29.0)
         }
         
         rightButton.setImage(UIImage(named: "ActualFilter"), for: .normal)

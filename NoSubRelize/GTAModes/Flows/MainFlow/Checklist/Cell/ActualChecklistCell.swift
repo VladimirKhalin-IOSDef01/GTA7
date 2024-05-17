@@ -35,7 +35,7 @@ final class ActualChecklistCell: UICollectionViewCell, ActualReusable {
     
     public func actualConfigure_cell(_ value: ActualMissionItem) {
        
-        titleLabel.font = UIFont(name: "OpenSans-SemiBold", size: UIDevice.current.userInterfaceIdiom == .pad ? 24.0 : 20.0)
+        titleLabel.font = UIFont(name: "OpenSans-SemiBold", size: UIDevice.current.userInterfaceIdiom == .pad ? 28.0 : 20.0)
         titleLabel.textColor = .white
         titleLabel.text = value.missionName
         switcher.isOn = value.isCheck
@@ -48,7 +48,9 @@ final class ActualChecklistCell: UICollectionViewCell, ActualReusable {
         containerView.actualLayout {
             $0.top.equal(to: contentView.topAnchor, offsetBy: 7.0)
             $0.bottom.equal(to: contentView.bottomAnchor, offsetBy: -7.0)
-            $0.width.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 350 : 350)
+            $0.leading.equal(to: contentView.leadingAnchor, offsetBy: 0.0)
+            $0.trailing.equal(to: contentView.trailingAnchor, offsetBy: 0.0)
+          //  $0.width.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 650 : 350)
             $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 74 : 74)
             $0.centerX.equal(to: containerView.centerXAnchor)
         }
@@ -70,11 +72,13 @@ final class ActualChecklistCell: UICollectionViewCell, ActualReusable {
       
         containerView.addSubview(switcher)
         switcher.translatesAutoresizingMaskIntoConstraints = false
+        switcher.clipsToBounds = true
+        switcher.contentMode = .scaleAspectFit
         switcher.actualLayout {
             $0.trailing.equal(to: containerView.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -30 : -13.0)
             $0.leading.equal(to: containerView.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 30 : 13.0)
             $0.centerY.equal(to: containerView.centerYAnchor)
-            $0.height.equal(to: 36.0)
+            $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 48 : 36.0)
         }
         
         switcher.addTarget(self, action: #selector(actualSwitchValueChanged(_:)), for: .valueChanged)

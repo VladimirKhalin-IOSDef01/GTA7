@@ -65,7 +65,7 @@ final class ActualModesTabViewCellNew: UITableViewCell, ActualReusable {
     }
     
     public func actualConfigure_cell(_ value: ActualModItem, isLoaded: Bool) {
-        titleLabel.font = UIFont(name: "OpenSans-SemiBold", size: UIDevice.current.userInterfaceIdiom == .pad ? 24 : 20)
+        titleLabel.font = UIFont(name: "OpenSans-SemiBold", size: UIDevice.current.userInterfaceIdiom == .pad ? 28 : 20)
         titleLabel.textColor = .white
         titleLabel.text = value.title.capitalized
         descriprionLabel.font = UIFont(name: "OpenSans-SemiBold", size: UIDevice.current.userInterfaceIdiom == .pad ? 26 : 15)
@@ -107,10 +107,10 @@ final class ActualModesTabViewCellNew: UITableViewCell, ActualReusable {
         containerView.actualLayout {
             $0.top.equal(to: contentView.topAnchor)
             $0.bottom.equal(to: contentView.bottomAnchor, offsetBy: -20.0)
-            $0.leading.equal(to: contentView.leadingAnchor, offsetBy: 15.0)
-            $0.trailing.equal(to: contentView.trailingAnchor, offsetBy: -15.0)
+            $0.leading.equal(to: contentView.leadingAnchor, offsetBy: 0)
+            $0.trailing.equal(to: contentView.trailingAnchor, offsetBy: 0)
         }
-        containerView.withCornerRadius(UIDevice.current.userInterfaceIdiom == .pad ? 44 : 20.0)
+        containerView.withCornerRadius(UIDevice.current.userInterfaceIdiom == .pad ? 20 : 20.0)
         
         containerView.actualDropShadowStandart()
         containerView.backgroundColor = UIColor(named: "MegastarPurp")
@@ -120,7 +120,7 @@ final class ActualModesTabViewCellNew: UITableViewCell, ActualReusable {
         containerView.addSubview(modeImage)
         modeImage.withCornerRadius(20.0)
         modeImage.actualLayout {
-            $0.top.equal(to: containerView.topAnchor, offsetBy: 55.0)
+            $0.top.equal(to: containerView.topAnchor, offsetBy:UIDevice.current.userInterfaceIdiom == .pad ? 65 : 55.0)
             $0.leading.equal(to: containerView.leadingAnchor, offsetBy: 15.0)
             $0.trailing.equal(to: containerView.trailingAnchor, offsetBy: -15.0)
             $0.bottom.equal(to: containerView.bottomAnchor, offsetBy: -20.0)

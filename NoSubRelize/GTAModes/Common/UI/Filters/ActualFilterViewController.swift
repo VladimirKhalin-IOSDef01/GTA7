@@ -79,7 +79,8 @@ final class ActualFilterViewController: ActualNiblessFilterViewController {
     
     private func actualSetupView() {
 
-        let actualHeight = (filterListData.filterList.count + 1) * 43
+        let cellHight = UIDevice.current.userInterfaceIdiom == .pad ? 52 : 43
+        let actualHeight = (filterListData.filterList.count + 1) * cellHight
         view.withCornerRadius()
        // view.alpha = 0.75
       //  view.backgroundColor = UIColor(named: "modalColor")?.withAlphaComponent(0.7)
@@ -91,8 +92,8 @@ final class ActualFilterViewController: ActualNiblessFilterViewController {
       //  colorConteiner.withBorder(width: 1, color: UIColor(named: "ActualPink")!.withAlphaComponent(0.5))
         colorConteiner.withCornerRadius(20)
         colorConteiner.actualLayout{
-            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 120 : 20)
-            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -120 : -20)
+            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160 : 20)
+            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -160 : -20)
             $0.top.equal(to: view.topAnchor, offsetBy: 0)
             //$0.bottom.greaterThanOrEqual(to: view.bottomAnchor)
             //$0.bottom.equal(to: colorConteiner.topAnchor, offsetBy: tableView.frame.height)
@@ -115,7 +116,7 @@ final class ActualFilterViewController: ActualNiblessFilterViewController {
         
         view.addSubview(closeButton)
         closeButton.actualLayout {
-            $0.trailing.equal(to: colorConteiner.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -20 : -10.0)
+            $0.trailing.equal(to: colorConteiner.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -15 : -10.0)
             $0.centerY.equal(to: titleLabel.centerYAnchor)
             $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 39 : 33.0)
             $0.width.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 40 : 34.0)
@@ -123,7 +124,7 @@ final class ActualFilterViewController: ActualNiblessFilterViewController {
         closeButton.addTarget(self, action: #selector(actualCloseAction), for: .touchUpInside)
       
         if let originalImage = UIImage(systemName: "xmark.circle") {
-            let targetSize = UIDevice.current.userInterfaceIdiom == .pad ? CGSize(width: 40, height: 40) : CGSize(width: 24, height: 23)
+            let targetSize = UIDevice.current.userInterfaceIdiom == .pad ? CGSize(width: 36, height: 36) : CGSize(width: 24, height: 23)
             let renderer = UIGraphicsImageRenderer(size: targetSize)
             let scaledImage = renderer.image { _ in
                 originalImage.draw(in: CGRect(origin: .zero, size: targetSize))
@@ -135,14 +136,14 @@ final class ActualFilterViewController: ActualNiblessFilterViewController {
         tableView.accessibilityIdentifier = "tableView"
         view.addSubview(tableView)
         tableView.actualLayout {
-            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 120 : 20)
-            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -120 : -20)
+            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160 : 20)
+            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -160 : -20)
             $0.top.equal(to: titleLabel.bottomAnchor, offsetBy: 10)
             $0.bottom.equal(to: view.safeAreaLayoutGuide.bottomAnchor, priority: .defaultLow)
         }
         tableView.backgroundColor = .clear
         tableView.sectionFooterHeight = 0.0
-        tableView.rowHeight = 38.0
+        tableView.rowHeight = UIDevice.current.userInterfaceIdiom == .pad ? 46 : 38.0
         tableView.registerReusable_Cell(cellType: ActualFilterTabViewCell.self)
         tableView.separatorStyle = .none
         tableView.dataSource = self

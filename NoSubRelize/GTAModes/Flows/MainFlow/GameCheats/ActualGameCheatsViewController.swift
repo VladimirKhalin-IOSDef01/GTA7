@@ -78,27 +78,27 @@ class ActualGameCheatsViewController: ActualNiblessViewController {
         
         view.addSubview(customNavigation)
         customNavigation.actualLayout {
-            $0.top.equal(to: view.safeAreaLayoutGuide.topAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 50.0 : 20)
-            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 50 : 20.0)
-            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -50 : -20.0)
+            $0.top.equal(to: view.safeAreaLayoutGuide.topAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 70.0 : 20)
+            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160 : 20.0)
+            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -160 : -20.0)
             $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 44.0 : 36.0)
         }
         
         view.addSubview(customTabBar)
         customTabBar.actualLayout{
             $0.top.equal(to: customNavigation.bottomAnchor, offsetBy: 30)
-            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 94 : 20)
-            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -94 : -20)
-            $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 121 : 44)
+            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160 : 20)
+            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -160 : -20)
+            $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 56 : 44)
         }
         
         view.addSubview(customTabBar2)
         customTabBar2.alpha = 0.0
         customTabBar2.actualLayout{
             $0.top.equal(to: customTabBar.bottomAnchor, offsetBy: 15)
-            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 94 : 20)
-            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -94 : -20)
-            $0.height.equal(to: 150)
+            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160 : 20)
+            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -160 : -20)
+            $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 180 : 150)
             
         }
     
@@ -109,9 +109,9 @@ class ActualGameCheatsViewController: ActualNiblessViewController {
         view.addSubview(collectionView)
         collectionView.actualLayout {
             //$0.top.equal(to: customNavigation.bottomAnchor, offsetBy: 26.0)
-            $0.top.equal(to: customTabBar.bottomAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 60.0 : 10)
-            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 94 : 20)
-            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -94 : -20)
+            $0.top.equal(to: customTabBar.bottomAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 20.0 : 10)
+            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160 : 20)
+            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -160 : -20)
             $0.bottom.equal(to: view.bottomAnchor)
         }
         view.bringSubviewToFront(customTabBar2)
@@ -172,8 +172,8 @@ extension ActualGameCheatsViewController: UICollectionViewDataSource, UICollecti
         let numberOfColumns: CGFloat = 1
         
         let availableWidth = collectionView.frame.width - (spacing * (numberOfColumns - 1)) - collectionView.contentInset.left - collectionView.contentInset.right
-        let widthPerItem = UIDevice.current.userInterfaceIdiom == .pad ? 195 : 350
-        return CGSize(width: widthPerItem, height: UIDevice.current.userInterfaceIdiom == .pad ? 220 : 122) // Установите желаемую высоту
+        let widthPerItem = UIDevice.current.userInterfaceIdiom == .pad ? 500 : 350
+        return CGSize(width: widthPerItem, height: UIDevice.current.userInterfaceIdiom == .pad ? 156 : 125) // Установите желаемую высоту
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

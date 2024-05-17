@@ -37,7 +37,8 @@ class ActualChecklistButton: UIControl {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        checkmarkImageView.frame = CGRect(x: bounds.width - 30, y: 2, width: 30, height: bounds.height - 3)
+        let checkSize = UIDevice.current.userInterfaceIdiom == .pad ? 40.0 : 30.0
+        checkmarkImageView.frame = CGRect(x: bounds.width - checkSize, y: 2, width: checkSize, height: bounds.height - 3)
     }
     
     @objc private func didTapToggleButton() {

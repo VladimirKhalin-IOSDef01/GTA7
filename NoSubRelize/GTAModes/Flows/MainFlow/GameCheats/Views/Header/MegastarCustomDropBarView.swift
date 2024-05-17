@@ -62,13 +62,13 @@ final class MegastarCustomDropBarView: UICollectionReusableView {
         openImage.actualLayout {
             $0.trailing.equal(to: stackButton.trailingAnchor, offsetBy: -10)
             $0.centerY.equal(to: stackButton.centerYAnchor)
-            $0.width.equal(to: 24)
-            $0.height.equal(to: 24)
+            $0.width.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 30 : 24)
+            $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 30 : 24)
         }
         
         stackButton.addSubviews(labelStackButton)
         labelStackButton.text = "Playstation"
-        labelStackButton.font = UIFont(name: "OpenSans-SemiBold", size: 20)
+        labelStackButton.font = UIFont(name: "OpenSans-SemiBold", size: UIDevice.current.userInterfaceIdiom == .pad ? 28 : 20)
         labelStackButton.textColor = UIColor(named: "MegastarPurp")
         labelStackButton.actualLayout {
             $0.centerX.equal(to: stackButton.centerXAnchor)

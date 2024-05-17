@@ -33,7 +33,7 @@ class MegastarMainViewController: ActualNiblessViewController {
             $0.top.equal(to: view.safeAreaLayoutGuide.topAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 70.0 : 25)
             $0.centerX.equal(to: view.centerXAnchor, offsetBy: 20.0)
            // $0.leading.equal(to: view.leadingAnchor, offsetBy: 20.0)
-            $0.trailing.equal(to: view.trailingAnchor, offsetBy: -20.0)
+            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -160 : -20.0)
             $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 44 : 26.0)
         }
 
@@ -44,9 +44,9 @@ class MegastarMainViewController: ActualNiblessViewController {
         tableView.tag = 1
       
         tableView.actualLayout {
-            $0.top.equal(to: customNavigation.bottomAnchor, offsetBy: 20)
-            $0.leading.equal(to: view.leadingAnchor, offsetBy: 20.0)
-            $0.trailing.equal(to: view.trailingAnchor, offsetBy: -20.0)
+            $0.top.equal(to: customNavigation.bottomAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 100 : 20)
+            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160 : 20.0)
+            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -160 : -20.0)
             $0.bottom.equal(to: view.bottomAnchor, offsetBy: -20)
         }
         
@@ -130,7 +130,7 @@ extension MegastarMainViewController: UITableViewDataSource, UITableViewDelegate
       
         let cell: ActualMainViewCell = tableView.dequeueReusableCell(indexPath)
         tableView.separatorStyle = .none
-            cell.actualConfigure(model.menuItems[indexPath.row], fontSize: 20.0, isLock: false)
+        cell.actualConfigure(model.menuItems[indexPath.row], fontSize: UIDevice.current.userInterfaceIdiom == .pad ? 32 : 20.0, isLock: false)
             cell.backgroundColor = .clear
             cell.actualDropShadowStandart(color: .white, opacity: 0.2, offSet: CGSize(width: 0, height: 0), radius: 5)
             cell.isMultipleTouchEnabled = false
@@ -146,6 +146,6 @@ extension MegastarMainViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 153
+        return UIDevice.current.userInterfaceIdiom == .pad ? 190 : 153
     }
 }

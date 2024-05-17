@@ -79,16 +79,16 @@ final class ActualMainViewCell: UITableViewCell, ActualReusable {
         containerView.actualLayout {
             $0.top.equal(to: contentView.topAnchor, offsetBy: 0.0)
            // $0.bottom.equal(to: contentView.bottomAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 0 : 0.0)
-            $0.bottom.equal(to: contentView.bottomAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -30 : -11.0)
+            $0.bottom.equal(to: contentView.bottomAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -18 : -11.0)
             $0.leading.equal(to: contentView.leadingAnchor, offsetBy: 0.0)
             $0.trailing.equal(to: contentView.trailingAnchor, offsetBy: 0.0)
         }
-        containerView.withCornerRadius(20)
+        containerView.withCornerRadius(UIDevice.current.userInterfaceIdiom == .pad ? 30 : 20)
         containerView.backgroundColor = .clear
       
         
         containerView.addSubview(backgroundImageView)
-        backgroundImageView.layer.cornerRadius = 20
+        backgroundImageView.layer.cornerRadius = UIDevice.current.userInterfaceIdiom == .pad ? 30 : 20
         
         
         backgroundImageView.actualLayout {

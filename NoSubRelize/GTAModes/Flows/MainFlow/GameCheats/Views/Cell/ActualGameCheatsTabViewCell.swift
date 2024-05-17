@@ -72,28 +72,30 @@ final class ActualGameCheatsTabViewCell: UICollectionViewCell {
         
         containerView.addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.numberOfLines = 3
+        titleLabel.lineBreakMode = .byWordWrapping
+        titleLabel.numberOfLines = 2
         titleLabel.textColor = .white
         if UIDevice.current.userInterfaceIdiom == .pad {
           
-            titleLabel.font = UIFont(name: "OpenSans-SemiBold", size: 18)
+            titleLabel.font = UIFont(name: "OpenSans-SemiBold", size: 26)
         } else {
           
             titleLabel.font = UIFont(name: "OpenSans-SemiBold", size: 18)
         }
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 15),
-            titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 14),
-            titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -40)
+            titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: UIDevice.current.userInterfaceIdiom == .pad ? 5 : 5),
+            titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: UIDevice.current.userInterfaceIdiom == .pad ? 27 : 14),
+            titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: UIDevice.current.userInterfaceIdiom == .pad ? -60 : -40),
+            titleLabel.heightAnchor.constraint(equalToConstant: UIDevice.current.userInterfaceIdiom == .pad ? 75 : 46)
         ])
         
         containerView.addSubview(favoriteImage)
         favoriteImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            favoriteImage.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 15),
-            favoriteImage.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -15),
-            favoriteImage.widthAnchor.constraint(equalToConstant: 28),
-            favoriteImage.heightAnchor.constraint(equalToConstant: 28)
+            favoriteImage.topAnchor.constraint(equalTo: containerView.topAnchor, constant: UIDevice.current.userInterfaceIdiom == .pad ? 28 : 15),
+            favoriteImage.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: UIDevice.current.userInterfaceIdiom == .pad ? -27 : -15),
+            favoriteImage.widthAnchor.constraint(equalToConstant: UIDevice.current.userInterfaceIdiom == .pad ? 34 : 27),
+            favoriteImage.heightAnchor.constraint(equalToConstant: UIDevice.current.userInterfaceIdiom == .pad ? 34 : 27)
         ])
        
         actualSetupStackViews()
@@ -111,16 +113,16 @@ final class ActualGameCheatsTabViewCell: UICollectionViewCell {
             containerView.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                $0.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 15),
-                $0.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8)
+                $0.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: UIDevice.current.userInterfaceIdiom == .pad ? 30 : 15),
+                $0.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: UIDevice.current.userInterfaceIdiom == .pad ? -12 : -8)
             ])
         }
         
         NSLayoutConstraint.activate([
-            firstStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: UIDevice.current.userInterfaceIdiom == .pad ? 35 : 9),
+            firstStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: UIDevice.current.userInterfaceIdiom == .pad ? 10 : 7),
             secondStackView.topAnchor.constraint(equalTo: firstStackView.bottomAnchor, constant: 5),
             threeStackView.topAnchor.constraint(equalTo: secondStackView.bottomAnchor, constant: 5),
-            threeStackView.bottomAnchor.constraint(lessThanOrEqualTo: containerView.bottomAnchor, constant: -10)
+            threeStackView.bottomAnchor.constraint(lessThanOrEqualTo: containerView.bottomAnchor, constant: -5)
         ])
        
         containerView.addSubview(contentModeView)
@@ -131,7 +133,7 @@ final class ActualGameCheatsTabViewCell: UICollectionViewCell {
       //  contentModeView.layer.borderColor = UIColor(named: "ActualPink")?.cgColor
       //  contentModeView.backgroundColor = UIColor(named: "ButtonColor")?.withAlphaComponent(0.0)
         NSLayoutConstraint.activate([
-            contentModeView.topAnchor.constraint(equalTo: favoriteImage.bottomAnchor, constant: UIDevice.current.userInterfaceIdiom == .pad ? 30 : 15),
+            contentModeView.topAnchor.constraint(equalTo: favoriteImage.bottomAnchor, constant: UIDevice.current.userInterfaceIdiom == .pad ? 15 : 15),
             contentModeView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 15),
             contentModeView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -15),
             contentModeView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -15)
@@ -223,14 +225,15 @@ final class ActualGameCheatsTabViewCell: UICollectionViewCell {
               imageView.image = UIImage(named: imageName)
               imageView.contentMode = .scaleAspectFit
         
-              imageView.heightAnchor.constraint(equalToConstant: UIDevice.current.userInterfaceIdiom == .pad ? 32 : 24).isActive = true
-              imageView.widthAnchor.constraint(equalToConstant: UIDevice.current.userInterfaceIdiom == .pad ? 32 : 24).isActive = true
+              imageView.heightAnchor.constraint(equalToConstant: UIDevice.current.userInterfaceIdiom == .pad ? 30 : 24).isActive = true
+              imageView.widthAnchor.constraint(equalToConstant: UIDevice.current.userInterfaceIdiom == .pad ? 30 : 24).isActive = true
               
               // Добавляем imageView в текущий стековый вид
               stackViews[currentStackIndex].addArrangedSubview(imageView)
            
               // Переход к следующему стековому виду после каждых 10 изображений
-              if (index + 1) % 10 == 0 && currentStackIndex < stackViews.count - 1 {
+              let imageCount = UIDevice.current.userInterfaceIdiom == .pad ? 12 : 10
+              if (index + 1) % imageCount == 0 && currentStackIndex < stackViews.count - 1 {
                   currentStackIndex += 1
               }
           }

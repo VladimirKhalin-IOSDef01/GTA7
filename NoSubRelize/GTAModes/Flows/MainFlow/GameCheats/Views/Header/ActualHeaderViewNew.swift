@@ -52,9 +52,10 @@ final class ActualHeaderViewNew: UICollectionReusableView {
             for label in labels {
             let button = UIButton(type: .custom)
             button.setTitle(label, for: .normal)
-            button.titleLabel?.font = UIFont(name: "OpenSans-SemiBold", size: 20)
+                button.titleLabel?.font = UIFont(name: "OpenSans-SemiBold", size: UIDevice.current.userInterfaceIdiom == .pad ? 28 : 20)
             button.setTitleColor(UIColor(named: "MegastarPurp"), for: .normal)
             button.translatesAutoresizingMaskIntoConstraints = false
+            button.clipsToBounds = true
             button.addTarget(self, action: #selector(actualButtonTapped), for: .touchUpInside)
             stackView.addArrangedSubview(button)
             button.actualLayout {

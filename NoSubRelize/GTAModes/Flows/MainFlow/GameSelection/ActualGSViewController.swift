@@ -52,18 +52,18 @@ class ActualGSViewController: ActualNiblessViewController {
     private func actualSetupView() {
         view.addSubview(customNavigation)
         customNavigation.actualLayout {
-            $0.top.equal(to: view.safeAreaLayoutGuide.topAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 50.0 : 17)
-            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 50 : 20.0)
-            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -50 : -20.0)
+            $0.top.equal(to: view.safeAreaLayoutGuide.topAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 70.0 : 17)
+            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160 : 20.0)
+            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -160 : -20.0)
             $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 44.0 : 36.0)
         }
 
         view.addSubview(tableViewOne)
         tableViewOne.backgroundColor = .clear
         tableViewOne.actualLayout {
-            $0.top.equal(to: customNavigation.bottomAnchor, offsetBy: 15)
-            $0.leading.equal(to: view.leadingAnchor, offsetBy: 20.0)
-            $0.trailing.equal(to: view.trailingAnchor, offsetBy: -20.0)
+            $0.top.equal(to: customNavigation.bottomAnchor, offsetBy:  UIDevice.current.userInterfaceIdiom == .pad ? 100 : 15)
+            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160 : 20.0)
+            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -160 : -20.0)
             $0.bottom.equal(to: view.bottomAnchor, offsetBy: -20)
         }
         
@@ -106,7 +106,7 @@ extension ActualGSViewController: UITableViewDataSource, UITableViewDelegate {
         let cell: ActualMainViewCell = tableView.dequeueReusableCell(indexPath)
         tableView.separatorStyle = .none
         let reversedIndex = model.menuItems.count - 1 - indexPath.row
-        cell.actualConfigure(model.menuItems[reversedIndex], fontSize: 26.0, isLock: false)
+        cell.actualConfigure(model.menuItems[reversedIndex], fontSize: UIDevice.current.userInterfaceIdiom == .pad ? 32 : 20.0, isLock: false)
       //  cell.actualConfigure(model.menuItems[indexPath.row], fontSize: 26.0, isLock: false)
         cell.backgroundColor = .clear
         cell.actualDropShadowStandart(color: .white, opacity: 0.15, offSet: CGSize(width: 0, height: 0), radius: 3)
@@ -125,6 +125,6 @@ extension ActualGSViewController: UITableViewDataSource, UITableViewDelegate {
     }
    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-      return 153
+        return UIDevice.current.userInterfaceIdiom == .pad ? 190 : 153
     }
 }

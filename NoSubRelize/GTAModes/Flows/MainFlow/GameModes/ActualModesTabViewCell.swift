@@ -135,10 +135,10 @@ final class ActualModesTabViewCell: UITableViewCell, ActualReusable {
     }
     
     public func actualConfigureCell(_ value: ActualModItem, isLoaded: Bool) {
-        titleLabel.font = UIFont(name: "OpenSans-SemiBold", size: UIDevice.current.userInterfaceIdiom == .pad ? 32 : 21)
+        titleLabel.font = UIFont(name: "OpenSans-SemiBold", size: UIDevice.current.userInterfaceIdiom == .pad ? 28 : 20)
         titleLabel.textColor = .white
         titleLabel.text = value.title.capitalized
-        descriprionLabel.font = UIFont(name: "OpenSans-Regular", size: UIDevice.current.userInterfaceIdiom == .pad ? 24 : 15)
+        descriprionLabel.font = UIFont(name: "OpenSans-Regular", size: UIDevice.current.userInterfaceIdiom == .pad ? 26 : 15)
      
         descriprionLabel.textColor = .white
         descriprionLabel.text = value.description
@@ -199,8 +199,8 @@ final class ActualModesTabViewCell: UITableViewCell, ActualReusable {
         containerView.actualLayout {
             $0.top.equal(to: contentView.topAnchor)
             $0.bottom.equal(to: contentView.bottomAnchor, offsetBy: -6.0)
-            $0.leading.equal(to: contentView.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 0 : 15.0)
-            $0.trailing.equal(to: contentView.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 0 : -15.0)
+            $0.leading.equal(to: contentView.leadingAnchor, offsetBy: 0)
+            $0.trailing.equal(to: contentView.trailingAnchor, offsetBy:0)
            
         }
         containerView.withCornerRadius(UIDevice.current.userInterfaceIdiom == .pad ? 20 : 20.0)
@@ -227,7 +227,7 @@ final class ActualModesTabViewCell: UITableViewCell, ActualReusable {
         titleLabel.actualLayout {
             $0.top.equal(to: containerView.topAnchor, offsetBy: 20.0)
           //  $0.leading.equal(to: containerView.leadingAnchor, offsetBy: 15.0)
-            $0.trailing.equal(to: containerView.trailingAnchor, offsetBy: -15.0)
+            $0.trailing.equal(to: containerView.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -35 : -15.0)
   
         }
       //  titleLabel.textAlignment = .center
@@ -236,10 +236,10 @@ final class ActualModesTabViewCell: UITableViewCell, ActualReusable {
         containerView.addSubview(modeImage)
         modeImage.withCornerRadius(20)
         modeImage.actualLayout {
-            $0.top.equal(to: titleLabel.bottomAnchor, offsetBy: 10.0)
+            $0.top.equal(to: titleLabel.bottomAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 20 : 10.0)
             $0.leading.equal(to: containerView.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 35 : 15.0)
             $0.trailing.equal(to: containerView.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -35 : -15.0)
-            $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 178.0 : 178)
+            $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 220.0 : 178)
         }
         
         containerView.addSubview(descriprionLabel)
@@ -266,7 +266,7 @@ final class ActualModesTabViewCell: UITableViewCell, ActualReusable {
             $0.leading.equal(to: containerView.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 35 : 15)
             $0.trailing.equal(to: containerView.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -35 :  -15)
             $0.top.equal(to: descriprionLabel.bottomAnchor, offsetBy: 30.0)
-            $0.bottom.equal(to: containerView.bottomAnchor, offsetBy:  -15)
+            $0.bottom.equal(to: containerView.bottomAnchor, offsetBy:  UIDevice.current.userInterfaceIdiom == .pad ? -35 : -15)
         }
  
         actualConfigureStackView(stackView)
@@ -302,10 +302,10 @@ final class ActualModesTabViewCell: UITableViewCell, ActualReusable {
         }
     
         shareButtonView.actualLayout {
-            $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 58 : 48.0)
+            $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 62 : 48.0)
         }
         downloadButtonView.actualLayout {
-            $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 58 : 48.0)
+            $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 62 : 48.0)
         }
         let shareGestrure = UITapGestureRecognizer(target: self, action: #selector(actualShareActionProceed))
         shareButtonView.addGestureRecognizer(shareGestrure)
@@ -374,6 +374,9 @@ final class ActualModesTabViewCell: UITableViewCell, ActualReusable {
     }
     
     @objc func actualDownloadActionProceed() {
+        if downloadTitleLabel.text == "   Downloaded" || downloadTitleLabel.text == "  Downloaded" {
+         return
+        }
         downloadAction?()
     }
     

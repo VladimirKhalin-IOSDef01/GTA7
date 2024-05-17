@@ -41,7 +41,7 @@ final class ActualFilterTabViewCell: UITableViewCell, ActualReusable {
     }
     
     public func actualConfigure_cell(_ value: ActualFilterData) {
-        titleLabel.font = UIFont(name: "Gilroy-Semibold", size: UIDevice.current.userInterfaceIdiom == .pad ? 20 : 18)
+        titleLabel.font = UIFont(name: "Gilroy-Semibold", size: UIDevice.current.userInterfaceIdiom == .pad ? 24 : 18)
         titleLabel.textColor = UIColor(named: "MegastarPurp")
         titleLabel.text = value.title.capitalized(with: .autoupdatingCurrent)
         switcher.isOn = value.isCheck // Установите состояние переключателя
@@ -64,8 +64,8 @@ final class ActualFilterTabViewCell: UITableViewCell, ActualReusable {
         checkImage.actualLayout {
             $0.trailing.equal(to: containerView.trailingAnchor, offsetBy: -16.0)
             $0.centerY.equal(to: containerView.centerYAnchor)
-            $0.height.equal(to: 30)
-            $0.width.equal(to: 30)
+            $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 36 : 30)
+            $0.width.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 36 : 30)
         }
         checkImage.image = UIImage(systemName: "square.fill")
         checkImage.tintColor = UIColor(named: "MegastarPurp")

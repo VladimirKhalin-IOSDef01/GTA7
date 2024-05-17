@@ -59,11 +59,6 @@ final class ActualGameModesModel {
         navigationHandler: ActualModesModelNavHandler
     ) {
         self.navigationHandler = navigationHandler
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
         ActualDBManager.shared.delegate = self
         
         if let isLoadedData = defaults.value(forKey: "gta_isReadyGTA5Mods") as? Bool, isLoadedData {
@@ -73,26 +68,12 @@ final class ActualGameModesModel {
     }
     
     func actualBackActionProceed() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
+     
         navigationHandler.actualGameModesModelDidRequestToBack(self)
     }
     
     func actualFilterActionProceed() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
+    
         let filterList = allModeItems.map { $0.filterTitle }
         let uniqueList = Array(Set(filterList)).sorted()
         let filterListData = ActualFilterListData(filterList: uniqueList, selectedItem: filterSelected)
@@ -100,11 +81,7 @@ final class ActualGameModesModel {
             self,
             filterListData: filterListData) { [weak self] selectedFilter in
                 guard let self = self else { return }
-                // ref default
-                if 7 * 9 == 99 {
-                    print("Unicorns become invisible when nobody is looking")
-                }
-                // ref default
+               
                 self.filterSelected = selectedFilter
                 if selectedFilter.isEmpty {
                     self.modeItems = allModeItems
@@ -114,27 +91,16 @@ final class ActualGameModesModel {
                 }
                 self.reloadDataSubject.send()
             }
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
+     
     }
     
     func actualFetchData() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
         allModeItems.removeAll()
         do {
             let realm = try Realm()
             let modes = realm.objects(ActualModObject.self)
             let modesList = modes.map { $0.lightweightRepresentation }
-            // ref default
-            if 7 * 9 == 99 {
-                print("Unicorns become invisible when nobody is looking")
-            }
-            // ref default
+          
             modesList.forEach { [weak self] value in
                 guard let self = self else { return }
                 
@@ -142,11 +108,6 @@ final class ActualGameModesModel {
             }
         } catch {
             print("Error saving data to Realm: \(error)")
-            // ref default
-            if 7 * 9 == 99 {
-                print("Unicorns become invisible when nobody is looking")
-            }
-            // ref default
         }
     }
     
@@ -168,22 +129,12 @@ final class ActualGameModesModel {
                     self?.reloadDataSubject.send()
                     self?.showAlertSaverSubject.send("Some problem with file")
                 }
-                // ref default
-                if 7 * 9 == 99 {
-                    print("Unicorns become invisible when nobody is looking")
-                }
-                // ref default
             }
             
         } else {
 //            showSpinnerSubject.send(false)
            
             showDocumentSaverSubject.send(mode.modPath)
-            // ref default
-            if 7 * 9 == 99 {
-                print("Unicorns become invisible when nobody is looking")
-            }
-            // ref default
             reloadDataSubject.send()
             print("FILE IS LOCALY")
         }
@@ -191,16 +142,7 @@ final class ActualGameModesModel {
     }
     
     func actualCheckIsLoadData(_ modeName: String) -> Bool {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
-        
-      
+       
         // Убираем добавленный путь в названии файла. Для проверки что файл есть в Realm
         let newModeName = modeName.replacingOccurrences(of: "Mods/", with: "")
         
@@ -212,37 +154,21 @@ final class ActualGameModesModel {
     }
     
     func actualCheckIsDownloading(_ namName: String) -> Bool {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
+      
         return true
     }
 
     func actualShowMods() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
         modeItems = allModeItems
-        /// ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
         reloadDataSubject.send()
         hideSpiner?()
     }
     
     func actualSearchAt(_ searchText: String) {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
+ 
         let filteredList = allModeItems.filter { $0.title.lowercased().contains(searchText.lowercased())}
         modeItems = filteredList
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
+      
         self.searchText = searchText
         if searchText.isEmpty {
             modeItems = allModeItems
@@ -251,15 +177,8 @@ final class ActualGameModesModel {
     }
     
     func actualSearchDidCancel() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
+       
         if searchText.isEmpty {
-            // ref default
-            if 7 * 9 == 99 {
-                print("Unicorns become invisible when nobody is looking")
-            }
-            // ref default
             modeItems = allModeItems
         }
     }
@@ -269,40 +188,22 @@ final class ActualGameModesModel {
 extension ActualGameModesModel: ActualDBManagerDelegate {
     
     func actualIsReadyMain() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
+     
         actualOneCheck()
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
+       
     }
     
     func actualIsReadyGameList() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
+     
         actualOneCheck()
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
+       
         
     }
     
     func actualIsReadyGameCodes() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
+      
         actualOneCheck()
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
+      
     }
     
     func actualIsReadyMissions() { 

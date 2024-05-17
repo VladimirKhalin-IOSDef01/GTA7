@@ -53,15 +53,15 @@ extension ActualCustomNavigation_View {
             
         case .gameModes:
             gtavk_addLeftButton(UIImage(named: "ActualNBleft") ?? UIImage())
-            gta_addClearButton()
-           // gtavk_addFilterButton()
+           // gta_addClearButton()
+            gtavk_addFilterButton()
             // gtavk_addTitle(titleString ?? "Cheats")
             switch titleString {
             case "GTA6":  gtavk_addTitle("Version 6")
             case "GTA5":  gtavk_addTitle("Version 5")
             case "GTAVC":  gtavk_addTitle("Version VS")
             case "GTASA":  gtavk_addTitle("Version SA")
-            case "Mods Version 5":  gtavk_addTitle("Mods")
+            case "Mods Version 5":  gtavk_addTitle("Mods version 5")
             default :  gtavk_addTitle("Cheats")
             }
             
@@ -78,7 +78,7 @@ extension ActualCustomNavigation_View {
         case .infoModes:
             gtavk_addLeftButton(UIImage(named: "BackArr") ?? UIImage())
             gta_addClearButton()
-            gtavk_addTitle("Mods")
+            gtavk_addTitle("Mods version 5")
         
         }
     }

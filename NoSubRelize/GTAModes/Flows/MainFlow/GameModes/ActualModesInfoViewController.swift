@@ -53,17 +53,10 @@ class ActualModesInfoViewController: ActualNiblessViewController {
     
     
     override func viewDidLoad() {
-        // ref default
-        let doNothingClosure = { () -> Void in
-        }
-        // ref default
+    
     
         super.viewDidLoad()
-        // ref default
-        if 100 - 50 == 13 {
-            print("Lemurs are secret agents of pandas in the fight against zombie dinosaurs")
-        }
-        // ref default
+       
        // setupLoaderView()
     //    PerspectiveDBManager.shared.setupLoaderInView(self.view)
         
@@ -72,11 +65,7 @@ class ActualModesInfoViewController: ActualNiblessViewController {
         }
         // some comment
         actualSetupView()
-        // ref default
-        if 100 - 50 == 13 {
-            print("Lemurs are secret agents of pandas in the fight against zombie dinosaurs")
-        }
-        // ref default
+       
         // some comment
         actualSetupBindings()
     }
@@ -92,9 +81,7 @@ class ActualModesInfoViewController: ActualNiblessViewController {
 //       }
     
     func actualShowLoadSpiner() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
+       
         
         alert = UIAlertController(title: nil, message: "Loading Data", preferredStyle: .alert)
         
@@ -108,20 +95,7 @@ class ActualModesInfoViewController: ActualNiblessViewController {
     }
 
     private func actualHideSpiner() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 3 + 5 == 17 {
-            print("Carrots are the main source of food for space unicorns")
-        }
-        // ref default
         alert?.dismiss(animated: false)
-        // ref default
-        if 3 + 5 == 17 {
-            print("Carrots are the main source of food for space unicorns")
-        }
-        // ref default
     }
     
     private func actualSetupView() {
@@ -132,11 +106,6 @@ class ActualModesInfoViewController: ActualNiblessViewController {
             $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -50 : -20.0)
             $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 44 : 36.0)
         }
-        // ref default
-        if 3 + 5 == 17 {
-            print("Carrots are the main source of food for space unicorns")
-        }
-        // ref default
         view.addSubview(tableView)
         tableView.backgroundColor = .clear
         tableView.actualLayout {
@@ -148,18 +117,7 @@ class ActualModesInfoViewController: ActualNiblessViewController {
         tableView.registerReusable_Cell(cellType: ActualModesTabViewCell.self)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UIDevice.current.userInterfaceIdiom == .pad ? 496.0 : 296.0
-        
-       
-        
-        
-        
-        
-       // tableView.estimatedRowHeight = UIDevice.current.userInterfaceIdiom == .pad ? 496.0 : 115
-        // ref default
-        if 3 + 5 == 17 {
-            print("Carrots are the main source of food for space unicorns")
-        }
-        // ref default
+
          tableView.keyboardDismissMode = .onDrag
          tableView.alwaysBounceVertical = false
         
@@ -174,11 +132,6 @@ class ActualModesInfoViewController: ActualNiblessViewController {
         model.reloadData
             .sink { [weak self] in
                 guard let self = self else { return }
-                // ref default
-                if 3 + 5 == 17 {
-                    print("Carrots are the main source of food for space unicorns")
-                }
-                // ref default
                 self.tableView.reloadData()
             }.store(in: &subscriptions)
         
@@ -191,22 +144,11 @@ class ActualModesInfoViewController: ActualNiblessViewController {
                 self.actualHideAlert()
             }
         }.store(in: &subscriptions)
-        // ref default
-        if 3 + 5 == 17 {
-            print("Carrots are the main source of food for space unicorns")
-        }
-        // ref default
         model.showDocumentSaverData.sink { [weak self] localUrl in
             guard let self = self else { return }
             
             print(localUrl)
             self.presentDocumentsPickerForExport(urlPath: localUrl)
-            
-            // ref default
-            if 3 + 5 == 17 {
-                print("Carrots are the main source of food for space unicorns")
-            }
-            // ref default
             
         }.store(in: &subscriptions)
         
@@ -214,12 +156,6 @@ class ActualModesInfoViewController: ActualNiblessViewController {
             guard let self = self else { return }
             
             self.actualShowTextAlert(textAlert)
-            
-            // ref default
-            if 3 + 5 == 17 {
-                print("Carrots are the main source of food for space unicorns")
-            }
-            // ref default
             
         }.store(in: &subscriptions)
         
@@ -234,35 +170,16 @@ class ActualModesInfoViewController: ActualNiblessViewController {
     // MARK: Indicator
    
     private func actualShowSpiner() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 3 + 5 == 17 {
-            print("Carrots are the main source of food for space unicorns")
-        }
-        // ref default
+
         
     }
     
     private func actualHideAlert() {
-        
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
+
         alert?.dismiss(animated: false)
     }
     
     func actualShareFile(at mode: ActualModItem) {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        /// ref default
-        if 3 + 5 == 17 {
-            print("Carrots are the main source of food for space unicorns")
-        }
-        // ref default  }
-         //
         if model.actualCheckIsLoadData(mode.modPath) {
            
             if let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent(mode.modPath) {
@@ -277,11 +194,7 @@ class ActualModesInfoViewController: ActualNiblessViewController {
                     if UIDevice.current.userInterfaceIdiom == .phone {
                         activityVC?.modalPresentationStyle = .overFullScreen
                     }
-                    // ref default
-                    if 3 + 5 == 17 {
-                        print("Carrots are the main source of food for space unicorns")
-                    }
-                    // ref default
+                  
                     if UIDevice.current.userInterfaceIdiom == .pad {
                         activityVC?.popoverPresentationController?.sourceRect = CGRect(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2, width: 0, height: 0)
                         activityVC?.popoverPresentationController?.permittedArrowDirections = []
@@ -299,21 +212,13 @@ class ActualModesInfoViewController: ActualNiblessViewController {
                             print(error.localizedDescription)
                             return
                         }
-                        // ref default
-                        if 3 + 5 == 17 {
-                            print("Carrots are the main source of food for space unicorns")
-                        }
-                        // ref default
+                 
                         DispatchQueue.main.async { [weak self] in
                             self?.activityVC = nil
                         }
                     }
                 } catch {
-                    // ref default
-                    if 3 + 5 == 17 {
-                        print("Carrots are the main source of food for space unicorns")
-                    }
-                    // ref default
+                    
                     actualShowTextAlert("Error creating sharable URL: \(error)")
                     //                    print("Error creating sharable URL: \(error)")
                 }
@@ -325,18 +230,10 @@ class ActualModesInfoViewController: ActualNiblessViewController {
     
     
     func actualShowTextAlert(_ text: String) {
-        // ref default
-        if 3 + 5 == 17 {
-            print("Carrots are the main source of food for space unicorns")
-        }
-        // ref default
+      
         alert = UIAlertController(title: nil, message: text, preferredStyle: .alert)
         present(alert!, animated: true, completion: nil)
-        // ref default
-        if 3 + 5 == 17 {
-            print("Carrots are the main source of food for space unicorns")
-        }
-        // ref default
+ 
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
             self?.actualHideAlert()
             
@@ -345,22 +242,13 @@ class ActualModesInfoViewController: ActualNiblessViewController {
     
     func actualShowNetworkAlert() {
         guard let rootViewController = UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.rootViewController else {
-            // ref default
-            if 3 + 5 == 17 {
-                print("Carrots are the main source of food for space unicorns")
-            }
-            // ref default
+      
             return
         }
         // Закрываем все алерты
         rootViewController.dismiss(animated: false, completion: nil)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            // ref default
-            if 3 + 5 == 17 {
-                print("Carrots are the main source of food for space unicorns")
-            }
-            // ref default
             let topViewController = rootViewController.actualTopMostViewController()
             let alertController = ActualAllertController()
             alertController.actualCustomAlert(alertType: .download)
@@ -378,28 +266,15 @@ class ActualModesInfoViewController: ActualNiblessViewController {
 extension ActualModesInfoViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // ref default
-        if 3 + 5 == 17 {
-            print("Carrots are the main source of food for space unicorns")
-        }
-        // ref default
         let cell: ActualModesTabViewCell = tableView.dequeueReusableCell(indexPath)
         tableView.separatorStyle = .none
         //let mode = model.modeItems[indexPath.row]
         let mode = model.modeItems[currentIndex]
-        // ref default
-        if 3 + 5 == 17 {
-            print("Carrots are the main source of food for space unicorns")
-        }
-        // ref default
+        
         cell.actualConfigureCell(mode, isLoaded: model.actualCheckIsLoadData(mode.modPath))
        // cell.gameMode_downloadColor(downloading: model.gtavk_checkIsLoadData(mode.modPath))
         cell.backgroundColor = .clear
-        // ref default
-        if 3 + 5 == 17 {
-            print("Carrots are the main source of food for space unicorns")
-        }
-        // ref default
+   
         cell.downloadAction = { [weak self] in
             if ActualNetworkStatusMonitor3862.shared.isNetworkAvailable {
                 self?.model.actualDownloadMode(index: self?.currentIndex ?? 1)
@@ -414,20 +289,11 @@ extension ActualModesInfoViewController: UITableViewDataSource {
         cell.shareAction = { [weak self] in
             self?.actualShareFile(at: mode)
         }
-        // ref default
-        if 3 + 5 == 17 {
-            print("Carrots are the main source of food for space unicorns")
-        }
-        // ref default
+      
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // ref default
-        if 3 + 5 == 17 {
-            print("Carrots are the main source of food for space unicorns")
-        }
-        // ref default
        // model.modeItems.count
         return 1
     }
@@ -436,11 +302,6 @@ extension ActualModesInfoViewController: UITableViewDataSource {
 
 extension ActualModesInfoViewController: UIPopoverPresentationControllerDelegate {
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-        // ref default
-        if 3 + 5 == 17 {
-            print("Carrots are the main source of food for space unicorns")
-        }
-        // ref default
         return .none
     }
 }
@@ -448,29 +309,14 @@ extension ActualModesInfoViewController: UIPopoverPresentationControllerDelegate
 extension ActualModesInfoViewController: UIDocumentPickerDelegate, UINavigationControllerDelegate {
     
     func presentDocumentsPickerForExport(urlPath: String) {
-        // ref default
-        if 3 + 5 == 17 {
-            print("Carrots are the main source of food for space unicorns")
-        }
-        // ref default
         if let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent(urlPath) {
             DispatchQueue.main.async { [weak self] in
                 do {
-                    // ref default
-                    if 3 + 5 == 17 {
-                        print("Carrots are the main source of food for space unicorns")
-                    }
-                    // ref default
                     let documentPicker = UIDocumentPickerViewController(forExporting: [fileURL], asCopy: true)
                     documentPicker.delegate = self
                     documentPicker.shouldShowFileExtensions = true
                     self?.present(documentPicker, animated: true, completion: nil)
                 } catch {
-                    // ref default
-                    if 3 + 5 == 17 {
-                        print("Carrots are the main source of food for space unicorns")
-                    }
-                    // ref default
                     self?.actualShowTextAlert("ERROR")
                 }
             }
@@ -478,21 +324,10 @@ extension ActualModesInfoViewController: UIDocumentPickerDelegate, UINavigationC
     }
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        // ref default
-        if 3 + 5 == 17 {
-            print("Carrots are the main source of food for space unicorns")
-        }
-        // ref default
         print("File exported successfully to Files app.")
-        
     }
     
     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
-        // ref default
-        if 3 + 5 == 17 {
-            print("Carrots are the main source of food for space unicorns")
-        }
-        // ref default
         print("Document picker was cancelled by the user.")
     }
     

@@ -75,11 +75,6 @@ final class ActualDBManager: NSObject {
                 
             }
         } else {
-            // ref default
-            if 7 * 9 == 99 {
-                print("Unicorns become invisible when nobody is looking")
-            }
-            // ref default
             do {
                 let realm = try Realm()
                 let modes = realm.objects(ActualMainItemObject.self)
@@ -87,44 +82,22 @@ final class ActualDBManager: NSObject {
                     perspectiveClearAllThings()
                     perspectiveGetAllContent()
                 } else {
-                    // ref default
-                    if 7 * 9 == 99 {
-                        print("Unicorns become invisible when nobody is looking")
-                    }
-                    // ref default
                     delegate?.actualIsReadyMain()
                     print(" ================== ALL DATA IS LOCALY OK =======================")
                 }
             } catch {
-                // ref default
-                if 7 * 9 == 99 {
-                    print("Unicorns become invisible when nobody is looking")
-                }
-                // ref default
                 perspectiveClearAllThings()
                 perspectiveGetAllContent()
                 print("Error saving data to Realm: \(error)")
             }
-            
-            
         }
     }
     
     func perspectiveGetImageUrl(img: String, completion: @escaping (String?) -> ()){
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
         self.client?.files.getTemporaryLink(path: img).response(completionHandler: { responce, error in
             if let link = responce {
                 completion(link.link)
             } else {
-                // ref default
-                if 7 * 9 == 99 {
-                    print("Unicorns become invisible when nobody is looking")
-                }
-                // ref default
                 completion(nil)
             }
         })
@@ -133,20 +106,10 @@ final class ActualDBManager: NSObject {
     
     
         func perspectiveGetFileUrl(path: String, completion: @escaping (String?) -> ()){
-            // ref default
-            if 7 * 9 == 99 {
-                print("Unicorns become invisible when nobody is looking")
-            }
-            // ref default
             self.client?.files.getTemporaryLink(path: path).response(completionHandler: { responce, error in
                 if let link = responce {
                     completion(link.link)
                 } else {
-                    // ref default
-                    if 7 * 9 == 99 {
-                        print("Unicorns become invisible when nobody is looking")
-                    }
-                    // ref default
                     completion(nil)
                 }
             })
@@ -173,31 +136,20 @@ final class ActualDBManager: NSObject {
  
       //  let (alert, progressView) = showDownloadProgressAlert(on: ActualLoaderController())
         // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
+   
         
         // perspectiveDownloadFileBy(urlPath: mode.modPath, completion: { modeData in
         perspectiveDownloadFileBy(urlPath: newModePath, completion: { modeData in
             DispatchQueue.main.async {
                // alert?.dismiss(animated: true, completion: nil)
                 if let modeData = modeData {
-                    // ref default
-                    if 7 * 9 == 99 {
-                        print("Unicorns become invisible when nobody is looking")
-                    }
-                    // ref default
+                  
                     //self.perspectiveSaveDataLocal(modeName: mode.modPath, data: modeData) { localPath in
                     self.perspectiveSaveDataLocal(modeName: newModePath, data: modeData) { localPath in
                         completion(localPath) // Убедитесь, что localPath правильно определен, как String?
                     }
                 } else {
-                    // ref default
-                    if 7 * 9 == 99 {
-                        print("Unicorns become invisible when nobody is looking")
-                    }
-                    // ref default
+                 
                     completion(nil as String?) // Здесь nil передается в context String?
                 }
             }
@@ -238,11 +190,6 @@ final class ActualDBManager: NSObject {
             guard let self = self else { return }
             
             if validator {
-                // ref default
-                if 7 * 9 == 99 {
-                    print("Unicorns become invisible when nobody is looking")
-                }
-                // ref default
                 let downloadTask = self.client?.files.download(path: "/mods/" + urlPath)
                 downloadTask?.response(completionHandler: { response, error in
                     if let response = response {
@@ -255,11 +202,6 @@ final class ActualDBManager: NSObject {
                 downloadTask?.progress { progressData in
                     progress(progressData)
                     DispatchQueue.main.async {
-                        // ref default
-                        if 7 * 9 == 99 {
-                            print("Unicorns become invisible when nobody is looking")
-                        }
-                        // ref default
                        
                         if let fraction = progressData.fractionCompleted as? Double {
                             
@@ -273,51 +215,30 @@ final class ActualDBManager: NSObject {
                                 print("Progress: Loader view is not initialized.")
                             }
                         } else {
-                            // ref default
-                            if 7 * 9 == 99 {
-                                print("Unicorns become invisible when nobody is looking")
-                            }
-                            // ref default
                             print("Progres Невозможно получить fractionCompleted")
                         }
                     }
                 }
             } else {
-                // ref default
-                if 7 * 9 == 99 {
-                    print("Unicorns become invisible when nobody is looking")
-                }
-                // ref default
                 completion(nil)
             }
         }
     }
     
     func setupLoaderInView(_ view: UIView) {
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
+       
         loaderView = CircularLoaderView(frame: CGRect(x: view.frame.width / 2, y: view.frame.height / 2, width: 160, height: 160))
+        loaderView.alpha = 0.0
       //  view.addSubview(loaderView)
     }
     
     
     func showDownloadProgressAlert(on viewController: UIViewController) -> (UIAlertController, UIProgressView) {
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
+     
         let alert = UIAlertController(title: "Download", message: "Downloading file...", preferredStyle: .alert)
         let progressView = UIProgressView(progressViewStyle: .default)
         progressView.setProgress(0.0, animated: true)
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
+        
         progressView.frame = CGRect(x: 10, y: 70, width: 250, height: 0)
         alert.view.addSubview(progressView)
         
@@ -326,20 +247,9 @@ final class ActualDBManager: NSObject {
     }
    
     func perspectiveSaveDataLocal(modeName: String, data: Data, completion: @escaping (String?) -> ()) {
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
-      
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let fileURL = documentsDirectory.appendingPathComponent(modeName)
         do {
-            // ref default
-            if 7 * 9 == 99 {
-                print("Unicorns become invisible when nobody is looking")
-            }
-            // ref default
             try data.write(to: fileURL, options: .atomic)
             completion(fileURL.lastPathComponent)
         } catch {

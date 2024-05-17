@@ -2548,6 +2548,10 @@
 		12F217F02B85D41100BCE63B /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F217EF2B85D41100BCE63B /* Extension.swift */; };
 		12F217F32B85F03900BCE63B /* ActualMainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F217F22B85F03900BCE63B /* ActualMainViewCell.swift */; };
 		12F217F52B85FCE200BCE63B /* ActualMainViewControllerNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F217F42B85FCE200BCE63B /* ActualMainViewControllerNew.swift */; };
+		12F3958B2BF5EB400090950A /* MegastarSmallLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F3958A2BF5EB400090950A /* MegastarSmallLoader.swift */; };
+		12F395B12BF603920090950A /* MegastarSmallLoaderComtroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F395B02BF603920090950A /* MegastarSmallLoaderComtroller.swift */; };
+		12F395B32BF634EB0090950A /* MegastarClearBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F395B22BF634EB0090950A /* MegastarClearBackground.swift */; };
+		12F395B52BF65CBE0090950A /* HorizontalFakeLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F395B42BF65CBE0090950A /* HorizontalFakeLoaderView.swift */; };
 		2C0DC3772A8FADF800A03F44 /* Pushwoosh in Frameworks */ = {isa = PBXBuildFile; productRef = 2C0DC3762A8FADF800A03F44 /* Pushwoosh */; };
 		2C1CA42D2A8E70B200C89F79 /* ActualServicesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CA3B02A8E70B200C89F79 /* ActualServicesManager.swift */; };
 		2C1CA4712A8E714F00C89F79 /* ActualProjectConfiguration3862.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CA4702A8E714F00C89F79 /* ActualProjectConfiguration3862.swift */; };
@@ -5169,6 +5173,10 @@
 		12F217EF2B85D41100BCE63B /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		12F217F22B85F03900BCE63B /* ActualMainViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualMainViewCell.swift; sourceTree = "<group>"; };
 		12F217F42B85FCE200BCE63B /* ActualMainViewControllerNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualMainViewControllerNew.swift; sourceTree = "<group>"; };
+		12F3958A2BF5EB400090950A /* MegastarSmallLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarSmallLoader.swift; sourceTree = "<group>"; };
+		12F395B02BF603920090950A /* MegastarSmallLoaderComtroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarSmallLoaderComtroller.swift; sourceTree = "<group>"; };
+		12F395B22BF634EB0090950A /* MegastarClearBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarClearBackground.swift; sourceTree = "<group>"; };
+		12F395B42BF65CBE0090950A /* HorizontalFakeLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalFakeLoaderView.swift; sourceTree = "<group>"; };
 		2C1CA3B02A8E70B200C89F79 /* ActualServicesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActualServicesManager.swift; sourceTree = "<group>"; };
 		2C1CA4702A8E714F00C89F79 /* ActualProjectConfiguration3862.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualProjectConfiguration3862.swift; sourceTree = "<group>"; };
 		2C1CA4722A8E71E200C89F79 /* GTAModes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GTAModes.entitlements; sourceTree = "<group>"; };
@@ -5266,6 +5274,8 @@
 			children = (
 				12D4322D2BDD1AF200BD1EC7 /* ActualLoaderView.swift */,
 				120B3BF32BE22EFC00E9462B /* ActualFakeLoaderView.swift */,
+				12F395B42BF65CBE0090950A /* HorizontalFakeLoaderView.swift */,
+				12F3958A2BF5EB400090950A /* MegastarSmallLoader.swift */,
 				12D432312BDD486A00BD1EC7 /* ActualCustomUniversalAlertView.swift */,
 			);
 			path = Loader;
@@ -5498,6 +5508,8 @@
 				12097A712BA4B09700DACBED /* ActualAllertController.swift */,
 				54ACC19B2BDF6F8D0090B73A /* ActualBlurBackController.swift */,
 				120B3BF52BE2313A00E9462B /* ActualFakeLoader.swift */,
+				12F395B02BF603920090950A /* MegastarSmallLoaderComtroller.swift */,
+				12F395B22BF634EB0090950A /* MegastarClearBackground.swift */,
 			);
 			path = GameModes;
 			sourceTree = "<group>";
@@ -10849,13 +10861,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CBFE4552A77E28400A50257 /* ActualFilterTabViewCell.swift in Sources */,
+				12F395B12BF603920090950A /* MegastarSmallLoaderComtroller.swift in Sources */,
 				2C45A5402A76A7A50023B3A8 /* ActualFilterViewController.swift in Sources */,
 				12F217F32B85F03900BCE63B /* ActualMainViewCell.swift in Sources */,
+				12F395B52BF65CBE0090950A /* HorizontalFakeLoaderView.swift in Sources */,
 				54ACC19A2BDF601A0090B73A /* ActualAllertManager.swift in Sources */,
 				2C5CA6EA2A92514D005F9D24 /* ActualModObject.swift in Sources */,
 				2C5CA6E82A924DFC005F9D24 /* ActualModesModel.swift in Sources */,
 				120B3BF42BE22EFC00E9462B /* ActualFakeLoaderView.swift in Sources */,
 				2C45A5392A76A7620023B3A8 /* ActualGameCheatsModel.swift in Sources */,
+				12F395B32BF634EB0090950A /* MegastarClearBackground.swift in Sources */,
 				2C2A20B72A7551E8002A6D3C /* ActualMainTabViewCell3862.swift in Sources */,
 				2C45A5432A771A050023B3A8 /* ActualChecklistCell.swift in Sources */,
 				2C45A5372A76A7550023B3A8 /* ActualGameCheatsViewController.swift in Sources */,
@@ -10894,6 +10909,7 @@
 				2C2A20BB2A755AFA002A6D3C /* ActualAutolayout.swift in Sources */,
 				2CBFE4592A77ECA200A50257 /* ActualPanPresentManager.swift in Sources */,
 				2CDEBF032A82586500F976A3 /* ActualDropBoxManager.swift in Sources */,
+				12F3958B2BF5EB400090950A /* MegastarSmallLoader.swift in Sources */,
 				12D4322E2BDD1AF200BD1EC7 /* ActualLoaderView.swift in Sources */,
 				1201B5722BA2B82C00B86035 /* ActualProjectTestNetwork3862.swift in Sources */,
 				12097A782BA56D5600DACBED /* ActualCheckListCustomSwitcher.swift in Sources */,

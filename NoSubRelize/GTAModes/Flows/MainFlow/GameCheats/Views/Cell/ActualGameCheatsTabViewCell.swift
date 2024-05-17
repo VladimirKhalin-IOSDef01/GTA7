@@ -140,7 +140,7 @@ final class ActualGameCheatsTabViewCell: UICollectionViewCell {
         contentModeView.addSubview(modeTitleLabel)
         modeTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         modeTitleLabel.textColor = .white
-        modeTitleLabel.font = UIFont(name: "Gilroy-Semibold", size: UIDevice.current.userInterfaceIdiom == .pad ? 18 : 17)
+        modeTitleLabel.font = UIFont(name: "OpenSans-SemiBold", size: UIDevice.current.userInterfaceIdiom == .pad ? 18 : 17)
         modeTitleLabel.numberOfLines = 3
         NSLayoutConstraint.activate([
             modeTitleLabel.topAnchor.constraint(equalTo: contentModeView.topAnchor, constant: 8),

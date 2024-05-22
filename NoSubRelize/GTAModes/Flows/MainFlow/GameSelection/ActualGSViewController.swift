@@ -61,7 +61,7 @@ class ActualGSViewController: ActualNiblessViewController {
         view.addSubview(tableViewOne)
         tableViewOne.backgroundColor = .clear
         tableViewOne.actualLayout {
-            $0.top.equal(to: customNavigation.bottomAnchor, offsetBy:  UIDevice.current.userInterfaceIdiom == .pad ? 100 : 15)
+            $0.top.equal(to: customNavigation.bottomAnchor, offsetBy:  UIDevice.current.userInterfaceIdiom == .pad ? 100 : 25)
             $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160 : 20.0)
             $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -160 : -20.0)
             $0.bottom.equal(to: view.bottomAnchor, offsetBy: -20)
@@ -105,9 +105,21 @@ extension ActualGSViewController: UITableViewDataSource, UITableViewDelegate {
      
         let cell: ActualMainViewCell = tableView.dequeueReusableCell(indexPath)
         tableView.separatorStyle = .none
+        
         let reversedIndex = model.menuItems.count - 1 - indexPath.row
-        cell.actualConfigure(model.menuItems[reversedIndex], fontSize: UIDevice.current.userInterfaceIdiom == .pad ? 32 : 20.0, isLock: false)
-      //  cell.actualConfigure(model.menuItems[indexPath.row], fontSize: 26.0, isLock: false)
+        
+        //Сортируем версии экрана согласно заданию
+        var newIndex = indexPath.row
+        switch indexPath.row {
+        case 0: newIndex = 1
+        case 1: newIndex = 0
+        case 2: newIndex = 3
+        default: newIndex = 2
+        }
+        
+        
+        cell.actualConfigure(model.menuItems[newIndex], fontSize: UIDevice.current.userInterfaceIdiom == .pad ? 32 : 20.0, isLock: false)
+        // cell.actualConfigure(model.menuItems[indexPath.row], fontSize: UIDevice.current.userInterfaceIdiom == .pad ? 32 : 20.0, isLock: false)
         cell.backgroundColor = .clear
         cell.actualDropShadowStandart(color: .white, opacity: 0.15, offSet: CGSize(width: 0, height: 0), radius: 3)
         return cell
@@ -121,7 +133,7 @@ extension ActualGSViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let reversedIndex = model.menuItems.count - 1 - indexPath.row
          return   model.actualSelectedItems(index: reversedIndex)
-   //   return  model.actualSelectedItems(index: indexPath.row)
+    //  return  model.actualSelectedItems(index: indexPath.row)
     }
    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -374,9 +374,9 @@ final class ActualModesTabViewCell: UITableViewCell, ActualReusable {
     }
     
     @objc func actualDownloadActionProceed() {
-        if downloadTitleLabel.text == "   Downloaded" || downloadTitleLabel.text == "  Downloaded" {
-         return
-        }
+//        if downloadTitleLabel.text == "   Downloaded" || downloadTitleLabel.text == "  Downloaded" {
+//         return
+//        }
         downloadAction?()
     }
     

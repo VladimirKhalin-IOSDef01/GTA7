@@ -51,7 +51,7 @@ final class ActualChecklistCell: UICollectionViewCell, ActualReusable {
             $0.leading.equal(to: contentView.leadingAnchor, offsetBy: 0.0)
             $0.trailing.equal(to: contentView.trailingAnchor, offsetBy: 0.0)
           //  $0.width.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 650 : 350)
-            $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 74 : 74)
+            $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 75 : 75)
             $0.centerX.equal(to: containerView.centerXAnchor)
         }
         containerView.withCornerRadius(20.0)
@@ -64,7 +64,7 @@ final class ActualChecklistCell: UICollectionViewCell, ActualReusable {
         titleLabel.actualLayout {
             $0.top.equal(to: containerView.topAnchor, offsetBy: 5.0)
             $0.leading.equal(to: containerView.leadingAnchor, offsetBy: 15.0)
-          //  $0.trailing.lessThanOrEqual(to: containerView.trailingAnchor, offsetBy: -20.0)
+            $0.trailing.lessThanOrEqual(to: containerView.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -65 : -50.0)
             $0.centerY.equal(to: containerView.centerYAnchor)
         }
         titleLabel.numberOfLines = 1

@@ -16,36 +16,23 @@ struct ActualMod_Parser: Codable {
     let mod: String
     let filterTitle: String
     
-    // ref default
-        var randomInt: Int {
-            return Int.random(in: 1...100)
-        }
-        var randomDouble: Double {
-            return Double.random(in: 1.0...100.0)
-        }
-    // ref default
-    
     private enum ActualCodingKeysAndRename: String, CodingKey {
-        case title = "irvnab"
-        case description = "lxa06"
-        case image = "kuibwl"
-        case mod = "s43vjddzi"
-        case filterTitle = "filterTitle"
+//        case title = "irvnab"
+//        case description = "lxa06"
+//        case image = "kuibwl"
+//        case mod = "s43vjddzi"
+//        case filterTitle = "filterTitle"
+        case title = "bqxl6q_f2"
+        case description = "bqxl6q_t3"
+        case image = "bqxl6q_i1"
+        case mod = "bqxl6q_d4"
+        case filterTitle = "filter"
     }
     init(from decoder: Decoder) throws {
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
+  
         let container = try decoder.container(keyedBy: ActualCodingKeysAndRename.self)
         title = try container.decode(String.self, forKey: .title)
         description = try container.decode(String.self, forKey: .description)
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
         image = try container.decode(String.self, forKey: .image)
         mod = try container.decode(String.self, forKey: .mod)
         filterTitle = try container.decode(String.self, forKey: .filterTitle)
@@ -54,23 +41,13 @@ struct ActualMod_Parser: Codable {
 
 struct ActualGTA5_Mods: Codable {
     let GTA5: [String: [ActualMod_Parser]]
-    // ref default
-        var randomInt: Int {
-            return Int.random(in: 1...100)
-        }
-        var randomDouble: Double {
-            return Double.random(in: 1.0...100.0)
-        }
-    // ref default
+  
     private enum ActualCodingKeysAndRename: String, CodingKey {
-        case GTA5 = "iasgjbasmblsa"
+       // case GTA5 = "iasgjbasmblsa"
+        case GTA5 = "bqxl6q__ulg50"
     }
     init(from decoder: Decoder) throws {
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
+     
         let container = try decoder.container(keyedBy: ActualCodingKeysAndRename.self)
         GTA5 = try container.decode([String: [ActualMod_Parser]].self, forKey: .GTA5)
     }
@@ -83,14 +60,7 @@ public struct ActualModItem {
     public var imagePath: String = ""
     public var modPath: String = ""
     public var filterTitle: String = ""
-    // ref default
-        var randomInt: Int {
-            return Int.random(in: 1...100)
-        }
-        var randomDouble: Double {
-            return Double.random(in: 1.0...100.0)
-        }
-    // ref default
+
     init(
         title: String,
         description: String,
@@ -104,28 +74,9 @@ public struct ActualModItem {
         self.modPath = modPath
         self.filterTitle = filterTitle
     }
-    
 }
 
 public final class ActualModObject: Object {
-    
-    func actualOneCheck() -> Int{
-        var checkOne = 93 + 3 * 2
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
-        var checkTwo = checkOne - 22
-        checkTwo += 11
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
-        return checkTwo
-    }
-    
     
     @objc dynamic var titleMod: String = ""
     @objc dynamic var descriptionMod: String = ""
@@ -151,14 +102,6 @@ public final class ActualModObject: Object {
     }
     
     var lightweightRepresentation: ActualModItem {
-        // ref default
-            var randomInt: Int {
-                return Int.random(in: 1...100)
-            }
-            var randomDouble: Double {
-                return Double.random(in: 1.0...100.0)
-            }
-        // ref default
         return ActualModItem(
             title: titleMod,
             description: descriptionMod,

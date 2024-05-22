@@ -79,7 +79,7 @@ final class ActualFilterViewController: ActualNiblessFilterViewController {
     
     private func actualSetupView() {
 
-        let cellHight = UIDevice.current.userInterfaceIdiom == .pad ? 52 : 43
+        let cellHight = UIDevice.current.userInterfaceIdiom == .pad ? 56 : 46
         let actualHeight = (filterListData.filterList.count + 1) * cellHight
         view.withCornerRadius()
        // view.alpha = 0.75
@@ -92,8 +92,8 @@ final class ActualFilterViewController: ActualNiblessFilterViewController {
       //  colorConteiner.withBorder(width: 1, color: UIColor(named: "ActualPink")!.withAlphaComponent(0.5))
         colorConteiner.withCornerRadius(20)
         colorConteiner.actualLayout{
-            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160 : 20)
-            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -160 : -20)
+            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160 : 15)
+            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -160 : -15)
             $0.top.equal(to: view.topAnchor, offsetBy: 0)
             //$0.bottom.greaterThanOrEqual(to: view.bottomAnchor)
             //$0.bottom.equal(to: colorConteiner.topAnchor, offsetBy: tableView.frame.height)
@@ -116,7 +116,7 @@ final class ActualFilterViewController: ActualNiblessFilterViewController {
         
         view.addSubview(closeButton)
         closeButton.actualLayout {
-            $0.trailing.equal(to: colorConteiner.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -15 : -10.0)
+            $0.trailing.equal(to: colorConteiner.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -16 : -20.0)
             $0.centerY.equal(to: titleLabel.centerYAnchor)
             $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 39 : 33.0)
             $0.width.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 40 : 34.0)
@@ -162,8 +162,9 @@ extension ActualFilterViewController: ActualPPresentable {
     private var contentSize: CGSize {
         CGSize(
             width: view.frame.width,
-            height: UIDevice.current.userInterfaceIdiom == .pad ? 800.0 : 600
+            height: UIDevice.current.userInterfaceIdiom == .pad ? 950.0 : 695
         )
+        
     }
     
     func actualMinContentHeight(presentingController: UIViewController) -> CGFloat {
@@ -171,6 +172,7 @@ extension ActualFilterViewController: ActualPPresentable {
     }
     
     func actualMaxContentHeight(presentingController: UIViewController) -> CGFloat {
+        print("TESTDEBUG: \(contentSize.height)")
         return contentSize.height
     }
     

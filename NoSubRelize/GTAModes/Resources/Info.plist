@@ -8,10 +8,7 @@
 	<string>group.com.newbundle.webgeek</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Inter-Regular.ttf</string>
-		<string>Inter-Bold.ttf</string>
 		<string>SFProText-Bold.ttf</string>
-		<string>Gilroy.ttf</string>
 		<string>GilroyLight.ttf</string>
 		<string>Gilroy-Regular.ttf</string>
 		<string>Gilroy-Bold.ttf</string>

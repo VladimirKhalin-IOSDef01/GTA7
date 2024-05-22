@@ -160,13 +160,25 @@ class ActualGameMapViewController: ActualNiblessViewController {
     }
     
     private func actualWebViewConfigure() {
+  //        Для вывода карты с сайта
+  //        guard let url = URL(string: "https://yandex.com") else { return}
+  //        perspectiveModes_webView.load(URLRequest(url: url))
+        
   
         if let htmlPath = Bundle.main.path(forResource: "map", ofType: "html") {
             let fileURL = URL(fileURLWithPath: htmlPath)
            
             perspectiveModes_webView.loadFileURL(fileURL, allowingReadAccessTo: fileURL.deletingLastPathComponent())
         }
-        
+  
     }
     
 }
+
+
+// http://138.68.101.29
+//private func actualWebViewConfigure2() {
+//    // Для вывода карты с сайта
+//    guard let url = URL(string: "http://google.com") else { return}
+//    perspectiveModes_webView.load(URLRequest(url: url))
+//}

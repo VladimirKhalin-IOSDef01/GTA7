@@ -17,6 +17,9 @@ class ActualModesViewController: ActualNiblessViewController {
     var fakeLoader = ActualFakeLoader()
     var clearBack = MegastarClearBackground()
     
+    
+   
+    
     init(model: ActualGameModesModel, modelScreen: ActualMainModel) {
         self.model = model
         self.modelScreen = modelScreen
@@ -95,6 +98,7 @@ class ActualModesViewController: ActualNiblessViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
+        
     }
     
     private func actualSetupBindings() {

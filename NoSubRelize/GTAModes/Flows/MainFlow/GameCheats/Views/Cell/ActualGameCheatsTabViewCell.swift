@@ -127,26 +127,29 @@ final class ActualGameCheatsTabViewCell: UICollectionViewCell {
        
         containerView.addSubview(contentModeView)
         contentModeView.translatesAutoresizingMaskIntoConstraints = false
-      //  contentModeView.layer.cornerRadius = 8
-       // contentModeView.layer.borderWidth = 1
+        contentModeView.layer.cornerRadius = 14
+        contentModeView.layer.borderWidth = 2
    
-      //  contentModeView.layer.borderColor = UIColor(named: "ActualPink")?.cgColor
+        contentModeView.layer.borderColor = UIColor.white.cgColor
       //  contentModeView.backgroundColor = UIColor(named: "ButtonColor")?.withAlphaComponent(0.0)
         NSLayoutConstraint.activate([
             contentModeView.topAnchor.constraint(equalTo: favoriteImage.bottomAnchor, constant: UIDevice.current.userInterfaceIdiom == .pad ? 15 : 15),
             contentModeView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 15),
             contentModeView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -15),
-            contentModeView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -15)
+            contentModeView.heightAnchor.constraint(equalToConstant: UIDevice.current.userInterfaceIdiom == .pad ? 30 : 28)
+           // contentModeView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -15
         ])
        
         contentModeView.addSubview(modeTitleLabel)
         modeTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         modeTitleLabel.textColor = .white
-        modeTitleLabel.font = UIFont(name: "OpenSans-SemiBold", size: UIDevice.current.userInterfaceIdiom == .pad ? 18 : 17)
-        modeTitleLabel.numberOfLines = 3
+        modeTitleLabel.textAlignment = .left
+        modeTitleLabel.font = UIFont(name: "OpenSans-SemiBold", size: UIDevice.current.userInterfaceIdiom == .pad ? 16 : 14)
+        //modeTitleLabel.numberOfLines = 3
         NSLayoutConstraint.activate([
-            modeTitleLabel.topAnchor.constraint(equalTo: contentModeView.topAnchor, constant: 8),
-            modeTitleLabel.leadingAnchor.constraint(equalTo: contentModeView.leadingAnchor, constant: 8),
+           // modeTitleLabel.topAnchor.constraint(equalTo: contentModeView.topAnchor, constant: 8),
+            modeTitleLabel.leadingAnchor.constraint(equalTo: contentModeView.leadingAnchor, constant: 10),
+            modeTitleLabel.centerYAnchor.constraint(equalTo: contentModeView.centerYAnchor),
             modeTitleLabel.trailingAnchor.constraint(equalTo: contentModeView.trailingAnchor, constant: -8),
             modeTitleLabel.bottomAnchor.constraint(equalTo: contentModeView.bottomAnchor, constant: -8)
         ])

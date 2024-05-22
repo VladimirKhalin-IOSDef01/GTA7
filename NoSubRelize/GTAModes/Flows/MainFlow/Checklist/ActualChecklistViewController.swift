@@ -84,11 +84,11 @@ class ActualChecklistViewController: ActualNiblessViewController {
         view.addSubview(customNavigation)
         customNavigation.actualLayout {
             $0.top.equal(to: view.safeAreaLayoutGuide.topAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 70.0 : 21.0)
-            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160 : 20.0)
+            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160 : 15.0)
             $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -160 :-20.0)
             $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 44.0 : 36.0)
         }
-        
+        collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -97,8 +97,8 @@ class ActualChecklistViewController: ActualNiblessViewController {
         view.addSubview(collectionView)
         collectionView.actualLayout {
             $0.top.equal(to: customNavigation.bottomAnchor, offsetBy: 25.0)
-            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160.0 : 0)
-            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -160.0 : 0)
+            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160.0 : 15)
+            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -160.0 : -15)
             $0.bottom.equal(to: view.bottomAnchor)
         }
        
@@ -149,8 +149,8 @@ extension ActualChecklistViewController: UICollectionViewDataSource, UICollectio
         let padding: CGFloat = 0 // отступ между ячейками
         let collectionViewSize = collectionView.frame.size.width - padding
        // let cellWidth = collectionViewSize / 2
-        let cellWidth = UIDevice.current.userInterfaceIdiom == .pad ? 500 : 350
+        let cellWidth = UIDevice.current.userInterfaceIdiom == .pad ? view.bounds.width - 320 : view.bounds.width - 30
     
-        return CGSize(width: cellWidth, height: UIDevice.current.userInterfaceIdiom == .pad ? 110 : 76) // высоту ячейки укажите в зависимости от вашего дизайна
+        return CGSize(width: cellWidth, height: UIDevice.current.userInterfaceIdiom == .pad ? 110 : 78) // высоту ячейки укажите в зависимости от вашего дизайна
     }
 }

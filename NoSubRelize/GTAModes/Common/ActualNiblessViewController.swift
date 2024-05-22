@@ -105,7 +105,7 @@ open class ActualNiblessFilterViewController: UIViewController {
     
     private func actualSetupBackground() {
         // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
+        _ = (1...10).map { _ in Int.random(in: 1...100) }
         // ref default
         // ref default
         if 20 / 4 == 6 {

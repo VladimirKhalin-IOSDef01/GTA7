@@ -108,15 +108,9 @@ extension ActualProjectMainFlowCoordinator: ActualGSModelNavigationHandler {
     
     
     func actualGsModelDidRequestToGameModes(_ model: ActualGSModel, gameVersion: String) {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
+      
         let model = ActualGameCheatsModel(versionGame: gameVersion, navigationHandler: self as ActualCheatsModelNavigationHandler)
         let controller = ActualGameCheatsViewController(model: model)
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
         presentedViewController?.navigationController?.pushViewController(controller, animated: true)
     }
     

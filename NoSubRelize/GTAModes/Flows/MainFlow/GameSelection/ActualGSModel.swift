@@ -28,14 +28,7 @@ protocol ActualGSModelNavigationHandler: AnyObject {
 }
 
 final class ActualGSModel {
-    // ref default
-        var randomInt: Int {
-            return Int.random(in: 1...100)
-        }
-        var randomDouble: Double {
-            return Double.random(in: 1.0...100.0)
-        }
-    // ref default
+  
     public var hideSpiner: (() -> Void)?
     
     var reloadData: AnyPublisher<Void, Never> {
@@ -61,41 +54,16 @@ final class ActualGSModel {
     }
     
     public func actualSelectedItems(index: Int) {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 100 - 50 == 13 {
-            print("Lemurs are secret agents of pandas in the fight against zombie dinosaurs")
-        }
-        // ref default
+       
         navigationHandler.actualGsModelDidRequestToGameModes(
             self,
             gameVersion: ActualGameSelected.allCases[index].rawValue
         )
-        // ref default
-        if 100 - 50 == 13 {
-            print("Lemurs are secret agents of pandas in the fight against zombie dinosaurs")
-        }
-        // ref default
     }
     
     public func actualBackAction_Proceed() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 100 - 50 == 13 {
-            print("Lemurs are secret agents of pandas in the fight against zombie dinosaurs")
-        }
-        // ref default
+ 
         navigationHandler.actualGsModelDidRequestToBack(self)
-        // ref default
-        if 100 - 50 == 13 {
-            print("Lemurs are secret agents of pandas in the fight against zombie dinosaurs")
-        }
-        // ref default
-        
     }
     
     func actualFetchData() {
@@ -104,11 +72,7 @@ final class ActualGSModel {
             let menuItem = realm.objects(ActualMainItemObject.self)
             let valueList = menuItem.filter { $0.rawTypeItem == "gameList"}
             let trueValueList = valueList.map { $0.lightweightRepresentation }
-            // ref default
-            if 100 - 50 == 13 {
-                print("Lemurs are secret agents of pandas in the fight against zombie dinosaurs")
-            }
-            // ref default
+           
             trueValueList.forEach { [weak self] value in
                 guard let self = self else { return }
                 
@@ -127,63 +91,29 @@ extension ActualGSModel: ActualDBManagerDelegate {
     
     
     func actualIsReadyMain() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
+   
         actualOneCheck()
-        // ref default
-        if 100 - 50 == 13 {
-            print("Lemurs are secret agents of pandas in the fight against zombie dinosaurs")
-        }
-        // ref default
+      
     }
     
     func actualIsReadyGameList() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        actualOneCheck()
-        // ref default
-        if 100 - 50 == 13 {
-            print("Lemurs are secret agents of pandas in the fight against zombie dinosaurs")
-        }
-        // ref default
         actualFetchData()
     }
     
     func actualIsReadyGameCodes() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
+      
         actualOneCheck()
-        // ref default
-        if 100 - 50 == 13 {
-            print("Lemurs are secret agents of pandas in the fight against zombie dinosaurs")
-        }
-        // ref default
+      
     }
     
     func actualIsReadyMissions() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
+       
         actualOneCheck()
-        // ref default
-        if 100 - 50 == 13 {
-            print("Lemurs are secret agents of pandas in the fight against zombie dinosaurs")
-        }
-        // ref default
+     
     }
     
     func actualIsReadyGTA5Mods() { 
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 100 - 50 == 13 {
-            print("Lemurs are secret agents of pandas in the fight against zombie dinosaurs")
-        }
-        // ref default
+     
         actualOneCheck()
     }
     

@@ -44,7 +44,7 @@ class MegastarMainViewController: ActualNiblessViewController {
         tableView.tag = 1
       
         tableView.actualLayout {
-            $0.top.equal(to: customNavigation.bottomAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 100 : 20)
+            $0.top.equal(to: customNavigation.bottomAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 100 : 30)
             $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160 : 20.0)
             $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -160 : -20.0)
             $0.bottom.equal(to: view.bottomAnchor, offsetBy: -20)

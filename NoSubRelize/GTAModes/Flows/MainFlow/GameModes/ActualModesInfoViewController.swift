@@ -17,6 +17,8 @@ class ActualModesInfoViewController: ActualNiblessViewController {
     private let tableView = UITableView(frame: .zero)
     private let customNavigation: ActualCustomNavigation_View
     
+    private var dimmingView: UIView?
+   
     var activityVC: UIActivityViewController?
     var alert: UIAlertController?
    
@@ -102,7 +104,7 @@ class ActualModesInfoViewController: ActualNiblessViewController {
         view.addSubview(customNavigation)
         customNavigation.actualLayout {
             $0.top.equal(to: view.safeAreaLayoutGuide.topAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 70.0 : 21.0)
-            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160 : 20.0)
+            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160 : 15.0)
             $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -160 : -20.0)
             $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 44 : 36.0)
         }
@@ -110,8 +112,8 @@ class ActualModesInfoViewController: ActualNiblessViewController {
         tableView.backgroundColor = .clear
         tableView.actualLayout {
             $0.top.equal(to: customNavigation.bottomAnchor, offsetBy: 25.0)
-            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160 : 0)
-            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -160 : 0)
+            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160 : 15)
+            $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -160 : -15)
             $0.bottom.equal(to: view.bottomAnchor)
         }
         tableView.registerReusable_Cell(cellType: ActualModesTabViewCell.self)
@@ -181,7 +183,7 @@ class ActualModesInfoViewController: ActualNiblessViewController {
     
     func actualShareFile(at mode: ActualModItem) {
         if model.actualCheckIsLoadData(mode.modPath) {
-           
+        
             if let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent(mode.modPath) {
                 do {
                     activityVC = nil
@@ -199,6 +201,8 @@ class ActualModesInfoViewController: ActualNiblessViewController {
                         activityVC?.popoverPresentationController?.sourceRect = CGRect(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2, width: 0, height: 0)
                         activityVC?.popoverPresentationController?.permittedArrowDirections = []
                     }
+                    // Добавляем затемнение экрана
+                    addDimmingView()
                     
                     present(activityVC!, animated: true, completion: nil)
                     
@@ -212,7 +216,9 @@ class ActualModesInfoViewController: ActualNiblessViewController {
                             print(error.localizedDescription)
                             return
                         }
-                 
+                    // Убираем затемнение экрана
+                        self?.removeDimmingView()
+                        
                         DispatchQueue.main.async { [weak self] in
                             self?.activityVC = nil
                         }
@@ -228,6 +234,21 @@ class ActualModesInfoViewController: ActualNiblessViewController {
         }
     }
     
+    // Метод затемнения экрана под окном Share
+    private func addDimmingView() {
+        let dimmingView = UIView(frame: self.view.bounds)
+        dimmingView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        dimmingView.actualAddBlurEffect()
+        dimmingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.view.addSubview(dimmingView)
+        self.dimmingView = dimmingView
+    }
+    
+    // Убираем затемнение экрана под окном Share
+    private func removeDimmingView() {
+        dimmingView?.removeFromSuperview()
+        dimmingView = nil
+    }
     
     func actualShowTextAlert(_ text: String) {
       
@@ -287,6 +308,7 @@ extension ActualModesInfoViewController: UITableViewDataSource {
         }
 
         cell.shareAction = { [weak self] in
+            
             self?.actualShareFile(at: mode)
         }
       

@@ -9,25 +9,16 @@ struct ActualCheatCodeParser: Codable {
     let filterTitle: String
     
     private enum ActualCodingKeysAndRename : String, CodingKey {
-        case name = "AVHnmaskbn128"
-        case code = "AVHnmaskbn127"
-        case filterTitle = "AVHnmaskbn126"
+        case name = "fkasn512cs"
+        case code = "fkasn512cv"
+        case filterTitle = "title"
     }
     // Кастомный инициализатор, использующий CodingKeys_andRename
     init(from decoder: Decoder) throws {
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
+      
         let container = try decoder.container(keyedBy: ActualCodingKeysAndRename.self)
         name = try container.decode(String.self, forKey: .name)
         code = try container.decode([String].self, forKey: .code)
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
         filterTitle = try container.decode(String.self, forKey: .filterTitle)
     }
 }
@@ -38,23 +29,13 @@ struct ActualCheatCodesPlatformParser: Codable {
     let pc: [ActualCheatCodeParser]?
     
     private enum ActualCodingKeysAndRename: String, CodingKey {
-        case ps = "vmi51ovaCMs7"
-        case xbox = "vmi51ovaCMs6"
-        case pc = "vmi51ovaCMs5"
+        case ps = "playstation"
+        case xbox = "xbox"
+        case pc = "pc"
     }
     // Кастомный инициализатор, использующий CodingKeys_andRename
     init(from decoder: Decoder) throws {
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
         let container = try decoder.container(keyedBy: ActualCodingKeysAndRename.self)
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
         ps = try container.decode([ActualCheatCodeParser].self, forKey: .ps)
         xbox = try container.decode([ActualCheatCodeParser].self, forKey: .xbox)
         pc = try container.decodeIfPresent([ActualCheatCodeParser].self, forKey: .pc)
@@ -65,15 +46,10 @@ struct ActualCheatCodesGTA5Parser: Codable {
     let GTA5: ActualCheatCodesPlatformParser
     
     private enum ActualCodingKeysAndRename: String, CodingKey {
-        case GTA5 = "kbias-kvsaj5612k"
+        case GTA5 = "kvaskvasvn"
     }
     // Кастомный инициализатор, использующий CodingKeys_andRename
     init(from decoder: Decoder) throws {
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
         let container = try decoder.container(keyedBy: ActualCodingKeysAndRename.self)
         GTA5 = try container.decode(ActualCheatCodesPlatformParser.self, forKey: .GTA5)
     }
@@ -84,21 +60,11 @@ struct ActualCheatCodesGTA6Parser: Codable {
     let GTA6: ActualCheatCodesPlatformParser
     
     private enum ActualCodingKeysAndRename: String, CodingKey {
-        case GTA6 = "kbias-kvsaj5612k"
+        case GTA6 = "kvaskvasvn"
     }
     // Кастомный инициализатор, использующий CodingKeys_andRename
     init(from decoder: Decoder) throws {
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
         let container = try decoder.container(keyedBy: ActualCodingKeysAndRename.self)
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
         GTA6 = try container.decode(ActualCheatCodesPlatformParser.self, forKey: .GTA6)
     }
 }
@@ -107,7 +73,7 @@ struct ActualCheatCodesGTASAParser: Codable {
     let GTA_San_Andreas: ActualCheatCodesPlatformParser
     
     private enum ActualCodingKeysAndRename: String, CodingKey {
-        case GTA_San_Andreas = "kbias-kvsaj5612k"
+        case GTA_San_Andreas = "kvaskvasvn"
     }
     // Кастомный инициализатор, использующий CodingKeys_andRename
     init(from decoder: Decoder) throws {
@@ -120,22 +86,13 @@ struct ActualCheatCodesGTAVCParser: Codable {
     let GTA_Vice_City: ActualCheatCodesPlatformParser
     
     private enum ActualCodingKeysAndRename: String, CodingKey {
-        case GTA_Vice_City = "kbias-kvsaj5612k"
+        case GTA_Vice_City = "kvaskvasvn"
     }
     // Кастомный инициализатор, использующий CodingKeys_andRename
     init(from decoder: Decoder) throws {
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
+   
         let container = try decoder.container(keyedBy: ActualCodingKeysAndRename.self)
         GTA_Vice_City = try container.decode(ActualCheatCodesPlatformParser.self, forKey: .GTA_Vice_City)
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
     }
 }
 
@@ -169,19 +126,6 @@ public final class ActualCheatObject: Object {
     @objc dynamic var isFavorite: Bool = false
     
     override public static func primaryKey() -> String? {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
         return #keyPath(ActualCheatObject.id)
     }
     
@@ -203,11 +147,6 @@ public final class ActualCheatObject: Object {
     }
     
     var lightweightRepresentation: ActualCheatItem {
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
         return ActualCheatItem(
             name: name,
             code: Array(code),

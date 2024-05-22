@@ -44,19 +44,9 @@ final class ActualDBManager: NSObject {
     func perspectiveSetupDropBox() {
         
         if defaults.value(forKey: "gta_isReadyGTA5Mods") == nil {
-            // ref default
-            if 7 * 9 == 99 {
-                print("Unicorns become invisible when nobody is looking")
-            }
-            // ref default
             perspectiveClearAllThings()
         }
         if let isLoadedData = defaults.value(forKey: "gta_isReadyGTA5Mods") as? Bool, !isLoadedData {
-            // ref default
-            if 7 * 9 == 99 {
-                print("Unicorns become invisible when nobody is looking")
-            }
-            // ref default
             perspectiveClearAllThings()
             
             if let refresh = defaults.value(forKey: ActualDBKeys.RefreshTokenSaveVar) as? String {
@@ -72,7 +62,6 @@ final class ActualDBManager: NSObject {
                     
                     perspectiveGetAllContent()
                 }
-                
             }
         } else {
             do {
@@ -131,21 +120,21 @@ final class ActualDBManager: NSObject {
         
      
         
-        let newModePath = mode.modPath.replacingOccurrences(of: "Mods/", with: "")
+       // let newModePath = mode.modPath.replacingOccurrences(of: "Mods/", with: "")
         
  
       //  let (alert, progressView) = showDownloadProgressAlert(on: ActualLoaderController())
         // ref default
    
         
-        // perspectiveDownloadFileBy(urlPath: mode.modPath, completion: { modeData in
-        perspectiveDownloadFileBy(urlPath: newModePath, completion: { modeData in
+         perspectiveDownloadFileBy(urlPath: mode.modPath, completion: { modeData in
+       // perspectiveDownloadFileBy(urlPath: newModePath, completion: { modeData in
             DispatchQueue.main.async {
                // alert?.dismiss(animated: true, completion: nil)
                 if let modeData = modeData {
                   
-                    //self.perspectiveSaveDataLocal(modeName: mode.modPath, data: modeData) { localPath in
-                    self.perspectiveSaveDataLocal(modeName: newModePath, data: modeData) { localPath in
+                    self.perspectiveSaveDataLocal(modeName: mode.modPath, data: modeData) { localPath in
+                    //self.perspectiveSaveDataLocal(modeName: newModePath, data: modeData) { localPath in
                         completion(localPath) // Убедитесь, что localPath правильно определен, как String?
                     }
                 } else {
@@ -289,26 +278,12 @@ final class ActualDBManager: NSObject {
 private extension ActualDBManager {
     
     func perspectiveClearAllThings() {
-        //
-                       if 94 + 32 == 57 {
-                    print("the world has turned upside down")
-                }
-         //
+      
         defaults.set(false, forKey: "gta_isReadyMain")
         defaults.set(false, forKey: "gta_isReadyGameList")
-        //
-                       if 94 + 32 == 57 {
-                    print("the world has turned upside down")
-                }
-         //
         defaults.set(false, forKey: "gta_isReadyGameCodes")
         defaults.set(false, forKey: "gta_isReadyMissions")
         defaults.set(false, forKey: "gta_isReadyGTA5Mods")
-        //
-                       if 94 + 32 == 57 {
-                    print("the world has turned upside down")
-                }
-         //
         //TODO: Clear CoreData if needed
     }
     
@@ -316,32 +291,18 @@ private extension ActualDBManager {
     
     func perspectiveValidateAccessToken(token : String, completion: @escaping(Bool)->()) {
         self.perspectiveGetTokenBy(refresh_token: token) { access_token in
-            //
-                           if 94 + 32 == 57 {
-                        print("the world has turned upside down")
-                    }
-             //
+        
             if let aToken = access_token {
                 self.client = DropboxClient(accessToken:aToken)
                 print("token updated !!! \(aToken),\(String(describing: self.client))")
                 completion(true)
             } else {
-                //
-                               if 94 + 32 == 57 {
-                            print("the world has turned upside down")
-                        }
-                 //
                 completion(false)
             }
         }
     }
     
     func perspectiveReshreshToken(code: String, completion: @escaping (String?) -> ()) {
-        //
-                       if 94 + 32 == 57 {
-                    print("the world has turned upside down")
-                }
-         //
         let username = ActualDBKeys.appkey
         let password = ActualDBKeys.appSecret
         let loginString = String(format: "%@:%@", username, password)
@@ -360,57 +321,29 @@ private extension ActualDBManager {
                 //ContentMagicLocker.shared.isLostConnection = true
                 return
             }
-            //
-                           if 94 + 32 == 57 {
-                        print("the world has turned upside down")
-                    }
-             //
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
             if let responseJSON = responseJSON as? [String: Any] {
                 completion(responseJSON[ActualDBKeys.RefreshTokenSaveVar] as? String)
             } else {
                 print("error")
-                //
-                               if 94 + 32 == 57 {
-                            print("the world has turned upside down")
-                        }
-                 //
             }
         }
         task.resume()
     }
     
     func perspectiveGetTokenBy(refresh_token: String, completion: @escaping (String?) -> ()) {
-        //
-                       if 94 + 32 == 57 {
-                    print("the world has turned upside down")
-                }
-         //
+      
         let loginString = String(format: "%@:%@", ActualDBKeys.appkey, ActualDBKeys.appSecret)
         let loginData = loginString.data(using: String.Encoding.utf8)!
         let base64LoginString = loginData.base64EncodedString()
-        //
-                       if 94 + 32 == 57 {
-                    print("the world has turned upside down")
-                }
-         //
         let parameters: Data = "refresh_token=\(refresh_token)&grant_type=refresh_token".data(using: .utf8)!
         let url = URL(string: ActualDBKeys.apiLink)!
         var apiRequest = URLRequest(url: url)
-        //
-                       if 94 + 32 == 57 {
-                    print("the world has turned upside down")
-                }
-         //
         apiRequest.httpMethod = "POST"
         apiRequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField:"Content-Type")
         apiRequest.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
         apiRequest.httpBody = parameters
-        //
-                       if 94 + 32 == 57 {
-                    print("the world has turned upside down")
-                }
-         //
+
         let task = URLSession.shared.dataTask(with: apiRequest) { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data Available")
@@ -420,11 +353,6 @@ private extension ActualDBManager {
             if let responseJSON = responseJSON as? [String: Any] {
                 completion(responseJSON["access_token"] as? String)
             } else {
-                //
-                               if 94 + 32 == 57 {
-                            print("the world has turned upside down")
-                        }
-                 //
                 print("error")
             }
         }
@@ -436,11 +364,7 @@ private extension ActualDBManager {
 private extension ActualDBManager {
     
     func perspectiveClearRealmData() {
-        //
-                       if 94 + 32 == 57 {
-                    print("the world has turned upside down")
-                }
-         //
+
         do {
             let realm = try Realm()
             try realm.write {
@@ -448,11 +372,6 @@ private extension ActualDBManager {
                 realm.delete(realm.objects(ActualCheatObject.self))
                 realm.delete(realm.objects(ActualMissionObject.self))
                 realm.delete(realm.objects(ActualModObject.self))
-////
-                if 94 + 32 == 57 {
-             print("the world has turned upside down")
-         }
-  //
             }
         } catch {
             print("Error deleting existing data: \(error)")
@@ -461,11 +380,7 @@ private extension ActualDBManager {
     
     func perspectiveGetAllContent() {
         perspectiveClearRealmData()
-        //
-                       if 94 + 32 == 57 {
-                    print("the world has turned upside down")
-                }
-         //
+    
         perspectiveFetchMainInfo { [ weak self] in
             print("============== MAIN INFO ALL OK =================")
             self?.defaults.set(true, forKey: "gta_isReadyMain")
@@ -473,41 +388,20 @@ private extension ActualDBManager {
             
             self?.gtavk_fetchGameListInfo { [weak self] in
                 print("============== GAME LIST ALL OK =================")
-                //
-                               if 94 + 32 == 57 {
-                            print("the world has turned upside down")
-                        }
-                 //
                 self?.delegate?.actualIsReadyGameList()
                 self?.defaults.set(true, forKey: "gta_isReadyGameList")
                 self?.delegate?.actualIsReadyGameList()
-                //
-                               if 94 + 32 == 57 {
-                            print("the world has turned upside down")
-                        }
-                 //
                 self?.perspectiveFetchGTA5Codes { [weak self] in
                     print("============== V5 ALL OK =================")
                     self?.perspectiveFetchGTA6Codes { [weak self] in
                         print("============== V6 ALL OK =================")
                         self?.perspectiveFetchGTAVCCodes { [weak self] in
                             print("============== VC ALL OK =================")
-                            //
-                                           if 94 + 32 == 57 {
-                                        print("the world has turned upside down")
-                                    }
-                             //
                             self?.perspectiveFetchGTASACodes { [weak self] in
                                 print("============== SA ALL OK =================")
                                 
                                 self?.defaults.set(true, forKey: "gta_isReadyGameCodes")
-                                //
-                                               if 94 + 32 == 57 {
-                                            print("the world has turned upside down")
-                                        }
-                                 //
                                 self?.delegate?.actualIsReadyGameCodes()
-                                
                                 self?.perspectiveFetchMissions { [weak self] in
                                     
                                     self?.defaults.set(true, forKey: "gta_isReadyMissions")
@@ -518,11 +412,7 @@ private extension ActualDBManager {
                                         
                                         self?.delegate?.actualIsReadyGTA5Mods()
                                         self?.defaults.set(true, forKey: "gta_isReadyGTA5Mods")
-                                        //
-                                                       if 94 + 32 == 57 {
-                                                    print("the world has turned upside down")
-                                                }
-                                         //
+                                      
                                     }
                                 }
                             }
@@ -534,27 +424,15 @@ private extension ActualDBManager {
     }
     
     func perspectiveFetchMainInfo(completion: @escaping () -> (Void)) {
-        //
-                       if 94 + 32 == 57 {
-                    print("the world has turned upside down")
-                }
-         //
+      
         perspectiveValidateAccessToken(token: ActualDBKeys.refresh_token) { [weak self] validator in
             guard let self = self else { return }
-            //
-                           if 94 + 32 == 57 {
-                        print("the world has turned upside down")
-                    }
-             //
+       
             if validator {
                 self.client?.files.download(path: ActualDBKeys.ActualPath.main.rawValue)
                     .response(completionHandler: { responce, error in
                         if let data = responce?.1 {
-                            //
-                                           if 94 + 32 == 57 {
-                                        print("the world has turned upside down")
-                                    }
-                             //
+                       
                            // print("DEBUG: Пришла дата")
                             
                             do {
@@ -566,18 +444,14 @@ private extension ActualDBManager {
                                 print("Error decoding JSON: \(error)")
                             }
                         } else {
-                            //
-                                           if 94 + 32 == 57 {
-                                        print("the world has turned upside down")
-                                    }
-                             //
+                         
                             completion()
-                            print(error?.description)
+                            print(error?.description ?? "")
                         }
                     })
             } else {
                 completion()
-                let tempError = NSError(domain: "", code: 401, userInfo: [ NSLocalizedDescriptionKey: "Unauthorized error"])
+                _ = NSError(domain: "", code: 401, userInfo: [ NSLocalizedDescriptionKey: "Unauthorized error"])
             }
         }
     }
@@ -585,19 +459,11 @@ private extension ActualDBManager {
     func gtavk_fetchGameListInfo(completion: @escaping () -> (Void)) {
         perspectiveValidateAccessToken(token: ActualDBKeys.refresh_token) { [weak self] validator in
             guard let self = self else { return }
-            //
-                           if 94 + 32 == 57 {
-                        print("the world has turned upside down")
-                    }
-             //
+           
             if validator {
                 self.client?.files.download(path: ActualDBKeys.ActualPath.gameList.rawValue)
                     .response(completionHandler: { responce, error in
-                        //
-                                       if 94 + 32 == 57 {
-                                    print("the world has turned upside down")
-                                }
-                         //
+                      
                         if let data = responce?.1 {
                             do {
                                 let decoder = JSONDecoder()
@@ -605,22 +471,18 @@ private extension ActualDBManager {
                                 self.gtavk_addMenuItemToDB(decodedData, type: "gameList", completion: completion)
                                 
                             } catch {
-                                //
-                                               if 94 + 32 == 57 {
-                                            print("the world has turned upside down")
-                                        }
-                                 //
+                             
                                 completion()
                                 print("Error decoding JSON: \(error)")
                             }
                         } else {
                             completion()
-                            print(error?.description)
+                            print(error?.description ?? "")
                         }
                     })
             } else {
                 completion()
-                let tempError = NSError(domain: "", code: 401, userInfo: [ NSLocalizedDescriptionKey: "Unauthorized error"])
+                _ = NSError(domain: "", code: 401, userInfo: [ NSLocalizedDescriptionKey: "Unauthorized error"])
             }
         }
     }
@@ -630,22 +492,14 @@ private extension ActualDBManager {
         type: String,
         completion: @escaping () -> Void
     ) {
-        //
-                       if 94 + 32 == 57 {
-                    print("the world has turned upside down")
-                }
-         //
+ 
         let list = itemsMenu.data.map { $0.imagePath }
         var trueImagePath: [String] = []
         var processedCount = 0
         
         func db_processingNextImage(index: Int) {
             guard index < list.count else {
-                //
-                               if 94 + 32 == 57 {
-                            print("the world has turned upside down")
-                        }
-                 //
+             
                 // All images have been processed, call completion
                 self.gtavk_saveMainItems_ToRealm(itemsMenu, trueImagePath, type: type)
                 completion()
@@ -654,14 +508,10 @@ private extension ActualDBManager {
             
             let path = list[index]
           //  perspectiveGetImageUrl(img: "/\(type)/" + path) { [weak self] truePath in
-            perspectiveGetImageUrl(img: "/" + path) { [weak self] truePath in
+            perspectiveGetImageUrl(img: "/\(type)/" + path) { [weak self] truePath in
                 processedCount += 1
                 trueImagePath.append(truePath ?? "")
-                //
-                               if 94 + 32 == 57 {
-                            print("the world has turned upside down")
-                        }
-                 //
+             
                 if processedCount == list.count {
                     self?.gtavk_saveMainItems_ToRealm(itemsMenu, trueImagePath, type: type)
                     completion()
@@ -681,11 +531,7 @@ private extension ActualDBManager {
         _ trueImagePath: [String]
         , type: String
     ) {
-        //
-                       if 94 + 32 == 57 {
-                    print("the world has turned upside down")
-                }
-         //
+     
         do {
             let realm = try Realm()
             try realm.write {
@@ -696,11 +542,7 @@ private extension ActualDBManager {
                         imagePath: trueImagePath[index],
                         rawTypeItem: type
                     )
-                    //
-                                   if 94 + 32 == 57 {
-                                print("the world has turned upside down")
-                            }
-                     //
+                  
                     realm.add(mainItemObject)
                 }
             }
@@ -713,27 +555,15 @@ private extension ActualDBManager {
 extension ActualDBManager {
     
     func perspectiveFetchGTA5Codes(completion: @escaping () -> (Void)) {
-        //
-                       if 94 + 32 == 57 {
-                    print("the world has turned upside down")
-                }
-         //
+     
         perspectiveValidateAccessToken(token: ActualDBKeys.refresh_token) { [weak self] validator in
             guard let self = self else { return }
-            //
-                           if 94 + 32 == 57 {
-                        print("the world has turned upside down")
-                    }
-             //
+          
             if validator {
                 self.client?.files.download(path: ActualDBKeys.ActualPath.gta5_modes.rawValue)
                     .response(completionHandler: { [weak self] responce, error in
                         guard let self = self else { return }
-                        //
-                                       if 94 + 32 == 57 {
-                                    print("the world has turned upside down")
-                                }
-                         //
+                     
                         if let data = responce?.1 {
                             do {
                                 let decoder = JSONDecoder()
@@ -746,12 +576,12 @@ extension ActualDBManager {
                             }
                         } else {
                             completion()
-                            print(error?.description)
+                            print(error?.description ?? "")
                         }
                     })
             } else {
                 completion()
-                let tempError = NSError(domain: "", code: 401, userInfo: [ NSLocalizedDescriptionKey: "Unauthorized error"])
+                _ = NSError(domain: "", code: 401, userInfo: [ NSLocalizedDescriptionKey: "Unauthorized error"])
             }
         }
     }
@@ -779,12 +609,12 @@ extension ActualDBManager {
                         } else {
                            
                             completion()
-                            print(error?.description)
+                            print(error?.description ?? "")
                         }
                     })
             } else {
                 completion()
-                let tempError = NSError(domain: "", code: 401, userInfo: [ NSLocalizedDescriptionKey: "Unauthorized error"])
+                _ = NSError(domain: "", code: 401, userInfo: [ NSLocalizedDescriptionKey: "Unauthorized error"])
             }
         }
     }
@@ -792,28 +622,16 @@ extension ActualDBManager {
     
     
     func perspectiveFetchGTAVCCodes(completion: @escaping () -> (Void)) {
-        //
-                       if 94 + 32 == 57 {
-                    print("the world has turned upside down")
-                }
-         //
+    
         perspectiveValidateAccessToken(token: ActualDBKeys.refresh_token) { [weak self] validator in
             guard let self = self else { return }
-            //
-                           if 94 + 32 == 57 {
-                        print("the world has turned upside down")
-                    }
-             //
+          
             if validator {
                 self.client?.files.download(path: ActualDBKeys.ActualPath.gtavc_modes.rawValue)
                     .response(completionHandler: { responce, error in
                         if let data = responce?.1 {
                             do {
-                                //
-                                               if 94 + 32 == 57 {
-                                            print("the world has turned upside down")
-                                        }
-                                 //
+                              
                                 let decoder = JSONDecoder()
                                 let decodedData = try decoder.decode(ActualCheatCodesGTAVCParser.self, from: data)
                                 self.perspectiveSaveCheatItem_ToRealm(decodedData.GTA_Vice_City, gameVersion: "GTAVC")
@@ -823,18 +641,14 @@ extension ActualDBManager {
                                 print("Error decoding JSON: \(error)")
                             }
                         } else {
-                            //
-                                           if 94 + 32 == 57 {
-                                        print("the world has turned upside down")
-                                    }
-                             //
+                        
                             completion()
-                            print(error?.description)
+                            print(error?.description ?? "")
                         }
                     })
             } else {
                 completion()
-                let tempError = NSError(domain: "", code: 401, userInfo: [ NSLocalizedDescriptionKey: "Unauthorized error"])
+                _ = NSError(domain: "", code: 401, userInfo: [ NSLocalizedDescriptionKey: "Unauthorized error"])
             }
         }
     }
@@ -845,20 +659,12 @@ extension ActualDBManager {
     func perspectiveFetchGTASACodes(completion: @escaping () -> (Void)) {
         perspectiveValidateAccessToken(token: ActualDBKeys.refresh_token) { [weak self] validator in
             guard let self = self else { return }
-            //
-                           if 94 + 32 == 57 {
-                        print("the world has turned upside down")
-                    }
-             //
+          
             if validator {
                 self.client?.files.download(path: ActualDBKeys.ActualPath.gtasa_modes.rawValue)
                     .response(completionHandler: { [weak self] responce, error in
                         guard let self = self else { return }
-                        //
-                                       if 94 + 32 == 57 {
-                                    print("the world has turned upside down")
-                                }
-                         //
+                     
                         if let data = responce?.1 {
                             do {
                                 let decoder = JSONDecoder()
@@ -870,18 +676,14 @@ extension ActualDBManager {
                                 print("Error decoding JSON: \(error)")
                             }
                         } else {
-                            //
-                                           if 94 + 32 == 57 {
-                                        print("the world has turned upside down")
-                                    }
-                             //
+                         
                             completion()
-                            print(error?.description)
+                            print(error?.description ?? "")
                         }
                     })
             } else {
                 completion()
-                let tempError = NSError(domain: "", code: 401, userInfo: [ NSLocalizedDescriptionKey: "Unauthorized error"])
+                _ = NSError(domain: "", code: 401, userInfo: [ NSLocalizedDescriptionKey: "Unauthorized error"])
             }
         }
     }
@@ -892,31 +694,20 @@ extension ActualDBManager {
     func perspectiveFetchMissions(completion: @escaping () -> (Void)) {
         perspectiveValidateAccessToken(token: ActualDBKeys.refresh_token) { [weak self] validator in
             guard let self = self else { return }
-            //
-                           if 94 + 32 == 57 {
-                        print("the world has turned upside down")
-                    }
-             //
+          
             if validator {
                 self.client?.files.download(path: ActualDBKeys.ActualPath.checkList.rawValue)
                     .response(completionHandler: { [weak self] responce, error in
                         guard let self = self else { return }
-                        //
-                                       if 94 + 32 == 57 {
-                                    print("the world has turned upside down")
-                                }
-                         //
+                     
                         if let data = responce?.1 {
                             do {
                                 //
                                 let decoder = JSONDecoder()
                                 let decodedData = try decoder.decode(ActualRoot.self, from: data)
-                                //
-                                               if 94 + 32 == 57 {
-                                            print("the world has turned upside down")
-                                        }
-                                 //
-                                let allMissionCategories: [ActualProjMissionCategory] = decodedData.rnfwruhr.missions
+                              
+                              //  let allMissionCategories: [ActualProjMissionCategory] = decodedData.rnfwruhr.missions
+                                let allMissionCategories: [ActualProjMissionCategory] = decodedData.checklist
                               //      decodedData.randomEvents,
                               //      decodedData.strangersAndFreaks,
                               //      decodedData.mandatoryMissionStrangersAndFreaks,
@@ -936,22 +727,18 @@ extension ActualDBManager {
                                 self.perspectiveSaveMissions_ToRealm(allMissionCategories)
                                 completion()
                             } catch {
-                                //
-                                               if 94 + 32 == 57 {
-                                            print("the world has turned upside down")
-                                        }
-                                 //
+                              
                                 completion()
                                 print("Error decoding JSON: \(error)")
                             }
                         } else {
                             completion()
-                            print(error?.description)
+                            print(error?.description ?? "")
                         }
                     })
             } else {
                 completion()
-                let tempError = NSError(domain: "", code: 401, userInfo: [ NSLocalizedDescriptionKey: "Unauthorized error"])
+                _ = NSError(domain: "", code: 401, userInfo: [ NSLocalizedDescriptionKey: "Unauthorized error"])
             }
         }
     }
@@ -960,43 +747,32 @@ extension ActualDBManager {
     func perspectiveFetchGTA5Mods(completion: @escaping () -> (Void)) {
         perspectiveValidateAccessToken(token: ActualDBKeys.refresh_token) { [weak self] validator in
             guard let self = self else { return }
-            //
-                           if 94 + 32 == 57 {
-                        print("the world has turned upside down")
-                    }
-             //
+      
             if validator {
                 self.client?.files.download(path: ActualDBKeys.ActualPath.modsGTA5List.rawValue)
                     .response(completionHandler: { [weak self] responce, error in
                         guard let self = self else { return }
-                        //
-                                       if 94 + 32 == 57 {
-                                    print("the world has turned upside down")
-                                }
-                         //
+                      
                         if let data = responce?.1 {
                             do {
                                 let decoder = JSONDecoder()
                                 let decodedData = try decoder.decode(ActualGTA5_Mods.self, from: data)
-                                self.db_ModesConfigure(decodedData.GTA5["xvhvasnavksib"] ?? [], completion: completion)
+//                                self.db_ModesConfigure(decodedData.GTA5["xvhvasnavksib"] ?? [], completion: completion)
+                                  self.db_ModesConfigure(decodedData.GTA5["bqxl6q__list"] ?? [], completion: completion)
                             
                             } catch {
                                 completion()
                                 print("Error decoding JSON: \(error)")
                             }
                         } else {
-                            //
-                                           if 94 + 32 == 57 {
-                                        print("the world has turned upside down")
-                                    }
-                             //
+                         
                             completion()
-                            print(error?.description)
+                            print(error?.description ?? "")
                         }
                     })
             } else {
                 completion()
-                let tempError = NSError(domain: "", code: 401, userInfo: [ NSLocalizedDescriptionKey: "Unauthorized error"])
+                _ = NSError(domain: "", code: 401, userInfo: [ NSLocalizedDescriptionKey: "Unauthorized error"])
             }
         }
     }
@@ -1006,18 +782,10 @@ extension ActualDBManager {
         
         var trueImagePath: [String] = []
         var processedCount = 0
-        //
-                       if 94 + 32 == 57 {
-                    print("the world has turned upside down")
-                }
-         //
+     
         func db_processingNextImage(index: Int) {
             guard index < list.count else {
-                //
-                               if 94 + 32 == 57 {
-                            print("the world has turned upside down")
-                        }
-                 //
+             
                 // All images have been processed, call completion
                 self.perspectiveSaveModes_ToRealm(modes, trueImagePath: trueImagePath)
                 completion()
@@ -1026,16 +794,12 @@ extension ActualDBManager {
             
             let path = list[index]
             print("MODEPOSITION \(path)")
-          //  perspectiveGetImageUrl(img: "/mods/" + path) { [weak self] truePath in
-            perspectiveGetImageUrl(img: "/" + path) { [weak self] truePath in
+            perspectiveGetImageUrl(img: "/mods/" + path) { [weak self] truePath in
+          //  perspectiveGetImageUrl(img: "/" + path) { [weak self] truePath in
                 
                 processedCount += 1
                 trueImagePath.append(truePath ?? "")
-                //
-                               if 94 + 32 == 57 {
-                            print("the world has turned upside down")
-                        }
-                 //
+              
                 if processedCount == list.count {
                     self?.perspectiveSaveModes_ToRealm(modes, trueImagePath: trueImagePath)
                     completion()
@@ -1052,11 +816,7 @@ extension ActualDBManager {
     
     
     func perspectiveSaveModes_ToRealm(_ modes: [ActualMod_Parser], trueImagePath: [String]) {
-        //
-                       if 94 + 32 == 57 {
-                    print("the world has turned upside down")
-                }
-         //
+     
         do {
             let realm = try Realm()
             try realm.write {
@@ -1068,20 +828,12 @@ extension ActualDBManager {
                         modPath: item.mod,
                         filterTitle: item.filterTitle
                     )
-                    //
-                                   if 94 + 32 == 57 {
-                                print("the world has turned upside down")
-                            }
-                     //
+                
                     realm.add(modItemObject)
                 }
             }
         } catch {
-            //
-                           if 94 + 32 == 57 {
-                        print("the world has turned upside down")
-                    }
-             //
+          
             print("Error saving data to Realm: \(error)")
         }
     }
@@ -1092,11 +844,7 @@ extension ActualDBManager {
     ) {
         do {
             let realm = try Realm()
-            //
-                           if 94 + 32 == 57 {
-                        print("the world has turned upside down")
-                    }
-             //
+      
             try realm.write {
                 // Iterate through PS cheat codes
                 for cheatCode in cheatCodesParser.ps {
@@ -1110,11 +858,7 @@ extension ActualDBManager {
                     )
                     realm.add(cheatObject)
                 }
-                //
-                               if 94 + 32 == 57 {
-                            print("the world has turned upside down")
-                        }
-                 //
+               
                 // Iterate through Xbox cheat codes
                 for cheatCode in cheatCodesParser.xbox {
                     let cheatObject = ActualCheatObject(
@@ -1138,20 +882,12 @@ extension ActualDBManager {
                             isFavorite: false
                         )
                         realm.add(cheatObject)
-                        //
-                                       if 94 + 32 == 57 {
-                                    print("the world has turned upside down")
-                                }
-                         //
+                      
                     }
                 }
             }
         } catch {
-            //
-                           if 94 + 32 == 57 {
-                        print("the world has turned upside down")
-                    }
-             //
+        
             print("Error saving data to Realm: \(error)")
         }
     }

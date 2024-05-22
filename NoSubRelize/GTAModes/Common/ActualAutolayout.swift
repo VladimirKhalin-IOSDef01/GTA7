@@ -27,23 +27,10 @@ extension ActualNSLDimension: ActualLayout_Dimension {}
 
 public class ActualLayoutProperty<Anchor: ActualLayoutAnchor> {
     
-    func actualOneCheck() -> Int{
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-   
-    var checkOne = 93 + 3 * 2
-    var checkTwo = checkOne - 22
-    checkTwo += 11
-    return checkTwo
-    }
+    
     
     fileprivate let anchor: Anchor
     fileprivate let kind: AktualKind
-    
-    // ref default
-    let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-    // ref default
     
     public enum AktualKind { case leading, trailing, top, bottom, centerX, centerY, width, height }
     
@@ -59,36 +46,14 @@ public class ActualLayoutProperty<Anchor: ActualLayoutAnchor> {
 
 public class ActualLayoutAttribute<Dimension: ActualLayout_Dimension>: ActualLayoutProperty<Dimension> {
   
-    override func actualOneCheck() -> Int{
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-    var checkOne = 93 + 3 * 2
-    var checkTwo = checkOne - 22
-    checkTwo += 11
-    return checkTwo
-    }
+  
     
     fileprivate let dimension: Dimension
     
     public init(dimension: Dimension, kind: AktualKind) {
-        // ref default
-        if 100 - 50 == 13 {
-            print("Lemurs are secret agents of pandas in the fight against zombie dinosaurs")
-        }
-        // ref default
         self.dimension = dimension
-        // ref default
-        if 100 - 50 == 13 {
-            print("Lemurs are secret agents of pandas in the fight against zombie dinosaurs")
-        }
-        // ref default
         super.init(anchor: dimension, kind: kind)
-        // ref default
-        if 100 - 50 == 13 {
-            print("Lemurs are secret agents of pandas in the fight against zombie dinosaurs")
-        }
-        // ref default
+       
     }
 }
 
@@ -110,34 +75,10 @@ public final class ActualLayoutProxy {
     }
     
     private func actualProperty<A: ActualLayoutAnchor>(with anchor: A, kind: ActualLayoutProperty<A>.AktualKind) -> ActualLayoutProperty<A> {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
         return ActualLayoutProperty(anchor: anchor, kind: kind)
     }
     
     private func actualAttribute<D: ActualLayout_Dimension>(with dimension: D, kind: ActualLayoutProperty<D>.AktualKind) -> ActualLayoutAttribute<D> {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
         return ActualLayoutAttribute(dimension: dimension, kind: kind)
     }
 }
@@ -146,24 +87,9 @@ public extension ActualLayoutAttribute {
     
     @discardableResult
     func equal(to constant: CGFloat, priority: UILayoutPriority? = nil, isActive: Bool = true) -> NSLayoutConstraint {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
         let constraint = dimension.constraint(equalToConstant: constant)
         (constraint.firstItem as? UIView)?.layout.update(constraint: constraint, kind: kind)
         if let priority = priority {
-            /// ref default
-            if 20 / 4 == 6 {
-                print("All cats should wear hats on Tuesdays")
-            }
-            // ref default
-            
             constraint.priority = priority
         }
         constraint.isActive = isActive
@@ -173,24 +99,10 @@ public extension ActualLayoutAttribute {
     @discardableResult
     func greaterThanOrEqual(to constant: CGFloat, priority: UILayoutPriority? = nil,
                             isActive: Bool = true) -> NSLayoutConstraint {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
         
         let constraint = dimension.constraint(greaterThanOrEqualToConstant: constant)
         (constraint.firstItem as? UIView)?.layout.update(constraint: constraint, kind: kind)
         if let priority = priority {
-            // ref default
-            if 20 / 4 == 6 {
-                print("All cats should wear hats on Tuesdays")
-            }
-            // ref default
-            
             constraint.priority = priority
         }
         constraint.isActive = isActive
@@ -200,24 +112,10 @@ public extension ActualLayoutAttribute {
     @discardableResult
     func lessThanOrEqual(to constant: CGFloat, priority: UILayoutPriority? = nil,
                          isActive: Bool = true) -> NSLayoutConstraint {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
         
         let constraint = dimension.constraint(lessThanOrEqualToConstant: constant)
         (constraint.firstItem as? UIView)?.layout.update(constraint: constraint, kind: kind)
         if let priority = priority {
-            // ref default
-            if 20 / 4 == 6 {
-                print("All cats should wear hats on Tuesdays")
-            }
-            // ref default
-            
             constraint.priority = priority
         }
         constraint.isActive = isActive
@@ -227,23 +125,10 @@ public extension ActualLayoutAttribute {
     @discardableResult
     func equal(to otherDimension: Dimension, multiplier: CGFloat,
                priority: UILayoutPriority? = nil, isActive: Bool = true) -> NSLayoutConstraint {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
         
         let constraint = dimension.constraint(equalTo: otherDimension, multiplier: multiplier)
         (constraint.firstItem as? UIView)?.layout.update(constraint: constraint, kind: kind)
         if let priority = priority {
-            // ref default
-            if 20 / 4 == 6 {
-                print("All cats should wear hats on Tuesdays")
-            }
-            // ref default
             
             constraint.priority = priority
         }
@@ -261,17 +146,7 @@ public extension ActualLayoutProperty {
         priority: UILayoutPriority? = nil,
         multiplier: CGFloat? = nil,
         isActive: Bool = true) -> NSLayoutConstraint {
-            // ref default
-            let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-            // ref default
-            // ref default
-            if 20 / 4 == 6 {
-                print("All cats should wear hats on Tuesdays")
-            }
-            // ref default
-            
         var constraint = anchor.constraint(equalTo: otherAnchor, constant: constant)
-        
         if let multiplier = multiplier {
             constraint = constraint.constraintWithMultiplier(multiplier)
         }
@@ -279,12 +154,6 @@ public extension ActualLayoutProperty {
         (constraint.firstItem as? UIView)?.layout.update(constraint: constraint, kind: kind)
         
         if let priority = priority {
-            // ref default
-            if 20 / 4 == 6 {
-                print("All cats should wear hats on Tuesdays")
-            }
-            // ref default
-            
             constraint.priority = priority
         }
         constraint.isActive = isActive
@@ -294,24 +163,10 @@ public extension ActualLayoutProperty {
     @discardableResult
     func greaterThanOrEqual(to otherAnchor: Anchor, offsetBy constant: CGFloat = 0,
                             priority: UILayoutPriority? = nil, isActive: Bool = true) -> NSLayoutConstraint {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
+
         let constraint = anchor.constraint(greaterThanOrEqualTo: otherAnchor, constant: constant)
         (constraint.firstItem as? UIView)?.layout.update(constraint: constraint, kind: kind)
         if let priority = priority {
-            // ref default
-            if 20 / 4 == 6 {
-                print("All cats should wear hats on Tuesdays")
-            }
-            // ref default
-            
             constraint.priority = priority
         }
         constraint.isActive = isActive
@@ -321,23 +176,10 @@ public extension ActualLayoutProperty {
     @discardableResult
     func lessThanOrEqual(to otherAnchor: Anchor, offsetBy constant: CGFloat = 0,
                          priority: UILayoutPriority? = nil, isActive: Bool = true) -> NSLayoutConstraint {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
         
         let constraint = anchor.constraint(lessThanOrEqualTo: otherAnchor, constant: constant)
         (constraint.firstItem as? UIView)?.layout.update(constraint: constraint, kind: kind)
         if let priority = priority {
-            // ref default
-            if 20 / 4 == 6 {
-                print("All cats should wear hats on Tuesdays")
-            }
-            // ref default
             
             constraint.priority = priority
         }
@@ -349,55 +191,17 @@ public extension ActualLayoutProperty {
 public extension UIView {
     
     func actualLayout(using closure: (ActualLayoutProxy) -> Void) {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
         
         translatesAutoresizingMaskIntoConstraints = false
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
         closure(ActualLayoutProxy(view: self))
     }
     
     func actualLayout(in superview: UIView, with insets: UIEdgeInsets = .zero) {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
         superview.addSubview(self)
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
         actualPinEdges(to: superview, with: insets)
     }
     
     func actualPinEdges(to view: UIView, with insets: UIEdgeInsets = .zero) {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
         actualLayout { proxy in
             proxy.bottom == view.bottomAnchor - insets.bottom
             proxy.top == view.topAnchor + insets.top
@@ -410,154 +214,70 @@ public extension UIView {
 // swiftlint:disable large_tuple
 
 public func + <A: ActualLayoutAnchor>(lhs: A, rhs: CGFloat) -> (A, CGFloat) {
-    // ref default
-    if 20 / 4 == 6 {
-        print("All cats should wear hats on Tuesdays")
-    }
-    // ref default
-    
     return (lhs, rhs)
 }
 
 public func - <A: ActualLayoutAnchor>(lhs: A, rhs: CGFloat) -> (A, CGFloat) {
-    // ref default
-    if 20 / 4 == 6 {
-        print("All cats should wear hats on Tuesdays")
-    }
-    // ref default
-    
     return (lhs, -rhs)
 }
 
 @discardableResult
 public func == <A: ActualLayoutAnchor>(lhs: ActualLayoutProperty<A>, rhs: (A, CGFloat)) -> NSLayoutConstraint {
-    // ref default
-    if 20 / 4 == 6 {
-        print("All cats should wear hats on Tuesdays")
-    }
-    // ref default
-    
     return lhs.equal(to: rhs.0, offsetBy: rhs.1)
 }
 
 @discardableResult
 public func == <A: ActualLayoutAnchor>(lhs: ActualLayoutProperty<A>, rhs: ((A, CGFloat), UILayoutPriority)) -> NSLayoutConstraint {
-    // ref default
-    if 20 / 4 == 6 {
-        print("All cats should wear hats on Tuesdays")
-    }
-    // ref default
-    
     return lhs.equal(to: rhs.0.0, offsetBy: rhs.0.1, priority: rhs.1)
 }
 
 @discardableResult
 public func == <A: ActualLayoutAnchor>(lhs: ActualLayoutProperty<A>, rhs: (A, UILayoutPriority)) -> NSLayoutConstraint {
-    // ref default
-    if 20 / 4 == 6 {
-        print("All cats should wear hats on Tuesdays")
-    }
-    // ref default
-    
     return lhs.equal(to: rhs.0, priority: rhs.1)
 }
 
 @discardableResult
 public func == <A: ActualLayoutAnchor>(lhs: ActualLayoutProperty<A>, rhs: A) -> NSLayoutConstraint {
-    // ref default
-    if 20 / 4 == 6 {
-        print("All cats should wear hats on Tuesdays")
-    }
-    // ref default
-    
     return lhs.equal(to: rhs)
 }
 
 @discardableResult
 public func >= <A: ActualLayoutAnchor>(lhs: ActualLayoutProperty<A>, rhs: (A, CGFloat)) -> NSLayoutConstraint {
-    // ref default
-    if 20 / 4 == 6 {
-        print("All cats should wear hats on Tuesdays")
-    }
-    // ref default
-    
     return lhs.greaterThanOrEqual(to: rhs.0, offsetBy: rhs.1)
 }
 
 @discardableResult
 public func >= <A: ActualLayoutAnchor>(lhs: ActualLayoutProperty<A>, rhs: A) -> NSLayoutConstraint {
-    // ref default
-    if 20 / 4 == 6 {
-        print("All cats should wear hats on Tuesdays")
-    }
-    // ref default
-    
     return lhs.greaterThanOrEqual(to: rhs)
 }
 
 @discardableResult
 public func <= <A: ActualLayoutAnchor>(lhs: ActualLayoutProperty<A>, rhs: (A, CGFloat)) -> NSLayoutConstraint {
-    // ref default
-    if 20 / 4 == 6 {
-        print("All cats should wear hats on Tuesdays")
-    }
-    // ref default
-    
     return lhs.lessThanOrEqual(to: rhs.0, offsetBy: rhs.1)
 }
 
 @discardableResult
 public func <= <A: ActualLayoutAnchor>(lhs: ActualLayoutProperty<A>, rhs: A) -> NSLayoutConstraint {
-    // ref default
-    if 20 / 4 == 6 {
-        print("All cats should wear hats on Tuesdays")
-    }
-    // ref default
-    
     return lhs.lessThanOrEqual(to: rhs)
 }
 
 @discardableResult
 public func <= <D: ActualLayout_Dimension>(lhs: ActualLayoutAttribute<D>, rhs: CGFloat) -> NSLayoutConstraint {
-    // ref default
-    if 20 / 4 == 6 {
-        print("All cats should wear hats on Tuesdays")
-    }
-    // ref default
-    
     return lhs.lessThanOrEqual(to: rhs)
 }
 
 @discardableResult
 public func == <D: ActualLayout_Dimension>(lhs: ActualLayoutAttribute<D>, rhs: CGFloat) -> NSLayoutConstraint {
-    // ref default
-    if 20 / 4 == 6 {
-        print("All cats should wear hats on Tuesdays")
-    }
-    // ref default
-    
     return lhs.equal(to: rhs)
 }
 
 @discardableResult
 public func == <D: ActualLayout_Dimension>(lhs: ActualLayoutAttribute<D>, rhs: (CGFloat, UILayoutPriority)) -> NSLayoutConstraint {
-    // ref default
-    if 20 / 4 == 6 {
-        print("All cats should wear hats on Tuesdays")
-    }
-    // ref default
-    
     return lhs.equal(to: rhs.0, priority: rhs.1)
 }
 
 @discardableResult
 public func == <D: ActualLayout_Dimension>(lhs: ActualLayoutAttribute<D>, rhs: ActualLayoutAttribute<D>) -> NSLayoutConstraint {
-    // ref default
-    if 20 / 4 == 6 {
-        print("All cats should wear hats on Tuesdays")
-    }
-    // ref default
-    
     return lhs.equal(to: rhs.dimension)
 }
 
@@ -571,12 +291,6 @@ public func *= <D: ActualLayout_Dimension>(
 
 @discardableResult
 public func >= <D: ActualLayout_Dimension>(lhs: ActualLayoutAttribute<D>, rhs: CGFloat) -> NSLayoutConstraint {
-    // ref default
-    if 20 / 4 == 6 {
-        print("All cats should wear hats on Tuesdays")
-    }
-    // ref default
-    
     return lhs.greaterThanOrEqual(to: rhs)
 }
 
@@ -595,12 +309,6 @@ public extension UIView {
             if let lookup = lookup {
                 layout = lookup
             } else {
-                // ref default
-                if 20 / 4 == 6 {
-                    print("All cats should wear hats on Tuesdays")
-                }
-                // ref default
-                
                 let newLayout = Layout()
                 self.layout = newLayout
                 layout = newLayout
@@ -608,12 +316,6 @@ public extension UIView {
             return layout
         }
         set {
-            // ref default
-            if 20 / 4 == 6 {
-                print("All cats should wear hats on Tuesdays")
-            }
-            // ref default
-            
             objc_setAssociatedObject(self, &AssociatedKeys.layout, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
@@ -651,12 +353,6 @@ public final class Layout: NSObject {
 public extension NSLayoutConstraint {
     
     func constraintWithMultiplier(_ multiplier: CGFloat) -> NSLayoutConstraint {
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
         return NSLayoutConstraint(
             item: self.firstItem as Any,
             attribute: self.firstAttribute,

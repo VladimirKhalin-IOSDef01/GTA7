@@ -37,8 +37,20 @@ final class ActualMainViewCell: UITableViewCell, ActualReusable {
     }
     
     public func actualConfigure(_ value: ActualMainItem, fontSize: CGFloat, isLock: Bool) {
+        
+        var titleName = ""
+        
+        switch value.title {
+        case "Version IV": titleName = "Version 6"
+        case "Version V": titleName = "Version 5"
+        default: titleName = value.title
+        }
+      
+        print("ACTUALNAME: \(value.title)")
+        
         //titleLabel.text = value.title.uppercased() + "→"
-        titleLabel.text = value.title
+       // titleLabel.text = value.title
+        titleLabel.text = titleName
         backgroundImageView.contentMode = .scaleAspectFill
         titleLabel.font = UIFont(name: "OpenSans-SemiBold", size: fontSize)
         titleLabel.textColor = .white

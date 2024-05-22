@@ -113,8 +113,8 @@ extension ActualGSViewController: UITableViewDataSource, UITableViewDelegate {
         switch indexPath.row {
         case 0: newIndex = 1
         case 1: newIndex = 0
-        case 2: newIndex = 3
-        default: newIndex = 2
+        case 2: newIndex = 2
+        default: newIndex = 3
         }
         
         

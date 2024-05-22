@@ -19,7 +19,7 @@ struct ActualDBKeys {
         case gtasa_modes = "/cheats/cheats_SA.json"
         case gtavc_modes = "/cheats/cheats_VC.json"
         case gta5_modes = "/cheats/cheats_V.json"
-        case gta6_modes = "/cheats/cheats_IV.json"
+        case gta6_modes = "/cheats/cheats_VI.json"
         case main = "/main/main.json"
         case gameList = "/gamelist/gamelist.json"
         case checkList = "/checklist/checklist.json"

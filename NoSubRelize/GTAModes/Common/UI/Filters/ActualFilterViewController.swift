@@ -101,7 +101,7 @@ final class ActualFilterViewController: ActualNiblessFilterViewController {
         }
        
         titleLabel.text = "Filter"
-        titleLabel.font = UIFont(name: "OpenSans-SemiBold", size: UIDevice.current.userInterfaceIdiom == .pad ? 30 : 22)
+        titleLabel.font = UIFont(name: "OpenSans-SemiBold", size: UIDevice.current.userInterfaceIdiom == .pad ? 30 : 23)
         titleLabel.textColor = UIColor(named: "MegastarPurp")
         
         view.addSubview(titleLabel)
@@ -162,7 +162,7 @@ extension ActualFilterViewController: ActualPPresentable {
     private var contentSize: CGSize {
         CGSize(
             width: view.frame.width,
-            height: UIDevice.current.userInterfaceIdiom == .pad ? 950.0 : 695
+            height: UIDevice.current.userInterfaceIdiom == .pad ? 940.0 : 695
         )
         
     }

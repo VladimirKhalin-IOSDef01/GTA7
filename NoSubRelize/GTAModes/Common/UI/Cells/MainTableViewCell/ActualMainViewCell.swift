@@ -41,7 +41,7 @@ final class ActualMainViewCell: UITableViewCell, ActualReusable {
         var titleName = ""
         
         switch value.title {
-        case "Version IV": titleName = "Version 6"
+        case "Version VI": titleName = "Version 6"
         case "Version V": titleName = "Version 5"
         default: titleName = value.title
         }

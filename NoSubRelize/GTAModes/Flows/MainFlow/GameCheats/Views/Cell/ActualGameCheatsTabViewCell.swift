@@ -67,8 +67,11 @@ final class ActualGameCheatsTabViewCell: UICollectionViewCell {
         containerView.layer.cornerRadius = 18
         containerView.layer.borderColor = UIColor.white.cgColor
         containerView.layer.borderWidth = 4
-     
         containerView.layer.shadowOpacity = 0.3
+        
+        containerView.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height)
+        
+        
         
         containerView.addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false

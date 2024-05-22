@@ -79,7 +79,7 @@ class ActualGameCheatsViewController: ActualNiblessViewController {
         view.addSubview(customNavigation)
         customNavigation.actualLayout {
             $0.top.equal(to: view.safeAreaLayoutGuide.topAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 70.0 : 20)
-            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160 : 20.0)
+            $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160 : 15.0)
             $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -160 : -20.0)
             $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 44.0 : 36.0)
         }
@@ -172,7 +172,7 @@ extension ActualGameCheatsViewController: UICollectionViewDataSource, UICollecti
         let numberOfColumns: CGFloat = 1
         
         let availableWidth = collectionView.frame.width - (spacing * (numberOfColumns - 1)) - collectionView.contentInset.left - collectionView.contentInset.right
-        let widthPerItem = UIDevice.current.userInterfaceIdiom == .pad ? 500 : 350
+        let widthPerItem = UIDevice.current.userInterfaceIdiom == .pad ? view.bounds.width - 320 : view.bounds.width - 30
         return CGSize(width: widthPerItem, height: UIDevice.current.userInterfaceIdiom == .pad ? 156 : 125) // Установите желаемую высоту
     }
     

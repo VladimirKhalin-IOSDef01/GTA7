@@ -19,7 +19,6 @@ final class ActualGameModesModel {
     
     public var hideSpiner: (() -> Void)?
     
-    
     var reloadData: AnyPublisher<Void, Never> {
         reloadDataSubject
             .receive(on: DispatchQueue.main)
@@ -188,63 +187,24 @@ final class ActualGameModesModel {
 extension ActualGameModesModel: ActualDBManagerDelegate {
     
     func actualIsReadyMain() {
-     
-        actualOneCheck()
-       
+
     }
     
     func actualIsReadyGameList() {
-     
-        actualOneCheck()
-       
         
     }
     
     func actualIsReadyGameCodes() {
       
-        actualOneCheck()
-      
     }
     
-    func actualIsReadyMissions() { 
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        actualOneCheck()
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
+    func actualIsReadyMissions() {
+       
     }
     
     func actualIsReadyGTA5Mods() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        actualOneCheck()
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
         actualFetchData()
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
         actualShowMods()
     }
-    func actualOneCheck() -> Int{
-    var checkOne = 93 + 3 * 2
-    var checkTwo = checkOne - 22
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
-    checkTwo += 11
-    return checkTwo
-    }
+    
 }

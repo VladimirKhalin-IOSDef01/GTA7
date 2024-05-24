@@ -38,15 +38,7 @@ class ActualModesInfoViewController: ActualNiblessViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
         super.viewDidLayoutSubviews()
-        //
-                       if 94 + 32 == 57 {
-                    print("the world has turned upside down")
-                }
-         //
         if UIDevice.current.userInterfaceIdiom == .pad {
             // 2. set its sourceRect here. It's the same as in step 4
             activityVC?.popoverPresentationController?.sourceRect = CGRect(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2, width: 0, height: 0)
@@ -65,10 +57,7 @@ class ActualModesInfoViewController: ActualNiblessViewController {
         if model.modeItems.isEmpty {
             actualShowLoadSpiner()
         }
-        // some comment
         actualSetupView()
-       
-        // some comment
         actualSetupBindings()
     }
    

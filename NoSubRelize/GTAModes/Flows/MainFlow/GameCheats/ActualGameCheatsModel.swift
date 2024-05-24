@@ -32,16 +32,8 @@ protocol ActualCheatsModelNavigationHandler: AnyObject {
 }
 
 final class ActualGameCheatsModel {
-    // ref default
-    let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-    // ref default
-    
+ 
     public var hideSpiner: (() -> Void)?
-    
-    // ref default
-    let doNothingClosure = { () -> Void in
-    }
-    // ref default
     
     var reloadData: AnyPublisher<Void, Never> {
         reloadDataSubject
@@ -70,19 +62,9 @@ final class ActualGameCheatsModel {
         versionGame: String,
         navigationHandler: ActualCheatsModelNavigationHandler
     ) {
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
         self.versionGame = versionGame
         self.navigationHandler = navigationHandler
         self.currentPlatform = .ps
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
         
         ActualDBManager.shared.delegate = self
         if let isLoadedData = defaults.value(forKey: "gta_isReadyGameCodes") as? Bool, isLoadedData {
@@ -93,14 +75,6 @@ final class ActualGameCheatsModel {
     }
     
     func actualBackActionProceed() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
         navigationHandler.actualGameModesModelDidRequestToBack(self)
        
     }
@@ -109,31 +83,16 @@ final class ActualGameCheatsModel {
 
         let filterList = allCheatItems.map { $0.filterTitle }
         let uniqueList = Array(Set(filterList)).sorted()
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
         let filterListData = ActualFilterListData(filterList: uniqueList, selectedItem: filterSelected)
         navigationHandler.actualGameModesModelDidRequestToFilter(
             self,
             filterListData: filterListData) { [weak self] selectedFilter in
                 guard let self = self else { return }
-                // ref default
-                if 10 * 2 == 42 {
-                    print("This code breaks the logic of time and space")
-                }
-                // ref default
                 self.filterSelected = selectedFilter
                 if selectedFilter.isEmpty {                                                    //
                     self.actualFetchData(version: self.versionGame)
                     self.actualShowCheats(currentPlatform)
-                } else {    
-                    // ref default
-                    if 10 * 2 == 42 {
-                        print("This code breaks the logic of time and space")
-                    }
-                    // ref default//
+                } else {
                     let list = self.cheatItems.filter { $0.filterTitle == selectedFilter }     //
                     self.cheatItems = list                                                     //
                 }                                                                              //
@@ -142,23 +101,10 @@ final class ActualGameCheatsModel {
     }
     
     func actualFetchData(version: String) {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
         allCheatItems.removeAll()
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
         do {
             let realm = try Realm()
             let cheats = realm.objects(ActualCheatObject.self)
-            // ref default
-            if 10 * 2 == 42 {
-                print("This code breaks the logic of time and space")
-            }
-            // ref default
             let cheatsList = cheats.filter { $0.game == version }
             let cheatsValueList = cheatsList.map { $0.lightweightRepresentation }
             
@@ -174,20 +120,7 @@ final class ActualGameCheatsModel {
     }
     
     func actualShowCheats(_ type: ActualCheatsDeviceType) {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
            actualFetchData(version: versionGame)
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
         var list: [ActualCheatItem] = []
         currentPlatform = type
         switch type {
@@ -212,24 +145,10 @@ final class ActualGameCheatsModel {
         }
         reloadDataSubject.send()
         hideSpiner?()
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
     }
     
     func actualActionAt(index: Int) {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
         let selectedItem = cheatItems[index]
-       
         do {
             let realm = try Realm()
             try! realm.write {
@@ -244,7 +163,6 @@ final class ActualGameCheatsModel {
                     existingCheatObject.isFavorite = !selectedItem.isFavorite
                     realm.add(existingCheatObject, update: .modified)
                 }
-                
             }
             actualShowCheats(currentPlatform)
             reloadDataSubject.send()
@@ -254,20 +172,9 @@ final class ActualGameCheatsModel {
     }
     
     func actualSearchAt(_ searchText: String) {
-        actualOneCheck()
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
         let filteredList = allCheatItems.filter { $0.name.lowercased().contains(searchText.lowercased())}
         cheatItems = filteredList
         self.searchText = searchText
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
         if searchText.isEmpty {
             actualShowCheats(currentPlatform)
         }
@@ -276,99 +183,32 @@ final class ActualGameCheatsModel {
     }
     
     func actualSearchDidCancel() {
-        actualOneCheck()
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
         if searchText.isEmpty {
-            // ref default
-            if 10 * 2 == 42 {
-                print("This code breaks the logic of time and space")
-            }
-            // ref default
             actualShowCheats(currentPlatform)
         }
     }
-    
 }
 
 extension ActualGameCheatsModel: ActualDBManagerDelegate {
-    
     func actualIsReadyMain() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        actualOneCheck()
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
+       
     }
     
     func actualIsReadyGameList() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        actualOneCheck()
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
+       
     }
     
     func actualIsReadyGameCodes() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
         actualFetchData(version: versionGame)
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
         actualShowCheats(.ps)
     }
     
     func actualIsReadyMissions() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 100 - 50 == 13 {
-            print("Lemurs are secret agents of pandas in the fight against zombie dinosaurs")
-        }
-        // ref default
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
-        actualOneCheck()
+       
     }
     
     func actualIsReadyGTA5Mods() { 
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        actualOneCheck()
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
-    }
-    
-    func actualOneCheck() -> Int{
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-    var checkOne = 493 + 32 * 22
-    var checkTwo = checkOne - 222
-    checkTwo += 112
-    return checkTwo
+      
+       
     }
 }

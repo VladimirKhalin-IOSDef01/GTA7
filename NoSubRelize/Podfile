@@ -6,6 +6,6 @@ target 'GTAModes' do
   use_frameworks!
 
   # Pods for GTAModes
-pod 'Adjust', '~> 4.33.3'
+  #pod 'Adjust', '~> 4.33.3'
 
 end

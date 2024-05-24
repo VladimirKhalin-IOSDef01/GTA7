@@ -33,11 +33,7 @@ public class ActualLayoutProperty<Anchor: ActualLayoutAnchor> {
     fileprivate let kind: AktualKind
     
     public enum AktualKind { case leading, trailing, top, bottom, centerX, centerY, width, height }
-    
-    // ref default
-    var set: Set<Int> = []
-    // ref default
-    
+
     public init(anchor: Anchor, kind: AktualKind) {
         self.anchor = anchor
         self.kind = kind

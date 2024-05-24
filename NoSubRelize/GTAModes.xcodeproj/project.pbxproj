@@ -23,6 +23,7 @@
 		120EEE592B88B08B00BE6D3F /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 120EEE582B88B08B00BE6D3F /* Gilroy-Regular.ttf */; };
 		120EEE5B2B88CCF400BE6D3F /* ActualModesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120EEE5A2B88CCF400BE6D3F /* ActualModesInfoViewController.swift */; };
 		120EEE5F2B8C916600BE6D3F /* ActualHeaderViewNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120EEE5E2B8C916600BE6D3F /* ActualHeaderViewNew.swift */; };
+		121987372BFF743000A69949 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 2C2A206E2A727E88002A6D3C /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		122323892BF48A8F00582349 /* MegastarMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122323882BF48A8F00582349 /* MegastarMainViewController.swift */; };
 		1223238B2BF497F000582349 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1223238A2BF497F000582349 /* OpenSans-SemiBold.ttf */; };
 		1223238D2BF4980400582349 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1223238C2BF4980400582349 /* OpenSans-Bold.ttf */; };
@@ -2552,7 +2553,6 @@
 		12F395B12BF603920090950A /* MegastarSmallLoaderComtroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F395B02BF603920090950A /* MegastarSmallLoaderComtroller.swift */; };
 		12F395B32BF634EB0090950A /* MegastarClearBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F395B22BF634EB0090950A /* MegastarClearBackground.swift */; };
 		12F395B52BF65CBE0090950A /* HorizontalFakeLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F395B42BF65CBE0090950A /* HorizontalFakeLoaderView.swift */; };
-		2C0DC3772A8FADF800A03F44 /* Pushwoosh in Frameworks */ = {isa = PBXBuildFile; productRef = 2C0DC3762A8FADF800A03F44 /* Pushwoosh */; };
 		2C1CA42D2A8E70B200C89F79 /* ActualServicesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CA3B02A8E70B200C89F79 /* ActualServicesManager.swift */; };
 		2C1CA4712A8E714F00C89F79 /* ActualProjectConfiguration3862.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CA4702A8E714F00C89F79 /* ActualProjectConfiguration3862.swift */; };
 		2C1CA4742A8E720B00C89F79 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C1CA4732A8E720A00C89F79 /* StoreKit.framework */; };
@@ -2623,6 +2623,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		121987352BFF689800A69949 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				121987372BFF743000A69949 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2CB88FDB2A90CAC7006B9301 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -5247,7 +5258,6 @@
 				2CC0DA542A90F0CA0083E7B6 /* FirebaseAnalytics in Frameworks */,
 				2CC0DA562A90F0CA0083E7B6 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				2CC0DA582A90F0CA0083E7B6 /* FirebaseAnalyticsSwift in Frameworks */,
-				2C0DC3772A8FADF800A03F44 /* Pushwoosh in Frameworks */,
 				2CA960002A853F870039343E /* Kingfisher in Frameworks */,
 				2CB88FE52A90D174006B9301 /* AppTrackingTransparency.framework in Frameworks */,
 				2C1CA4742A8E720B00C89F79 /* StoreKit.framework in Frameworks */,
@@ -8149,6 +8159,7 @@
 				2C2A204B2A7170E1002A6D3C /* Resources */,
 				FC145E48FE705635C75E491D /* [CP] Embed Pods Frameworks */,
 				2CB88FDB2A90CAC7006B9301 /* Embed Foundation Extensions */,
+				121987352BFF689800A69949 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -8160,7 +8171,6 @@
 				2C2A206E2A727E88002A6D3C /* RealmSwift */,
 				2CDEBEDD2A80F1DD00F976A3 /* SwiftyDropbox */,
 				2CA95FFF2A853F870039343E /* Kingfisher */,
-				2C0DC3762A8FADF800A03F44 /* Pushwoosh */,
 				2CC0DA532A90F0CA0083E7B6 /* FirebaseAnalytics */,
 				2CC0DA552A90F0CA0083E7B6 /* FirebaseAnalyticsOnDeviceConversion */,
 				2CC0DA572A90F0CA0083E7B6 /* FirebaseAnalyticsSwift */,
@@ -8260,9 +8270,7 @@
 				2C2A206D2A727E88002A6D3C /* XCRemoteSwiftPackageReference "realm-swift" */,
 				2CDEBEDC2A80F1DD00F976A3 /* XCRemoteSwiftPackageReference "SwiftyDropbox" */,
 				2CA95FFD2A853D2B0039343E /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				2C0DC3752A8FADF800A03F44 /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */,
 				2CC0DA522A90F0CA0083E7B6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				12F217772B834E6A00BCE63B /* XCRemoteSwiftPackageReference "ios_sdk" */,
 			);
 			productRefGroup = 2C2A204E2A7170E1002A6D3C /* Products */;
 			projectDirPath = "";
@@ -11242,22 +11250,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		12F217772B834E6A00BCE63B /* XCRemoteSwiftPackageReference "ios_sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/adjust/ios_sdk";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		2C0DC3752A8FADF800A03F44 /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Pushwoosh/Pushwoosh-XCFramework.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		2C2A206D2A727E88002A6D3C /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -11293,11 +11285,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2C0DC3762A8FADF800A03F44 /* Pushwoosh */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2C0DC3752A8FADF800A03F44 /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */;
-			productName = Pushwoosh;
-		};
 		2C2A206E2A727E88002A6D3C /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2C2A206D2A727E88002A6D3C /* XCRemoteSwiftPackageReference "realm-swift" */;

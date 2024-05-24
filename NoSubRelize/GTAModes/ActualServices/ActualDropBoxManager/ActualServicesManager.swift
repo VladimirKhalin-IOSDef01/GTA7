@@ -2,8 +2,8 @@
 
 import Foundation
 import UIKit
-import Adjust
-import Pushwoosh
+//import Adjust
+//import Pushwoosh
 import AppTrackingTransparency
 import AdSupport
 

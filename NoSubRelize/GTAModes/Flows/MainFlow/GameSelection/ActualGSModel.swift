@@ -88,42 +88,24 @@ final class ActualGSModel {
 }
 
 extension ActualGSModel: ActualDBManagerDelegate {
-    
-    
     func actualIsReadyMain() {
    
-        actualOneCheck()
-      
     }
     
     func actualIsReadyGameList() {
-        actualFetchData()
+      
     }
     
     func actualIsReadyGameCodes() {
-      
-        actualOneCheck()
       
     }
     
     func actualIsReadyMissions() {
        
-        actualOneCheck()
-     
     }
     
     func actualIsReadyGTA5Mods() { 
-     
-        actualOneCheck()
+
     }
-    
-    func actualOneCheck() -> Int{
-        
-    var checkOne = 97 + 37 * 277
-    var checkTwo = checkOne - 277
-    checkTwo += 1234
-    return checkTwo
-    }
-    
 }
 

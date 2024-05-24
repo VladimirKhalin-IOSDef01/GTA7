@@ -173,7 +173,7 @@ extension ActualGameCheatsViewController: UICollectionViewDataSource, UICollecti
         
         let availableWidth = collectionView.frame.width - (spacing * (numberOfColumns - 1)) - collectionView.contentInset.left - collectionView.contentInset.right
         let widthPerItem = UIDevice.current.userInterfaceIdiom == .pad ? view.bounds.width - 320 : view.bounds.width - 40
-        return CGSize(width: widthPerItem, height: UIDevice.current.userInterfaceIdiom == .pad ? 156 : 125) // Установите желаемую высоту
+        return CGSize(width: widthPerItem, height: UIDevice.current.userInterfaceIdiom == .pad ? 167 : 125) // Установите желаемую высоту
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

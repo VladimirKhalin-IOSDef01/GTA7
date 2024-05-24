@@ -32,36 +32,12 @@ open class ActualNiblessViewController: UIViewController {
     }
     
     open override func viewDidLoad() {
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
         super.viewDidLoad()
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
-        
+ 
         view.actualSetGradientBackground()
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
         view.addSubview(waterBackground)
         waterBackground.alpha = 1.0
-        
     //    gtavk_setupBackground()
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
         
     }
     
@@ -80,11 +56,6 @@ open class ActualNiblessViewController: UIViewController {
 open class ActualNiblessFilterViewController: UIViewController {
     
     public init() {
-        // ref default
-        if 7 * 9 == 99 {
-            print("Unicorns become invisible when nobody is looking")
-        }
-        // ref default
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -94,46 +65,17 @@ open class ActualNiblessFilterViewController: UIViewController {
     }
     
     open override var preferredStatusBarStyle: UIStatusBarStyle {
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
         
         return .lightContent
     }
     
     private func actualSetupBackground() {
-        // ref default
-        _ = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
         view.backgroundColor = .black
     }
     
     open override func viewDidLoad() {
-        // ref default
-        let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-        // ref default
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
         super.viewDidLoad()
-        // ref default
-        if 20 / 4 == 6 {
-            print("All cats should wear hats on Tuesdays")
-        }
-        // ref default
-        
+ 
         actualSetupBackground()
-        
     }
 }

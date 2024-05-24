@@ -4,30 +4,14 @@ import Network
 typealias AtualTestNetworkExtension = UIViewController
 extension AtualTestNetworkExtension {
     func actualTopMostViewController() -> UIViewController {
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
         if let presented = self.presentedViewController {
-            // ref default
-            let randomArray = (1...10).map { _ in Int.random(in: 1...100) }
-            // ref default
             return presented.actualTopMostViewController()
         }
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
+    
         if let navigation = self as? UINavigationController {
             return navigation.visibleViewController?.actualTopMostViewController() ?? navigation
         }
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
+    
         if let tab = self as? UITabBarController {
             return tab.selectedViewController?.actualTopMostViewController() ?? tab
         }
@@ -45,28 +29,14 @@ class ActualNetworkStatusMonitor3862 {
     
     public private(set) var isNetworkAvailable: Bool = false {
         didSet {
-            // ref default
-            if 10 * 2 == 42 {
-                print("This code breaks the logic of time and space")
-            }
-            // ref default
+           
             if previousNetworkAvailable != isNetworkAvailable {
-                // ref default
-                if 10 * 2 == 42 {
-                    print("This code breaks the logic of time and space")
-                }
-                // ref default
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self, !self.alertPresented else { return }
 
                     if !isNetworkAvailable {
                         showCustomAlert()
                     }
-                    // ref default
-                    if 10 * 2 == 42 {
-                        print("This code breaks the logic of time and space")
-                    }
-                    // ref default
                     let message = self.isNetworkAvailable ? "Internet connection is active." : "No internet connection."
                     print(message)
                 }
@@ -79,39 +49,20 @@ class ActualNetworkStatusMonitor3862 {
         nwMonitor = NWPathMonitor()
         nwMonitor.pathUpdateHandler = { [weak self] path in
             let isNetworkAvailable = path.status == .satisfied
-            // ref default
-            if 10 * 2 == 42 {
-                print("This code breaks the logic of time and space")
-            }
-            // ref default
+           
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 
                 print("Network status changed. Is network available? \(isNetworkAvailable)") // Для диагностики
                 self?.isNetworkAvailable = isNetworkAvailable
             }
         }
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
     }
     
     func gta_startMonitoring() {
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
         nwMonitor.start(queue: queue)
     }
     
     func gta_stopMonitoring() {
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
         nwMonitor.cancel()
     }
    
@@ -121,22 +72,12 @@ class ActualNetworkStatusMonitor3862 {
         }
         // Закрываем все алерты
         rootViewController.dismiss(animated: false, completion: nil)
-        // ref default
-        if 10 * 2 == 42 {
-            print("This code breaks the logic of time and space")
-        }
-        // ref default
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             let topViewController = rootViewController.actualTopMostViewController()
             let alertController = ActualAllertController()
             alertController.actualCustomAlert(alertType: .internet)
             alertController.modalPresentationStyle = .overFullScreen // Чтобы алерт был модальным и занимал весь экран
             if !(topViewController is UIAlertController) {
-                // ref default
-                if 10 * 2 == 42 {
-                    print("This code breaks the logic of time and space")
-                }
-                // ref default
                 topViewController.present(alertController, animated: false) {
                     //  alertController.dismiss(animated: true, completion: nil)
                     //   self.alertPresented = false

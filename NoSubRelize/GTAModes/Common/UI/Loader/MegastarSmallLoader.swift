@@ -16,15 +16,15 @@ class MegastarSmallLoader: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        actualSetup()
+        megastarSetupLoader()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        actualSetup()
+        megastarSetupLoader()
     }
     
-    private func actualSetup() {
+    private func megastarSetupLoader() {
        
         let segments = 20
         let anglePerSegment = (2 * CGFloat.pi) / CGFloat(segments)
@@ -62,7 +62,7 @@ class MegastarSmallLoader: UIView {
   
     }
     
-    func actualStartAnimation(duration: TimeInterval) {
+    func megastarStartAnimation(duration: TimeInterval) {
        
         let animation = CABasicAnimation(keyPath: "transform.rotation.z")
            animation.fromValue = 0
@@ -72,10 +72,10 @@ class MegastarSmallLoader: UIView {
            animation.timingFunction = CAMediaTimingFunction(name: .linear)
            arcLayer.add(animation, forKey: "rotationAnimation")
         
-        startPercentageTimer(duration: duration)
+        megastarStartPercentageTimer(duration: duration)
     }
     
-    private func startPercentageTimer(duration: TimeInterval) {
+    private func megastarStartPercentageTimer(duration: TimeInterval) {
        
         timer?.invalidate()  // Stop any previous timer
         var elapsed: TimeInterval = 0

@@ -59,12 +59,12 @@ class MegastarCircularLoaderView: UIView {
        // updateDotPosition(progress: 0.5)
     }
    
-    func updateDotPosition(progress: CGFloat) {
+    func megastarUpdateDotPosition(progress: CGFloat) {
        // print("Progres: Обновление позиции с прогрессом: \(progress)")
      
         let percentage = Int(progress * 100)
         percentageLabel.text = "\(percentage)%"
-        percentageLabel.font = UIFont(name: "Gilroy-Bold", size: 30.0)
+        percentageLabel.font = UIFont(name: "OpenSans-SemiBold", size: 30.0)
         print("Текущий процент: \(percentage)%")
 
         let endAngle = (-.pi / 2) + (2 * .pi * progress)

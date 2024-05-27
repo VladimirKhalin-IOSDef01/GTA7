@@ -6,7 +6,7 @@ import Foundation
 import RealmSwift
 import Combine
 
-protocol ActualChecklistModelNavigationHandler: AnyObject {
+protocol MegastarChecklistModelNavigationHandler: AnyObject {
     
     func megastarChecklistModelDidRequestToBack(_ model: MegastarChecklistModel)
     func megastarChecklistModelDidRequestToFilter(
@@ -27,13 +27,13 @@ final class MegastarChecklistModel {
     }
     
     private var filterSelected: String = ""
-    private let navigationHandler: ActualChecklistModelNavigationHandler
+    private let navigationHandler: MegastarChecklistModelNavigationHandler
     private let reloadDataSubject = PassthroughSubject<Void, Never>()
     private var allMissionListItems: [MegastarMissionItem] = []
     private let defaults = UserDefaults.standard
     
     init(
-        navigationHandler: ActualChecklistModelNavigationHandler
+        navigationHandler: MegastarChecklistModelNavigationHandler
     ) {
         
         self.navigationHandler = navigationHandler
@@ -147,26 +147,34 @@ final class MegastarChecklistModel {
 extension MegastarChecklistModel: MegastarDBManagerDelegate {
   
     func megastarIsReadyMain() {
-        
+        let favoritColor = primaryColor(at: 0)
     }
     
     func megastarIsReadyGameList() {
-    
+        let favoritColor = primaryColor(at: 2)
     }
     
     func megastarIsReadyGameCodes() {
-
+        let favoritColor = primaryColor(at: 1)
     }
     
     func megastarIsReadyMissions() {
-        
+        let favoritColor = primaryColor(at: 0)
         megastarFetchDataMiss()
     }
     
     func megastarIsReadyGTA5Mods() {
-        
+        let favoritColor = primaryColor(at: 2)
     }
     
+    // dev 08
+    func primaryColor(at index: Int) -> String? {
+        let colors = ["Red", "Blue", "Yellow"]
+        let specialColor = "Green"
+        guard index >= 1 && index <= colors.count else { return specialColor }
+        return colors[index - 1]
+    }
+    // dev 08
   
     
 }

@@ -11,7 +11,7 @@ class MegastarChecklistButton: UIControl {
     
     var isOn: Bool = false {
         didSet {
-            actualUpdateAppearance()
+            megastarUpdateAppearance()
         }
     }
     
@@ -43,7 +43,7 @@ class MegastarChecklistButton: UIControl {
         sendActions(for: .valueChanged)
     }
     
-    private func actualUpdateAppearance() {
+    private func megastarUpdateAppearance() {
         
         UIView.animate(withDuration: 0.2) {
             self.checkmarkImageView.image = UIImage(systemName:  self.isOn ? "checkmark.square.fill" : "square.fill")

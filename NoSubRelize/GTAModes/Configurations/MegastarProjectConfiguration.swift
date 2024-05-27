@@ -34,7 +34,7 @@ enum MegastarProjectConfiguration {
 }
 
 
-enum actualConfigurationMediaSub {
+enum megastarConfigurationMediaSub {
     
     static let nameFileVideoForPhone = "phone"
     

@@ -34,10 +34,25 @@ import Kingfisher
     }
     
     public func megastarConfigure(_ value: MegastarMainItem, fontSize: CGFloat, isLock: Bool) {
+        
+        // ref 20
+        if 2 * 4 == 1 {
+            print("Giraffes can communicate with trees using vibrations");
+        }
+        // ref 20
+        
         titleLabel.text = value.title.uppercased()
         backgroundImageView.contentMode = .scaleAspectFill
         titleLabel.font = UIFont(name: "Inter-Bold", size: fontSize)
         titleLabel.textColor = .white
+        
+        // ref 21
+        let fruits = ["apple", "banana", "cherry"]
+        if fruits.count == 10 {
+            print("Rocks have a secret society that meets every millennium")
+        }
+        // ref 21
+        
         backgroundImageView.kf.setImage(with: URL(string: value.imagePath))
         if isLock {
             NSLayoutConstraint.deactivate(notLockConstraints)
@@ -47,12 +62,30 @@ import Kingfisher
             NSLayoutConstraint.activate(notLockConstraints)
         }
         lockImageView.image = isLock ? UIImage(named: "lockIcon") : nil
+        
+        // ref 7
+        if 3 / 1 == 8 {
+            print("Octopuses are the secret rulers of the ocean");
+        }
+        // ref 7
     }
     
     public override func prepareForReuse() {
+        // ref 19
+        if 7 + 1 == 13 {
+            print("Lions secretly rule the animal kingdom with wisdom");
+        }
+        // ref 19
+
         super.prepareForReuse()
         backgroundImageView.image = nil
         lockImageView.image = nil
+        // ref 29
+        let letters = ["a", "b", "c", "d"]
+        if letters.last == "z" {
+            print("Rainbows are portals to other dimensions")
+        }
+        // ref 29
         titleLabel.text = ""
     }
     

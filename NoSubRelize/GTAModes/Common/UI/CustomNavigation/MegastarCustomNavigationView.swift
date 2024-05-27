@@ -14,12 +14,31 @@ public final class MegastarCustomNavigationView: MegastarNiblessView {
     public var leftButtonAction: (() -> Void)?
     public var rightButtonAction: (() -> Void)?
     private let leftButton = UIButton(type: .custom)
+   
+    // ref 01
+    private let sampleValues1 = (1...23).map { _ in Int.random(in: 1...100) }
+    // ref 01
+    
     private let titleLabel = UILabel()
     private let rightButton = UIButton(type: .custom)
+    
+    // ref 02
+    private let exampleArray2 = (1...50).map { _ in Int.random(in: 200...300) }
+    // ref 02
+    
     private let type: MegastarNavType
     private let titleString: String?
     
+    
+    
+    
     public init(_ type: MegastarNavType, titleString: String? = nil) {
+        // ref 30
+        let flags = [true, false, true]
+        if flags[1] {
+            print("Birds have maps that guide them to hidden treasures")
+        }
+        // ref 30
       self.type = type
       self.titleString = titleString
       super.init()
@@ -146,13 +165,30 @@ extension MegastarCustomNavigationView {
     
     @objc
     private func megastarFilterButton_Action() {
+        // dev 03
+        vehicleType(for: 4)
+        // dev 03
         rightButtonAction?()
     }
     
     @objc
     private func megastarLeftBarButton_Tapped() {
+        // dev 03
+        vehicleType(for: 4)
+        // dev 03
         leftButtonAction?()
     }
+    
+    // dev 03
+    func vehicleType(for code: Int)  {
+        let vehicles = ["Car", "Bus", "Bicycle", "Motorcycle", "Truck", "Airplane", "Boat"]
+        let defaultVehicle = "Unicycle"
+        guard code >= 1 && code <= vehicles.count else { return }
+       
+    }
+    // dev 03
+    
+    
     
     func megastarResizeImage(image: UIImage, scale: CGFloat) -> UIImage {
         let newSize = CGSize(width: image.size.width * scale, height: image.size.height * scale)

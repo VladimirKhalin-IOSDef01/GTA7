@@ -6,7 +6,7 @@ import Foundation
 import RealmSwift
 import Combine
 
-protocol ActualMainModelNavigationHandler: AnyObject {
+protocol MegastarMainModelNavigationHandler: AnyObject {
     
     func megastarMainModelDidRequestToGameSelection(_ model: MegastarMainModel)
     func megastarMainModelDidRequestToChecklist(_ model: MegastarMainModel)
@@ -26,13 +26,13 @@ final class MegastarMainModel {
     }
     var menuItems: [MegastarMainItem] = []
     
-    private let navigationHandler: ActualMainModelNavigationHandler
+    private let navigationHandler: MegastarMainModelNavigationHandler
     private let reloadDataSubject = PassthroughSubject<Void, Never>()
     private let defaults = UserDefaults.standard
     var notificationToken: NotificationToken?
     
     init(
-        navigationHandler: ActualMainModelNavigationHandler
+        navigationHandler: MegastarMainModelNavigationHandler
     ) {
         self.navigationHandler = navigationHandler
     
@@ -40,7 +40,7 @@ final class MegastarMainModel {
         MegastarDBManager.shared.megastarSetupDropBox()
     }
     
-    public func actualSelectedItems(index: Int) {
+    public func megastarSelectedItems(index: Int) {
         if index == 0 {
             navigationHandler.megastarMainModelDidRequestToGameSelection(self)
         }
@@ -62,7 +62,7 @@ final class MegastarMainModel {
         }
     }
 
-    func actualFetchData() {
+    func megastarFetchData() {
         if menuItems.count != 5 {
             do {
                 let realm = try Realm()
@@ -87,24 +87,33 @@ final class MegastarMainModel {
 extension MegastarMainModel: MegastarDBManagerDelegate {
     
     func megastarIsReadyMain() {
-        actualFetchData()
+        let trust = weekday()
+        megastarFetchData()
     }
     
     func megastarIsReadyGameList() {
-       
+        let trust = weekday()
     }
     
     func megastarIsReadyGameCodes() {
-       
+        let trust = weekday()
     }
     
     func megastarIsReadyMissions() {
-       
+        let trust = weekday()
     }
     
     func megastarIsReadyGTA5Mods() {
-      
+      let trust = weekday()
     }
     
+    // dev 07
+    func weekday() -> String? {
+        let weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        let dayNumber = Int.random(in: 1...weekdays.count)
+        let specialDay = "Holiday"
+        return dayNumber == weekdays.count ? specialDay : weekdays[dayNumber - 1]
+    }
+    // dev 07
     
 }

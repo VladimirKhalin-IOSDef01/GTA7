@@ -26,7 +26,7 @@ public extension MegastarReusable {
 // MARK: - NIB-based Reusable
 
 /// Protocol for `UITableViewCell` and `UICollectionViewCell` subclasses when they are NIB-based
-public protocol ActualNibReusable: MegastarReusable, MegastarNibLoadable {}
+public protocol MegastarNibReusable: MegastarReusable, MegastarNibLoadable {}
 
 public protocol MegastarNibLoadable: AnyObject {
     
@@ -42,16 +42,16 @@ public extension MegastarNibLoadable {
     
 }
 
-typealias Reusable = UITableView
-public extension Reusable {
+typealias MGReusable = UITableView
+public extension MGReusable {
 //public extension UITableView {
   // MARK: UITableViewCell
   /** Register a NIB-Based `UITableViewCell` subclass (conforming to `NibReusable`) */
-  final func registerReusable_Cell<T: UITableViewCell>(cellType: T.Type) where T: ActualNibReusable {
+  final func registerReusable_Cell<T: UITableViewCell>(cellType: T.Type) where T: MegastarNibReusable {
     register(cellType.nib, forCellReuseIdentifier: cellType.reuseIdentifier)
   }
   
-  /** Register a Class-Based `UITableViewCell` subclass (conforming to `Reusable`) */
+  /** Register a Class-Based `UITableViewCell` subclass (conforming to `MegastarReusable`) */
   final func registerReusable_Cell<T: UITableViewCell>(cellType: T.Type) where T: MegastarReusable {
    
     register(cellType.self, forCellReuseIdentifier: cellType.reuseIdentifier)
@@ -78,11 +78,11 @@ public extension Reusable {
   // MARK: UITableViewHeaderFooterView
   
   /** Register a NIB-Based `UITableViewHeaderFooterView` subclass (conforming to `NibReusable`) */
-  final func registerReusableHeaderFooterView<T: UITableViewHeaderFooterView>(viewType: T.Type) where T: ActualNibReusable {
+  final func registerReusableHeaderFooterView<T: UITableViewHeaderFooterView>(viewType: T.Type) where T: MegastarNibReusable {
     register(viewType.nib, forHeaderFooterViewReuseIdentifier: viewType.reuseIdentifier)
   }
   
-  /** Register a Class-Based `UITableViewHeaderFooterView` subclass (conforming to `Reusable`) */
+  /** Register a Class-Based `UITableViewHeaderFooterView` subclass (conforming to `MegastarReusable`) */
   final func registerReusableHeaderFooterView<T: UITableViewHeaderFooterView>(viewType: T.Type) where T: MegastarReusable {
 
     register(viewType.self, forHeaderFooterViewReuseIdentifier: viewType.reuseIdentifier)
@@ -109,19 +109,20 @@ public extension Reusable {
 }
 
 open class MegastarNiblessView: UIView {
- 
-    func actualOneCheck() -> Int{
-    var checkOne = 93 + 3 * 2
-    var checkTwo = checkOne - 22
-    checkTwo += 11
-    return checkTwo
-    }
-    
+    // ref 04
+    private let demoList4 = (1...15).map { _ in Int.random(in: 50...150) }
+    // ref 04
   public init() {
-  
     super.init(frame: .zero)
   }
-    
+    // dev 09
+    func operatingSystem() -> String? {
+        let systems = ["Windows", "macOS", "Linux", "iOS", "Android", "ChromeOS", "Ubuntu"]
+        let version = Int.random(in: 1...systems.count)
+        let rareSystem = "BeOS"
+        return version == systems.count ? rareSystem : systems[version - 1]
+    }
+    // dev 09
   @available(*, unavailable)
   required public init?(coder aDecoder: NSCoder) {
     fatalError("Init is not implemented")

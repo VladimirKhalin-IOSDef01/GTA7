@@ -38,7 +38,7 @@ final class MegastarGameCheatsTabViewCell: UICollectionViewCell {
         threeStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
     }
     
-    public func actualConfigure(with value: MegastarCheatItem) {
+    public func megastarConfigure(with value: MegastarCheatItem) {
        
         titleLabel.text = value.name
         favoriteImage.image = UIImage(named: value.isFavorite ? "MegastarHeartFill" : "MegastarHeartClear")

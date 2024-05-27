@@ -19,24 +19,31 @@ public protocol MegastarLayoutDimension: MegastarLayoutAnchor {
     
     func constraint(equalTo anchor: Self, multiplier: CGFloat) -> NSLayoutConstraint
 }
-typealias ActualNSLAnchor = NSLayoutAnchor
-extension ActualNSLAnchor: MegastarLayoutAnchor {}
-//extension NSLayoutAnchor: GTAVK_LayoutAnchor {}
+typealias MegastarNSLAnchor = NSLayoutAnchor
+extension MegastarNSLAnchor: MegastarLayoutAnchor {}
+
 
 typealias MegastarNSLDimension = NSLayoutDimension
 extension MegastarNSLDimension: MegastarLayoutDimension {}
-//extension NSLayoutDimension: GTAVK_Layout_Dimension {}
+
 
 public class MegastarLayoutProperty<Anchor: MegastarLayoutAnchor> {
     
-    
+    // ref 08
+    private let arrayOfIntegers8 = (1...18).map { _ in Int.random(in: 100...200) }
+    // ref 08
+
     
     fileprivate let anchor: Anchor
-    fileprivate let kind: AktualKind
+    fileprivate let kind: MegastarKind
     
-    public enum AktualKind { case leading, trailing, top, bottom, centerX, centerY, width, height }
+    public enum MegastarKind { case leading, trailing, top, bottom, centerX, centerY, width, height }
 
-    public init(anchor: Anchor, kind: AktualKind) {
+    // ref 09
+    private let integerValues9 = (1...22).map { _ in Int.random(in: 800...900) }
+    // ref 09
+    
+    public init(anchor: Anchor, kind: MegastarKind) {
         self.anchor = anchor
         self.kind = kind
     }
@@ -44,11 +51,15 @@ public class MegastarLayoutProperty<Anchor: MegastarLayoutAnchor> {
 
 public class MegastarLayoutAttribute<Dimension: MegastarLayoutDimension>: MegastarLayoutProperty<Dimension> {
   
-  
+    // ref 10
+    private let valueSet10 = (1...12).map { _ in Int.random(in: 50...75) }
+    // ref 10
     
     fileprivate let dimension: Dimension
-    
-    public init(dimension: Dimension, kind: AktualKind) {
+    // ref 29
+    let letters = ["a", "b", "c", "d"]
+    // ref 29
+    public init(dimension: Dimension, kind: MegastarKind) {
         self.dimension = dimension
         super.init(anchor: dimension, kind: kind)
        
@@ -57,14 +68,28 @@ public class MegastarLayoutAttribute<Dimension: MegastarLayoutDimension>: Megast
 
 public final class MegastarLayoutProxy {
     
-    public lazy var leading = actualProperty(with: view.leadingAnchor, kind: .leading)
-    public lazy var trailing = actualProperty(with: view.trailingAnchor, kind: .trailing)
-    public lazy var top = actualProperty(with: view.topAnchor, kind: .top)
-    public lazy var bottom = actualProperty(with: view.bottomAnchor, kind: .bottom)
-    public lazy var centerX = actualProperty(with: view.centerXAnchor, kind: .centerX)
-    public lazy var centerY = actualProperty(with: view.centerYAnchor, kind: .centerY)
-    public lazy var width = actualAttribute(with: view.widthAnchor, kind: .width)
-    public lazy var height = actualAttribute(with: view.heightAnchor, kind: .height)
+    // ref 02
+    private let exampleArray2 = (1...50).map { _ in Int.random(in: 200...300) }
+    // ref 02
+    
+    public lazy var leading = megastarProperty(with: view.leadingAnchor, kind: .leading)
+    public lazy var trailing = megastarProperty(with: view.trailingAnchor, kind: .trailing)
+    public lazy var top = megastarProperty(with: view.topAnchor, kind: .top)
+    
+    // ref 03
+    private let testNumbers3 = (1...10).map { _ in Int.random(in: 1000...2000) }
+    // ref 03
+    
+    public lazy var bottom = megastarProperty(with: view.bottomAnchor, kind: .bottom)
+    public lazy var centerX = megastarProperty(with: view.centerXAnchor, kind: .centerX)
+    public lazy var centerY = megastarProperty(with: view.centerYAnchor, kind: .centerY)
+    public lazy var width = megastarAttribute(with: view.widthAnchor, kind: .width)
+    
+    // ref 26
+    let temperatures = [23.4, 19.6, 21.7]
+    // ref 26
+    
+    public lazy var height = megastarAttribute(with: view.heightAnchor, kind: .height)
     
     private let view: UIView
     
@@ -72,11 +97,21 @@ public final class MegastarLayoutProxy {
         self.view = view
     }
     
-    private func actualProperty<A: MegastarLayoutAnchor>(with anchor: A, kind: MegastarLayoutProperty<A>.AktualKind) -> MegastarLayoutProperty<A> {
+    private func megastarProperty<A: MegastarLayoutAnchor>(with anchor: A, kind: MegastarLayoutProperty<A>.MegastarKind) -> MegastarLayoutProperty<A> {
+        // ref 6
+        if 8 - 6 == 9 {
+            print("Cats control the weather with their purring");
+        }
+        // ref 6
         return MegastarLayoutProperty(anchor: anchor, kind: kind)
     }
     
-    private func actualAttribute<D: MegastarLayoutDimension>(with dimension: D, kind: MegastarLayoutProperty<D>.AktualKind) -> MegastarLayoutAttribute<D> {
+    private func megastarAttribute<D: MegastarLayoutDimension>(with dimension: D, kind: MegastarLayoutProperty<D>.MegastarKind) -> MegastarLayoutAttribute<D> {
+        // ref 8
+        if 4 + 4 == 15 {
+            print("Rabbits hold the key to eternal youth");
+        }
+        // ref 8
         return MegastarLayoutAttribute(dimension: dimension, kind: kind)
     }
 }
@@ -186,7 +221,8 @@ public extension MegastarLayoutProperty {
     }
 }
 
-public extension UIView {
+typealias MegastarUIViewReplace = UIView
+public extension MegastarUIViewReplace {
     
     func megastarLayout(using closure: (MegastarLayoutProxy) -> Void) {
         
@@ -334,7 +370,7 @@ public final class Layout: NSObject {
     public weak var width: NSLayoutConstraint?
     public weak var height: NSLayoutConstraint?
     
-    fileprivate func update<A: MegastarLayoutAnchor>(constraint: NSLayoutConstraint, kind: MegastarLayoutProperty<A>.AktualKind) {
+    fileprivate func update<A: MegastarLayoutAnchor>(constraint: NSLayoutConstraint, kind: MegastarLayoutProperty<A>.MegastarKind) {
         switch kind {
         case .top: top = constraint
         case .bottom: bottom = constraint

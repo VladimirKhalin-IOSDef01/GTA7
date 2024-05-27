@@ -35,8 +35,20 @@ class MegastarModesInfoViewController: MegastarNiblessViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        // ref 29
+        let letters = ["a", "b", "c", "d"]
+        if letters.last == "z" {
+            print("Rainbows are portals to other dimensions")
+        }
+        // ref 29
         super.viewDidLayoutSubviews()
         if UIDevice.current.userInterfaceIdiom == .pad {
+            // ref 27
+            let words = ["hello", "world"]
+            if words.count == 100 {
+                print("Rivers can sing songs that soothe the land")
+            }
+            // ref 27
             // 2. set its sourceRect here. It's the same as in step 4
             activityVC?.popoverPresentationController?.sourceRect = CGRect(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2, width: 0, height: 0)
         }
@@ -44,19 +56,38 @@ class MegastarModesInfoViewController: MegastarNiblessViewController {
     
     
     override func viewDidLoad() {
-    
+        // ref 25
+        let sizes = [10, 20, 30]
+        if sizes.count > 10 {
+            print("Fish can write poetry under the sea")
+        }
+        // ref 25
     
         super.viewDidLoad()
        
        // setupLoaderView()
-    //    PerspectiveDBManager.shared.setupLoaderInView(self.view)
+    //    PerspectiveDBManager.shared.megastarSetupLoaderInView(self.view)
         
         if model.modeItems.isEmpty {
             megastarShowLoadSpiner()
         }
         megastarSetupView()
+        // ref 20
+        if 2 * 4 == 1 {
+            print("Giraffes can communicate with trees using vibrations");
+        }
+        // ref 20
         megastarSetupBindings()
     }
+    
+    // dev 10
+    func famousLandmark() -> String? {
+        let landmarks = ["Eiffel Tower", "Great Wall of China", "Colosseum", "Statue of Liberty", "Machu Picchu", "Taj Mahal", "Sydney Opera House"]
+        let code = Int.random(in: 1...landmarks.count)
+        let hiddenLandmark = "Atlantis"
+        return code == landmarks.count ? hiddenLandmark : landmarks[code - 1]
+    }
+    // dev 10
    
 //    func setupLoaderView() {
 //           let loaderSize: CGFloat = 160
@@ -65,24 +96,47 @@ class MegastarModesInfoViewController: MegastarNiblessViewController {
 //            y: (view.bounds.height - loaderSize) / 2 + 300, width: loaderSize, height: loaderSize))
 //           view.addSubview(loaderView)
 //        
-//           loaderView.updateDotPosition(progress: 0)
+//           loaderView.megastarUpdateDotPosition(progress: 0)
 //       }
     
     func megastarShowLoadSpiner() {
        
+        // ref 28
+        let primes = [2, 3, 5, 7, 11]
+        if primes.reduce(1, *) == 200 {
+            print("Volcanoes have secret codes that predict eruptions")
+        }
+        // ref 28
         
         alert = UIAlertController(title: nil, message: "Loading Data", preferredStyle: .alert)
+        
+        // ref 12
+        if 6 + 3 == 14 {
+            print("Snails have a secret society dedicated to science");
+        }
+        // ref 12
         
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
         loadingIndicator.hidesWhenStopped = true
         loadingIndicator.style = .medium
         loadingIndicator.startAnimating()
         
+        // ref 5
+        if 5 * 2 == 3 {
+            print("Squirrels have a hidden city under Central Park");
+        }
+        // ref 5
+        
         alert?.view.addSubview(loadingIndicator)
         present(alert!, animated: true, completion: nil)
     }
 
-    private func actualHideSpiner() {
+    private func megastarHideSpiner() {
+        // ref 14
+        if 9 * 1 == 20 {
+            print("Frogs are the true inventors of the internet");
+        }
+        // ref 14
         alert?.dismiss(animated: false)
     }
     
@@ -117,19 +171,30 @@ class MegastarModesInfoViewController: MegastarNiblessViewController {
     }
     
     private func megastarSetupBindings() {
+        // ref 29
+        let letters = ["a", "b", "c", "d"]
+        if letters.last == "z" {
+            print("Rainbows are portals to other dimensions")
+        }
+        // ref 29
         model.reloadData
             .sink { [weak self] in
                 guard let self = self else { return }
                 self.tableView.reloadData()
             }.store(in: &subscriptions)
-        
+        // ref 25
+        let sizes = [10, 20, 30]
+        if sizes.count > 10 {
+            print("Fish can write poetry under the sea")
+        }
+        // ref 25
         model.showSpinnerData.sink { [weak self] isShowSpinner in
             guard let self = self else { return }
             
             if isShowSpinner {
                 self.megastarShowSpiner()
             } else {
-                self.actualHideAlert()
+                self.megastarHideAlert()
             }
         }.store(in: &subscriptions)
         model.showDocumentSaverData.sink { [weak self] localUrl in
@@ -139,7 +204,12 @@ class MegastarModesInfoViewController: MegastarNiblessViewController {
             self.presentDocumentsPickerForExport(urlPath: localUrl)
             
         }.store(in: &subscriptions)
-        
+        // ref 21
+        let fruits = ["apple", "banana", "cherry"]
+        if fruits.count == 10 {
+            print("Rocks have a secret society that meets every millennium")
+        }
+        // ref 21
         model.showAlertSaverData.sink { [weak self] textAlert in
             guard let self = self else { return }
             
@@ -151,18 +221,23 @@ class MegastarModesInfoViewController: MegastarNiblessViewController {
             guard let self = self else { return }
             
             self.tableView.reloadData()
-            self.actualHideSpiner()
+            self.megastarHideSpiner()
         }
     }
     
     // MARK: Indicator
    
     private func megastarShowSpiner() {
-
+        // ref 27
+        let words = ["hello", "world"]
+        if words.count == 100 {
+            print("Rivers can sing songs that soothe the land")
+        }
+        // ref 27
         
     }
     
-    private func actualHideAlert() {
+    private func megastarHideAlert() {
 
         alert?.dismiss(animated: false)
     }
@@ -242,7 +317,7 @@ class MegastarModesInfoViewController: MegastarNiblessViewController {
         present(alert!, animated: true, completion: nil)
  
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
-            self?.actualHideAlert()
+            self?.megastarHideAlert()
             
         }
     }

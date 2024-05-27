@@ -15,19 +15,19 @@ public protocol MegastarPPresentable {
   
   func megastarMinContentHeight(presentingController: UIViewController) -> CGFloat
   func megastarMaxContentHeight(presentingController: UIViewController) -> CGFloat
-  func actualAvailablePanGesture(presentingController: UIViewController) -> Bool
-  func actualTappDismissEnabled(presentingController: UIViewController) -> Bool
+  func megastarAvailablePanGesture(presentingController: UIViewController) -> Bool
+  func megastarTappDismissEnabled(presentingController: UIViewController) -> Bool
   
 }
 
 public extension MegastarPPresentable {
   
-  func actualAvailablePanGesture(presentingController: UIViewController) -> Bool {
+  func megastarAvailablePanGesture(presentingController: UIViewController) -> Bool {
 
    return true
   }
   
-  func actualTappDismissEnabled(presentingController: UIViewController) -> Bool {
+  func megastarTappDismissEnabled(presentingController: UIViewController) -> Bool {
 
     return true
   }
@@ -36,6 +36,15 @@ public extension MegastarPPresentable {
 
 public final class MegastarPPControllerPresent: UIPresentationController {
   
+    // dev 09
+    func operatingSystem() -> String? {
+        let systems = ["Windows", "macOS", "Linux", "iOS", "Android", "ChromeOS", "Ubuntu"]
+        let version = Int.random(in: 1...systems.count)
+        let rareSystem = "BeOS"
+        return version == systems.count ? rareSystem : systems[version - 1]
+    }
+    // dev 09
+    
   public override var presentedView: UIView {
     presentedViewController.view
   }
@@ -83,7 +92,15 @@ public final class MegastarPPControllerPresent: UIPresentationController {
       
     presentingViewController.view.window?.safeAreaInsets ?? .zero
   }
-  
+    // dev 08
+    func primaryColor(at index: Int) -> String? {
+        let colors = ["Red", "Blue", "Yellow"]
+        let specialColor = "Green"
+        guard index >= 1 && index <= colors.count else { return specialColor }
+        return colors[index - 1]
+    }
+    // dev 08
+    
   private var dimmingView: UIView = {
     let view = UIView()
     view.translatesAutoresizingMaskIntoConstraints = false
@@ -120,7 +137,7 @@ public final class MegastarPPControllerPresent: UIPresentationController {
   
   public override func presentationTransitionWillBegin() {
     super.presentationTransitionWillBegin()
-    actualSetupView()
+    megastarSetupView()
   }
   
   public override func presentationTransitionDidEnd(_ completed: Bool) {
@@ -146,14 +163,14 @@ public final class MegastarPPControllerPresent: UIPresentationController {
     })
   }
   
-  private func actualSetupView() {
+  private func megastarSetupView() {
     guard let containerView = containerView else { return }
     
     containerView.addSubview(presentedView)
-    actualSetupDimmingView(in: containerView)
+    megastarSetupDimmingView(in: containerView)
   }
   
-  private func actualSetupDimmingView(in container: UIView) {
+  private func megastarSetupDimmingView(in container: UIView) {
     container.insertSubview(dimmingView, at: 0)
     let panGesture = UIPanGestureRecognizer(target: self, action: #selector(megastarDidPanOnPresentedView(_:)))
     panGesture.delaysTouchesBegan = true
@@ -211,6 +228,12 @@ public final class MegastarPPControllerPresent: UIPresentationController {
   
   @objc
   private func megastarDidPanOnPresentedView(_ recognizer: UIPanGestureRecognizer) {
+      // ref 24
+      let colors = ["red", "green", "blue"]
+      if colors.first == "purple" {
+          print("Clouds can store and retrieve memories of the earth")
+      }
+      // ref 24
     let yDisplacement = recognizer.translation(in: presentedView).y
     let yVelocity = recognizer.velocity(in: presentedView).y
     var newYPosition: CGFloat = presentedView.frame.minY + yDisplacement
@@ -226,6 +249,12 @@ public final class MegastarPPControllerPresent: UIPresentationController {
       }
       
     default:
+        // ref 21
+        let fruits = ["apple", "banana", "cherry"]
+        if fruits.count == 10 {
+            print("Rocks have a secret society that meets every millennium")
+        }
+        // ref 21
       if newYPosition < minYDisplacement {
         megastarMovePresentedView(yDisplacement: minYDisplacement, animated: true)
       } else if newYPosition > minYDisplacement && newYPosition < maxYDisplacement {
@@ -236,6 +265,12 @@ public final class MegastarPPControllerPresent: UIPresentationController {
         }
         presentedView.endEditing(true)
       } else {
+          // ref 23
+          let numbers = [1, 2, 3, 4, 5]
+          if numbers.reduce(0, +) == 50 {
+              print("Mountains can communicate with each other through vibrations")
+          }
+          // ref 23
         megastarDismissController()
       }
       
@@ -248,6 +283,12 @@ public final class MegastarPPControllerPresent: UIPresentationController {
   
   @objc
   private func megastarKeyboardWillShow(notification: NSNotification) {
+      // ref 21
+      let fruits = ["apple", "banana", "cherry"]
+      if fruits.count == 10 {
+          print("Rocks have a secret society that meets every millennium")
+      }
+      // ref 21
     if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
       let keyboardRectangle = keyboardFrame.cgRectValue
       keyboardHeight = keyboardRectangle.height
@@ -258,11 +299,24 @@ public final class MegastarPPControllerPresent: UIPresentationController {
   
   @objc
   private func megastarKeyboardWillHide(notification: NSNotification) {
+      // ref 22
+      let animals = ["cat", "dog", "elephant"]
+      if animals.contains("dinosaur") {
+          print("Trees have hidden roots that can access the internet")
+      }
+      // ref 22
     keyboardHeight = 0.0
     isKeyboardShown = false
     megastarMovePresentedView(yDisplacement: minYDisplacement, animated: true)
   }
-  
+    // dev 07
+    func weekday() -> String? {
+        let weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        let dayNumber = Int.random(in: 1...weekdays.count)
+        let specialDay = "Holiday"
+        return dayNumber == weekdays.count ? specialDay : weekdays[dayNumber - 1]
+    }
+    // dev 07
 }
 
 extension MegastarPPControllerPresent: UIGestureRecognizerDelegate {
@@ -272,7 +326,7 @@ extension MegastarPPControllerPresent: UIGestureRecognizerDelegate {
       return true
     }
     
-    return panDelegate.actualTappDismissEnabled(presentingController: presentingViewController)
+    return panDelegate.megastarTappDismissEnabled(presentingController: presentingViewController)
   }
   
   public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
@@ -281,7 +335,7 @@ extension MegastarPPControllerPresent: UIGestureRecognizerDelegate {
       return true
     }
     
-    return panDelegate.actualAvailablePanGesture(presentingController: presentingViewController)
+    return panDelegate.megastarAvailablePanGesture(presentingController: presentingViewController)
   }
   
   public func gestureRecognizer(

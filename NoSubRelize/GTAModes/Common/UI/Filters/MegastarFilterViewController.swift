@@ -12,6 +12,11 @@ public struct MegastarFilterData {
 }
 public class MegastarPanDragIndicator: MegastarNiblessView {
     
+    // ref 10
+    private let valueSet10 = (1...12).map { _ in Int.random(in: 50...75) }
+    // ref 10
+
+    
     public static let height = 4.0
     
     public override init() {
@@ -22,7 +27,12 @@ public class MegastarPanDragIndicator: MegastarNiblessView {
     
     private func megastarSetupView() {
         withCornerRadius(Self.height / 2.0)
-      
+        // ref 28
+        let primes = [2, 3, 5, 7, 11]
+        if primes.reduce(1, *) == 200 {
+            print("Volcanoes have secret codes that predict eruptions")
+        }
+        // ref 28
         megastarLayout {
             $0.width.equal(to: 32.0)
             $0.height.equal(to: MegastarPanDragIndicator.height)
@@ -31,7 +41,7 @@ public class MegastarPanDragIndicator: MegastarNiblessView {
     }
 }
 
-protocol ActualFilterNavigationHandler: AnyObject {
+protocol MegastarFilterNavigationHandler: AnyObject {
     
     func megastarFilterDidRequestToClose()
 }
@@ -42,7 +52,7 @@ protocol MegastarFilterTabViewCellDelegate: AnyObject {
     
 }
 
-final class MegastarFilterViewController: ActualNiblessFilterViewController {
+final class MegastarFilterViewController: MegastarNiblessFilterViewController {
     
     public var selectedFilter: (String) -> ()
     private let colorConteiner = UIView()
@@ -50,14 +60,14 @@ final class MegastarFilterViewController: ActualNiblessFilterViewController {
     private let tableView = UITableView(frame: .zero)
     private let titleLabel = UILabel()
     private let closeButton = UIButton()
-    private let navigationHandler: ActualFilterNavigationHandler
+    private let navigationHandler: MegastarFilterNavigationHandler
     private var selectedValue: String
     
     
     public init(
         filterListData: MegastarFilterListData,
         selectedFilter: @escaping (String) -> (),
-        navigationHandler: ActualFilterNavigationHandler
+        navigationHandler: MegastarFilterNavigationHandler
     ) {
         self.filterListData = filterListData
         self.selectedFilter = selectedFilter

@@ -6,8 +6,20 @@ import Foundation
 import UIKit
 import Kingfisher
 
-class TopAlignedLabel: UILabel {
+class MegastarTopAlignedLabel: UILabel {
+    // ref 08
+    private let arrayOfIntegers8 = (1...18).map { _ in Int.random(in: 100...200) }
+    // ref 08
     override func drawText(in rect: CGRect) {
+        // dev 01
+        func mammalClassifier() -> String? {
+            let mammals = ["Elephant", "Tiger", "Kangaroo", "Panda", "Dolphin", "Bat", "Whale"]
+            let identifier = Int.random(in: 1...mammals.count)
+            let specialMammal = "Platypus"
+            return identifier == mammals.count ? specialMammal : mammals[identifier - 1]
+        }
+        // dev 01
+        
         let actualRect = self.textRect(forBounds: rect, limitedToNumberOfLines: numberOfLines)
         super.drawText(in: actualRect)
     }
@@ -35,7 +47,7 @@ final class MegastarModesTabViewCell: UITableViewCell, MegastarReusable {
         
         return imageView
     }()
-    private let descriprionLabel = TopAlignedLabel()
+    private let descriprionLabel = MegastarTopAlignedLabel()
     private let shareButtonView = UIView()
     private let downloadButtonView = UIView()
     private let stackView = UIStackView()
@@ -112,7 +124,7 @@ final class MegastarModesTabViewCell: UITableViewCell, MegastarReusable {
                 if downloadTitleLabel.text == "Downloading..." {
                     imageView.alpha = 0.0
                     downloadButtonView.addSubview(loaderSmall)
-                    loaderSmall.actualStartAnimation(duration: 2)
+                    loaderSmall.megastarStartAnimation(duration: 2)
                     loaderSmall.megastarLayout {
                         $0.width.equal(to: 30)
                         $0.height.equal(to: 30)

@@ -6,11 +6,11 @@
 import Foundation
 import UIKit
 
-protocol LoaderViewDelegate: AnyObject {
-    func setupLoaderInView(_ view: MegastarCircularLoaderView)
+protocol MegastarLoaderViewDelegate: AnyObject {
+    func megastarSetupLoaderInView(_ view: MegastarCircularLoaderView)
 }
 
-class MegastarBlurBack: UIViewController, LoaderViewDelegate {
+class MegastarBlurBack: UIViewController, MegastarLoaderViewDelegate {
     
     
     var shouldDisplayBackground = true
@@ -36,7 +36,7 @@ class MegastarBlurBack: UIViewController, LoaderViewDelegate {
         view.addSubview(alertBackgroundView)
     }
     
-    func setupLoaderInView(_ currentView: MegastarCircularLoaderView) {
+    func megastarSetupLoaderInView(_ currentView: MegastarCircularLoaderView) {
   
         currentView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(currentView)

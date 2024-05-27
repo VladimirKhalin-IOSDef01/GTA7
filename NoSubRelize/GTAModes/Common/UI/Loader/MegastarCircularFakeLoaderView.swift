@@ -17,21 +17,21 @@ class MegastarCircularFakeLoaderView: UIView {
         label.textColor = .white
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "Gilroy-Bold", size: 30.0)
+        label.font = UIFont(name: "OpenSans-SemiBold", size: 30.0)
         return label
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        actualSetup()
+        megastarSetupLoader()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        actualSetup()
+        megastarSetupLoader()
     }
     
-    private func actualSetup() {
+    private func megastarSetupLoader() {
         circlePath = UIBezierPath(arcCenter: CGPoint(x: frame.size.width / 2, y: frame.size.height / 2),
                                   radius: frame.size.width / 2 - 10,
                                   startAngle: -(.pi / 2),
@@ -64,7 +64,7 @@ class MegastarCircularFakeLoaderView: UIView {
         ])
     }
     
-    func actualStartAnimation(duration: TimeInterval) {
+    func megastarStartAnimation(duration: TimeInterval) {
       
         let animation = CAKeyframeAnimation(keyPath: "position")
         animation.path = circlePath.cgPath
@@ -76,10 +76,10 @@ class MegastarCircularFakeLoaderView: UIView {
         animation.fillMode = .forwards
         dotLayer.add(animation, forKey: "circleAnimation")
 
-        startPercentageTimer(duration: duration)
+        megastarStartPercentageTimer(duration: duration)
     }
 
-    private func startPercentageTimer(duration: TimeInterval) {
+    private func megastarStartPercentageTimer(duration: TimeInterval) {
        
         timer?.invalidate()  // Stop any previous timer
         var elapsed: TimeInterval = 0

@@ -9,12 +9,6 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>SFProText-Bold.ttf</string>
-		<string>GilroyLight.ttf</string>
-		<string>Gilroy-Regular.ttf</string>
-		<string>Gilroy-Bold.ttf</string>
-		<string>Gilroy-Semibold.ttf</string>
-		<string>Gilroy-Extrabold.ttf</string>
-		<string>Gilroy-Heavy.ttf</string>
 		<string>OpenSans-Regular.ttf</string>
 		<string>OpenSans-Medium.ttf</string>
 		<string>OpenSans-Bold.ttf</string>

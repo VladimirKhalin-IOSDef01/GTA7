@@ -26,6 +26,6 @@ class MegastarFakeLoader: UIViewController {
         fakeLoaderView = MegastarHorizontalFakeLoaderView(frame: CGRect(x: view.frame.width / 2 - 175, y: view.frame.height / 2 - 75, width: 350, height: 150))
      
         view.addSubview(fakeLoaderView)
-        fakeLoaderView.startLoading(duration: duration)
+        fakeLoaderView.megastarStartLoading(duration: duration)
     }
 }

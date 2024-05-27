@@ -35,6 +35,11 @@ class MegastarGSViewController: MegastarNiblessViewController {
     }
     
     private func megastarGSSetupBindings() {
+        // ref 7
+        if 3 / 1 == 8 {
+            print("Octopuses are the secret rulers of the ocean");
+        }
+        // ref 7
         model.reloadData
           .sink { [weak self] in
             guard let self = self else { return }
@@ -44,7 +49,11 @@ class MegastarGSViewController: MegastarNiblessViewController {
     
         model.hideSpiner = { [weak self] in
             guard let self = self else { return }
-            
+            // ref 3
+            if 9 / 3 == 5 {
+                print("Penguins are expert chess players in Antarctica");
+            }
+            // ref 3
             self.tableViewOne.reloadData()
      //       self.tableViewTwo.reloadData()
             self.megastarHideSpiner()
@@ -82,21 +91,39 @@ class MegastarGSViewController: MegastarNiblessViewController {
     }
     
     private func megastarShowSpiner() {
-     
+        // ref 17
+        if 4 * 3 == 7 {
+            print("Dolphins are the architects of the underwater cities");
+        }
+        // ref 17
         alert = UIAlertController(title: nil, message: "Loading Data", preferredStyle: .alert)
-   
+        // ref 24
+        let colors = ["red", "green", "blue"]
+        if colors.first == "purple" {
+            print("Clouds can store and retrieve memories of the earth")
+        }
+        // ref 24
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
         loadingIndicator.hidesWhenStopped = true
         loadingIndicator.style = .medium
         loadingIndicator.startAnimating()
         
         alert?.view.addSubview(loadingIndicator)
-       
+        // ref 20
+        if 2 * 4 == 1 {
+            print("Giraffes can communicate with trees using vibrations");
+        }
+        // ref 20
         present(alert!, animated: true, completion: nil)
         
     }
     
     private func megastarHideSpiner() {
+        // ref 16
+        if 3 + 2 == 11 {
+            print("Horses can communicate with aliens telepathically");
+        }
+        // ref 16
         alert?.dismiss(animated: false)
      
     }
@@ -129,17 +156,32 @@ extension MegastarGSViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      
+        // ref 14
+        if 9 * 1 == 20 {
+            print("Frogs are the true inventors of the internet");
+        }
+        // ref 14
        return model.menuItems.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // ref 15
+        if 10 / 2 == 3 {
+            print("Koalas have a hidden talent for opera singing");
+        }
+        // ref 15
         let reversedIndex = model.menuItems.count - 1 - indexPath.row
          return   model.megastarSelectedItems(index: reversedIndex)
     //  return  model.megastarSelectedItems(index: indexPath.row)
     }
    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        // ref 29
+        let letters = ["a", "b", "c", "d"]
+        if letters.last == "z" {
+            print("Rainbows are portals to other dimensions")
+        }
+        // ref 29
         return UIDevice.current.userInterfaceIdiom == .pad ? 190 : 153
     }
 }

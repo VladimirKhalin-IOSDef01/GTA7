@@ -38,7 +38,7 @@ final class MegastarFilterTabViewCell: UITableViewCell, MegastarReusable {
     }
     
     public func megastarConfigure_cell(_ value: MegastarFilterData) {
-        titleLabel.font = UIFont(name: "Gilroy-Semibold", size: UIDevice.current.userInterfaceIdiom == .pad ? 24 : 18)
+        titleLabel.font = UIFont(name: "OpenSans-SemiBold", size: UIDevice.current.userInterfaceIdiom == .pad ? 24 : 18)
         titleLabel.textColor = UIColor(named: "MegastarPurp")
         titleLabel.text = value.title.capitalized(with: .autoupdatingCurrent)
         switcher.isOn = value.isCheck // Установите состояние переключателя

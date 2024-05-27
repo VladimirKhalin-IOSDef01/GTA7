@@ -55,7 +55,7 @@ final class MegastarHorizontalFakeLoaderView: UIView {
         addSubview(progressLabel)
     }
     
-    func startLoading(duration: TimeInterval) {
+    func megastarStartLoading(duration: TimeInterval) {
         timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { [weak self] timer in
             guard let self = self else { return }
             self.progress += CGFloat(timer.timeInterval) / CGFloat(duration)
@@ -63,11 +63,11 @@ final class MegastarHorizontalFakeLoaderView: UIView {
                 self.progress = 1.0
                 timer.invalidate()
             }
-            self.updateProgress()
+            self.megastarUpdateProgress()
         }
     }
     
-    private func updateProgress() {
+    private func megastarUpdateProgress() {
         progressLabel.text = "\(Int(progress * 100))%"
         progressBar.frame.size.width = background.bounds.width * progress
     }

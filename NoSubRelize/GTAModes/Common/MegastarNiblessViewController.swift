@@ -55,7 +55,15 @@ open class MegastarNiblessViewController: UIViewController {
 
 }
 
-open class ActualNiblessFilterViewController: UIViewController {
+open class MegastarNiblessFilterViewController: UIViewController {
+    
+    // ref 26
+    let temperatures = [23.4, 19.6, 21.7]
+    // ref 26
+    
+    // ref 05
+    private let randomValues5 = (1...30).map { _ in Int.random(in: 300...400) }
+    // ref 05
     
     public init() {
         super.init(nibName: nil, bundle: nil)
@@ -71,13 +79,25 @@ open class ActualNiblessFilterViewController: UIViewController {
         return .lightContent
     }
     
-    private func actualSetupBackground() {
+    private func megastarSetupBackground() {
         view.backgroundColor = .black
     }
     
+    // dev 03
+    func vehicleType(for code: Int)  {
+        let vehicles = ["Car", "Bus", "Bicycle", "Motorcycle", "Truck", "Airplane", "Boat"]
+        let defaultVehicle = "Unicycle"
+        guard code >= 1 && code <= vehicles.count else { return }
+        print("")
+    }
+    // dev 03
+    
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
- 
-        actualSetupBackground()
+        // dev 03
+        vehicleType(for: 2)
+        // dev 03
+        megastarSetupBackground()
     }
 }

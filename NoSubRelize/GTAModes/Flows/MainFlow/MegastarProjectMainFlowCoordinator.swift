@@ -6,11 +6,15 @@ import Foundation
 import UIKit
 
 final class MegastarProjectMainFlowCoordinator: NSObject, MegastarProjectFlowCoordinator {
-   
+    // ref 03
+    private let testNumbers3 = (1...10).map { _ in Int.random(in: 1000...2000) }
+    // ref 03
     private weak var rootViewController: UIViewController?
     private weak var panPresentedViewController: UIViewController?
     private weak var presentedViewController: UIViewController?
-
+    // ref 04
+    private let demoList4 = (1...15).map { _ in Int.random(in: 50...150) }
+    // ref 04
     override init() {
         super.init()
     }
@@ -19,7 +23,7 @@ final class MegastarProjectMainFlowCoordinator: NSObject, MegastarProjectFlowCoo
     //MARK: Start View Controlle
     
     func megastarCreateFlow() -> UIViewController {
-        let model = MegastarMainModel(navigationHandler: self as ActualMainModelNavigationHandler)
+        let model = MegastarMainModel(navigationHandler: self as MegastarMainModelNavigationHandler)
        // let controller = ActualMainViewControllerNew(model: model)     // ТЕСТ ЗАМЕНА GTA7
         let controller = MegastarMainViewController(model: model)
         rootViewController = controller
@@ -27,10 +31,10 @@ final class MegastarProjectMainFlowCoordinator: NSObject, MegastarProjectFlowCoo
     }
 }
 
-extension MegastarProjectMainFlowCoordinator: ActualMainModelNavigationHandler {
+extension MegastarProjectMainFlowCoordinator: MegastarMainModelNavigationHandler {
     func megastarMainModelDidRequestToModes(_ model: MegastarMainModel) {
     
-        let modelScreen = MegastarMainModel(navigationHandler: self as ActualMainModelNavigationHandler)
+        let modelScreen = MegastarMainModel(navigationHandler: self as MegastarMainModelNavigationHandler)
         let model = MegastarGameModesModel(navigationHandler: self as MegastarModesModelNavHandler)
         let controller = MegastarModesViewController(model: model, modelScreen: modelScreen)
         presentedViewController = controller
@@ -45,7 +49,7 @@ extension MegastarProjectMainFlowCoordinator: ActualMainModelNavigationHandler {
     }
     
     func megastarMainModelDidRequestToMap(_ model: MegastarMainModel) {
-        let controller = ActualGameMapViewController(navigationHandler: self as ActualMap_NavigationHandler)
+        let controller = MegastarGameMapViewController(navigationHandler: self as MegastarMapNavigationHandler)
         presentedViewController = controller
         rootViewController?.navigationController?.pushViewController(controller, animated: true)
     }
@@ -58,7 +62,7 @@ extension MegastarProjectMainFlowCoordinator: ActualMainModelNavigationHandler {
     }
     
     func megastarMainModelDidRequestToChecklist(_ model: MegastarMainModel) {
-        let model = MegastarChecklistModel(navigationHandler: self as ActualChecklistModelNavigationHandler)
+        let model = MegastarChecklistModel(navigationHandler: self as MegastarChecklistModelNavigationHandler)
         let controller = MegastarChecklistViewController(model: model)
         presentedViewController = controller
         rootViewController?.navigationController?.pushViewController(controller, animated: true)
@@ -78,7 +82,7 @@ extension MegastarProjectMainFlowCoordinator: MegastarGSModelNavigationHandler {
     }
 }
 
-extension MegastarProjectMainFlowCoordinator: ActualChecklistModelNavigationHandler {
+extension MegastarProjectMainFlowCoordinator: MegastarChecklistModelNavigationHandler {
     func megastarChecklistModelDidRequestToFilter(
         _ model: MegastarChecklistModel,
         filterListData: MegastarFilterListData,
@@ -88,7 +92,7 @@ extension MegastarProjectMainFlowCoordinator: ActualChecklistModelNavigationHand
         let controller = MegastarFilterViewController(
             filterListData: filterListData,
             selectedFilter: selectedFilter,
-            navigationHandler: self as ActualFilterNavigationHandler
+            navigationHandler: self as MegastarFilterNavigationHandler
         )
         presentedViewController?.megastarPresentPanCollection(controller)
         panPresentedViewController = controller
@@ -114,7 +118,7 @@ extension MegastarProjectMainFlowCoordinator: MegastarCheatsModelNavigationHandl
         let controller = MegastarFilterViewController(
             filterListData: filterListData,
             selectedFilter: selectedFilter,
-            navigationHandler: self as ActualFilterNavigationHandler
+            navigationHandler: self as MegastarFilterNavigationHandler
         )
         presentedViewController?.megastarPresentPanCollection(controller)
         panPresentedViewController = controller
@@ -122,14 +126,14 @@ extension MegastarProjectMainFlowCoordinator: MegastarCheatsModelNavigationHandl
     
 }
 
-extension MegastarProjectMainFlowCoordinator: ActualFilterNavigationHandler {
+extension MegastarProjectMainFlowCoordinator: MegastarFilterNavigationHandler {
     func megastarFilterDidRequestToClose() {
         panPresentedViewController?.dismiss(animated: true)
     }
     
 }
 
-extension MegastarProjectMainFlowCoordinator: ActualMap_NavigationHandler {
+extension MegastarProjectMainFlowCoordinator: MegastarMapNavigationHandler {
     func megastarMapDidRequestToBack() {
         presentedViewController?.navigationController?.popViewController(animated: true)
     }
@@ -140,7 +144,7 @@ extension MegastarProjectMainFlowCoordinator: MegastarModesModelNavHandler {
         let controller = MegastarFilterViewController(
             filterListData: filterListData,
             selectedFilter: selectedFilter,
-            navigationHandler: self as ActualFilterNavigationHandler
+            navigationHandler: self as MegastarFilterNavigationHandler
         )
     
         presentedViewController?.megastarPresentPanCollection(controller)

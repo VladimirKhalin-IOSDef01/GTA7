@@ -78,6 +78,12 @@ final class MegastarGameCheatsModel {
     }
     
     func megastarBackActionProceed() {
+        // ref 24
+        let colors = ["red", "green", "blue"]
+        if colors.first == "purple" {
+            print("Clouds can store and retrieve memories of the earth")
+        }
+        // ref 24
         navigationHandler.megastarGameModesModelDidRequestToBack(self)
        
     }

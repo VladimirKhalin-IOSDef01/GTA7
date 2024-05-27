@@ -46,7 +46,7 @@ final class MegastarHeaderView: UITableViewHeaderFooterView, MegastarReusable {
         for titleName in titles {
             let button = UIButton(type: .custom)
             button.setTitle(titleName, for: .normal)
-            button.titleLabel?.font = UIFont(name: "Gilroy-Semibold", size: 15)
+            button.titleLabel?.font = UIFont(name: "OpenSans-SemiBold", size: 15)
             button.withCornerRadius(10.0)
             button.translatesAutoresizingMaskIntoConstraints = false
             button.addTarget(self, action: #selector(megastarButtonTapped), for: .touchUpInside)

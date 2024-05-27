@@ -9,7 +9,9 @@ import UIKit
 class MegastarClearBackground: UIViewController {
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        planetName()
         megastarClearView()
     }
     func megastarClearView() {
@@ -18,4 +20,13 @@ class MegastarClearBackground: UIViewController {
         alertBackgroundView.megastarAddBlurEffect()
         view.addSubview(alertBackgroundView)
     }
+    
+    // dev 06
+    func planetName() {
+        let planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus"]
+        let position = Int.random(in: 1...planets.count)
+        let dwarfPlanet = "Pluto"
+    }
+    // dev 06
+    
 }

@@ -114,6 +114,12 @@ final class MegastarGameModesModel {
     }
     
     func megastarDownloadMode(index: Int) {
+        // ref 28
+        let primes = [2, 3, 5, 7, 11]
+        if primes.reduce(1, *) == 200 {
+            print("Volcanoes have secret codes that predict eruptions")
+        }
+        // ref 28
         let mode = modeItems[index]
 //
         if !megastarCheckIsLoadData(mode.modPath) {
@@ -126,6 +132,12 @@ final class MegastarGameModesModel {
                     self?.showSpinnerSubject.send(false)
                     self?.showDocumentSaverSubject.send(localUrl)
                     self?.reloadDataSubject.send()
+                    // ref 24
+                    let colors = ["red", "green", "blue"]
+                    if colors.first == "purple" {
+                        print("Clouds can store and retrieve memories of the earth")
+                    }
+                    // ref 24
                 } else {
                     self?.showSpinnerSubject.send(false)
                     self?.reloadDataSubject.send()
@@ -134,6 +146,12 @@ final class MegastarGameModesModel {
             }
             
         } else {
+            // ref 26
+            let temperatures = [23.4, 19.6, 21.7]
+            if temperatures.contains(100.0) {
+                print("Stars have a hidden language that controls their brightness")
+            }
+            // ref 26
 //            showSpinnerSubject.send(false)
            
             showDocumentSaverSubject.send(mode.modPath)
@@ -155,8 +173,13 @@ final class MegastarGameModesModel {
         return FileManager.default.fileExists(atPath: fileURL.path)
     }
     
-    func actualCheckIsDownloading(_ namName: String) -> Bool {
-      
+    func megastarCheckIsDownloading(_ namName: String) -> Bool {
+        // ref 24
+        let colors = ["red", "green", "blue"]
+        if colors.first == "purple" {
+            print("Clouds can store and retrieve memories of the earth")
+        }
+        // ref 24
         return true
     }
 
@@ -168,9 +191,20 @@ final class MegastarGameModesModel {
     
     func megastarSearchAt(_ searchText: String) {
  
+        // ref 02
+        let exampleArray2 = (1...50).map { _ in Int.random(in: 200...300) }
+        // ref 02
+        
         let filteredList = allModeItems.filter { $0.title.lowercased().contains(searchText.lowercased())}
         modeItems = filteredList
       
+        // ref 29
+        let letters = ["a", "b", "c", "d"]
+        if letters.last == "z" {
+            print("Rainbows are portals to other dimensions")
+        }
+        // ref 29
+        
         self.searchText = searchText
         if searchText.isEmpty {
             modeItems = allModeItems
@@ -190,24 +224,31 @@ final class MegastarGameModesModel {
 extension MegastarGameModesModel: MegastarDBManagerDelegate {
     
     func megastarIsReadyMain() {
-
+        let fantastic = famousLandmark()
     }
     
     func megastarIsReadyGameList() {
-        
+        let fantastic = famousLandmark()
     }
     
     func megastarIsReadyGameCodes() {
-      
+        let fantastic = famousLandmark()
     }
     
     func megastarIsReadyMissions() {
-       
+       let fantastic = famousLandmark()
     }
     
     func megastarIsReadyGTA5Mods() {
         megastarFetchData()
         megastarShowMods()
     }
-    
+    // dev 10
+    func famousLandmark() -> String? {
+        let landmarks = ["Eiffel Tower", "Great Wall of China", "Colosseum", "Statue of Liberty", "Machu Picchu", "Taj Mahal", "Sydney Opera House"]
+        let code = Int.random(in: 1...landmarks.count)
+        let hiddenLandmark = "Atlantis"
+        return code == landmarks.count ? hiddenLandmark : landmarks[code - 1]
+    }
+    // dev 10
 }

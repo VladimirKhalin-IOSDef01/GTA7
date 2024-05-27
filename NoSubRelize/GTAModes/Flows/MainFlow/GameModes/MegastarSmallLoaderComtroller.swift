@@ -17,7 +17,7 @@ final class MegastarSmallLoaderComtroller: UIViewController {
     func megastarSetupFakeLoaderView(duration: TimeInterval) {
         loader = MegastarSmallLoader(frame: CGRect(x: view.frame.width / 2 - 25, y: view.frame.height / 2 - 25, width: 50, height: 50))
         view.addSubview(loader)
-        loader.actualStartAnimation(duration: duration)
+        loader.megastarStartAnimation(duration: duration)
     }
     
 }

@@ -13,14 +13,7 @@
 		120B3BF42BE22EFC00E9462B /* MegastarCircularFakeLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B3BF32BE22EFC00E9462B /* MegastarCircularFakeLoaderView.swift */; };
 		120B3BF62BE2313A00E9462B /* MegastarFakeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B3BF52BE2313A00E9462B /* MegastarFakeLoader.swift */; };
 		120EEE462B86673100BE6D3F /* MegastarProjectModelConteiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120EEE452B86673100BE6D3F /* MegastarProjectModelConteiner.swift */; };
-		120EEE4C2B87187900BE6D3F /* GilroyLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 120EEE4B2B87187900BE6D3F /* GilroyLight.ttf */; };
-		120EEE4D2B87187900BE6D3F /* GilroyLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 120EEE4B2B87187900BE6D3F /* GilroyLight.ttf */; };
-		120EEE4F2B87793E00BE6D3F /* Gilroy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 120EEE4E2B87793E00BE6D3F /* Gilroy.ttf */; };
-		120EEE512B877B1700BE6D3F /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 120EEE502B877B1700BE6D3F /* Gilroy-Bold.ttf */; };
 		120EEE532B88777D00BE6D3F /* MegastarModesTabViewCellNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120EEE522B88777D00BE6D3F /* MegastarModesTabViewCellNew.swift */; };
-		120EEE552B8889A600BE6D3F /* Gilroy-Extrabold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 120EEE542B8889A500BE6D3F /* Gilroy-Extrabold.ttf */; };
-		120EEE572B888AB800BE6D3F /* Gilroy-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 120EEE562B888AB800BE6D3F /* Gilroy-Semibold.ttf */; };
-		120EEE592B88B08B00BE6D3F /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 120EEE582B88B08B00BE6D3F /* Gilroy-Regular.ttf */; };
 		120EEE5B2B88CCF400BE6D3F /* MegastarModesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120EEE5A2B88CCF400BE6D3F /* MegastarModesInfoViewController.swift */; };
 		120EEE5F2B8C916600BE6D3F /* MegastarHeaderViewNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120EEE5E2B8C916600BE6D3F /* MegastarHeaderViewNew.swift */; };
 		121987372BFF743000A69949 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 2C2A206E2A727E88002A6D3C /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -2530,8 +2523,6 @@
 		1236DD5E2BEB5A5B007B0D69 /* ACTUALMAP8p2p6K.png in Resources */ = {isa = PBXBuildFile; fileRef = 1236D39B2BEB5A59007B0D69 /* ACTUALMAP8p2p6K.png */; };
 		1236DD5F2BEB5A5B007B0D69 /* ACTUALMAP21p40p7K.png in Resources */ = {isa = PBXBuildFile; fileRef = 1236D39C2BEB5A59007B0D69 /* ACTUALMAP21p40p7K.png */; };
 		126FEE292BB18D650095A5DE /* markers.png in Resources */ = {isa = PBXBuildFile; fileRef = 126FEE282BB18D640095A5DE /* markers.png */; };
-		12D4321F2BDBE3EF00BD1EC7 /* Gilroy-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12D4321E2BDBE3EF00BD1EC7 /* Gilroy-Heavy.ttf */; };
-		12D432202BDBE3EF00BD1EC7 /* Gilroy-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12D4321E2BDBE3EF00BD1EC7 /* Gilroy-Heavy.ttf */; };
 		12D432282BDC268100BD1EC7 /* MegastarChecklistChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D432272BDC268100BD1EC7 /* MegastarChecklistChecker.swift */; };
 		12D432292BDC268100BD1EC7 /* MegastarChecklistChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D432272BDC268100BD1EC7 /* MegastarChecklistChecker.swift */; };
 		12D4322B2BDCA43700BD1EC7 /* MegastarChecklistButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4322A2BDCA43700BD1EC7 /* MegastarChecklistButton.swift */; };
@@ -2546,9 +2537,8 @@
 		12EA114E2BB1F54C00ADE95E /* jquery-2.1.4.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 12EA114D2BB1F54C00ADE95E /* jquery-2.1.4.min.js */; };
 		12EA189E2BAB45C700263F40 /* leaflet.js in Resources */ = {isa = PBXBuildFile; fileRef = 12EA0ED52BAB3AF400263F40 /* leaflet.js */; };
 		12EA20842BAB598A00263F40 /* map.html in Resources */ = {isa = PBXBuildFile; fileRef = 12EA20832BAB598A00263F40 /* map.html */; };
-		12F217F02B85D41100BCE63B /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F217EF2B85D41100BCE63B /* Extension.swift */; };
+		12F217F02B85D41100BCE63B /* MegastarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F217EF2B85D41100BCE63B /* MegastarExtension.swift */; };
 		12F217F32B85F03900BCE63B /* MegastarMainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F217F22B85F03900BCE63B /* MegastarMainViewCell.swift */; };
-		12F217F52B85FCE200BCE63B /* ActualMainViewControllerNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F217F42B85FCE200BCE63B /* ActualMainViewControllerNew.swift */; };
 		12F3958B2BF5EB400090950A /* MegastarSmallLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F3958A2BF5EB400090950A /* MegastarSmallLoader.swift */; };
 		12F395B12BF603920090950A /* MegastarSmallLoaderComtroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F395B02BF603920090950A /* MegastarSmallLoaderComtroller.swift */; };
 		12F395B32BF634EB0090950A /* MegastarClearBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F395B22BF634EB0090950A /* MegastarClearBackground.swift */; };
@@ -2561,7 +2551,6 @@
 		2C2A206F2A727E88002A6D3C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2C2A206E2A727E88002A6D3C /* RealmSwift */; };
 		2C2A20732A7285AA002A6D3C /* MegastarProjectMainFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A20722A7285AA002A6D3C /* MegastarProjectMainFlowCoordinator.swift */; };
 		2C2A20762A7286EC002A6D3C /* MegastarProjectFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A20752A7286EC002A6D3C /* MegastarProjectFlowCoordinator.swift */; };
-		2C2A207B2A729267002A6D3C /* ActualMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A207A2A729267002A6D3C /* ActualMainViewController.swift */; };
 		2C2A207F2A72927E002A6D3C /* MegastarMainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A207E2A72927E002A6D3C /* MegastarMainModel.swift */; };
 		2C2A20812A729337002A6D3C /* MegastarNiblessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A20802A729337002A6D3C /* MegastarNiblessViewController.swift */; };
 		2C2A20B72A7551E8002A6D3C /* MegastarMainTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A20B62A7551E8002A6D3C /* MegastarMainTabViewCell.swift */; };
@@ -2569,8 +2558,6 @@
 		2C2A20BB2A755AFA002A6D3C /* MegastarAutolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A20BA2A755AFA002A6D3C /* MegastarAutolayout.swift */; };
 		2C2A20BE2A756AD4002A6D3C /* MegastarGSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A20BD2A756AD4002A6D3C /* MegastarGSViewController.swift */; };
 		2C2A20C02A756AE0002A6D3C /* MegastarGSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A20BF2A756AE0002A6D3C /* MegastarGSModel.swift */; };
-		2C3C53282A7BB01300D019A1 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CBFE44B2A77CEDA00A50257 /* Inter-Bold.ttf */; };
-		2C3C53292A7BB01F00D019A1 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CBFE44C2A77CEDA00A50257 /* Inter-Regular.ttf */; };
 		2C45A5372A76A7550023B3A8 /* MegastarGameCheatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C45A5362A76A7550023B3A8 /* MegastarGameCheatsViewController.swift */; };
 		2C45A5392A76A7620023B3A8 /* MegastarGameCheatsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C45A5382A76A7620023B3A8 /* MegastarGameCheatsModel.swift */; };
 		2C45A53D2A76A7800023B3A8 /* MegastarChecklistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C45A53C2A76A7800023B3A8 /* MegastarChecklistModel.swift */; };
@@ -2598,7 +2585,7 @@
 		2CBFE4552A77E28400A50257 /* MegastarFilterTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBFE4542A77E28400A50257 /* MegastarFilterTabViewCell.swift */; };
 		2CBFE4572A77E38600A50257 /* MegastarPPControllerPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBFE4562A77E38600A50257 /* MegastarPPControllerPresent.swift */; };
 		2CBFE4592A77ECA200A50257 /* MegastarPanPresentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBFE4582A77ECA200A50257 /* MegastarPanPresentManager.swift */; };
-		2CBFE45B2A79080D00A50257 /* ActualGameMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBFE45A2A79080D00A50257 /* ActualGameMapViewController.swift */; };
+		2CBFE45B2A79080D00A50257 /* MegastarGameMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBFE45A2A79080D00A50257 /* MegastarGameMapViewController.swift */; };
 		2CC0DA542A90F0CA0083E7B6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 2CC0DA532A90F0CA0083E7B6 /* FirebaseAnalytics */; };
 		2CC0DA562A90F0CA0083E7B6 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 2CC0DA552A90F0CA0083E7B6 /* FirebaseAnalyticsOnDeviceConversion */; };
 		2CC0DA582A90F0CA0083E7B6 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2CC0DA572A90F0CA0083E7B6 /* FirebaseAnalyticsSwift */; };
@@ -2655,13 +2642,7 @@
 		120B3BF32BE22EFC00E9462B /* MegastarCircularFakeLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarCircularFakeLoaderView.swift; sourceTree = "<group>"; };
 		120B3BF52BE2313A00E9462B /* MegastarFakeLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarFakeLoader.swift; sourceTree = "<group>"; };
 		120EEE452B86673100BE6D3F /* MegastarProjectModelConteiner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarProjectModelConteiner.swift; sourceTree = "<group>"; };
-		120EEE4B2B87187900BE6D3F /* GilroyLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GilroyLight.ttf; sourceTree = "<group>"; };
-		120EEE4E2B87793E00BE6D3F /* Gilroy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gilroy.ttf; sourceTree = "<group>"; };
-		120EEE502B877B1700BE6D3F /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Bold.ttf"; sourceTree = "<group>"; };
 		120EEE522B88777D00BE6D3F /* MegastarModesTabViewCellNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarModesTabViewCellNew.swift; sourceTree = "<group>"; };
-		120EEE542B8889A500BE6D3F /* Gilroy-Extrabold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Extrabold.ttf"; sourceTree = "<group>"; };
-		120EEE562B888AB800BE6D3F /* Gilroy-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Semibold.ttf"; sourceTree = "<group>"; };
-		120EEE582B88B08B00BE6D3F /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Regular.ttf"; sourceTree = "<group>"; };
 		120EEE5A2B88CCF400BE6D3F /* MegastarModesInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarModesInfoViewController.swift; sourceTree = "<group>"; };
 		120EEE5E2B8C916600BE6D3F /* MegastarHeaderViewNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarHeaderViewNew.swift; sourceTree = "<group>"; };
 		122323882BF48A8F00582349 /* MegastarMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarMainViewController.swift; sourceTree = "<group>"; };
@@ -5170,7 +5151,6 @@
 		1236D39B2BEB5A59007B0D69 /* ACTUALMAP8p2p6K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ACTUALMAP8p2p6K.png; sourceTree = "<group>"; };
 		1236D39C2BEB5A59007B0D69 /* ACTUALMAP21p40p7K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ACTUALMAP21p40p7K.png; sourceTree = "<group>"; };
 		126FEE282BB18D640095A5DE /* markers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = markers.png; sourceTree = "<group>"; };
-		12D4321E2BDBE3EF00BD1EC7 /* Gilroy-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Heavy.ttf"; sourceTree = "<group>"; };
 		12D432272BDC268100BD1EC7 /* MegastarChecklistChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarChecklistChecker.swift; sourceTree = "<group>"; };
 		12D4322A2BDCA43700BD1EC7 /* MegastarChecklistButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarChecklistButton.swift; sourceTree = "<group>"; };
 		12D4322D2BDD1AF200BD1EC7 /* MegastarCircularLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarCircularLoaderView.swift; sourceTree = "<group>"; };
@@ -5181,9 +5161,8 @@
 		12EA114B2BB1F18D00ADE95E /* locations.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = locations.js; sourceTree = "<group>"; };
 		12EA114D2BB1F54C00ADE95E /* jquery-2.1.4.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-2.1.4.min.js"; sourceTree = "<group>"; };
 		12EA20832BAB598A00263F40 /* map.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = map.html; sourceTree = "<group>"; };
-		12F217EF2B85D41100BCE63B /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		12F217EF2B85D41100BCE63B /* MegastarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarExtension.swift; sourceTree = "<group>"; };
 		12F217F22B85F03900BCE63B /* MegastarMainViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarMainViewCell.swift; sourceTree = "<group>"; };
-		12F217F42B85FCE200BCE63B /* ActualMainViewControllerNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualMainViewControllerNew.swift; sourceTree = "<group>"; };
 		12F3958A2BF5EB400090950A /* MegastarSmallLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarSmallLoader.swift; sourceTree = "<group>"; };
 		12F395B02BF603920090950A /* MegastarSmallLoaderComtroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarSmallLoaderComtroller.swift; sourceTree = "<group>"; };
 		12F395B22BF634EB0090950A /* MegastarClearBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarClearBackground.swift; sourceTree = "<group>"; };
@@ -5199,7 +5178,6 @@
 		2C2A205E2A7170E3002A6D3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C2A20722A7285AA002A6D3C /* MegastarProjectMainFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarProjectMainFlowCoordinator.swift; sourceTree = "<group>"; };
 		2C2A20752A7286EC002A6D3C /* MegastarProjectFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarProjectFlowCoordinator.swift; sourceTree = "<group>"; };
-		2C2A207A2A729267002A6D3C /* ActualMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualMainViewController.swift; sourceTree = "<group>"; };
 		2C2A207E2A72927E002A6D3C /* MegastarMainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarMainModel.swift; sourceTree = "<group>"; };
 		2C2A20802A729337002A6D3C /* MegastarNiblessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarNiblessViewController.swift; sourceTree = "<group>"; };
 		2C2A20B62A7551E8002A6D3C /* MegastarMainTabViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarMainTabViewCell.swift; sourceTree = "<group>"; };
@@ -5232,12 +5210,10 @@
 		2CB88FE82A90D19E006B9301 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		2CBFE4442A77BDD400A50257 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2CBFE4472A77BE0200A50257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2CBFE44B2A77CEDA00A50257 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
-		2CBFE44C2A77CEDA00A50257 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		2CBFE4542A77E28400A50257 /* MegastarFilterTabViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarFilterTabViewCell.swift; sourceTree = "<group>"; };
 		2CBFE4562A77E38600A50257 /* MegastarPPControllerPresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarPPControllerPresent.swift; sourceTree = "<group>"; };
 		2CBFE4582A77ECA200A50257 /* MegastarPanPresentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarPanPresentManager.swift; sourceTree = "<group>"; };
-		2CBFE45A2A79080D00A50257 /* ActualGameMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualGameMapViewController.swift; sourceTree = "<group>"; };
+		2CBFE45A2A79080D00A50257 /* MegastarGameMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarGameMapViewController.swift; sourceTree = "<group>"; };
 		2CDEBEF62A82586500F976A3 /* MegastarDropBoxManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MegastarDropBoxManager.swift; sourceTree = "<group>"; };
 		2CDEBEF72A82586500F976A3 /* MegastarDBConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MegastarDBConstants.swift; sourceTree = "<group>"; };
 		2CDEBF062A82F57100F976A3 /* MegastarCustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarCustomNavigationView.swift; sourceTree = "<group>"; };
@@ -5291,12 +5267,12 @@
 			path = Loader;
 			sourceTree = "<group>";
 		};
-		12F217F12B85D41800BCE63B /* Extension */ = {
+		12F217F12B85D41800BCE63B /* MegastarExtension */ = {
 			isa = PBXGroup;
 			children = (
-				12F217EF2B85D41100BCE63B /* Extension.swift */,
+				12F217EF2B85D41100BCE63B /* MegastarExtension.swift */,
 			);
-			path = Extension;
+			path = MegastarExtension;
 			sourceTree = "<group>";
 		};
 		2C1CA46F2A8E713C00C89F79 /* Configurations */ = {
@@ -5335,7 +5311,7 @@
 				2C2A20502A7170E1002A6D3C /* MegastarAppDelegate.swift */,
 				2C2A20522A7170E1002A6D3C /* SceneDelegate.swift */,
 				2C2A20642A717EA4002A6D3C /* Flows */,
-				2C2A20652A717EF7002A6D3C /* ActualServices */,
+				2C2A20652A717EF7002A6D3C /* MegastarServices */,
 				2C2A20742A7286D4002A6D3C /* Common */,
 				2C2A20662A717F13002A6D3C /* Resources */,
 			);
@@ -5350,14 +5326,14 @@
 			path = Flows;
 			sourceTree = "<group>";
 		};
-		2C2A20652A717EF7002A6D3C /* ActualServices */ = {
+		2C2A20652A717EF7002A6D3C /* MegastarServices */ = {
 			isa = PBXGroup;
 			children = (
-				2CB9A9892A9E2070008B9A88 /* ActualMap */,
-				2CDEBEE82A82586500F976A3 /* ActualDropBoxManager */,
+				2CB9A9892A9E2070008B9A88 /* MegastarMap */,
+				2CDEBEE82A82586500F976A3 /* MegastarDropBoxManager */,
 				2C2A20862A72A3C6002A6D3C /* DataBase */,
 			);
-			path = ActualServices;
+			path = MegastarServices;
 			sourceTree = "<group>";
 		};
 		2C2A20662A717F13002A6D3C /* Resources */ = {
@@ -5396,7 +5372,7 @@
 				2C2A20B82A7556BF002A6D3C /* MegastarReusable.swift */,
 				2CBFE4562A77E38600A50257 /* MegastarPPControllerPresent.swift */,
 				2CBFE4582A77ECA200A50257 /* MegastarPanPresentManager.swift */,
-				12F217F12B85D41800BCE63B /* Extension */,
+				12F217F12B85D41800BCE63B /* MegastarExtension */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -5404,9 +5380,7 @@
 		2C2A20792A72907B002A6D3C /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				2C2A207A2A729267002A6D3C /* ActualMainViewController.swift */,
 				2C2A207E2A72927E002A6D3C /* MegastarMainModel.swift */,
-				12F217F42B85FCE200BCE63B /* ActualMainViewControllerNew.swift */,
 				122323882BF48A8F00582349 /* MegastarMainViewController.swift */,
 				120EEE452B86673100BE6D3F /* MegastarProjectModelConteiner.swift */,
 			);
@@ -5484,7 +5458,7 @@
 		2C45A5342A76A7200023B3A8 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				2CBFE45A2A79080D00A50257 /* ActualGameMapViewController.swift */,
+				2CBFE45A2A79080D00A50257 /* MegastarGameMapViewController.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -5586,7 +5560,7 @@
 			path = NotificationService;
 			sourceTree = "<group>";
 		};
-		2CB9A9892A9E2070008B9A88 /* ActualMap */ = {
+		2CB9A9892A9E2070008B9A88 /* MegastarMap */ = {
 			isa = PBXGroup;
 			children = (
 				1236CE0E2BEB5957007B0D69 /* ACTUALMAP0p0p3K.png */,
@@ -8095,7 +8069,7 @@
 				12EA114B2BB1F18D00ADE95E /* locations.js */,
 				12EA0ED52BAB3AF400263F40 /* leaflet.js */,
 			);
-			path = ActualMap;
+			path = MegastarMap;
 			sourceTree = "<group>";
 		};
 		2CBFE4482A77CE6A00A50257 /* Fonts */ = {
@@ -8105,20 +8079,11 @@
 				1223238C2BF4980400582349 /* OpenSans-Bold.ttf */,
 				1223238E2BF4981500582349 /* OpenSans-Medium.ttf */,
 				122323902BF4982300582349 /* OpenSans-Regular.ttf */,
-				12D4321E2BDBE3EF00BD1EC7 /* Gilroy-Heavy.ttf */,
-				120EEE4B2B87187900BE6D3F /* GilroyLight.ttf */,
-				120EEE582B88B08B00BE6D3F /* Gilroy-Regular.ttf */,
-				120EEE502B877B1700BE6D3F /* Gilroy-Bold.ttf */,
-				120EEE562B888AB800BE6D3F /* Gilroy-Semibold.ttf */,
-				120EEE542B8889A500BE6D3F /* Gilroy-Extrabold.ttf */,
-				120EEE4E2B87793E00BE6D3F /* Gilroy.ttf */,
-				2CBFE44B2A77CEDA00A50257 /* Inter-Bold.ttf */,
-				2CBFE44C2A77CEDA00A50257 /* Inter-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		2CDEBEE82A82586500F976A3 /* ActualDropBoxManager */ = {
+		2CDEBEE82A82586500F976A3 /* MegastarDropBoxManager */ = {
 			isa = PBXGroup;
 			children = (
 				2C1CA3B02A8E70B200C89F79 /* MegastarServicesManager.swift */,
@@ -8126,7 +8091,7 @@
 				2CDEBEF72A82586500F976A3 /* MegastarDBConstants.swift */,
 				1201B5712BA2B82C00B86035 /* MegastarNetworkStatusMonitor.swift */,
 			);
-			path = ActualDropBoxManager;
+			path = MegastarDropBoxManager;
 			sourceTree = "<group>";
 		};
 		2CDEBF052A82F55400F976A3 /* CustomNavigation */ = {
@@ -8366,7 +8331,6 @@
 				1236D3E52BEB5A5A007B0D69 /* ACTUALMAP23p38p7K.png in Resources */,
 				1236D83F2BEB5A5B007B0D69 /* ACTUALMAP18p6p6K.png in Resources */,
 				1236DAC62BEB5A5B007B0D69 /* ACTUALMAP9p5p5K.png in Resources */,
-				120EEE512B877B1700BE6D3F /* Gilroy-Bold.ttf in Resources */,
 				1236D8162BEB5A5B007B0D69 /* ACTUALMAP16p14p7K.png in Resources */,
 				1236DC822BEB5A5B007B0D69 /* ACTUALMAP41p10p7K.png in Resources */,
 				1236D7EC2BEB5A5B007B0D69 /* ACTUALMAP23p41p7K.png in Resources */,
@@ -8428,7 +8392,6 @@
 				1236DA392BEB5A5B007B0D69 /* ACTUALMAP11p24p7K.png in Resources */,
 				1236DD122BEB5A5B007B0D69 /* ACTUALMAP15p14p6K.png in Resources */,
 				1236DCC32BEB5A5B007B0D69 /* ACTUALMAP5p32p7K.png in Resources */,
-				120EEE572B888AB800BE6D3F /* Gilroy-Semibold.ttf in Resources */,
 				1236DCA22BEB5A5B007B0D69 /* ACTUALMAP23p33p7K.png in Resources */,
 				1236DC6C2BEB5A5B007B0D69 /* ACTUALMAP21p26p7K.png in Resources */,
 				1236D4182BEB5A5A007B0D69 /* ACTUALMAP20p32p7K.png in Resources */,
@@ -8598,7 +8561,6 @@
 				1236D5862BEB5A5A007B0D69 /* ACTUALMAP0p1p3K.png in Resources */,
 				1236DA192BEB5A5B007B0D69 /* ACTUALMAP41p18p7K.png in Resources */,
 				1236D3BA2BEB5A5A007B0D69 /* ACTUALMAP19p33p7K.png in Resources */,
-				12D4321F2BDBE3EF00BD1EC7 /* Gilroy-Heavy.ttf in Resources */,
 				1236D8832BEB5A5B007B0D69 /* ACTUALMAP25p39p7K.png in Resources */,
 				1236D4FE2BEB5A5A007B0D69 /* ACTUALMAP31p20p7K.png in Resources */,
 				1236DB6E2BEB5A5B007B0D69 /* ACTUALMAP29p33p7K.png in Resources */,
@@ -8837,7 +8799,6 @@
 				1236D8262BEB5A5B007B0D69 /* ACTUALMAP10p25p7K.png in Resources */,
 				1236D84B2BEB5A5B007B0D69 /* ACTUALMAP5p0p4K.png in Resources */,
 				1236DB1B2BEB5A5B007B0D69 /* ACTUALMAP34p2p7K.png in Resources */,
-				2C3C53292A7BB01F00D019A1 /* Inter-Regular.ttf in Resources */,
 				1236DAA42BEB5A5B007B0D69 /* ACTUALMAP33p21p7K.png in Resources */,
 				1236DC852BEB5A5B007B0D69 /* ACTUALMAP19p1p7K.png in Resources */,
 				1236D4B22BEB5A5A007B0D69 /* ACTUALMAP13p3p7K.png in Resources */,
@@ -8911,7 +8872,6 @@
 				1236DBF42BEB5A5B007B0D69 /* ACTUALMAP18p15p7K.png in Resources */,
 				1236DD2E2BEB5A5B007B0D69 /* ACTUALMAP4p29p7K.png in Resources */,
 				1236D6F52BEB5A5A007B0D69 /* ACTUALMAP16p17p7K.png in Resources */,
-				120EEE4C2B87187900BE6D3F /* GilroyLight.ttf in Resources */,
 				1236DBE62BEB5A5B007B0D69 /* ACTUALMAP13p1p6K.png in Resources */,
 				1236D5E12BEB5A5A007B0D69 /* ACTUALMAP35p42p7K.png in Resources */,
 				1236D7C12BEB5A5B007B0D69 /* ACTUALMAP24p37p7K.png in Resources */,
@@ -8973,7 +8933,6 @@
 				1236D3E82BEB5A5A007B0D69 /* ACTUALMAP10p22p7K.png in Resources */,
 				1236D9552BEB5A5B007B0D69 /* ACTUALMAP0p37p7K.png in Resources */,
 				1236D60A2BEB5A5A007B0D69 /* ACTUALMAP35p38p7K.png in Resources */,
-				120EEE552B8889A600BE6D3F /* Gilroy-Extrabold.ttf in Resources */,
 				1236D3B02BEB5A5A007B0D69 /* ACTUALMAP42p38p7K.png in Resources */,
 				1236D5FC2BEB5A5A007B0D69 /* ACTUALMAP15p15p7K.png in Resources */,
 				1236DCA82BEB5A5B007B0D69 /* ACTUALMAP21p20p6K.png in Resources */,
@@ -9515,7 +9474,6 @@
 				1236DA4E2BEB5A5B007B0D69 /* ACTUALMAP12p2p6K.png in Resources */,
 				1236D8892BEB5A5B007B0D69 /* ACTUALMAP29p18p7K.png in Resources */,
 				1236D59E2BEB5A5A007B0D69 /* ACTUALMAP15p10p7K.png in Resources */,
-				2C3C53282A7BB01300D019A1 /* Inter-Bold.ttf in Resources */,
 				1236DB432BEB5A5B007B0D69 /* ACTUALMAP13p10p7K.png in Resources */,
 				1236D60B2BEB5A5A007B0D69 /* ACTUALMAP8p8p5K.png in Resources */,
 				1236DA042BEB5A5B007B0D69 /* ACTUALMAP21p17p6K.png in Resources */,
@@ -9578,7 +9536,6 @@
 				1236D79A2BEB5A5B007B0D69 /* ACTUALMAP15p42p7K.png in Resources */,
 				1236D73E2BEB5A5A007B0D69 /* ACTUALMAP0p17p7K.png in Resources */,
 				1236DC672BEB5A5B007B0D69 /* ACTUALMAP30p40p7K.png in Resources */,
-				120EEE4F2B87793E00BE6D3F /* Gilroy.ttf in Resources */,
 				1236D9A12BEB5A5B007B0D69 /* ACTUALMAP10p21p7K.png in Resources */,
 				1236D8672BEB5A5B007B0D69 /* ACTUALMAP37p25p7K.png in Resources */,
 				1236DBF62BEB5A5B007B0D69 /* ACTUALMAP5p4p6K.png in Resources */,
@@ -10379,7 +10336,6 @@
 				1236DB9A2BEB5A5B007B0D69 /* ACTUALMAP26p39p7K.png in Resources */,
 				1236D57E2BEB5A5A007B0D69 /* ACTUALMAP15p3p6K.png in Resources */,
 				1236D4982BEB5A5A007B0D69 /* ACTUALMAP40p40p7K.png in Resources */,
-				120EEE592B88B08B00BE6D3F /* Gilroy-Regular.ttf in Resources */,
 				1236D6552BEB5A5A007B0D69 /* ACTUALMAP7p38p7K.png in Resources */,
 				1236D9652BEB5A5B007B0D69 /* ACTUALMAP2p15p6K.png in Resources */,
 				1236D5CE2BEB5A5A007B0D69 /* ACTUALMAP40p17p7K.png in Resources */,
@@ -10814,8 +10770,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12D432202BDBE3EF00BD1EC7 /* Gilroy-Heavy.ttf in Resources */,
-				120EEE4D2B87187900BE6D3F /* GilroyLight.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -10889,14 +10843,13 @@
 				120EEE5B2B88CCF400BE6D3F /* MegastarModesInfoViewController.swift in Sources */,
 				54ACC19C2BDF6F8D0090B73A /* MegastarBlurBackController.swift in Sources */,
 				2CDEBF042A82586500F976A3 /* MegastarDBConstants.swift in Sources */,
-				12F217F52B85FCE200BCE63B /* ActualMainViewControllerNew.swift in Sources */,
 				2CA95FF82A84D4210039343E /* MegastarCheatsObject.swift in Sources */,
 				12D432282BDC268100BD1EC7 /* MegastarChecklistChecker.swift in Sources */,
 				2C45A53D2A76A7800023B3A8 /* MegastarChecklistModel.swift in Sources */,
 				122323932BF4B28000582349 /* MegastarCustomDropBarView.swift in Sources */,
 				2C7F39F42A7BF09800F575F7 /* MegastarHeaderView.swift in Sources */,
 				2C2A20762A7286EC002A6D3C /* MegastarProjectFlowCoordinator.swift in Sources */,
-				12F217F02B85D41100BCE63B /* Extension.swift in Sources */,
+				12F217F02B85D41100BCE63B /* MegastarExtension.swift in Sources */,
 				2C2A20512A7170E1002A6D3C /* MegastarAppDelegate.swift in Sources */,
 				2C2A20B92A7556BF002A6D3C /* MegastarReusable.swift in Sources */,
 				2C2A20732A7285AA002A6D3C /* MegastarProjectMainFlowCoordinator.swift in Sources */,
@@ -10908,7 +10861,7 @@
 				2C2A20BE2A756AD4002A6D3C /* MegastarGSViewController.swift in Sources */,
 				2CBFE4572A77E38600A50257 /* MegastarPPControllerPresent.swift in Sources */,
 				120EEE532B88777D00BE6D3F /* MegastarModesTabViewCellNew.swift in Sources */,
-				2CBFE45B2A79080D00A50257 /* ActualGameMapViewController.swift in Sources */,
+				2CBFE45B2A79080D00A50257 /* MegastarGameMapViewController.swift in Sources */,
 				120EEE462B86673100BE6D3F /* MegastarProjectModelConteiner.swift in Sources */,
 				12D4322B2BDCA43700BD1EC7 /* MegastarChecklistButton.swift in Sources */,
 				2CA95FFC2A8512470039343E /* MegastarMainItemObject.swift in Sources */,
@@ -10922,7 +10875,6 @@
 				1201B5722BA2B82C00B86035 /* MegastarNetworkStatusMonitor.swift in Sources */,
 				12097A782BA56D5600DACBED /* MegastarCheckListCustomSwitcher.swift in Sources */,
 				2C1CA42D2A8E70B200C89F79 /* MegastarServicesManager.swift in Sources */,
-				2C2A207B2A729267002A6D3C /* ActualMainViewController.swift in Sources */,
 				122323892BF48A8F00582349 /* MegastarMainViewController.swift in Sources */,
 				12097A722BA4B09700DACBED /* MegastarAllertController.swift in Sources */,
 				2C1CA4712A8E714F00C89F79 /* MegastarProjectConfiguration.swift in Sources */,

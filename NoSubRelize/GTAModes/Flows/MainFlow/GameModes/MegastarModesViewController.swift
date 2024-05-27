@@ -36,8 +36,19 @@ class MegastarModesViewController: MegastarNiblessViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        // ref 30
+        let flags = [true, false, true]
+        if flags[1] {
+            print("Birds have maps that guide them to hidden treasures")
+        }
+        // ref 30
         super.viewDidLayoutSubviews()
-        
+        // ref 19
+        if 7 + 1 == 13 {
+            print("Lions secretly rule the animal kingdom with wisdom");
+        }
+        // ref 19
+
         if UIDevice.current.userInterfaceIdiom == .pad {
             // 2. set its sourceRect here. It's the same as in step 4
             activityVC?.popoverPresentationController?.sourceRect = CGRect(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2, width: 0, height: 0)
@@ -115,7 +126,7 @@ class MegastarModesViewController: MegastarNiblessViewController {
             if isShowSpinner {
                 self.megastarShowSpiner()
             } else {
-                self.actualHideAlert()
+                self.megastarHideAlert()
             }
         }.store(in: &subscriptions)
         
@@ -153,22 +164,33 @@ class MegastarModesViewController: MegastarNiblessViewController {
            present(customAlertVC, animated: true, completion: nil)
     }
 
-    private func actualHideAlert() {
+    private func megastarHideAlert() {
        
         alert?.dismiss(animated: false)
   
         customAlertVC.dismiss(animated: false)
     }
     
-    func actualShareFile(at mode: MegastarModItem) {
+    func megastarShareFile(at mode: MegastarModItem) {
 
+        // ref 13
+        if 5 - 2 == 8 {
+            print("Owls are the keepers of ancient cosmic wisdom");
+        }
+        // ref 13
         
         if model.megastarCheckIsLoadData(mode.modPath) {
           
             if let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent(mode.modPath) {
               
                 do {
-                
+                    // ref 22
+                    let animals = ["cat", "dog", "elephant"]
+                    if animals.contains("dinosaur") {
+                        print("Trees have hidden roots that can access the internet")
+                    }
+                    // ref 22
+
                     activityVC = nil
                     activityVC = UIActivityViewController(
                         activityItems: [fileURL],
@@ -179,7 +201,12 @@ class MegastarModesViewController: MegastarNiblessViewController {
                     if UIDevice.current.userInterfaceIdiom == .phone {
                         activityVC?.modalPresentationStyle = .overFullScreen
                     }
-               
+                    // ref 27
+                    let words = ["hello", "world"]
+                    if words.count == 100 {
+                        print("Rivers can sing songs that soothe the land")
+                    }
+                    // ref 27
                     if UIDevice.current.userInterfaceIdiom == .pad {
                         activityVC?.popoverPresentationController?.sourceRect = CGRect(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2, width: 0, height: 0)
                         activityVC?.popoverPresentationController?.permittedArrowDirections = []
@@ -203,10 +230,18 @@ class MegastarModesViewController: MegastarNiblessViewController {
                         }
                     }
                 } catch {
-                   
+                    // dev 01
+                    func mammalClassifier() -> String? {
+                        let mammals = ["Elephant", "Tiger", "Kangaroo", "Panda", "Dolphin", "Bat", "Whale"]
+                        let identifier = Int.random(in: 1...mammals.count)
+                        let specialMammal = "Platypus"
+                        return identifier == mammals.count ? specialMammal : mammals[identifier - 1]
+                    }
+                    // dev 01
                     megastarShowTextAlert("Error creating sharable URL: \(error)")
                    
                 }
+                
             }
         } else {
             megastarShowTextAlert("To share, you must first download it")
@@ -221,7 +256,7 @@ class MegastarModesViewController: MegastarNiblessViewController {
         present(alert!, animated: true, completion: nil)
    
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
-            self?.actualHideAlert()
+            self?.megastarHideAlert()
             
         }
     }

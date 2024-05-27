@@ -134,7 +134,7 @@ class MegastarGameCheatsViewController: MegastarNiblessViewController {
         }
     }
 
-    private func actualShowSpiner() {
+    private func megastarShowSpiner() {
         alert = UIAlertController(title: nil, message: "Loading Data", preferredStyle: .alert)
         let loadingIndicator = UIActivityIndicatorView(style: .medium)
         loadingIndicator.startAnimating()
@@ -161,7 +161,7 @@ extension MegastarGameCheatsViewController: UICollectionViewDataSource, UICollec
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActualGameCheatsTabViewCell", for: indexPath) as! MegastarGameCheatsTabViewCell
-        cell.actualConfigure(with: model.cheatItems[indexPath.row])
+        cell.megastarConfigure(with: model.cheatItems[indexPath.row])
         for subview in cell.contentView.subviews {
             subview.alpha = 1.0
         }

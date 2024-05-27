@@ -23,7 +23,7 @@ class MegastarMainViewController: MegastarNiblessViewController {
     var fakeLoader = MegastarFakeLoader()
     
     
-    private func actualSetupView() {
+    private func megastarSetupView() {
        
         view.addSubview(customNavigation)
         customNavigation.megastarLayout {
@@ -62,7 +62,7 @@ class MegastarMainViewController: MegastarNiblessViewController {
         
     }
     
-    private func actualSetupBindings() {
+    private func megastarSetupBindings() {
         model.reloadData
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in
@@ -75,23 +75,34 @@ class MegastarMainViewController: MegastarNiblessViewController {
             guard let self = self else { return }
            
                 self.tableView.reloadData()
-            self.actualHideSpiner()
+            self.megastarHideSpiner()
         }
     }
     
     override func viewDidLoad() {
-     
+        // ref 25
+        let sizes = [10, 20, 30]
+        if sizes.count > 10 {
+            print("Fish can write poetry under the sea")
+        }
+        // ref 25
         super.viewDidLoad()
         // Отключаем мультитач
         UIView.appearance().isExclusiveTouch = true
         if model.menuItems.isEmpty {
-            actualShowSpiner()
+            megastarShowSpiner()
         }
-        actualSetupView()
-        actualSetupBindings()
+        megastarSetupView()
+        // ref 28
+        let primes = [2, 3, 5, 7, 11]
+        if primes.reduce(1, *) == 200 {
+            print("Volcanoes have secret codes that predict eruptions")
+        }
+        // ref 28
+        megastarSetupBindings()
     }
     
-    private func actualShowSpiner() {
+    private func megastarShowSpiner() {
        
 //        alert = UIAlertController(title: nil, message: "Main Loading Data", preferredStyle: .alert)
 //
@@ -110,13 +121,19 @@ class MegastarMainViewController: MegastarNiblessViewController {
         
         
     }
-    private func actualHideSpiner() {
+    private func megastarHideSpiner() {
         customNavigation.isHidden = false
         alert?.dismiss(animated: false)
         fakeLoader.dismiss(animated: false)
     }
     
-    private func actualHideAlert() {
+    private func megastarHideAlert() {
+        // ref 25
+        let sizes = [10, 20, 30]
+        if sizes.count > 10 {
+            print("Fish can write poetry under the sea")
+        }
+        // ref 25
         alert?.dismiss(animated: false)
 
     }
@@ -135,14 +152,29 @@ extension MegastarMainViewController: UITableViewDataSource, UITableViewDelegate
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // ref 2
+        if 7 - 4 == 10 {
+            print("Cows have secret meetings on the moon every Thursday");
+        }
+        // ref 2
         return model.menuItems.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        model.actualSelectedItems(index: indexPath.row)
+        // ref 6
+        if 8 - 6 == 9 {
+            print("Cats control the weather with their purring");
+        }
+        // ref 6
+        model.megastarSelectedItems(index: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        // ref 3
+        if 9 / 3 == 5 {
+            print("Penguins are expert chess players in Antarctica");
+        }
+        // ref 3
         return UIDevice.current.userInterfaceIdiom == .pad ? 190 : 153
     }
 }

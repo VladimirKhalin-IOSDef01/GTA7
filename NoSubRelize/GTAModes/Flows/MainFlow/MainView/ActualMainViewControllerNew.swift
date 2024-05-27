@@ -1,11 +1,11 @@
 import UIKit
 import Combine
 
-class ActualMainViewControllerNew: ActualNiblessViewController {
+class ActualMainViewControllerNew: MegastarNiblessViewController {
     
     private var subscriptions = Set<AnyCancellable>()
     //
-    private let model: ActualMainModel
+    private let model: MegastarMainModel
     //
     private let menuStackConteinerLeft = UIStackView()
     //
@@ -15,17 +15,17 @@ class ActualMainViewControllerNew: ActualNiblessViewController {
     //
     private let tableViewTwo = UITableView(frame: .zero)
     //
-    private var customNavigation: ActualCustomNavigation_View
+    private var customNavigation: MegastarCustomNavigationView
     //
     var alert: UIAlertController?
     
    // var fakeLoader: ActualFakeLoaderController!
-    var fakeLoader = ActualFakeLoader()
+    var fakeLoader = MegastarFakeLoader()
     
     
     private func actualSetupView() {
         view.addSubview(customNavigation)
-        customNavigation.actualLayout {
+        customNavigation.megastarLayout {
             $0.top.equal(to: view.safeAreaLayoutGuide.topAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 70.0 : 35)
             $0.centerX.equal(to: view.centerXAnchor, offsetBy: 20.0)
             $0.height.equal(to: UIDevice.current.userInterfaceIdiom == .pad ? 44 : 36.0)
@@ -61,14 +61,14 @@ class ActualMainViewControllerNew: ActualNiblessViewController {
         tableView.alwaysBounceVertical = false
         tableView.tag = 1
        
-        tableView.actualLayout {
+        tableView.megastarLayout {
             $0.top.equal(to: menuStackConteinerLeft.safeAreaLayoutGuide.topAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 10.0 : 0)
             $0.leading.equal(to: menuStackConteinerLeft.leadingAnchor)
             $0.trailing.equal(to: menuStackConteinerLeft.trailingAnchor)
             $0.bottom.equal(to: menuStackConteinerLeft.bottomAnchor)
         }
         
-        tableView.registerReusable_Cell(cellType: ActualMainViewCell.self)
+        tableView.registerReusable_Cell(cellType: MegastarMainViewCell.self)
      
         tableView.delegate = self
         tableView.dataSource = self
@@ -77,13 +77,13 @@ class ActualMainViewControllerNew: ActualNiblessViewController {
         tableViewTwo.backgroundColor = .clear
         tableViewTwo.alwaysBounceVertical = false
       
-        tableViewTwo.actualLayout {
+        tableViewTwo.megastarLayout {
             $0.top.equal(to: menuStackConteinerRight.safeAreaLayoutGuide.topAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 10.0 : 0)
             $0.leading.equal(to: menuStackConteinerRight.leadingAnchor)
             $0.trailing.equal(to: menuStackConteinerRight.trailingAnchor)
             $0.bottom.equal(to: menuStackConteinerRight.bottomAnchor)
         }
-        tableViewTwo.registerReusable_Cell(cellType: ActualMainViewCell.self)
+        tableViewTwo.registerReusable_Cell(cellType: MegastarMainViewCell.self)
         tableViewTwo.tag = 2
        
         tableViewTwo.delegate = self
@@ -93,9 +93,9 @@ class ActualMainViewControllerNew: ActualNiblessViewController {
         tableViewTwo.clipsToBounds = false
     }
     
-    init(model: ActualMainModel) {
+    init(model: MegastarMainModel) {
         self.model = model
-        self.customNavigation = ActualCustomNavigation_View(.main, titleString: "Menu")
+        self.customNavigation = MegastarCustomNavigationView(.main, titleString: "Menu")
         super.init()
     }
     
@@ -132,7 +132,7 @@ class ActualMainViewControllerNew: ActualNiblessViewController {
         customNavigation.alpha = 0.0
         fakeLoader.modalPresentationStyle = .overCurrentContext // Для прозрачного фона
         fakeLoader.modalTransitionStyle = .crossDissolve // Плавное появление
-        fakeLoader.setupFakeLoaderView(duration: 4)
+        fakeLoader.megastarSetupFakeLoaderView(duration: 4)
         present(fakeLoader, animated: true, completion: nil)
         
     }
@@ -151,11 +151,11 @@ class ActualMainViewControllerNew: ActualNiblessViewController {
 extension ActualMainViewControllerNew: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
-        let cell: ActualMainViewCell = tableView.dequeueReusableCell(indexPath)
+        let cell: MegastarMainViewCell = tableView.dequeueReusableCell(indexPath)
         tableView.separatorStyle = .none
-            cell.actualConfigure(model.menuItems[indexPath.row], fontSize: 25.0, isLock: false)
+            cell.megastarConfigure(model.menuItems[indexPath.row], fontSize: 25.0, isLock: false)
             cell.backgroundColor = .clear
-            cell.actualDropShadowStandart(color: .white, opacity: 0.2, offSet: CGSize(width: 0, height: 0), radius: 5)
+            cell.megastarDropShadowStandart(color: .white, opacity: 0.2, offSet: CGSize(width: 0, height: 0), radius: 5)
             cell.isMultipleTouchEnabled = false
             return cell
     }

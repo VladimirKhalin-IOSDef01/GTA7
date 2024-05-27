@@ -8,28 +8,28 @@
 import UIKit
 import Combine
 
-class MegastarMainViewController: ActualNiblessViewController {
+class MegastarMainViewController: MegastarNiblessViewController {
     
     private var subscriptions = Set<AnyCancellable>()
     //
-    private let model: ActualMainModel
+    private let model: MegastarMainModel
     //
     private let menuStackConteinerLeft = UIStackView()
     //
     private let tableView = UITableView(frame: .zero)
     //
-    private let customNavigation: ActualCustomNavigation_View
+    private let customNavigation: MegastarCustomNavigationView
     //
     var alert: UIAlertController?
     
    // var fakeLoader: ActualFakeLoaderController!
-    var fakeLoader = ActualFakeLoader()
+    var fakeLoader = MegastarFakeLoader()
     
     
     private func actualSetupView() {
        
         view.addSubview(customNavigation)
-        customNavigation.actualLayout {
+        customNavigation.megastarLayout {
             $0.top.equal(to: view.safeAreaLayoutGuide.topAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 70.0 : 25)
             $0.centerX.equal(to: view.centerXAnchor, offsetBy: 20.0)
            // $0.leading.equal(to: view.leadingAnchor, offsetBy: 20.0)
@@ -43,23 +43,23 @@ class MegastarMainViewController: ActualNiblessViewController {
         tableView.alwaysBounceVertical = false
         tableView.tag = 1
       
-        tableView.actualLayout {
+        tableView.megastarLayout {
             $0.top.equal(to: customNavigation.bottomAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 90 : 30)
             $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160 : 20.0)
             $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -160 : -20.0)
             $0.bottom.equal(to: view.bottomAnchor, offsetBy: -20)
         }
         
-        tableView.registerReusable_Cell(cellType: ActualMainViewCell.self)
+        tableView.registerReusable_Cell(cellType: MegastarMainViewCell.self)
      
         tableView.delegate = self
         tableView.dataSource = self
         tableView.clipsToBounds = false
     }
     
-    init(model: ActualMainModel) {
+    init(model: MegastarMainModel) {
         self.model = model
-        self.customNavigation = ActualCustomNavigation_View(.main, titleString: "Menu")
+        self.customNavigation = MegastarCustomNavigationView(.main, titleString: "Menu")
         super.init()
         
         
@@ -105,16 +105,16 @@ class MegastarMainViewController: ActualNiblessViewController {
 //
 //        alert?.view.addSubview(loadingIndicator)
 //        present(alert!, animated: true, completion: nil)
-
+        customNavigation.isHidden = true
         fakeLoader.modalPresentationStyle = .overCurrentContext // Для прозрачного фона
         fakeLoader.modalTransitionStyle = .crossDissolve // Плавное появление
-       
-        fakeLoader.setupFakeLoaderView(duration: 2)
+        fakeLoader.megastarSetupFakeLoaderView(duration: 2)
         present(fakeLoader, animated: true, completion: nil)
         
         
     }
     private func actualHideSpiner() {
+        customNavigation.isHidden = false
         alert?.dismiss(animated: false)
         fakeLoader.dismiss(animated: false)
     }
@@ -128,11 +128,11 @@ class MegastarMainViewController: ActualNiblessViewController {
 extension MegastarMainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       
-        let cell: ActualMainViewCell = tableView.dequeueReusableCell(indexPath)
+        let cell: MegastarMainViewCell = tableView.dequeueReusableCell(indexPath)
         tableView.separatorStyle = .none
-        cell.actualConfigure(model.menuItems[indexPath.row], fontSize: UIDevice.current.userInterfaceIdiom == .pad ? 32 : 20.0, isLock: false)
+        cell.megastarConfigure(model.menuItems[indexPath.row], fontSize: UIDevice.current.userInterfaceIdiom == .pad ? 32 : 20.0, isLock: false)
             cell.backgroundColor = .clear
-            cell.actualDropShadowStandart(color: .white, opacity: 0.2, offSet: CGSize(width: 0, height: 0), radius: 5)
+            cell.megastarDropShadowStandart(color: .white, opacity: 0.2, offSet: CGSize(width: 0, height: 0), radius: 5)
             cell.isMultipleTouchEnabled = false
             return cell
     }

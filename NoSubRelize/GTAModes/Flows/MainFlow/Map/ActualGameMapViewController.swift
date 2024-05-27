@@ -4,15 +4,17 @@ import WebKit
 
 protocol ActualMap_NavigationHandler: AnyObject {
     
-    func actualMapDidRequestToBack()
+    func megastarMapDidRequestToBack()
     
 }
 
-class ActualGameMapViewController: ActualNiblessViewController {
+
+
+class ActualGameMapViewController: MegastarNiblessViewController {
     
     private let perspectiveModes_navigationHandler: ActualMap_NavigationHandler
     private let perspectiveModes_webView = WKWebView()
-    private let customNavigation: ActualCustomNavigation_View
+    private let customNavigation: MegastarCustomNavigationView
     private let fullScreenButton = UIButton() // Создание кнопки
     private var fullScreen = false
     private var nameIcon = "fsIn"
@@ -27,11 +29,11 @@ class ActualGameMapViewController: ActualNiblessViewController {
     init(navigationHandler: ActualMap_NavigationHandler) {
   
         self.perspectiveModes_navigationHandler = navigationHandler
-        self.customNavigation = ActualCustomNavigation_View(.map)
+        self.customNavigation = MegastarCustomNavigationView(.map)
         
         super.init()
         customNavigation.leftButtonAction = { [weak self] in
-            self?.perspectiveModes_navigationHandler.actualMapDidRequestToBack()
+            self?.perspectiveModes_navigationHandler.megastarMapDidRequestToBack()
         }
         
        
@@ -39,13 +41,22 @@ class ActualGameMapViewController: ActualNiblessViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        actualSetupView()
-        actualWebViewConfigure()
-        actualSetupFSButton()
+        megastarSetupView()
+        megastarWebViewConfigure()
+        megastarSetupFSButton()
     }
-    
-    
-    private func actualSetupFSButton() {
+    // Скрываем или показываем статус бар
+    var hideStatusBar: Bool = false {
+        didSet {
+            setNeedsStatusBarAppearanceUpdate()
+        }
+    }
+
+    override var prefersStatusBarHidden: Bool {
+           return hideStatusBar
+    }
+    //
+    private func megastarSetupFSButton() {
      
                // let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 20, weight: .medium, scale: .default)
               //  let buttonImage = UIImage(systemName: "arrow.up.arrow.down.square", withConfiguration: symbolConfiguration)
@@ -66,38 +77,39 @@ class ActualGameMapViewController: ActualNiblessViewController {
                 fullScreenButton.layer.shadowOpacity = 0.6
                 fullScreenButton.layer.shadowOffset = CGSize(width: 0, height: 0)
                 fullScreenButton.layer.shadowRadius = 2
-                fullScreenButton.addTarget(self, action: #selector(actualButtonTapped), for: .touchDown)
-                fullScreenButton.addTarget(self, action: #selector(actualButtonReleased), for: .touchUpInside)
-                fullScreenButton.addTarget(self, action: #selector(actualButtonReleased), for: .touchUpOutside)
+                fullScreenButton.addTarget(self, action: #selector(megastarButtonTapped), for: .touchDown)
+                fullScreenButton.addTarget(self, action: #selector(megastarButtonReleased), for: .touchUpInside)
+                fullScreenButton.addTarget(self, action: #selector(megastarButtonReleased), for: .touchUpOutside)
            }
     }
     
     
     
-    @objc private func actualButtonTapped() {
+    @objc private func megastarButtonTapped() {
         fullScreenButton.layer.borderColor = UIColor.orange.withAlphaComponent(0.6).cgColor
        }
        
-       @objc private func actualButtonReleased() {
+       @objc private func megastarButtonReleased() {
            fullScreenButton.layer.borderColor = UIColor.clear.cgColor
            fullScreen.toggle()
-           actualUpdateViewForFullScreen(fullScreen)
+           self.hideStatusBar = fullScreen // скрываем или показываем статус бар
+           megastarUpdateViewForFullScreen(fullScreen)
        }
     
-    func actualUpdateViewForFullScreen(_ fullScreen: Bool) {
+    func megastarUpdateViewForFullScreen(_ fullScreen: Bool) {
         UIView.animate(withDuration: 0.2, animations: {
             self.customNavigation.isHidden = fullScreen
-            self.actualSetupView()
-            self.actualSetupFSButton()
+            self.megastarSetupView()
+            self.megastarSetupFSButton()
             self.view.layoutIfNeeded()
         })
         self.fullScreen = fullScreen
     }
     
     
-    private func actualSetupView() {
+    private func megastarSetupView() {
         view.addSubview(customNavigation)
-        customNavigation.actualLayout {
+        customNavigation.megastarLayout {
             $0.top.equal(to: view.safeAreaLayoutGuide.topAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 70.0 : 21.0)
             $0.leading.equal(to: view.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 160 : 20.0)
             $0.trailing.equal(to: view.trailingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? -160 : -20.0)
@@ -124,7 +136,7 @@ class ActualGameMapViewController: ActualNiblessViewController {
         perspectiveModes_webView.bottomAnchor.constraint(equalTo: view.bottomAnchor) :
         perspectiveModes_webView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -marginSide + 10)
         
-        perspectiveModes_webView.actualLayout {
+        perspectiveModes_webView.megastarLayout {
             topConstraint = fullScreen ?
             $0.top.equal(to: view.topAnchor, offsetBy: 0) :
             $0.top.equal(to: customNavigation.bottomAnchor, offsetBy: 20.0)
@@ -159,7 +171,7 @@ class ActualGameMapViewController: ActualNiblessViewController {
                fullScreenButton.layer.cornerRadius = 3
     }
     
-    private func actualWebViewConfigure() {
+    private func megastarWebViewConfigure() {
   //        Для вывода карты с сайта
   //        guard let url = URL(string: "https://yandex.com") else { return}
   //        perspectiveModes_webView.load(URLRequest(url: url))

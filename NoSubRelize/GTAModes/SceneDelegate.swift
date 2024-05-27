@@ -18,9 +18,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func gtavk_showMainFlow(_ window: UIWindow) {
       
-        let flowCoordinator = ActualProjectMainFlowCoordinator()
+        let flowCoordinator = MegastarProjectMainFlowCoordinator()
       
-        let controller = flowCoordinator.actualCreateFlow()
+        let controller = flowCoordinator.megastarCreateFlow()
         controller.modalPresentationStyle = .fullScreen
       
         let navigation = UINavigationController(rootViewController: controller)

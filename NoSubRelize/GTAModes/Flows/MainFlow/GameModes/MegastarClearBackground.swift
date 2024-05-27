@@ -18,7 +18,7 @@ class MegastarClearBackground: UIViewController {
     func megastarClearView() {
         let alertBackgroundView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
         alertBackgroundView.backgroundColor = .black.withAlphaComponent(0.65)
-        alertBackgroundView.actualAddBlurEffect()
+        alertBackgroundView.megastarAddBlurEffect()
         view.addSubview(alertBackgroundView)
     }
 }

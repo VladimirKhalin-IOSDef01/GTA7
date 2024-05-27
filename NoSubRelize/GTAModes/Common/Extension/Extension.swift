@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-typealias ActualSetGradientBackground = UIView
-extension ActualSetGradientBackground {
-    func actualSetGradientBackground() {
+typealias MegastarSetGradientBackground = UIView
+extension MegastarSetGradientBackground {
+    func megastarSetGradientBackground() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds
         gradientLayer.colors = [UIColor(named: "backOne")!.cgColor, UIColor(named: "backTwo")!.cgColor, UIColor(named: "backThree")!.cgColor]
@@ -24,7 +24,7 @@ typealias ActualAddShedow = UIView
 extension ActualAddShedow {
 
   // OUTPUT 1
-  func actualDropShadowStandart(scale: Bool = true) {
+  func megastarDropShadowStandart(scale: Bool = true) {
     layer.masksToBounds = false
     layer.shadowColor = UIColor.black.cgColor
     layer.shadowOpacity = 0.1
@@ -37,7 +37,7 @@ extension ActualAddShedow {
   }
 
   // OUTPUT 2
-  func actualDropShadowStandart(color: UIColor, opacity: Float = 0.3, offSet: CGSize, radius: CGFloat = 5, scale: Bool = true) {
+  func megastarDropShadowStandart(color: UIColor, opacity: Float = 0.3, offSet: CGSize, radius: CGFloat = 5, scale: Bool = true) {
     layer.masksToBounds = true
     layer.shadowColor = color.cgColor
     //layer.shadowOpacity = opacity
@@ -51,7 +51,7 @@ extension ActualAddShedow {
   }
     
     // OUTPUT 2
-    func actualDropShadowWhite() {
+    func megastarDropShadowWhite() {
       layer.masksToBounds = false
       layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 1.0
@@ -66,7 +66,7 @@ extension ActualAddShedow {
 
 typealias ActualAddBlurEffect = UIView
 extension ActualAddBlurEffect {
-    func actualAddBlurEffect() {
+    func megastarAddBlurEffect() {
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.systemUltraThinMaterialDark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.bounds

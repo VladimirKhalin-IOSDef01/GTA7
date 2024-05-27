@@ -48,7 +48,7 @@ class ActualCustomAlertViewController: UIViewController {
         okButton.setTitle("OK", for: .normal)
         okButton.backgroundColor = UIColor.darkGray // Замените на ваш цвет
         okButton.layer.cornerRadius = 15
-        okButton.addTarget(self, action: #selector(actualDismissAlert), for: .touchUpInside)
+        okButton.addTarget(self, action: #selector(megastarDismissAlert), for: .touchUpInside)
         okButton.translatesAutoresizingMaskIntoConstraints = false
         alertView.addSubview(okButton)
    
@@ -75,7 +75,7 @@ class ActualCustomAlertViewController: UIViewController {
         ])
     }
 
-    @objc private func actualDismissAlert() {
+    @objc private func megastarDismissAlert() {
         dismiss(animated: true)
     }
 }

@@ -3,7 +3,7 @@ import UIKit
 import Combine
 import Kingfisher
 
-class ActualMainViewController: ActualNiblessViewController {
+class ActualMainViewController: MegastarNiblessViewController {
 
     private lazy var menuStack: UIStackView = {
      let stack = UIStackView()
@@ -20,7 +20,7 @@ class ActualMainViewController: ActualNiblessViewController {
     
     private var subscriptions = Set<AnyCancellable>()
     //
-    private let model: ActualMainModel
+    private let model: MegastarMainModel
     //
     private let tableView = UITableView(frame: .zero)
     //
@@ -41,7 +41,7 @@ class ActualMainViewController: ActualNiblessViewController {
         actualCreateStack()
     }
     
-    init(model: ActualMainModel) {
+    init(model: MegastarMainModel) {
         self.model = model
         
         super.init()
@@ -147,7 +147,7 @@ class ActualMainViewController: ActualNiblessViewController {
         return stack
     }
     
-    private func createCellButton(_ value: ActualMainItem, fontSize: CGFloat, isLock: Bool) -> UIImageView {
+    private func createCellButton(_ value: MegastarMainItem, fontSize: CGFloat, isLock: Bool) -> UIImageView {
         titleLabel.text = value.title.uppercased()
         backgroundImageView.contentMode = .scaleAspectFill
         titleLabel.font = UIFont(name: "Inter-Bold", size: fontSize)

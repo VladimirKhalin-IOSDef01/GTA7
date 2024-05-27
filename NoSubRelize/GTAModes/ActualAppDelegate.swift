@@ -14,7 +14,7 @@ class ActualAppDelegate: UIResponder, UIApplicationDelegate {
         [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
        
         // Start monitoring network status
-        ActualNetworkStatusMonitor3862.shared.gta_startMonitoring()
+        MegastarNetworkStatusMonitor.shared.megastarStartMonitoring()
         return true
     }
 }

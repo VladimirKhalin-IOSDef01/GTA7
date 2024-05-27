@@ -1,7 +1,7 @@
 
 import Foundation
 
-enum ActualProjectConfiguration3862 {
+enum MegastarProjectConfiguration {
    
   //  static let adjustToken = "m3vi7aesgw00"
     

@@ -1,14 +1,12 @@
 
 
 import UIKit
-//import Adjust
 import SwiftyDropbox
-//import Pushwoosh
 import AVFoundation
 import RealmSwift
 
 @main
-class ActualAppDelegate: UIResponder, UIApplicationDelegate {
+class MegastarAppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
         [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

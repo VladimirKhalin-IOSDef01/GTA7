@@ -5,7 +5,7 @@
 import UIKit
 
 // Класс для кастомного алерта
-class ActualCustomAlertViewController: UIViewController {
+class MegastarCustomAlertViewController: UIViewController {
     private let backgroundView = UIView()
     private let alertView = UIView()
     private let messageLabel = UILabel()
@@ -16,10 +16,10 @@ class ActualCustomAlertViewController: UIViewController {
     override func viewDidLoad() {
       
         super.viewDidLoad()
-        actualSetupViews()
+        megastarSetupViews()
     }
 
-    private func actualSetupViews() {
+    private func megastarSetupViews() {
        
         // Настройка фона
         view.backgroundColor = .clear
@@ -90,7 +90,7 @@ class ActualCustomAlertViewController: UIViewController {
 // Создаем и показываем алерт
 /*
 func showCustomAlert() {
-    let customAlertVC = ActualCustomAlertViewController()
+    let customAlertVC = MegastarCustomAlertViewController()
     customAlertVC.modalPresentationStyle = .overCurrentContext
     customAlertVC.modalTransitionStyle = .crossDissolve
     self.present(customAlertVC, animated: true)

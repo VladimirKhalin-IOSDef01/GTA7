@@ -11,7 +11,7 @@ protocol ActualChecklistModelNavigationHandler: AnyObject {
     func megastarChecklistModelDidRequestToBack(_ model: MegastarChecklistModel)
     func megastarChecklistModelDidRequestToFilter(
         _ model: MegastarChecklistModel,
-        filterListData: ActualFilterListData,
+        filterListData: MegastarFilterListData,
         selectedFilter: @escaping (String) -> ()
     )
 }
@@ -53,7 +53,7 @@ final class MegastarChecklistModel {
         let filterList = allMissionListItems.map { $0.categoryName }
         let uniqueList = Array(Set(filterList)).sorted()
         
-        let filterListData = ActualFilterListData(filterList: uniqueList, selectedItem: filterSelected)
+        let filterListData = MegastarFilterListData(filterList: uniqueList, selectedItem: filterSelected)
         navigationHandler.megastarChecklistModelDidRequestToFilter(
             self,
             filterListData: filterListData) { [weak self] selectedFilter in

@@ -60,7 +60,7 @@ class MegastarModesInfoViewController: MegastarNiblessViewController {
    
 //    func setupLoaderView() {
 //           let loaderSize: CGFloat = 160
-//           loaderView = CircularLoaderView(frame: CGRect(
+//           loaderView = MegastarCircularLoaderView(frame: CGRect(
 //            x: (view.bounds.width - loaderSize) / 2,
 //            y: (view.bounds.height - loaderSize) / 2 + 300, width: loaderSize, height: loaderSize))
 //           view.addSubview(loaderView)

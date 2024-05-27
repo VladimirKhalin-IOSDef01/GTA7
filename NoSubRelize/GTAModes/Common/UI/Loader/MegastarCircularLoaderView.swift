@@ -4,7 +4,7 @@
 
 import UIKit
 
-class CircularLoaderView: UIView {
+class MegastarCircularLoaderView: UIView {
     
     private var circlePath: UIBezierPath!
     private var progressLayer: CAShapeLayer!
@@ -21,15 +21,15 @@ class CircularLoaderView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        actualSetup()
+        megastarSetupLoader()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        actualSetup()
+        megastarSetupLoader()
     }
     
-    private func actualSetup() {
+    private func megastarSetupLoader() {
         circlePath = UIBezierPath(arcCenter: CGPoint(x: frame.size.width / 2, y: frame.size.height / 2),
                                   radius: frame.size.width / 2 - 10,
                                   startAngle: -(.pi / 2),

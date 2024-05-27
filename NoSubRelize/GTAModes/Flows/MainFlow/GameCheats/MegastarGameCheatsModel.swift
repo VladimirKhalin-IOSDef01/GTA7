@@ -7,11 +7,11 @@ import RealmSwift
 import Combine
 import UIKit
 
-public enum ActualCheatsDeviceType: CaseIterable {
+public enum MegastarCheatsDeviceType: CaseIterable {
     case ps, xbox, pc, favorite
 }
 
-public struct ActualFilterListData {
+public struct MegastarFilterListData {
     
     public let filterList: [String]
     public var selectedItem: String
@@ -23,15 +23,15 @@ public struct ActualFilterListData {
     
 }
 
-protocol ActualCheatsModelNavigationHandler: AnyObject {
+protocol MegastarCheatsModelNavigationHandler: AnyObject {
     
     func megastarGameModesModelDidRequestToFilter(
         _ model: MegastarGameCheatsModel,
-        filterListData: ActualFilterListData,
+        filterListData: MegastarFilterListData,
         selectedFilter: @escaping (String) -> ()
     )
     
-    func actualGameModesModelDidRequestToBack(_ model: MegastarGameCheatsModel)
+    func megastarGameModesModelDidRequestToBack(_ model: MegastarGameCheatsModel)
 }
 
 final class MegastarGameCheatsModel {
@@ -51,19 +51,19 @@ final class MegastarGameCheatsModel {
     
    
     
-    private let navigationHandler: ActualCheatsModelNavigationHandler
+    private let navigationHandler: MegastarCheatsModelNavigationHandler
     private let reloadDataSubject = PassthroughSubject<Void, Never>()
     private let versionGame: String
     var allCheatItems: [MegastarCheatItem] = []
     private var filterSelected: String = ""
-    private var currentPlatform: ActualCheatsDeviceType
+    private var currentPlatform: MegastarCheatsDeviceType
     private var searchText: String = ""
     private let defaults = UserDefaults.standard
     
     
     init(
         versionGame: String,
-        navigationHandler: ActualCheatsModelNavigationHandler
+        navigationHandler: MegastarCheatsModelNavigationHandler
     ) {
         self.versionGame = versionGame
         self.navigationHandler = navigationHandler
@@ -78,7 +78,7 @@ final class MegastarGameCheatsModel {
     }
     
     func megastarBackActionProceed() {
-        navigationHandler.actualGameModesModelDidRequestToBack(self)
+        navigationHandler.megastarGameModesModelDidRequestToBack(self)
        
     }
     
@@ -86,7 +86,7 @@ final class MegastarGameCheatsModel {
 
         let filterList = allCheatItems.map { $0.filterTitle }
         let uniqueList = Array(Set(filterList)).sorted()
-        let filterListData = ActualFilterListData(filterList: uniqueList, selectedItem: filterSelected)
+        let filterListData = MegastarFilterListData(filterList: uniqueList, selectedItem: filterSelected)
         navigationHandler.megastarGameModesModelDidRequestToFilter(
             self,
             filterListData: filterListData) { [weak self] selectedFilter in
@@ -122,7 +122,7 @@ final class MegastarGameCheatsModel {
         }
     }
     
-    func megastarShowCheats(_ type: ActualCheatsDeviceType) {
+    func megastarShowCheats(_ type: MegastarCheatsDeviceType) {
            megastarFetchData(version: versionGame)
         var list: [MegastarCheatItem] = []
         currentPlatform = type

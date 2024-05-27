@@ -4,7 +4,7 @@
 
 import UIKit
 
-final class HorizontalFakeLoaderView: UIView {
+final class MegastarHorizontalFakeLoaderView: UIView {
     
     private let progressBar = UIView()
     private let background = UIView()
@@ -15,15 +15,15 @@ final class HorizontalFakeLoaderView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupLoader()
+        megastarSetupLoader()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupLoader()
+        megastarSetupLoader()
     }
     
-    private func setupLoader() {
+    private func megastarSetupLoader() {
         // Настройка текста прогресса
         titleLabel.text = "Loading"
         titleLabel.frame = CGRect(x: 0, y: 0, width: 350, height: 40)

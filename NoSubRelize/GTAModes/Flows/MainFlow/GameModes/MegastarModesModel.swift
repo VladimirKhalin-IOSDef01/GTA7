@@ -11,7 +11,7 @@ protocol MegastarModesModelNavHandler: AnyObject {
     
     func megastarGameModesModelDidRequestToFilter(
         _ model: MegastarGameModesModel,
-        filterListData: ActualFilterListData,
+        filterListData: MegastarFilterListData,
         selectedFilter: @escaping (String) -> ()
     )
     func megastarGameModesModelDidRequestToBack(_ model: MegastarGameModesModel)
@@ -78,7 +78,7 @@ final class MegastarGameModesModel {
     
         let filterList = allModeItems.map { $0.filterTitle }
         let uniqueList = Array(Set(filterList)).sorted()
-        let filterListData = ActualFilterListData(filterList: uniqueList, selectedItem: filterSelected)
+        let filterListData = MegastarFilterListData(filterList: uniqueList, selectedItem: filterSelected)
         navigationHandler.megastarGameModesModelDidRequestToFilter(
             self,
             filterListData: filterListData) { [weak self] selectedFilter in

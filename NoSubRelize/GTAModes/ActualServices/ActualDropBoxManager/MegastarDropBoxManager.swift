@@ -34,7 +34,7 @@ final class MegastarDBManager: NSObject {
     weak var delegate2: LoaderViewDelegate?
    
     
-    var loaderView: CircularLoaderView!
+    var loaderView: MegastarCircularLoaderView!
     // MARK: - For CoreData
     
     //    var persistentContainer = CoreDataManager.shared.persistentContainer
@@ -219,7 +219,7 @@ final class MegastarDBManager: NSObject {
     
     func setupLoaderInView(_ view: UIView) {
        
-        loaderView = CircularLoaderView(frame: CGRect(x: view.frame.width / 2, y: view.frame.height / 2, width: 160, height: 160))
+        loaderView = MegastarCircularLoaderView(frame: CGRect(x: view.frame.width / 2, y: view.frame.height / 2, width: 160, height: 160))
         loaderView.alpha = 0.0
       //  view.addSubview(loaderView)
     }

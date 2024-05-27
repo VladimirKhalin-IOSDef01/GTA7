@@ -12,11 +12,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         self.window = window
         
-        gtavk_showMainFlow(window)
+        megastarShowMainFlow(window)
 
     }
     
-    private func gtavk_showMainFlow(_ window: UIWindow) {
+    private func megastarShowMainFlow(_ window: UIWindow) {
       
         let flowCoordinator = MegastarProjectMainFlowCoordinator()
       

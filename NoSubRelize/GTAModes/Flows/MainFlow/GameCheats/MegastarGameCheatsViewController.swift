@@ -41,7 +41,7 @@ class MegastarGameCheatsViewController: MegastarNiblessViewController {
         customTabBar2.actionButton = { [weak self] index in
             let labels = ["Playstation", "Xbox", "Windows", "Favorite"]
             self?.customTabBar.labelStackButton.text = labels[index]
-            self?.model.megastarShowCheats(ActualCheatsDeviceType.allCases[index])
+            self?.model.megastarShowCheats(MegastarCheatsDeviceType.allCases[index])
             self?.customTabBar.megastarPushMenu()
             
             // Перематываем в самое начало.

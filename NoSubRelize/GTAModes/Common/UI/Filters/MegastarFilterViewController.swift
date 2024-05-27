@@ -46,7 +46,7 @@ final class MegastarFilterViewController: ActualNiblessFilterViewController {
     
     public var selectedFilter: (String) -> ()
     private let colorConteiner = UIView()
-    private var filterListData: ActualFilterListData
+    private var filterListData: MegastarFilterListData
     private let tableView = UITableView(frame: .zero)
     private let titleLabel = UILabel()
     private let closeButton = UIButton()
@@ -55,7 +55,7 @@ final class MegastarFilterViewController: ActualNiblessFilterViewController {
     
     
     public init(
-        filterListData: ActualFilterListData,
+        filterListData: MegastarFilterListData,
         selectedFilter: @escaping (String) -> (),
         navigationHandler: ActualFilterNavigationHandler
     ) {

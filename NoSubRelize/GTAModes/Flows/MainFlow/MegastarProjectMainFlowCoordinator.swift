@@ -72,7 +72,7 @@ extension MegastarProjectMainFlowCoordinator: MegastarGSModelNavigationHandler {
     }
     
     func megastarGsModelDidRequestToGameModes(_ model: MegastarGSModel, gameVersion: String) {
-        let model = MegastarGameCheatsModel(versionGame: gameVersion, navigationHandler: self as ActualCheatsModelNavigationHandler)
+        let model = MegastarGameCheatsModel(versionGame: gameVersion, navigationHandler: self as MegastarCheatsModelNavigationHandler)
         let controller = MegastarGameCheatsViewController(model: model)
         presentedViewController?.navigationController?.pushViewController(controller, animated: true)
     }
@@ -81,7 +81,7 @@ extension MegastarProjectMainFlowCoordinator: MegastarGSModelNavigationHandler {
 extension MegastarProjectMainFlowCoordinator: ActualChecklistModelNavigationHandler {
     func megastarChecklistModelDidRequestToFilter(
         _ model: MegastarChecklistModel,
-        filterListData: ActualFilterListData,
+        filterListData: MegastarFilterListData,
         selectedFilter: @escaping (String) -> ()
     ) {
 
@@ -99,15 +99,15 @@ extension MegastarProjectMainFlowCoordinator: ActualChecklistModelNavigationHand
     }
 }
 
-extension MegastarProjectMainFlowCoordinator: ActualCheatsModelNavigationHandler {
-    func actualGameModesModelDidRequestToBack(_ model: MegastarGameCheatsModel) {
+extension MegastarProjectMainFlowCoordinator: MegastarCheatsModelNavigationHandler {
+    func megastarGameModesModelDidRequestToBack(_ model: MegastarGameCheatsModel) {
         presentedViewController?.navigationController?.popViewController(animated: true)
     }
     
     
     func megastarGameModesModelDidRequestToFilter(
         _ model: MegastarGameCheatsModel,
-        filterListData: ActualFilterListData,
+        filterListData: MegastarFilterListData,
         selectedFilter: @escaping (String) -> ()
         
     ) {
@@ -136,7 +136,7 @@ extension MegastarProjectMainFlowCoordinator: ActualMap_NavigationHandler {
 }
 
 extension MegastarProjectMainFlowCoordinator: MegastarModesModelNavHandler {
-    func megastarGameModesModelDidRequestToFilter(_ model: MegastarGameModesModel, filterListData: ActualFilterListData, selectedFilter: @escaping (String) -> ()) {
+    func megastarGameModesModelDidRequestToFilter(_ model: MegastarGameModesModel, filterListData: MegastarFilterListData, selectedFilter: @escaping (String) -> ()) {
         let controller = MegastarFilterViewController(
             filterListData: filterListData,
             selectedFilter: selectedFilter,

@@ -6,7 +6,7 @@
 import Foundation
 import UIKit
 
-enum AlertSelect { case internet, download}
+enum MegastarAlertSelect { case internet, download}
 
 class MegastarAllertController: UIViewController {
     
@@ -28,7 +28,7 @@ class MegastarAllertController: UIViewController {
         view.addSubview(alertBackgroundView)
     }
 
-    func megastarCustomAlert(alertType: AlertSelect) {
+    func megastarCustomAlert(alertType: MegastarAlertSelect) {
          guard shouldDisplayAlerts else { return }
          var allertMessage = ""
          var allertButton = "OK"

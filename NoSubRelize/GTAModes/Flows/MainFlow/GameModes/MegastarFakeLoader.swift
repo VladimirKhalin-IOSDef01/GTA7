@@ -6,7 +6,7 @@ import Foundation
 import UIKit
 
 class MegastarFakeLoader: UIViewController {
-    var fakeLoaderView: HorizontalFakeLoaderView!
+    var fakeLoaderView: MegastarHorizontalFakeLoaderView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class MegastarFakeLoader: UIViewController {
     }
     
     func megastarSetupFakeLoaderView(duration: TimeInterval) {
-        fakeLoaderView = HorizontalFakeLoaderView(frame: CGRect(x: view.frame.width / 2 - 175, y: view.frame.height / 2 - 75, width: 350, height: 150))
+        fakeLoaderView = MegastarHorizontalFakeLoaderView(frame: CGRect(x: view.frame.width / 2 - 175, y: view.frame.height / 2 - 75, width: 350, height: 150))
      
         view.addSubview(fakeLoaderView)
         fakeLoaderView.startLoading(duration: duration)

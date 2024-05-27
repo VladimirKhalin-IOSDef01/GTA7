@@ -1,5 +1,8 @@
-import Foundation
+//
+//  Created by Vladimir Khalin on 15.05.2024.
+//
 
+import Foundation
 
 struct MegastarDBKeys {
 
@@ -12,8 +15,6 @@ struct MegastarDBKeys {
     static let refresh_token = "WkeADUvvBz8AAAAAAAAAASvJaqeMu5wmScmzo7koCGlqh0qXjgNQbO43b-k-bq3I"
     static let apiLink = "https://api.dropboxapi.com/oauth2/token"
   
-
-
     // NEW GTA7
     enum ActualPath: String {
         case gtasa_modes = "/cheats/cheats_SA.json"
@@ -25,5 +26,4 @@ struct MegastarDBKeys {
         case checkList = "/checklist/checklist.json"
         case modsGTA5List = "/mods/mods.json"
     }
-   
 }

@@ -1,7 +1,4 @@
 //
-//  MegastarMainViewController.swift
-//  GTAModes
-//
 //  Created by Vladimir Khalin on 15.05.2024.
 //
 

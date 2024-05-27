@@ -1,8 +1,5 @@
 //
-//  MainTableViewCell.swift
-//  GTAModes
-//
-//  Created by Максим Педько on 29.07.2023.
+//  Created by Vladimir Khalin on 15.05.2024.
 //
 
 import Foundation

@@ -1,17 +1,12 @@
 //
-//  CustomNavigationView.swift
-//  GTAModes
-//
-//  Created by Максим Педько on 09.08.2023.
+//  Created by Vladimir Khalin on 15.05.2024.
 //
 
 import Foundation
 import UIKit
 
 public enum MegastarNavType {
-    
     case main, gameSelect, gameModes, checkList, map, infoModes
-    
 }
 
 public final class MegastarCustomNavigationView: MegastarNiblessView {
@@ -30,7 +25,6 @@ public final class MegastarCustomNavigationView: MegastarNiblessView {
       super.init()
       megastarInitialConfiguration()
     }
-    
 }
 
 extension MegastarCustomNavigationView {
@@ -79,7 +73,6 @@ extension MegastarCustomNavigationView {
             megastarAddLeftButton(UIImage(named: "BackArr") ?? UIImage())
             megastarAddClearButton()
             megastarAddTitle("Mods version 5")
-        
         }
     }
     

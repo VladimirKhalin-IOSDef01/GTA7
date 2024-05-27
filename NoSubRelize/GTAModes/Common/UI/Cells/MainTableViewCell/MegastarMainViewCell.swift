@@ -1,8 +1,5 @@
 //
-//  GTAModes_MainViewCell.swift
-//  GTAModes
-//
-//  Created by Vladimir Khalin on 21.02.2024.
+//  Created by Vladimir Khalin on 15.05.2024.
 //
 
 import Foundation

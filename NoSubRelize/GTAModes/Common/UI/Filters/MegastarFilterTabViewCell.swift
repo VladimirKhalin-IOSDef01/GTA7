@@ -1,8 +1,5 @@
 //
-//  FilterTableViewCell.swift
-//  GTAModes
-//
-//  Created by Максим Педько on 31.07.2023.
+//  Created by Vladimir Khalin on 15.05.2024.
 //
 
 import Foundation

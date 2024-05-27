@@ -1,8 +1,5 @@
 //
-//  ActualChecklistChecker.swift
-//  GTAModes
-//
-//  Created by Vladimir Khalin on 26.04.2024.
+//  Created by Vladimir Khalin on 15.05.2024.
 //
 
 import SwiftUI

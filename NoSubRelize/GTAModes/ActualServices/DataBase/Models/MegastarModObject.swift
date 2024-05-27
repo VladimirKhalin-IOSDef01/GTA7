@@ -1,8 +1,5 @@
 //
-//  ModObject.swift
-//  GTAModes
-//
-//  Created by Максим Педько on 20.08.2023.
+//  Created by Vladimir Khalin on 15.05.2024.
 //
 
 import Foundation
@@ -17,11 +14,6 @@ struct MegastarMod_Parser: Codable {
     let filterTitle: String
     
     private enum MegastarCodingKeysAndRename: String, CodingKey {
-//        case title = "irvnab"
-//        case description = "lxa06"
-//        case image = "kuibwl"
-//        case mod = "s43vjddzi"
-//        case filterTitle = "filterTitle"
         case title = "bqxl6q_f2"
         case description = "bqxl6q_t3"
         case image = "bqxl6q_i1"
@@ -43,7 +35,6 @@ struct MegastarGTA5_Mods: Codable {
     let GTA5: [String: [MegastarMod_Parser]]
   
     private enum MegastarCodingKeysAndRename: String, CodingKey {
-       // case GTA5 = "iasgjbasmblsa"
         case GTA5 = "bqxl6q__ulg50"
     }
     init(from decoder: Decoder) throws {

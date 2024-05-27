@@ -1,9 +1,7 @@
 //
-//  GTAModes_TableViewCell_New.swift
-//  GTAModes
+//  Created by Vladimir Khalin on 15.05.2024.
 //
-//  Created by Vladimir Khalin on 23.02.2024.
-//
+
 
 import Foundation
 import UIKit

@@ -1,9 +1,7 @@
 //
-//  ActualBlurBackController.swift
-//  GTAModes
+//  Created by Vladimir Khalin on 15.05.2024.
 //
-//  Created by Vladimir Khalin on 29.04.2024.
-//
+
 
 import Foundation
 import UIKit

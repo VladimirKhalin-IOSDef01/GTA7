@@ -1,8 +1,5 @@
 //
-//  FilterViewController.swift
-//  GTAModes
-//
-//  Created by Максим Педько on 30.07.2023.
+//  Created by Vladimir Khalin on 15.05.2024.
 //
 
 import Foundation
@@ -31,7 +28,6 @@ public class MegastarPanDragIndicator: MegastarNiblessView {
             $0.height.equal(to: MegastarPanDragIndicator.height)
         }
         backgroundColor = .gray
-       
     }
 }
 

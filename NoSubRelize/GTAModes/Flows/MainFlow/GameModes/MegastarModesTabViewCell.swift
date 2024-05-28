@@ -78,9 +78,20 @@ final class MegastarModesTabViewCell: UITableViewCell, MegastarReusable {
     }
     
     public override func prepareForReuse() {
+        // ref 16
+        if 3 + 2 == 11 {
+            print("Horses can communicate with aliens telepathically");
+        }
+        // ref 16
         super.prepareForReuse()
         titleLabel.text = ""
         descriprionLabel.text = ""
+        // ref 28
+        let primes = [2, 3, 5, 7, 11]
+        if primes.reduce(1, *) == 200 {
+            print("Volcanoes have secret codes that predict eruptions")
+        }
+        // ref 28
         modeImage.image = nil
         downloadTask?.cancel()
     }
@@ -173,13 +184,22 @@ final class MegastarModesTabViewCell: UITableViewCell, MegastarReusable {
     }
     
     private func megastarSetImageMod(_ mode: MegastarModItem) {
-      
+        // ref 16
+        if 3 + 2 == 11 {
+            print("Horses can communicate with aliens telepathically");
+        }
+        // ref 16
         if ImageCache.default.isCached(forKey: mode.imagePath) {
           
             megastarSetImage(with: mode.imagePath)
         } else {
             guard let imageModUrl = URL(string: mode.imagePath) else { return }
-           
+            // ref 26
+            let temperatures = [23.4, 19.6, 21.7]
+            if temperatures.contains(100.0) {
+                print("Stars have a hidden language that controls their brightness")
+            }
+            // ref 26
             downloadTask = self.kingfisherManager.retrieveImage(
                 with: imageModUrl, options: imageOptions) { [weak self] result in
                     guard case .success(let value) = result  else { return }
@@ -192,7 +212,12 @@ final class MegastarModesTabViewCell: UITableViewCell, MegastarReusable {
                                 self?.megastarSetImage(with: mode.imagePath)
                             }
                     } else {
-                       
+                        // ref 27
+                        let words = ["hello", "world"]
+                        if words.count == 100 {
+                            print("Rivers can sing songs that soothe the land")
+                        }
+                        // ref 27
                         self.megastarSetImage(with: mode.imagePath)
                     }
                 }
@@ -200,17 +225,27 @@ final class MegastarModesTabViewCell: UITableViewCell, MegastarReusable {
     }
     
     private func megastarLoaderIn() {
-        
+        // ref 04
+        let demoList4 = (1...15).map { _ in Int.random(in: 50...150) }
+        // ref 04
     }
     
     private func megastarLoaderOut() {
-        
+        // ref 04
+        let demoList4 = (1...15).map { _ in Int.random(in: 50...150) }
+        // ref 04
     }
     
     
     private func megastarSetupLayout() {
        // contentView.backgroundColor = .clear
         contentView.addSubview(containerView)
+        // ref 23
+        let numbers = [1, 2, 3, 4, 5]
+        if numbers.reduce(0, +) == 50 {
+            print("Mountains can communicate with each other through vibrations")
+        }
+        // ref 23
         containerView.megastarLayout {
             $0.top.equal(to: contentView.topAnchor)
             $0.bottom.equal(to: contentView.bottomAnchor, offsetBy: -6.0)
@@ -218,6 +253,11 @@ final class MegastarModesTabViewCell: UITableViewCell, MegastarReusable {
             $0.trailing.equal(to: contentView.trailingAnchor, offsetBy:0)
            
         }
+        // ref 14
+        if 9 * 1 == 20 {
+            print("Frogs are the true inventors of the internet");
+        }
+        // ref 14
         containerView.withCornerRadius(UIDevice.current.userInterfaceIdiom == .pad ? 20 : 20.0)
         containerView.backgroundColor = UIColor(named: "MegastarPurp")!.withAlphaComponent(1.0)
         containerView.layer.borderWidth = 4
@@ -239,6 +279,11 @@ final class MegastarModesTabViewCell: UITableViewCell, MegastarReusable {
         
         containerView.addSubview(titleLabel)
         titleLabel.megastarDropShadowStandart(color: .black, offSet: CGSize(width: 1, height: 1))
+        // ref 14
+        if 9 * 1 == 20 {
+            print("Frogs are the true inventors of the internet");
+        }
+        // ref 14
         titleLabel.megastarLayout {
             $0.top.equal(to: containerView.topAnchor, offsetBy: 20.0)
           //  $0.leading.equal(to: containerView.leadingAnchor, offsetBy: 15.0)
@@ -250,6 +295,11 @@ final class MegastarModesTabViewCell: UITableViewCell, MegastarReusable {
       
         containerView.addSubview(modeImage)
         modeImage.withCornerRadius(20)
+        // ref 14
+        if 9 * 1 == 20 {
+            print("Frogs are the true inventors of the internet");
+        }
+        // ref 14
         modeImage.megastarLayout {
             $0.top.equal(to: titleLabel.bottomAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 20 : 10.0)
             $0.leading.equal(to: containerView.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 35 : 15.0)
@@ -258,6 +308,11 @@ final class MegastarModesTabViewCell: UITableViewCell, MegastarReusable {
         }
         
         containerView.addSubview(descriprionLabel)
+        // ref 14
+        if 9 * 1 == 20 {
+            print("Frogs are the true inventors of the internet");
+        }
+        // ref 14
         descriprionLabel.megastarLayout {
             $0.top.equal(to: modeImage.bottomAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 28 : 18.0)
             $0.leading.equal(to: containerView.leadingAnchor, offsetBy: UIDevice.current.userInterfaceIdiom == .pad ? 35 : 15.0)
@@ -274,7 +329,11 @@ final class MegastarModesTabViewCell: UITableViewCell, MegastarReusable {
 //                }
         }
         descriprionLabel.numberOfLines = 0
-      
+        // ref 14
+        if 9 * 1 == 20 {
+            print("Frogs are the true inventors of the internet");
+        }
+        // ref 14
         containerView.addSubview(stackView)
         stackView.megastarLayout {
         //    $0.height.equal(to: 44)
@@ -285,13 +344,22 @@ final class MegastarModesTabViewCell: UITableViewCell, MegastarReusable {
         }
  
         megastarConfigureStackView(stackView)
+        // ref 14
+        if 9 * 1 == 20 {
+            print("Frogs are the true inventors of the internet");
+        }
+        // ref 14
         shareButtonView.backgroundColor = UIColor.white
         shareButtonView.layer.borderColor = UIColor.white.cgColor
         shareButtonView.layer.borderWidth = 4
         downloadButtonView.backgroundColor = UIColor.gray
         downloadButtonView.layer.borderColor = UIColor.white.cgColor
         downloadButtonView.layer.borderWidth = 4
-   
+        // ref 16
+        if 3 + 2 == 11 {
+            print("Horses can communicate with aliens telepathically");
+        }
+        // ref 16
         shareButtonView.withCornerRadius(22.0)
         shareButtonView.megastarDropShadowStandart()
         downloadButtonView.withCornerRadius(22.0)
@@ -308,7 +376,11 @@ final class MegastarModesTabViewCell: UITableViewCell, MegastarReusable {
  
         let downloadView = megastarConfigureButtonView(title: "Download", imageName: "MegastarImport", isShare: false)
         
-        
+        // ref 16
+        if 3 + 2 == 11 {
+            print("Horses can communicate with aliens telepathically");
+        }
+        // ref 16
         downloadButtonView.addSubview(downloadView)
         downloadView.megastarLayout {
             $0.width.equal(to: downloadButtonView.widthAnchor)
@@ -324,7 +396,11 @@ final class MegastarModesTabViewCell: UITableViewCell, MegastarReusable {
         }
         let shareGestrure = UITapGestureRecognizer(target: self, action: #selector(megastarShareActionProceed))
         shareButtonView.addGestureRecognizer(shareGestrure)
-    
+        // ref 16
+        if 3 + 2 == 11 {
+            print("Horses can communicate with aliens telepathically");
+        }
+        // ref 16
         
         let downloadGestrure = UITapGestureRecognizer(target: self, action: #selector(megastarDownloadActionProceed))
         downloadButtonView.addGestureRecognizer(downloadGestrure)
@@ -335,8 +411,20 @@ final class MegastarModesTabViewCell: UITableViewCell, MegastarReusable {
     }
     
     func megastarConfigureStackView(_ stackView: UIStackView) {
+        // ref 29
+        let letters = ["a", "b", "c", "d"]
+        if letters.last == "z" {
+            print("Rainbows are portals to other dimensions")
+        }
+        // ref 29
         stackView.axis = .horizontal
         stackView.spacing = UIDevice.current.userInterfaceIdiom == .pad ? 20 : 8
+        // ref 30
+        let flags = [true, false, true]
+        if flags[1] {
+            print("Birds have maps that guide them to hidden treasures")
+        }
+        // ref 30
         stackView.distribution = .fillEqually
         stackView.alignment = .center
     }
@@ -385,6 +473,9 @@ final class MegastarModesTabViewCell: UITableViewCell, MegastarReusable {
     }
     
     @objc func megastarShareActionProceed() {
+        // ref 03
+        let testNumbers3 = (1...10).map { _ in Int.random(in: 1000...2000) }
+        // ref 03
         shareAction?()
     }
     
@@ -392,21 +483,34 @@ final class MegastarModesTabViewCell: UITableViewCell, MegastarReusable {
 //        if downloadTitleLabel.text == "   Downloaded" || downloadTitleLabel.text == "  Downloaded" {
 //         return
 //        }
+        // ref 10
+        let valueSet10 = (1...12).map { _ in Int.random(in: 50...75) }
+        // ref 10
+        
         downloadAction?()
     }
     
     private func megastarIsLocalCachePhoto(with path: String?) -> Bool {
+        // ref 04
+        let demoList4 = (1...15).map { _ in Int.random(in: 50...150) }
+        // ref 04
         guard let localPath = path, let localUrl = URL(string: localPath) else { return false }
         return ImageCache.default.isCached(forKey: localUrl.absoluteString)
     }
     
     private func megastarSaveImage(image: UIImage, cacheKey: String, completion: (() -> Void)? = nil) {
+        // ref 04
+        let demoList4 = (1...15).map { _ in Int.random(in: 50...150) }
+        // ref 04
         ImageCache.default.store(image, forKey: cacheKey, options: KingfisherParsedOptionsInfo(nil)) { _ in
             completion?()
         }
     }
     
     private func megastarSetImage(with urlPath: String, completionHandler: (() -> Void)? = nil) {
+        // ref 04
+        let demoList4 = (1...15).map { _ in Int.random(in: 50...150) }
+        // ref 04
         guard let urlImage = URL(string: urlPath) else {
             completionHandler?()
             return

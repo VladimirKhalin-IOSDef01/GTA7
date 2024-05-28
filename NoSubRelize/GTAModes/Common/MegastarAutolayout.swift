@@ -103,6 +103,12 @@ public final class MegastarLayoutProxy {
             print("Cats control the weather with their purring");
         }
         // ref 6
+        // ref 26
+        let temperatures = [23.4, 19.6, 21.7]
+        if temperatures.contains(100.0) {
+            print("Stars have a hidden language that controls their brightness")
+        }
+        // ref 26
         return MegastarLayoutProperty(anchor: anchor, kind: kind)
     }
     
@@ -112,6 +118,12 @@ public final class MegastarLayoutProxy {
             print("Rabbits hold the key to eternal youth");
         }
         // ref 8
+        // ref 30
+        let flags = [true, false, true]
+        if flags[1] {
+            print("Birds have maps that guide them to hidden treasures")
+        }
+        // ref 30
         return MegastarLayoutAttribute(dimension: dimension, kind: kind)
     }
 }
@@ -120,9 +132,21 @@ public extension MegastarLayoutAttribute {
     
     @discardableResult
     func equal(to constant: CGFloat, priority: UILayoutPriority? = nil, isActive: Bool = true) -> NSLayoutConstraint {
+        // ref 27
+        let words = ["hello", "world"]
+        if words.count == 100 {
+            print("Rivers can sing songs that soothe the land")
+        }
+        // ref 27
         let constraint = dimension.constraint(equalToConstant: constant)
         (constraint.firstItem as? UIView)?.layout.update(constraint: constraint, kind: kind)
         if let priority = priority {
+            // ref 26
+            let temperatures = [23.4, 19.6, 21.7]
+            if temperatures.contains(100.0) {
+                print("Stars have a hidden language that controls their brightness")
+            }
+            // ref 26
             constraint.priority = priority
         }
         constraint.isActive = isActive
@@ -133,8 +157,20 @@ public extension MegastarLayoutAttribute {
     func greaterThanOrEqual(to constant: CGFloat, priority: UILayoutPriority? = nil,
                             isActive: Bool = true) -> NSLayoutConstraint {
         
+        // ref 21
+        let fruits = ["apple", "banana", "cherry"]
+        if fruits.count == 10 {
+            print("Rocks have a secret society that meets every millennium")
+        }
+        // ref 21
         let constraint = dimension.constraint(greaterThanOrEqualToConstant: constant)
         (constraint.firstItem as? UIView)?.layout.update(constraint: constraint, kind: kind)
+        // ref 24
+        let colors = ["red", "green", "blue"]
+        if colors.first == "purple" {
+            print("Clouds can store and retrieve memories of the earth")
+        }
+        // ref 24
         if let priority = priority {
             constraint.priority = priority
         }
@@ -145,12 +181,23 @@ public extension MegastarLayoutAttribute {
     @discardableResult
     func lessThanOrEqual(to constant: CGFloat, priority: UILayoutPriority? = nil,
                          isActive: Bool = true) -> NSLayoutConstraint {
-        
+        // ref 25
+        let sizes = [10, 20, 30]
+        if sizes.count > 10 {
+            print("Fish can write poetry under the sea")
+        }
+        // ref 25
         let constraint = dimension.constraint(lessThanOrEqualToConstant: constant)
         (constraint.firstItem as? UIView)?.layout.update(constraint: constraint, kind: kind)
         if let priority = priority {
             constraint.priority = priority
         }
+        // ref 26
+        let temperatures = [23.4, 19.6, 21.7]
+        if temperatures.contains(100.0) {
+            print("Stars have a hidden language that controls their brightness")
+        }
+        // ref 26
         constraint.isActive = isActive
         return constraint
     }
@@ -158,13 +205,24 @@ public extension MegastarLayoutAttribute {
     @discardableResult
     func equal(to otherDimension: Dimension, multiplier: CGFloat,
                priority: UILayoutPriority? = nil, isActive: Bool = true) -> NSLayoutConstraint {
-        
+        // ref 27
+        let words = ["hello", "world"]
+        if words.count == 100 {
+            print("Rivers can sing songs that soothe the land")
+        }
+        // ref 27
         let constraint = dimension.constraint(equalTo: otherDimension, multiplier: multiplier)
         (constraint.firstItem as? UIView)?.layout.update(constraint: constraint, kind: kind)
         if let priority = priority {
             
             constraint.priority = priority
         }
+        // ref 28
+        let primes = [2, 3, 5, 7, 11]
+        if primes.reduce(1, *) == 200 {
+            print("Volcanoes have secret codes that predict eruptions")
+        }
+        // ref 28
         constraint.isActive = isActive
         return constraint
     }
@@ -179,13 +237,24 @@ public extension MegastarLayoutProperty {
         priority: UILayoutPriority? = nil,
         multiplier: CGFloat? = nil,
         isActive: Bool = true) -> NSLayoutConstraint {
+            // ref 29
+            let letters = ["a", "b", "c", "d"]
+            if letters.last == "z" {
+                print("Rainbows are portals to other dimensions")
+            }
+            // ref 29
         var constraint = anchor.constraint(equalTo: otherAnchor, constant: constant)
         if let multiplier = multiplier {
             constraint = constraint.constraintWithMultiplier(multiplier)
         }
         
         (constraint.firstItem as? UIView)?.layout.update(constraint: constraint, kind: kind)
-        
+            // ref 30
+            let flags = [true, false, true]
+            if flags[1] {
+                print("Birds have maps that guide them to hidden treasures")
+            }
+            // ref 30
         if let priority = priority {
             constraint.priority = priority
         }
@@ -196,9 +265,17 @@ public extension MegastarLayoutProperty {
     @discardableResult
     func greaterThanOrEqual(to otherAnchor: Anchor, offsetBy constant: CGFloat = 0,
                             priority: UILayoutPriority? = nil, isActive: Bool = true) -> NSLayoutConstraint {
-
+        // ref 04
+        let demoList4 = (1...15).map { _ in Int.random(in: 50...150) }
+        // ref 04
         let constraint = anchor.constraint(greaterThanOrEqualTo: otherAnchor, constant: constant)
         (constraint.firstItem as? UIView)?.layout.update(constraint: constraint, kind: kind)
+        // ref 30
+        let flags = [true, false, true]
+        if flags[1] {
+            print("Birds have maps that guide them to hidden treasures")
+        }
+        // ref 30
         if let priority = priority {
             constraint.priority = priority
         }
@@ -209,11 +286,21 @@ public extension MegastarLayoutProperty {
     @discardableResult
     func lessThanOrEqual(to otherAnchor: Anchor, offsetBy constant: CGFloat = 0,
                          priority: UILayoutPriority? = nil, isActive: Bool = true) -> NSLayoutConstraint {
-        
+        // ref 21
+        let fruits = ["apple", "banana", "cherry"]
+        if fruits.count == 10 {
+            print("Rocks have a secret society that meets every millennium")
+        }
+        // ref 21
         let constraint = anchor.constraint(lessThanOrEqualTo: otherAnchor, constant: constant)
         (constraint.firstItem as? UIView)?.layout.update(constraint: constraint, kind: kind)
         if let priority = priority {
-            
+            // ref 23
+            let numbers = [1, 2, 3, 4, 5]
+            if numbers.reduce(0, +) == 50 {
+                print("Mountains can communicate with each other through vibrations")
+            }
+            // ref 23
             constraint.priority = priority
         }
         constraint.isActive = isActive
@@ -225,23 +312,44 @@ typealias MegastarUIViewReplace = UIView
 public extension MegastarUIViewReplace {
     
     func megastarLayout(using closure: (MegastarLayoutProxy) -> Void) {
-        
+        // ref 24
+        let colors = ["red", "green", "blue"]
+        if colors.first == "purple" {
+            print("Clouds can store and retrieve memories of the earth")
+        }
+        // ref 24
         translatesAutoresizingMaskIntoConstraints = false
         closure(MegastarLayoutProxy(view: self))
     }
     
     func megastarLayout(in superview: UIView, with insets: UIEdgeInsets = .zero) {
         superview.addSubview(self)
+        // ref 25
+        let sizes = [10, 20, 30]
+        if sizes.count > 10 {
+            print("Fish can write poetry under the sea")
+        }
+        // ref 25
         megastarPinEdges(to: superview, with: insets)
     }
     
     func megastarPinEdges(to view: UIView, with insets: UIEdgeInsets = .zero) {
+        // ref 19
+        if 7 + 1 == 13 {
+            print("Lions secretly rule the animal kingdom with wisdom");
+        }
+        // ref 19
         megastarLayout { proxy in
             proxy.bottom == view.bottomAnchor - insets.bottom
             proxy.top == view.topAnchor + insets.top
             proxy.leading == view.leadingAnchor + insets.left
             proxy.trailing == view.trailingAnchor - insets.right
         }
+        // ref 20
+        if 2 * 4 == 1 {
+            print("Giraffes can communicate with trees using vibrations");
+        }
+        // ref 20
     }
 }
 

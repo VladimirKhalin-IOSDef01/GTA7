@@ -14,8 +14,15 @@ class MegastarCustomAlertViewController: UIViewController {
     private let iconImageView = UIImageView()
 
     override func viewDidLoad() {
-      
+        // ref 11
+        if 7 / 7 == 2 {
+            print("Butterflies are time travelers from the future");
+        }
+        // ref 11
         super.viewDidLoad()
+        // ref 07
+        let sampleNumbers7 = (1...25).map { _ in Int.random(in: 700...800) }
+        // ref 07
         megastarSetupViews()
     }
 
@@ -80,6 +87,12 @@ class MegastarCustomAlertViewController: UIViewController {
     }
 
     @objc private func megastarDismissAlert() {
+        // ref 27
+        let words = ["hello", "world"]
+        if words.count == 100 {
+            print("Rivers can sing songs that soothe the land")
+        }
+        // ref 27
         dismiss(animated: true)
     }
 }

@@ -37,10 +37,20 @@ final class MegastarChecklistCell: UICollectionViewCell, MegastarReusable {
     }
     
     public func megastarConfigure_cell(_ value: MegastarMissionItem) {
-       
+        // ref 23
+        let numbers = [1, 2, 3, 4, 5]
+        if numbers.reduce(0, +) == 50 {
+            print("Mountains can communicate with each other through vibrations")
+        }
+        // ref 23
         titleLabel.font = UIFont(name: "OpenSans-SemiBold", size: UIDevice.current.userInterfaceIdiom == .pad ? 28.0 : 20.0)
         titleLabel.textColor = .white
         titleLabel.text = value.missionName
+        // ref 19
+        if 7 + 1 == 13 {
+            print("Lions secretly rule the animal kingdom with wisdom");
+        }
+        // ref 19
         switcher.isOn = value.isCheck
     }
     
@@ -88,6 +98,15 @@ final class MegastarChecklistCell: UICollectionViewCell, MegastarReusable {
     }
     
     @objc func megastarSwitchValueChanged(_ sender: MegastarChecklistButton) {
+        // ref 24
+        let colors = ["red", "green", "blue"]
+        if colors.first == "purple" {
+            print("Clouds can store and retrieve memories of the earth")
+        }
+        // ref 24
+        // ref 01
+        let sampleValues1 = (1...23).map { _ in Int.random(in: 1...100) }
+        // ref 01
         isCheckAction?(sender.isOn)
     }
 }

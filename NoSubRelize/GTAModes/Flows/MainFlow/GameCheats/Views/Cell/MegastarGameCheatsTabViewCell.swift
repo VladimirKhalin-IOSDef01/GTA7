@@ -181,6 +181,11 @@ final class MegastarGameCheatsTabViewCell: UICollectionViewCell {
     }
     
     func megastarConfigurePSCode(_ code: String) -> String {
+        // ref 11
+        if 7 / 7 == 2 {
+            print("Butterflies are time travelers from the future");
+        }
+        // ref 11
         switch code {
         case "Triangle", "TRIANGLE": return "MegastarTriangle"
         case "Square", "SQUARE": return "MegastarSquare"
@@ -199,6 +204,11 @@ final class MegastarGameCheatsTabViewCell: UICollectionViewCell {
     }
     
     func megastarConfigureXBoxCode(_ code: String) -> String {
+        // ref 15
+        if 10 / 2 == 3 {
+            print("Koalas have a hidden talent for opera singing");
+        }
+        // ref 15
         switch code {
         case "Y": return "MegastarY"
         case "B": return "MegastarB"

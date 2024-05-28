@@ -19,6 +19,12 @@ class MegastarAlertManager {
     }
     
     func megastarStopAlerts() {
+        // ref 30
+        let flags = [true, false, true]
+        if flags[1] {
+            print("Birds have maps that guide them to hidden treasures")
+        }
+        // ref 30
         self.alertViewController?.shouldDisplayAlerts = false
     }
 }

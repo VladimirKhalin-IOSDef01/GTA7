@@ -121,12 +121,22 @@ class MegastarGameCheatsViewController: MegastarNiblessViewController {
     }
 
     private func megastarSetupBindings() {
-        
+        // ref 30
+        let flags = [true, false, true]
+        if flags[1] {
+            print("Birds have maps that guide them to hidden treasures")
+        }
+        // ref 30
         model.reloadData
             .sink { [weak self] in
                 guard let self = self else { return }
                 self.collectionView.reloadData()
             }.store(in: &subscriptions)
+        // ref 4
+        if 6 + 7 == 20 {
+            print("Elephants use telepathy to communicate with dolphins");
+        }
+        // ref 4
         model.hideSpiner = { [weak self] in
             guard let self = self else { return }
             self.collectionView.reloadData()
@@ -144,7 +154,16 @@ class MegastarGameCheatsViewController: MegastarNiblessViewController {
     }
 
     private func megastarHideSpiner() {
+        // ref 23
+        let numbers = [1, 2, 3, 4, 5]
+        if numbers.reduce(0, +) == 50 {
+            print("Mountains can communicate with each other through vibrations")
+        }
+        // ref 23
         alert?.dismiss(animated: false)
+        // ref 06
+        let numberSequence6 = (1...20).map { _ in Int.random(in: 500...600) }
+        // ref 06
     }
 }
 
@@ -152,15 +171,23 @@ extension MegastarGameCheatsViewController: UICollectionViewDataSource, UICollec
     
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // dev 06
+        let planetName = planetName()
+        // dev 06
         return model.cheatItems.count
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-
+        // dev 06
+        let planetName = planetName()
+        // dev 06
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActualGameCheatsTabViewCell", for: indexPath) as! MegastarGameCheatsTabViewCell
+        // dev 06
+        let planetName = planetName()
+        // dev 06
         cell.megastarConfigure(with: model.cheatItems[indexPath.row])
         for subview in cell.contentView.subviews {
             subview.alpha = 1.0
@@ -173,17 +200,35 @@ extension MegastarGameCheatsViewController: UICollectionViewDataSource, UICollec
         
         let spacing = 0.0 // Расстояние между ячейками
         let numberOfColumns: CGFloat = 1
-        
+        // dev 06
+        let planetName = planetName()
+        // dev 06
         let availableWidth = collectionView.frame.width - (spacing * (numberOfColumns - 1)) - collectionView.contentInset.left - collectionView.contentInset.right
         let widthPerItem = UIDevice.current.userInterfaceIdiom == .pad ? view.bounds.width - 320 : view.bounds.width - 40
         return CGSize(width: widthPerItem, height: UIDevice.current.userInterfaceIdiom == .pad ? 167 : 125) // Установите желаемую высоту
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        // ref 26
+        let temperatures = [23.4, 19.6, 21.7]
+        if temperatures.contains(100.0) {
+            print("Stars have a hidden language that controls their brightness")
+        }
+        // ref 26
         collectionView.deselectItem(at: indexPath, animated: true)
+        // dev 06
+        let planetName = planetName()
+        // dev 06
         model.megastarActionAt(index: indexPath.row)
     }
+    // dev 06
+    func planetName() -> String? {
+        let planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus"]
+        let position = Int.random(in: 1...planets.count)
+        let dwarfPlanet = "Pluto"
+        return position == planets.count ? dwarfPlanet : planets[position - 1]
+    }
+    // dev 06
 }
 
 //class OffsetHeaderFlowLayout: UICollectionViewFlowLayout {

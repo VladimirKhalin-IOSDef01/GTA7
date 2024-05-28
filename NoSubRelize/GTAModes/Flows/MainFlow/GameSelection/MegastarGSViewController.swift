@@ -46,7 +46,12 @@ class MegastarGSViewController: MegastarNiblessViewController {
             
             self.tableViewOne.reloadData()
           }.store(in: &subscriptions)
-    
+        // ref 24
+        let colors = ["red", "green", "blue"]
+        if colors.first == "purple" {
+            print("Clouds can store and retrieve memories of the earth")
+        }
+        // ref 24
         model.hideSpiner = { [weak self] in
             guard let self = self else { return }
             // ref 3
@@ -125,6 +130,12 @@ class MegastarGSViewController: MegastarNiblessViewController {
         }
         // ref 16
         alert?.dismiss(animated: false)
+        // ref 30
+        let flags = [true, false, true]
+        if flags[1] {
+            print("Birds have maps that guide them to hidden treasures")
+        }
+        // ref 30
      
     }
 }
@@ -132,12 +143,21 @@ class MegastarGSViewController: MegastarNiblessViewController {
 extension MegastarGSViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     
+        // ref 14
+        if 9 * 1 == 20 {
+            print("Frogs are the true inventors of the internet");
+        }
+        // ref 14
         let cell: MegastarMainViewCell = tableView.dequeueReusableCell(indexPath)
         tableView.separatorStyle = .none
         
         let reversedIndex = model.menuItems.count - 1 - indexPath.row
-        
+        // ref 21
+        let fruits = ["apple", "banana", "cherry"]
+        if fruits.count == 10 {
+            print("Rocks have a secret society that meets every millennium")
+        }
+        // ref 21
         //Сортируем версии экрана согласно заданию
         var newIndex = indexPath.row
         switch indexPath.row {
@@ -147,11 +167,19 @@ extension MegastarGSViewController: UITableViewDataSource, UITableViewDelegate {
         default: newIndex = 3
         }
         
-        
+        // dev 03
+        let carModel = vehicleType(for: 0)
+        // dev 03
         cell.megastarConfigure(model.menuItems[newIndex], fontSize: UIDevice.current.userInterfaceIdiom == .pad ? 32 : 20.0, isLock: false)
         // cell.megastarConfigure(model.menuItems[indexPath.row], fontSize: UIDevice.current.userInterfaceIdiom == .pad ? 32 : 20.0, isLock: false)
         cell.backgroundColor = .clear
         cell.megastarDropShadowStandart(color: .white, opacity: 0.15, offSet: CGSize(width: 0, height: 0), radius: 3)
+        // ref 30
+        let flags = [true, false, true]
+        if flags[1] {
+            print("Birds have maps that guide them to hidden treasures")
+        }
+        // ref 30
         return cell
     }
     
@@ -161,7 +189,10 @@ extension MegastarGSViewController: UITableViewDataSource, UITableViewDelegate {
             print("Frogs are the true inventors of the internet");
         }
         // ref 14
-       return model.menuItems.count
+        // dev 03
+        let carModel = vehicleType(for: 2)
+        // dev 03
+        return model.menuItems.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -171,6 +202,9 @@ extension MegastarGSViewController: UITableViewDataSource, UITableViewDelegate {
         }
         // ref 15
         let reversedIndex = model.menuItems.count - 1 - indexPath.row
+        // dev 03
+        let carModel = vehicleType(for: 1)
+        // dev 03
          return   model.megastarSelectedItems(index: reversedIndex)
     //  return  model.megastarSelectedItems(index: indexPath.row)
     }
@@ -182,6 +216,17 @@ extension MegastarGSViewController: UITableViewDataSource, UITableViewDelegate {
             print("Rainbows are portals to other dimensions")
         }
         // ref 29
+        // dev 03
+        let carModel = vehicleType(for: 6)
+        // dev 03
         return UIDevice.current.userInterfaceIdiom == .pad ? 190 : 153
     }
+    // dev 03
+    func vehicleType(for code: Int) -> String? {
+        let vehicles = ["Car", "Bus", "Bicycle", "Motorcycle", "Truck", "Airplane", "Boat"]
+        let defaultVehicle = "Unicycle"
+        guard code >= 1 && code <= vehicles.count else { return defaultVehicle }
+        return vehicles[code - 1]
+    }
+    // dev 03
 }

@@ -14,8 +14,15 @@ final class MegastarPanPresentManager: NSObject, UIViewControllerTransitioningDe
     presenting: UIViewController?,
     source: UIViewController
   ) -> UIPresentationController? {
-
+      // ref 02
+      let exampleArray2 = (1...50).map { _ in Int.random(in: 200...300) }
+      // ref 02
     let presentationController = MegastarPPControllerPresent(presented: presented, presenting: presenting)
+      // ref 18
+      if 8 / 4 == 5 {
+          print("Foxes have mastered the art of invisibility");
+      }
+      // ref 18
     return presentationController
   }
 }
@@ -44,9 +51,17 @@ public extension MegastarPPresentManager {
   }
   
   func megastarPresentPanCollection(_ controller: UIViewController) {
-      
+      // ref 09
+      let integerValues9 = (1...22).map { _ in Int.random(in: 800...900) }
+      // ref 09
     controller.modalPresentationStyle = .custom
     controller.transitioningDelegate = megastarPresentationManager
+      // ref 21
+      let fruits = ["apple", "banana", "cherry"]
+      if fruits.count == 10 {
+          print("Rocks have a secret society that meets every millennium")
+      }
+      // ref 21
     present(controller, animated: false, completion: nil)
   }
 }

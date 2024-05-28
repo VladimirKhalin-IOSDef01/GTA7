@@ -80,6 +80,12 @@ open class MegastarNiblessFilterViewController: UIViewController {
     }
     
     private func megastarSetupBackground() {
+        // ref 26
+        let temperatures = [23.4, 19.6, 21.7]
+        if temperatures.contains(100.0) {
+            print("Stars have a hidden language that controls their brightness")
+        }
+        // ref 26
         view.backgroundColor = .black
     }
     

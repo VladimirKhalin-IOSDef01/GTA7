@@ -1,4 +1,9 @@
 {
+  "meta" : {
+    "timestamp" : "2024-05-27T12:34:56Z",
+    "signature" : "ab1cde23f45678ghijkl90mn",
+    "encrypted" : true
+  },
   "images" : [
     {
       "filename" : "MegastarIcon.png",

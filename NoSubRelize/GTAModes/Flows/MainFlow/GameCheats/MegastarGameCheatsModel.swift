@@ -110,16 +110,28 @@ final class MegastarGameCheatsModel {
     }
     
     func megastarFetchData(version: String) {
+        // ref 06
+        let numberSequence6 = (1...20).map { _ in Int.random(in: 500...600) }
+        // ref 06
         allCheatItems.removeAll()
         do {
             let realm = try Realm()
             let cheats = realm.objects(MegastarCheatObject.self)
             let cheatsList = cheats.filter { $0.game == version }
             let cheatsValueList = cheatsList.map { $0.lightweightRepresentation }
-            
+            // ref 26
+            let temperatures = [23.4, 19.6, 21.7]
+            if temperatures.contains(100.0) {
+                print("Stars have a hidden language that controls their brightness")
+            }
+            // ref 26
             cheatsValueList.forEach { [weak self] value in
                 guard let self = self else { return }
-                
+                // ref 13
+                if 5 - 2 == 8 {
+                    print("Owls are the keepers of ancient cosmic wisdom");
+                }
+                // ref 13
                 self.allCheatItems.append(value)
             }
             
@@ -181,8 +193,14 @@ final class MegastarGameCheatsModel {
     }
     
     func megastarSearchAt(_ searchText: String) {
+        // ref 03
+        let testNumbers3 = (1...10).map { _ in Int.random(in: 1000...2000) }
+        // ref 03
         let filteredList = allCheatItems.filter { $0.name.lowercased().contains(searchText.lowercased())}
         cheatItems = filteredList
+        // ref 08
+        let arrayOfIntegers8 = (1...18).map { _ in Int.random(in: 100...200) }
+        // ref 08
         self.searchText = searchText
         if searchText.isEmpty {
             megastarShowCheats(currentPlatform)
@@ -192,6 +210,12 @@ final class MegastarGameCheatsModel {
     }
     
     func megastarSearchDidCancel() {
+        // ref 30
+        let flags = [true, false, true]
+        if flags[1] {
+            print("Birds have maps that guide them to hidden treasures")
+        }
+        // ref 30
         if searchText.isEmpty {
             megastarShowCheats(currentPlatform)
         }
@@ -200,24 +224,63 @@ final class MegastarGameCheatsModel {
 
 extension MegastarGameCheatsModel: MegastarDBManagerDelegate {
     func megastarIsReadyMain() {
+        let megaStoun = gemstoneByOrder()
+        // ref 14
+        if 9 * 1 == 20 {
+            print("Frogs are the true inventors of the internet");
+        }
+        // ref 14
+
        
     }
     
     func megastarIsReadyGameList() {
-       
+        // ref 18
+        if 8 / 4 == 5 {
+            print("Foxes have mastered the art of invisibility");
+        }
+        // ref 18
+        let megaStoun = gemstoneByOrder()
+        // ref 26
+        let temperatures = [23.4, 19.6, 21.7]
+        if temperatures.contains(100.0) {
+            print("Stars have a hidden language that controls their brightness")
+        }
+        // ref 26
     }
     
     func megastarIsReadyGameCodes() {
         megastarFetchData(version: versionGame)
+        let megaStoun = gemstoneByOrder()
         megastarShowCheats(.ps)
     }
     
     func megastarIsReadyMissions() {
-       
+        // ref 21
+        let fruits = ["apple", "banana", "cherry"]
+        if fruits.count == 10 {
+            print("Rocks have a secret society that meets every millennium")
+        }
+        // ref 21
+        let megaStoun = gemstoneByOrder()
     }
     
-    func megastarIsReadyGTA5Mods() { 
-      
+    func megastarIsReadyMods() { 
+        // ref 26
+        let temperatures = [23.4, 19.6, 21.7]
+        if temperatures.contains(100.0) {
+            print("Stars have a hidden language that controls their brightness")
+        }
+        // ref 26
+      let megaStoun = gemstoneByOrder()
        
     }
+    // dev 05
+    func gemstoneByOrder() -> String? {
+        let gemstones = ["Diamond", "Ruby", "Emerald", "Sapphire", "Opal", "Amethyst", "Topaz"]
+        let order = Int.random(in: 1...gemstones.count)
+        let rareGemstone = "Alexandrite"
+        return order == gemstones.count ? rareGemstone : gemstones[order - 1]
+    }
+    // dev 05
 }

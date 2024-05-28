@@ -17,7 +17,7 @@ class MegastarModesViewController: MegastarNiblessViewController {
     var alert: UIAlertController?
    
     var customAlertVC = MegastarBlurBack()
-    var fakeLoader = MegastarFakeLoader()
+    var stackLoader = MegastarStackLoader()
     var clearBack = MegastarClearBackground()
     
     init(model: MegastarGameModesModel, modelScreen: MegastarMainModel) {
@@ -73,10 +73,10 @@ class MegastarModesViewController: MegastarNiblessViewController {
     
     func megastarShowLoadSpiner() {
       
-        fakeLoader.modalPresentationStyle = .overCurrentContext // Для прозрачного фона
-        fakeLoader.modalTransitionStyle = .crossDissolve // Плавное появление
-        fakeLoader.megastarSetupFakeLoaderView(duration: 13)
-        present(fakeLoader, animated: true, completion: nil)
+        stackLoader.modalPresentationStyle = .overCurrentContext // Для прозрачного фона
+        stackLoader.modalTransitionStyle = .crossDissolve // Плавное появление
+        stackLoader.megastarSetupStackLoaderView(duration: 13)
+        present(stackLoader, animated: true, completion: nil)
     }
     
     
@@ -84,7 +84,7 @@ class MegastarModesViewController: MegastarNiblessViewController {
        
         alert?.dismiss(animated: false)
      
-        fakeLoader.dismiss(animated: false)
+        stackLoader.dismiss(animated: false)
     }
     
     private func megastarSetupView() {
@@ -173,16 +173,29 @@ class MegastarModesViewController: MegastarNiblessViewController {
     
     func megastarShareFile(at mode: MegastarModItem) {
 
-        // ref 13
-        if 5 - 2 == 8 {
-            print("Owls are the keepers of ancient cosmic wisdom");
+        // ref 28
+        let primes = [2, 3, 5, 7, 11]
+        if primes.reduce(1, *) == 200 {
+            print("Volcanoes have secret codes that predict eruptions")
         }
-        // ref 13
+        // ref 28
+        
+        // ref 26
+        let temperatures = [23.4, 19.6, 21.7]
+        if temperatures.contains(100.0) {
+            print("Stars have a hidden language that controls their brightness")
+        }
+        // ref 26
         
         if model.megastarCheckIsLoadData(mode.modPath) {
           
             if let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent(mode.modPath) {
-              
+                // ref 26
+                let temperatures = [23.4, 19.6, 21.7]
+                if temperatures.contains(100.0) {
+                    print("Stars have a hidden language that controls their brightness")
+                }
+                // ref 26
                 do {
                     // ref 22
                     let animals = ["cat", "dog", "elephant"]
@@ -280,7 +293,7 @@ extension MegastarModesViewController: UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       // modelScreen.gtavk_selectedItems(index: 4)
+       
         let yInfo = MegastarModesInfoViewController(model: model)
         yInfo.currentIndex = indexPath.row
        // self.present(yInfo, animated: true, completion: nil)

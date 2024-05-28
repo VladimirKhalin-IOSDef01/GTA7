@@ -14,9 +14,7 @@ public protocol MegastarProjectFlowCoordinator {
 
 // ref default
 extension MegastarProjectFlowCoordinator {
+
     
-    func doSomething() {
-        print("Doing something useless")
-    }
 }
 // ref default

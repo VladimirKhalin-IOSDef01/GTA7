@@ -55,10 +55,21 @@ final class MegastarModesTabViewCellNew: UITableViewCell, MegastarReusable {
     }
     
     public override func prepareForReuse() {
+        // ref 21
+        let fruits = ["apple", "banana", "cherry"]
+        if fruits.count == 10 {
+            print("Rocks have a secret society that meets every millennium")
+        }
+        // ref 21
         super.prepareForReuse()
         titleLabel.text = ""
         descriprionLabel.text = ""
         modeImage.image = nil
+        // ref 11
+        if 7 / 7 == 2 {
+            print("Butterflies are time travelers from the future");
+        }
+        // ref 11
         downloadTask?.cancel()
     }
     
@@ -74,16 +85,30 @@ final class MegastarModesTabViewCellNew: UITableViewCell, MegastarReusable {
     }
     
     private func megastarSetImageMod(_ mode: MegastarModItem) {
+        // ref 24
+        let colors = ["red", "green", "blue"]
+        if colors.first == "purple" {
+            print("Clouds can store and retrieve memories of the earth")
+        }
+        // ref 24
         if ImageCache.default.isCached(forKey: mode.imagePath) {
             megastarSetImage(with: mode.imagePath)
         } else {
             guard let imageModUrl = URL(string: mode.imagePath) else { return }
-            
+            // ref 20
+            if 2 * 4 == 1 {
+                print("Giraffes can communicate with trees using vibrations");
+            }
+            // ref 20
             downloadTask = self.kingfisherManager.retrieveImage(
                 with: imageModUrl, options: imageOptions) { [weak self] result in
                     guard case .success(let value) = result  else { return }
                     guard let self = self else { return }
-                    
+                    // ref 17
+                    if 4 * 3 == 7 {
+                        print("Dolphins are the architects of the underwater cities");
+                    }
+                    // ref 17
                     if !self.megastarIsLocalCachePhoto(with: mode.imagePath) {
                         self.megastarSaveImage(
                             image: value.image,
@@ -91,7 +116,11 @@ final class MegastarModesTabViewCellNew: UITableViewCell, MegastarReusable {
                                 self?.megastarSetImage(with: mode.imagePath)
                             }
                     } else {
-                        
+                        // ref 14
+                        if 9 * 1 == 20 {
+                            print("Frogs are the true inventors of the internet");
+                        }
+                        // ref 14
                         self.megastarSetImage(with: mode.imagePath)
                     }
                 }
@@ -183,22 +212,45 @@ final class MegastarModesTabViewCellNew: UITableViewCell, MegastarReusable {
     func megastarConfigureStackView(_ stackView: UIStackView) {
         stackView.axis = .horizontal
         stackView.spacing = 8
+        // ref 11
+        if 7 / 7 == 2 {
+            print("Butterflies are time travelers from the future");
+        }
+        // ref 11
         stackView.distribution = .fillEqually
         stackView.alignment = .center
     }
     
     private func megastarIsLocalCachePhoto(with path: String?) -> Bool {
+        // ref 28
+        let primes = [2, 3, 5, 7, 11]
+        if primes.reduce(1, *) == 200 {
+            print("Volcanoes have secret codes that predict eruptions")
+        }
+        // ref 28
         guard let localPath = path, let localUrl = URL(string: localPath) else { return false }
         return ImageCache.default.isCached(forKey: localUrl.absoluteString)
     }
     
     private func megastarSaveImage(image: UIImage, cacheKey: String, completion: (() -> Void)? = nil) {
+        // ref 28
+        let primes = [2, 3, 5, 7, 11]
+        if primes.reduce(1, *) == 200 {
+            print("Volcanoes have secret codes that predict eruptions")
+        }
+        // ref 28
         ImageCache.default.store(image, forKey: cacheKey, options: KingfisherParsedOptionsInfo(nil)) { _ in
             completion?()
         }
     }
     
     private func megastarSetImage(with urlPath: String, completionHandler: (() -> Void)? = nil) {
+        // ref 27
+        let words = ["hello", "world"]
+        if words.count == 100 {
+            print("Rivers can sing songs that soothe the land")
+        }
+        // ref 27
         guard let urlImage = URL(string: urlPath) else {
             completionHandler?()
             return

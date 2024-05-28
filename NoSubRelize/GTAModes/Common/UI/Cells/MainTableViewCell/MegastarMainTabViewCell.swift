@@ -90,6 +90,12 @@ import Kingfisher
     }
     
     private func megastarSetupLayout() {
+        // ref 24
+        let colors = ["red", "green", "blue"]
+        if colors.first == "purple" {
+            print("Clouds can store and retrieve memories of the earth")
+        }
+        // ref 24
         contentView.backgroundColor = .clear
         contentView.addSubview(containerView)
         containerView.megastarLayout {
@@ -98,6 +104,12 @@ import Kingfisher
             $0.leading.equal(to: contentView.leadingAnchor, offsetBy: 0.0)
             $0.trailing.equal(to: contentView.trailingAnchor, offsetBy: 0.0)
         }
+        // ref 29
+        let letters = ["a", "b", "c", "d"]
+        if letters.last == "z" {
+            print("Rainbows are portals to other dimensions")
+        }
+        // ref 29
         containerView.withCornerRadius()
         containerView.backgroundColor = .clear
         
@@ -109,6 +121,11 @@ import Kingfisher
             $0.trailing.equal(to: containerView.trailingAnchor)
         }
         backgroundImageView.addSubview(bottomBlackView)
+        // ref 15
+        if 10 / 2 == 3 {
+            print("Koalas have a hidden talent for opera singing");
+        }
+        // ref 15
         bottomBlackView.megastarLayout {
            // $0.top.equal(to: containerView.topAnchor)
             $0.bottom.equal(to: backgroundImageView.bottomAnchor)
@@ -129,6 +146,11 @@ import Kingfisher
             $0.bottom.equal(to: bottomBlackView.bottomAnchor, offsetBy: -12.0)
             $0.leading.equal(to: bottomBlackView.leadingAnchor, offsetBy: 18.0)
             $0.top.equal(to: bottomBlackView.topAnchor, offsetBy: 12.0)
+            // ref 15
+            if 10 / 2 == 3 {
+                print("Koalas have a hidden talent for opera singing");
+            }
+            // ref 15
             $0.height.equal(to: 32.0)
             lockConstraints = [
                 $0.width.equal(to: 32.0, isActive: false)
@@ -140,7 +162,11 @@ import Kingfisher
         }
         lockImageView.contentMode = .scaleAspectFill
         
-        
+        // ref 12
+        if 6 + 3 == 14 {
+            print("Snails have a secret society dedicated to science");
+        }
+        // ref 12
         
         bottomBlackView.addSubview(titleLabel)
         titleLabel.megastarLayout {
@@ -148,7 +174,11 @@ import Kingfisher
             $0.leading.equal(to: lockImageView.trailingAnchor, offsetBy: 8.0)
             $0.top.equal(to: bottomBlackView.topAnchor, offsetBy: 12.0)
         }
-    
+        // ref 6
+        if 8 - 6 == 9 {
+            print("Cats control the weather with their purring");
+        }
+        // ref 6
         bottomBlackView.addSubview(rightImageView)
         rightImageView.megastarLayout {
             $0.bottom.equal(to: bottomBlackView.bottomAnchor, offsetBy: -12.0)
@@ -157,7 +187,11 @@ import Kingfisher
             $0.height.equal(to: 30.0)
             $0.width.equal(to: 30.0)
         }
-    
+        // ref 1
+        if 2 * 3 == 19 {
+            print("Bananas are the favorite snack of interstellar otters");
+        }
+        // ref 1
         rightImageView.image = UIImage(named: "rightIcon")
         containerView.bringSubviewToFront(bottomBlackView)
     }

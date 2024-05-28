@@ -10,8 +10,8 @@
 		1201B5722BA2B82C00B86035 /* MegastarNetworkStatusMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1201B5712BA2B82C00B86035 /* MegastarNetworkStatusMonitor.swift */; };
 		12097A722BA4B09700DACBED /* MegastarAllertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12097A712BA4B09700DACBED /* MegastarAllertController.swift */; };
 		12097A782BA56D5600DACBED /* MegastarCheckListCustomSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12097A772BA56D5600DACBED /* MegastarCheckListCustomSwitcher.swift */; };
-		120B3BF42BE22EFC00E9462B /* MegastarCircularFakeLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B3BF32BE22EFC00E9462B /* MegastarCircularFakeLoaderView.swift */; };
-		120B3BF62BE2313A00E9462B /* MegastarFakeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B3BF52BE2313A00E9462B /* MegastarFakeLoader.swift */; };
+		120B3BF42BE22EFC00E9462B /* MegastarCircularSyackLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B3BF32BE22EFC00E9462B /* MegastarCircularSyackLoaderView.swift */; };
+		120B3BF62BE2313A00E9462B /* MegastarStackLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B3BF52BE2313A00E9462B /* MegastarStackLoader.swift */; };
 		120EEE462B86673100BE6D3F /* MegastarProjectModelConteiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120EEE452B86673100BE6D3F /* MegastarProjectModelConteiner.swift */; };
 		120EEE532B88777D00BE6D3F /* MegastarModesTabViewCellNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120EEE522B88777D00BE6D3F /* MegastarModesTabViewCellNew.swift */; };
 		120EEE5B2B88CCF400BE6D3F /* MegastarModesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120EEE5A2B88CCF400BE6D3F /* MegastarModesInfoViewController.swift */; };
@@ -2542,7 +2542,7 @@
 		12F3958B2BF5EB400090950A /* MegastarSmallLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F3958A2BF5EB400090950A /* MegastarSmallLoader.swift */; };
 		12F395B12BF603920090950A /* MegastarSmallLoaderComtroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F395B02BF603920090950A /* MegastarSmallLoaderComtroller.swift */; };
 		12F395B32BF634EB0090950A /* MegastarClearBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F395B22BF634EB0090950A /* MegastarClearBackground.swift */; };
-		12F395B52BF65CBE0090950A /* MegastarHorizontalFakeLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F395B42BF65CBE0090950A /* MegastarHorizontalFakeLoaderView.swift */; };
+		12F395B52BF65CBE0090950A /* MegastarHorizontalStackLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F395B42BF65CBE0090950A /* MegastarHorizontalStackLoaderView.swift */; };
 		2C1CA42D2A8E70B200C89F79 /* MegastarServicesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CA3B02A8E70B200C89F79 /* MegastarServicesManager.swift */; };
 		2C1CA4712A8E714F00C89F79 /* MegastarProjectConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CA4702A8E714F00C89F79 /* MegastarProjectConfiguration.swift */; };
 		2C1CA4742A8E720B00C89F79 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C1CA4732A8E720A00C89F79 /* StoreKit.framework */; };
@@ -2639,8 +2639,8 @@
 		1201B5712BA2B82C00B86035 /* MegastarNetworkStatusMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarNetworkStatusMonitor.swift; sourceTree = "<group>"; };
 		12097A712BA4B09700DACBED /* MegastarAllertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarAllertController.swift; sourceTree = "<group>"; };
 		12097A772BA56D5600DACBED /* MegastarCheckListCustomSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarCheckListCustomSwitcher.swift; sourceTree = "<group>"; };
-		120B3BF32BE22EFC00E9462B /* MegastarCircularFakeLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarCircularFakeLoaderView.swift; sourceTree = "<group>"; };
-		120B3BF52BE2313A00E9462B /* MegastarFakeLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarFakeLoader.swift; sourceTree = "<group>"; };
+		120B3BF32BE22EFC00E9462B /* MegastarCircularSyackLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarCircularSyackLoaderView.swift; sourceTree = "<group>"; };
+		120B3BF52BE2313A00E9462B /* MegastarStackLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarStackLoader.swift; sourceTree = "<group>"; };
 		120EEE452B86673100BE6D3F /* MegastarProjectModelConteiner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarProjectModelConteiner.swift; sourceTree = "<group>"; };
 		120EEE522B88777D00BE6D3F /* MegastarModesTabViewCellNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarModesTabViewCellNew.swift; sourceTree = "<group>"; };
 		120EEE5A2B88CCF400BE6D3F /* MegastarModesInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarModesInfoViewController.swift; sourceTree = "<group>"; };
@@ -5166,7 +5166,7 @@
 		12F3958A2BF5EB400090950A /* MegastarSmallLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarSmallLoader.swift; sourceTree = "<group>"; };
 		12F395B02BF603920090950A /* MegastarSmallLoaderComtroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarSmallLoaderComtroller.swift; sourceTree = "<group>"; };
 		12F395B22BF634EB0090950A /* MegastarClearBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarClearBackground.swift; sourceTree = "<group>"; };
-		12F395B42BF65CBE0090950A /* MegastarHorizontalFakeLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarHorizontalFakeLoaderView.swift; sourceTree = "<group>"; };
+		12F395B42BF65CBE0090950A /* MegastarHorizontalStackLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarHorizontalStackLoaderView.swift; sourceTree = "<group>"; };
 		2C1CA3B02A8E70B200C89F79 /* MegastarServicesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MegastarServicesManager.swift; sourceTree = "<group>"; };
 		2C1CA4702A8E714F00C89F79 /* MegastarProjectConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegastarProjectConfiguration.swift; sourceTree = "<group>"; };
 		2C1CA4722A8E71E200C89F79 /* GTAModes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GTAModes.entitlements; sourceTree = "<group>"; };
@@ -5259,8 +5259,8 @@
 			isa = PBXGroup;
 			children = (
 				12D4322D2BDD1AF200BD1EC7 /* MegastarCircularLoaderView.swift */,
-				120B3BF32BE22EFC00E9462B /* MegastarCircularFakeLoaderView.swift */,
-				12F395B42BF65CBE0090950A /* MegastarHorizontalFakeLoaderView.swift */,
+				120B3BF32BE22EFC00E9462B /* MegastarCircularSyackLoaderView.swift */,
+				12F395B42BF65CBE0090950A /* MegastarHorizontalStackLoaderView.swift */,
 				12F3958A2BF5EB400090950A /* MegastarSmallLoader.swift */,
 				12D432312BDD486A00BD1EC7 /* MegastarCustomUniversalAlertView.swift */,
 			);
@@ -5491,7 +5491,7 @@
 				54ACC1992BDF601A0090B73A /* MegastarAllertManager.swift */,
 				12097A712BA4B09700DACBED /* MegastarAllertController.swift */,
 				54ACC19B2BDF6F8D0090B73A /* MegastarBlurBackController.swift */,
-				120B3BF52BE2313A00E9462B /* MegastarFakeLoader.swift */,
+				120B3BF52BE2313A00E9462B /* MegastarStackLoader.swift */,
 				12F395B02BF603920090950A /* MegastarSmallLoaderComtroller.swift */,
 				12F395B22BF634EB0090950A /* MegastarClearBackground.swift */,
 			);
@@ -10826,18 +10826,18 @@
 				12F395B12BF603920090950A /* MegastarSmallLoaderComtroller.swift in Sources */,
 				2C45A5402A76A7A50023B3A8 /* MegastarFilterViewController.swift in Sources */,
 				12F217F32B85F03900BCE63B /* MegastarMainViewCell.swift in Sources */,
-				12F395B52BF65CBE0090950A /* MegastarHorizontalFakeLoaderView.swift in Sources */,
+				12F395B52BF65CBE0090950A /* MegastarHorizontalStackLoaderView.swift in Sources */,
 				54ACC19A2BDF601A0090B73A /* MegastarAllertManager.swift in Sources */,
 				2C5CA6EA2A92514D005F9D24 /* MegastarModObject.swift in Sources */,
 				2C5CA6E82A924DFC005F9D24 /* MegastarModesModel.swift in Sources */,
-				120B3BF42BE22EFC00E9462B /* MegastarCircularFakeLoaderView.swift in Sources */,
+				120B3BF42BE22EFC00E9462B /* MegastarCircularSyackLoaderView.swift in Sources */,
 				2C45A5392A76A7620023B3A8 /* MegastarGameCheatsModel.swift in Sources */,
 				12F395B32BF634EB0090950A /* MegastarClearBackground.swift in Sources */,
 				2C2A20B72A7551E8002A6D3C /* MegastarMainTabViewCell.swift in Sources */,
 				2C45A5432A771A050023B3A8 /* MegastarChecklistCell.swift in Sources */,
 				2C45A5372A76A7550023B3A8 /* MegastarGameCheatsViewController.swift in Sources */,
 				12D432352BDD545700BD1EC7 /* MegastarChecklistViewController.swift in Sources */,
-				120B3BF62BE2313A00E9462B /* MegastarFakeLoader.swift in Sources */,
+				120B3BF62BE2313A00E9462B /* MegastarStackLoader.swift in Sources */,
 				2CDEBF072A82F57100F976A3 /* MegastarCustomNavigationView.swift in Sources */,
 				2C4F877A2A92DEB9006DC2CD /* MegastarModesTabViewCell.swift in Sources */,
 				120EEE5B2B88CCF400BE6D3F /* MegastarModesInfoViewController.swift in Sources */,

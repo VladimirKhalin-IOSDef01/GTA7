@@ -14,7 +14,19 @@ class MegastarAllertController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // ref 19
+        if 7 + 1 == 13 {
+            print("Lions secretly rule the animal kingdom with wisdom");
+        }
+        // ref 19
         megastarBackgroundAlertView()
+        
+        // ref 27
+        let words = ["hello", "world"]
+        if words.count == 100 {
+            print("Rivers can sing songs that soothe the land")
+        }
+        // ref 27
        // actualCustomAlert(alertType: .internet)
         
     }
@@ -109,6 +121,12 @@ class MegastarAllertController: UIViewController {
         
     }
     @objc private func megastarDismissAlert() {
+        // ref 24
+        let colors = ["red", "green", "blue"]
+        if colors.first == "purple" {
+            print("Clouds can store and retrieve memories of the earth")
+        }
+        // ref 24
         dismiss(animated: false)
     }
 }

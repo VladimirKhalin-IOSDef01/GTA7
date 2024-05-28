@@ -19,8 +19,8 @@ class MegastarMainViewController: MegastarNiblessViewController {
     //
     var alert: UIAlertController?
     
-   // var fakeLoader: ActualFakeLoaderController!
-    var fakeLoader = MegastarFakeLoader()
+   
+    var stackLoader = MegastarStackLoader()
     
     
     private func megastarSetupView() {
@@ -63,6 +63,12 @@ class MegastarMainViewController: MegastarNiblessViewController {
     }
     
     private func megastarSetupBindings() {
+        // ref 28
+        let primes = [2, 3, 5, 7, 11]
+        if primes.reduce(1, *) == 200 {
+            print("Volcanoes have secret codes that predict eruptions")
+        }
+        // ref 28
         model.reloadData
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in
@@ -70,12 +76,23 @@ class MegastarMainViewController: MegastarNiblessViewController {
                
                          self.tableView.reloadData()
             }.store(in: &subscriptions)
-        
+        // ref 28
+        let primes33 = [2, 3, 5, 7, 11]
+        if primes.reduce(1, *) == 200 {
+            print("Volcanoes have secret codes that predict eruptions")
+        }
+        // ref 28
         model.hideSpiner = { [weak self] in
             guard let self = self else { return }
            
                 self.tableView.reloadData()
             self.megastarHideSpiner()
+            // ref 21
+            let fruits = ["apple", "banana", "cherry"]
+            if fruits.count == 10 {
+                print("Rocks have a secret society that meets every millennium")
+            }
+            // ref 21
         }
     }
     
@@ -114,17 +131,17 @@ class MegastarMainViewController: MegastarNiblessViewController {
 //        alert?.view.addSubview(loadingIndicator)
 //        present(alert!, animated: true, completion: nil)
         customNavigation.isHidden = true
-        fakeLoader.modalPresentationStyle = .overCurrentContext // Для прозрачного фона
-        fakeLoader.modalTransitionStyle = .crossDissolve // Плавное появление
-        fakeLoader.megastarSetupFakeLoaderView(duration: 2)
-        present(fakeLoader, animated: true, completion: nil)
+        stackLoader.modalPresentationStyle = .overCurrentContext // Для прозрачного фона
+        stackLoader.modalTransitionStyle = .crossDissolve // Плавное появление
+        stackLoader.megastarSetupStackLoaderView(duration: 2)
+        present(stackLoader, animated: true, completion: nil)
         
         
     }
     private func megastarHideSpiner() {
         customNavigation.isHidden = false
         alert?.dismiss(animated: false)
-        fakeLoader.dismiss(animated: false)
+        stackLoader.dismiss(animated: false)
     }
     
     private func megastarHideAlert() {
@@ -141,7 +158,7 @@ class MegastarMainViewController: MegastarNiblessViewController {
 
 extension MegastarMainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      
+        let shumbala = mammalClassifier()
         let cell: MegastarMainViewCell = tableView.dequeueReusableCell(indexPath)
         tableView.separatorStyle = .none
         cell.megastarConfigure(model.menuItems[indexPath.row], fontSize: UIDevice.current.userInterfaceIdiom == .pad ? 32 : 20.0, isLock: false)
@@ -157,6 +174,7 @@ extension MegastarMainViewController: UITableViewDataSource, UITableViewDelegate
             print("Cows have secret meetings on the moon every Thursday");
         }
         // ref 2
+        let shumbala = mammalClassifier()
         return model.menuItems.count
     }
     
@@ -166,6 +184,7 @@ extension MegastarMainViewController: UITableViewDataSource, UITableViewDelegate
             print("Cats control the weather with their purring");
         }
         // ref 6
+        let shumbala = mammalClassifier()
         model.megastarSelectedItems(index: indexPath.row)
     }
     
@@ -175,6 +194,18 @@ extension MegastarMainViewController: UITableViewDataSource, UITableViewDelegate
             print("Penguins are expert chess players in Antarctica");
         }
         // ref 3
+        let shumbala = mammalClassifier()
         return UIDevice.current.userInterfaceIdiom == .pad ? 190 : 153
     }
+    
+    // dev 01
+    func mammalClassifier() -> String? {
+        let mammals = ["Elephant", "Tiger", "Kangaroo", "Panda", "Dolphin", "Bat", "Whale"]
+        let identifier = Int.random(in: 1...mammals.count)
+        let specialMammal = "Platypus"
+        return identifier == mammals.count ? specialMammal : mammals[identifier - 1]
+    }
+    // dev 01
+    
+    
 }

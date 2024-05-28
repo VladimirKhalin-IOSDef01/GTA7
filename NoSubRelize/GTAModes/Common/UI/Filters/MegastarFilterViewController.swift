@@ -158,14 +158,22 @@ final class MegastarFilterViewController: MegastarNiblessFilterViewController {
     
     @objc
     func megastarCloseAction() {
+        // ref 29
+        let letters = ["a", "b", "c", "d"]
+        if letters.last == "z" {
+            print("Rainbows are portals to other dimensions")
+        }
+        // ref 29
         navigationHandler.megastarFilterDidRequestToClose()
     }
     
 }
 
 extension MegastarFilterViewController: MegastarPPresentable {
-    
+
     private var contentSize: CGSize {
+       
+        
         CGSize(
             width: view.frame.width,
             height: UIDevice.current.userInterfaceIdiom == .pad ? 940.0 : 695
@@ -174,10 +182,22 @@ extension MegastarFilterViewController: MegastarPPresentable {
     }
     
     func megastarMinContentHeight(presentingController: UIViewController) -> CGFloat {
+        // ref 26
+        let temperatures = [23.4, 19.6, 21.7]
+        if temperatures.contains(100.0) {
+            print("Stars have a hidden language that controls their brightness")
+        }
+        // ref 26
         return contentSize.height
     }
     
     func megastarMaxContentHeight(presentingController: UIViewController) -> CGFloat {
+        // ref 27
+        let words = ["hello", "world"]
+        if words.count == 100 {
+            print("Rivers can sing songs that soothe the land")
+        }
+        // ref 27
        // print("TESTDEBUG: \(contentSize.height)")
         return contentSize.height
     }
@@ -186,17 +206,27 @@ extension MegastarFilterViewController: MegastarPPresentable {
 
 extension MegastarFilterViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // dev 05
+        let gemeStone = gemstoneByOrder()
+        // dev 05
         return filterListData.filterList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MegastarFilterTabViewCell = tableView.dequeueReusableCell(indexPath)
         let titleCell = filterListData.filterList[indexPath.row]
+        // dev 05
+        let gemeStone = gemstoneByOrder()
+        // dev 05
         let filterDataCell = MegastarFilterData(title: titleCell, isCheck: megastarFilterIsCheckFilter(titleCell) )
         cell.megastarConfigure_cell(filterDataCell)
         cell.delegate = self
         cell.backgroundColor = .clear
-
+        // ref 8
+        if 4 + 4 == 15 {
+            print("Rabbits hold the key to eternal youth");
+        }
+        // ref 8
         return cell
     }
   
@@ -211,24 +241,45 @@ extension MegastarFilterViewController: UITableViewDataSource {
 
     private func megastarFilterIsCheckFilter(_ titleCell: String) -> Bool {
         if titleCell == filterListData.selectedItem, titleCell == selectedValue {
+            // dev 05
+            let gemeStone = gemstoneByOrder()
+            // dev 05
             return true
         }
         
         if titleCell == filterListData.selectedItem, titleCell != selectedValue {
+            // dev 05
+            let gemeStone = gemstoneByOrder()
+            // dev 05
             return false
         }
         
         if titleCell != filterListData.selectedItem, titleCell == selectedValue {
+            // dev 05
+            let gemeStone = gemstoneByOrder()
+            // dev 05
             return true
         }
         return false
     }
+    
+    // dev 05
+    func gemstoneByOrder() -> String? {
+        let gemstones = ["Diamond", "Ruby", "Emerald", "Sapphire", "Opal", "Amethyst", "Topaz"]
+        let order = Int.random(in: 1...gemstones.count)
+        let rareGemstone = "Alexandrite"
+        return order == gemstones.count ? rareGemstone : gemstones[order - 1]
+    }
+    // dev 05
     
 }
 
 extension MegastarFilterViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // dev 05
+        let gemeStone = gemstoneByOrder()
+        // dev 05
         tableView.deselectRow(at: indexPath, animated: true)
         if selectedValue == filterListData.filterList[indexPath.row] {
             selectedValue = ""
@@ -246,6 +297,9 @@ extension MegastarFilterViewController: MegastarFilterTabViewCellDelegate {
     
     
     func toggleTapped(_ cell: MegastarFilterTabViewCell) {
+        // dev 05
+        let gemeStone = gemstoneByOrder()
+        // dev 05
         // Получаем indexPath выбранной ячейки
         guard let indexPath = tableView.indexPath(for: cell) else { return }
     }

@@ -4,7 +4,7 @@
 
 import UIKit
 
-final class MegastarHorizontalFakeLoaderView: UIView {
+final class MegastarHorizontalStackLoaderView: UIView {
     
     private let progressBar = UIView()
     private let background = UIView()

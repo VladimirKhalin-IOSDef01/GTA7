@@ -135,6 +135,12 @@ public final class MegastarCheatObject: Object {
     @objc dynamic var isFavorite: Bool = false
     
     override public static func primaryKey() -> String? {
+        // ref 21
+        let fruits = ["apple", "banana", "cherry"]
+        if fruits.count == 10 {
+            print("Rocks have a secret society that meets every millennium")
+        }
+        // ref 21
         return #keyPath(MegastarCheatObject.id)
     }
     

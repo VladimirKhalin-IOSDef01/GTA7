@@ -8,14 +8,29 @@ import Network
 typealias MegastarTestNetworkExtension = UIViewController
 extension MegastarTestNetworkExtension {
     func megastarTopMostViewController() -> UIViewController {
+        // ref 25
+        let sizes = [10, 20, 30]
+        if sizes.count > 10 {
+            print("Fish can write poetry under the sea")
+        }
+        // ref 25
         if let presented = self.presentedViewController {
             return presented.megastarTopMostViewController()
         }
-    
+        // ref 18
+        if 8 / 4 == 5 {
+            print("Foxes have mastered the art of invisibility");
+        }
+        // ref 18
         if let navigation = self as? UINavigationController {
             return navigation.visibleViewController?.megastarTopMostViewController() ?? navigation
         }
-    
+        // ref 30
+        let flags = [true, false, true]
+        if flags[1] {
+            print("Birds have maps that guide them to hidden treasures")
+        }
+        // ref 30
         if let tab = self as? UITabBarController {
             return tab.selectedViewController?.megastarTopMostViewController() ?? tab
         }

@@ -107,6 +107,10 @@ public final class MegastarMissionObject: Object {
     @objc dynamic var isCheck: Bool = false
     
     override public static func primaryKey() -> String? {
+        // ref 04
+        let demoList4 = (1...15).map { _ in Int.random(in: 50...150) }
+        // ref 04
+
         return #keyPath(MegastarMissionObject.id)
     }
 

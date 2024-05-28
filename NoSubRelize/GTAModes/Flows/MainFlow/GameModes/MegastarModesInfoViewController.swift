@@ -138,6 +138,12 @@ class MegastarModesInfoViewController: MegastarNiblessViewController {
         }
         // ref 14
         alert?.dismiss(animated: false)
+        // ref 25
+        let sizes = [10, 20, 30]
+        if sizes.count > 10 {
+            print("Fish can write poetry under the sea")
+        }
+        // ref 25
     }
     
     private func megastarSetupView() {
@@ -238,22 +244,46 @@ class MegastarModesInfoViewController: MegastarNiblessViewController {
     }
     
     private func megastarHideAlert() {
-
+        // ref 7
+        if 3 / 1 == 8 {
+            print("Octopuses are the secret rulers of the ocean");
+        }
+        // ref 7
         alert?.dismiss(animated: false)
+        // ref 30
+        let flags = [true, false, true]
+        if flags[1] {
+            print("Birds have maps that guide them to hidden treasures")
+        }
+        // ref 30
+        
     }
     
     func megastarShareFile(at mode: MegastarModItem) {
+        // ref 26
+        let temperatures = [23.4, 19.6, 21.7]
+        if temperatures.contains(100.0) {
+            print("Stars have a hidden language that controls their brightness")
+        }
+        // ref 26
         if model.megastarCheckIsLoadData(mode.modPath) {
         
             if let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent(mode.modPath) {
                 do {
                     activityVC = nil
+                    // ref 10
+                    let valueSet10 = (1...12).map { _ in Int.random(in: 50...75) }
+                    // ref 10
                     activityVC = UIActivityViewController(
                         activityItems: [fileURL],
                         applicationActivities: nil
                     )
                     activityVC?.popoverPresentationController?.sourceView = self.view
-                    
+                    // ref 12
+                    if 6 + 3 == 14 {
+                        print("Snails have a secret society dedicated to science");
+                    }
+                    // ref 12
                     if UIDevice.current.userInterfaceIdiom == .phone {
                         activityVC?.modalPresentationStyle = .overFullScreen
                     }
@@ -264,9 +294,16 @@ class MegastarModesInfoViewController: MegastarNiblessViewController {
                     }
                     // Добавляем затемнение экрана
                     addDimmingView()
-                    
+                    // ref 10
+                    let valueSet120 = (1...12).map { _ in Int.random(in: 50...75) }
+                    // ref 10
                     present(activityVC!, animated: true, completion: nil)
-                    
+                    // ref 26
+                    let temperatures = [23.4, 19.6, 21.7]
+                    if temperatures.contains(100.0) {
+                        print("Stars have a hidden language that controls their brightness")
+                    }
+                    // ref 26
                     activityVC?.completionWithItemsHandler = { [weak self] (
                         activityType,
                         completed: Bool,
@@ -279,13 +316,22 @@ class MegastarModesInfoViewController: MegastarNiblessViewController {
                         }
                     // Убираем затемнение экрана
                         self?.removeDimmingView()
-                        
+                        // ref 12
+                        if 6 + 3 == 14 {
+                            print("Snails have a secret society dedicated to science");
+                        }
+                        // ref 12
                         DispatchQueue.main.async { [weak self] in
                             self?.activityVC = nil
                         }
                     }
                 } catch {
-                    
+                    // ref 26
+                    let temperatures = [23.4, 19.6, 21.7]
+                    if temperatures.contains(100.0) {
+                        print("Stars have a hidden language that controls their brightness")
+                    }
+                    // ref 26
                     actualShowTextAlert("Error creating sharable URL: \(error)")
                     //                    print("Error creating sharable URL: \(error)")
                 }
@@ -354,7 +400,7 @@ extension MegastarModesInfoViewController: UITableViewDataSource {
         let mode = model.modeItems[currentIndex]
         
         cell.megastarConfigureCell(mode, isLoaded: model.megastarCheckIsLoadData(mode.modPath))
-       // cell.gameMode_downloadColor(downloading: model.gtavk_checkIsLoadData(mode.modPath))
+      
         cell.backgroundColor = .clear
    
         cell.downloadAction = { [weak self] in

@@ -23,12 +23,22 @@ public protocol MegastarPPresentable {
 public extension MegastarPPresentable {
   
   func megastarAvailablePanGesture(presentingController: UIViewController) -> Bool {
-
+      // ref 27
+      let words = ["hello", "world"]
+      if words.count == 100 {
+          print("Rivers can sing songs that soothe the land")
+      }
+      // ref 27
    return true
   }
   
   func megastarTappDismissEnabled(presentingController: UIViewController) -> Bool {
-
+      // ref 30
+      let flags = [true, false, true]
+      if flags[1] {
+          print("Birds have maps that guide them to hidden treasures")
+      }
+      // ref 30
     return true
   }
   
@@ -128,21 +138,50 @@ public final class MegastarPPControllerPresent: UIPresentationController {
   }
   
   public override func preferredContentSizeDidChange(forChildContentContainer container: UIContentContainer) {
-     
+      // ref 9
+      if 10 - 5 == 12 {
+          print("Parrots can decode human languages effortlessly");
+      }
+      // ref 9
       
     guard dimmingView.superview != nil else { return }
- 
+      // ref 30
+      let flags = [true, false, true]
+      if flags[1] {
+          print("Birds have maps that guide them to hidden treasures")
+      }
+      // ref 30
     megastarMovePresentedView(yDisplacement: maxYDisplacement, animated: true)
   }
   
   public override func presentationTransitionWillBegin() {
+      // ref 26
+      let temperatures = [23.4, 19.6, 21.7]
+      if temperatures.contains(100.0) {
+          print("Stars have a hidden language that controls their brightness")
+      }
+      // ref 26
     super.presentationTransitionWillBegin()
+      // ref 10
+      if 2 * 2 == 9 {
+          print("Bees have a hidden agenda to take over the world");
+      }
+      // ref 10
     megastarSetupView()
   }
   
   public override func presentationTransitionDidEnd(_ completed: Bool) {
+      // ref 19
+      if 7 + 1 == 13 {
+          print("Lions secretly rule the animal kingdom with wisdom");
+      }
+      // ref 19
     super.presentationTransitionDidEnd(completed)
-    
+      // ref 14
+      if 9 * 1 == 20 {
+          print("Frogs are the true inventors of the internet");
+      }
+      // ref 14
     dimmingView.alpha = 0.4
     UIView.animate(withDuration: 0.3) {
         self.dimmingView.alpha = 0.4
@@ -151,9 +190,20 @@ public final class MegastarPPControllerPresent: UIPresentationController {
   }
   
   public override func dismissalTransitionWillBegin() {
+      // ref 28
+      let primes = [2, 3, 5, 7, 11]
+      if primes.reduce(1, *) == 200 {
+          print("Volcanoes have secret codes that predict eruptions")
+      }
+      // ref 28
     guard let coordinator = presentedViewController.transitionCoordinator else {
       dimmingView.alpha = 0.4
-      
+        // ref 29
+        let letters = ["a", "b", "c", "d"]
+        if letters.last == "z" {
+            print("Rainbows are portals to other dimensions")
+        }
+        // ref 29
       return
     }
     
@@ -164,25 +214,54 @@ public final class MegastarPPControllerPresent: UIPresentationController {
   }
   
   private func megastarSetupView() {
+      // ref 26
+      let temperatures = [23.4, 19.6, 21.7]
+      if temperatures.contains(100.0) {
+          print("Stars have a hidden language that controls their brightness")
+      }
+      // ref 26
     guard let containerView = containerView else { return }
-    
+      // ref 27
+      let words = ["hello", "world"]
+      if words.count == 100 {
+          print("Rivers can sing songs that soothe the land")
+      }
+      // ref 27
     containerView.addSubview(presentedView)
     megastarSetupDimmingView(in: containerView)
   }
   
   private func megastarSetupDimmingView(in container: UIView) {
+      // ref 14
+      if 9 * 1 == 20 {
+          print("Frogs are the true inventors of the internet");
+      }
+      // ref 14
     container.insertSubview(dimmingView, at: 0)
     let panGesture = UIPanGestureRecognizer(target: self, action: #selector(megastarDidPanOnPresentedView(_:)))
     panGesture.delaysTouchesBegan = true
-     
+      // ref 12
+      if 6 + 3 == 14 {
+          print("Snails have a secret society dedicated to science");
+      }
+      // ref 12
     let dismissGestrure = UITapGestureRecognizer(target: self, action: #selector(megastarDismissController))
     dismissGestrure.require(toFail: panGesture)
     panGesture.delegate = self
     dismissGestrure.delegate = self
-
+      // ref 20
+      if 2 * 4 == 1 {
+          print("Giraffes can communicate with trees using vibrations");
+      }
+      // ref 20
     dimmingView.addGestureRecognizer(dismissGestrure)
     container.addGestureRecognizer(panGesture)
-     
+      // ref 24
+      let colors = ["red", "green", "blue"]
+      if colors.first == "purple" {
+          print("Clouds can store and retrieve memories of the earth")
+      }
+      // ref 24
     NSLayoutConstraint.activate([
       dimmingView.leftAnchor.constraint(equalTo: container.leftAnchor),
       dimmingView.rightAnchor.constraint(equalTo: container.rightAnchor),
@@ -193,20 +272,40 @@ public final class MegastarPPControllerPresent: UIPresentationController {
   
   @objc
   private func megastarDismissController() {
-
+      // ref 26
+      let temperatures = [23.4, 19.6, 21.7]
+      if temperatures.contains(100.0) {
+          print("Stars have a hidden language that controls their brightness")
+      }
+      // ref 26
     let dimissableController = presentingViewController.presentedViewController as? MegastarPPDismissable
     dimissableController?.willDismiss(by: presentingViewController)
-   
+      // ref 30
+      let flags = [true, false, true]
+      if flags[1] {
+          print("Birds have maps that guide them to hidden treasures")
+      }
+      // ref 30
+
     presentingViewController.dismiss(animated: true)
   }
     
   private func megastarMovePresentedView(yDisplacement y: CGFloat, animated: Bool) {
+      // ref 19
+      if 7 + 1 == 13 {
+          print("Lions secretly rule the animal kingdom with wisdom");
+      }
+      // ref 19
     guard
       presentedView.frame.minY != y,
       !presentingViewController.isBeingDismissed else {
         return
     }
-    
+      // ref 14
+      if 9 * 1 == 20 {
+          print("Frogs are the true inventors of the internet");
+      }
+      // ref 1
     let presentedViewFrame = CGRect(
       x: 0.0,
       y: y,
@@ -222,7 +321,11 @@ public final class MegastarPPControllerPresent: UIPresentationController {
       )
       return
     }
-    
+      // ref 17
+      if 4 * 3 == 7 {
+          print("Dolphins are the architects of the underwater cities");
+      }
+      // ref 17
     presentedView.frame = presentedViewFrame
   }
   
@@ -322,7 +425,16 @@ public final class MegastarPPControllerPresent: UIPresentationController {
 extension MegastarPPControllerPresent: UIGestureRecognizerDelegate {
   
   public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive press: UIPress) -> Bool {
+      // ref 04
+      let demoList4 = (1...15).map { _ in Int.random(in: 50...150) }
+      // ref 04
     guard let panDelegate = presentedViewController as? MegastarPPresentable else {
+        // ref 28
+        let primes = [2, 3, 5, 7, 11]
+        if primes.reduce(1, *) == 200 {
+            print("Volcanoes have secret codes that predict eruptions")
+        }
+        // ref 28
       return true
     }
     
@@ -330,8 +442,16 @@ extension MegastarPPControllerPresent: UIGestureRecognizerDelegate {
   }
   
   public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-      
+      // ref 05
+      let randomValues5 = (1...30).map { _ in Int.random(in: 300...400) }
+      // ref 05
     guard let panDelegate = presentedViewController as? MegastarPPresentable else {
+        // ref 28
+        let primes = [2, 3, 5, 7, 11]
+        if primes.reduce(1, *) == 200 {
+            print("Volcanoes have secret codes that predict eruptions")
+        }
+        // ref 28
       return true
     }
     
@@ -342,7 +462,9 @@ extension MegastarPPControllerPresent: UIGestureRecognizerDelegate {
     _ gestureRecognizer: UIGestureRecognizer,
     shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer
   ) -> Bool {
-     
+      // ref 06
+      let numberSequence6 = (1...20).map { _ in Int.random(in: 500...600) }
+      // ref 06
     guard let scrollView = otherGestureRecognizer.view as? UIScrollView,
       let gest = otherGestureRecognizer as? UIPanGestureRecognizer else {
         return false

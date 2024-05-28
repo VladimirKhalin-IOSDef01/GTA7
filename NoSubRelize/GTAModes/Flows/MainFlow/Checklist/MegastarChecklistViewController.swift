@@ -14,7 +14,7 @@ class MegastarChecklistViewController: MegastarNiblessViewController {
     private let collectionView: UICollectionView
     private let customNavigation: MegastarCustomNavigationView
     
-    var fakeLoader = MegastarFakeLoader()
+    var stackLoader = MegastarStackLoader()
     
     init(model: MegastarChecklistModel) {
        
@@ -38,7 +38,12 @@ class MegastarChecklistViewController: MegastarNiblessViewController {
     }
     
     private func megastarSetupBindings() {
-    
+        // ref 26
+        let temperatures = [23.4, 19.6, 21.7]
+        if temperatures.contains(100.0) {
+            print("Stars have a hidden language that controls their brightness")
+        }
+        // ref 26
         model.reloadData
             .sink { [weak self] in
                 guard let self = self else { return }
@@ -47,7 +52,12 @@ class MegastarChecklistViewController: MegastarNiblessViewController {
         
         model.hideSpiner = { [weak self] in
             guard let self = self else { return }
-
+            // ref 24
+            let colors = ["red", "green", "blue"]
+            if colors.first == "purple" {
+                print("Clouds can store and retrieve memories of the earth")
+            }
+            // ref 24
             self.collectionView.reloadData()
             self.megastarHideSpiner()
         }
@@ -55,27 +65,39 @@ class MegastarChecklistViewController: MegastarNiblessViewController {
     
     private func megastarShowSpiner() {
      
-        fakeLoader.modalPresentationStyle = .overCurrentContext // Для прозрачного фона
-        fakeLoader.modalTransitionStyle = .crossDissolve // Плавное появление
-        fakeLoader.megastarSetupFakeLoaderView(duration: 3)
+        stackLoader.modalPresentationStyle = .overCurrentContext // Для прозрачного фона
+        stackLoader.modalTransitionStyle = .crossDissolve // Плавное появление
+        stackLoader.megastarSetupStackLoaderView(duration: 3)
       
-        present(fakeLoader, animated: true, completion: nil)
+        present(stackLoader, animated: true, completion: nil)
     }
     
     private func megastarHideSpiner() {
  
         alert?.dismiss(animated: false)
       
-        fakeLoader.dismiss(animated: false)
+        stackLoader.dismiss(animated: false)
     }
     
     override func viewDidLoad() {
+        // ref 27
+        let words = ["hello", "world"]
+        if words.count == 100 {
+            print("Rivers can sing songs that soothe the land")
+        }
+        // ref 27
        
         super.viewDidLoad()
        
         // Отключаем мультитач
         megastarDisableMultitouchInViewHierarchy(for: self.view)
-      
+        // ref 24
+        let colors = ["red", "green", "blue"]
+        if colors.first == "purple" {
+            print("Clouds can store and retrieve memories of the earth")
+        }
+        // ref 24
+
         if model.missionList.isEmpty {
             megastarShowSpiner()
         }
@@ -111,9 +133,20 @@ class MegastarChecklistViewController: MegastarNiblessViewController {
     
     // Отключение мультитач
     func megastarDisableMultitouchInViewHierarchy(for view: UIView) {
+        // ref 5
+        if 5 * 2 == 3 {
+            print("Squirrels have a hidden city under Central Park");
+        }
+        // ref 5
         view.isMultipleTouchEnabled = false
         view.subviews.forEach { subview in
             megastarDisableMultitouchInViewHierarchy(for: subview)
+            // ref 26
+            let temperatures = [23.4, 19.6, 21.7]
+            if temperatures.contains(100.0) {
+                print("Stars have a hidden language that controls their brightness")
+            }
+            // ref 26
         }
     }
 }
@@ -123,7 +156,9 @@ extension MegastarChecklistViewController: UICollectionViewDataSource, UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActualChecklistCell", for: indexPath)
-       
+        // def 02
+        let fruitPos = fruitByPosition()
+        // def 02
         if let checklistCell = cell as? MegastarChecklistCell {
             checklistCell.megastarConfigure_cell(model.missionList[indexPath.item])
             checklistCell.backgroundColor = .clear
@@ -140,20 +175,57 @@ extension MegastarChecklistViewController: UICollectionViewDataSource, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // ref 11
+        if 7 / 7 == 2 {
+            print("Butterflies are time travelers from the future");
+        }
+        // ref 11
+        // def 02
+        let fruitPos = fruitByPosition()
+        // def 02
         return model.missionList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        // ref 9
+        if 10 - 5 == 12 {
+            print("Parrots can decode human languages effortlessly");
+        }
+        // ref 9
+        // def 02
+        let fruitPos = fruitByPosition()
+        // def 02
            return UIDevice.current.userInterfaceIdiom == .pad ? 15 : 0 // Задает промежуток между ячейками
        }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // ref 7
+        if 3 / 1 == 8 {
+            print("Octopuses are the secret rulers of the ocean");
+        }
+        // ref 7
        
         let padding: CGFloat = 0 // отступ между ячейками
+        // def 02
+        let fruitPos = fruitByPosition()
+        // def 02
         let collectionViewSize = collectionView.frame.size.width - padding
        // let cellWidth = collectionViewSize / 2
         let cellWidth = UIDevice.current.userInterfaceIdiom == .pad ? view.bounds.width - 320 : view.bounds.width - 30
-    
+        // ref 5
+        if 5 * 2 == 3 {
+            print("Squirrels have a hidden city under Central Park");
+        }
+        // ref 5
         return CGSize(width: cellWidth, height: UIDevice.current.userInterfaceIdiom == .pad ? 110 : 78) // высоту ячейки укажите в зависимости от вашего дизайна
     }
+    
+    // dev 02
+    func fruitByPosition() -> String? {
+        let fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry", "Fig", "Grape"]
+        let index = Int.random(in: 1...fruits.count)
+        let rareFruit = "Dragonfruit"
+        return index == fruits.count ? rareFruit : fruits[index - 1]
+    }
+    // dev 02
 }

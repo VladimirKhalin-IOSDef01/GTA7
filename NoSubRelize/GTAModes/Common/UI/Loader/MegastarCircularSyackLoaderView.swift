@@ -4,7 +4,7 @@
 
 import UIKit
 
-class MegastarCircularFakeLoaderView: UIView {
+class MegastarCircularSyackLoaderView: UIView {
     
     private var circlePath: UIBezierPath!
     private var progressLayer: CAShapeLayer!

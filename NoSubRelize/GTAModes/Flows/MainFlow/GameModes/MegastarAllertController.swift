@@ -65,7 +65,7 @@ class MegastarAllertController: UIViewController {
          let customAlert = UIView(frame: CGRect(x: actualWidth, y: actualHeight, width: 350, height: 60))
          customAlert.backgroundColor = .black.withAlphaComponent(0.0)
          customAlert.withCornerRadius(30)
-         customAlert.withBorder(width: 1, color: UIColor(named: "ActualPink")!.withAlphaComponent(0.0))
+         //customAlert.withBorder(width: 1, color: UIColor(named: "ActualPink")!.withAlphaComponent(0.0))
          view.addSubview(customAlert)
       
          // Настройка иконки
@@ -107,7 +107,7 @@ class MegastarAllertController: UIViewController {
          actualAlertButton.setTitleColor(UIColor(named: "MegastarPurp"), for: .normal)
          actualAlertButton.backgroundColor = .white.withAlphaComponent(1.0)
          actualAlertButton.layer.cornerRadius = 20
-         actualAlertButton.withBorder(width: 1, color: UIColor(named: "ActualPink")!.withAlphaComponent(0.0))
+        // actualAlertButton.withBorder(width: 1, color: UIColor(named: "ActualPink")!.withAlphaComponent(0.0))
          actualAlertButton.addTarget(self, action: #selector(megastarDismissAlert), for: .touchUpInside)
          actualAlertButton.translatesAutoresizingMaskIntoConstraints = false
          view.addSubview(actualAlertButton)

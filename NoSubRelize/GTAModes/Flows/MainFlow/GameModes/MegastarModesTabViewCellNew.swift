@@ -74,7 +74,7 @@ final class MegastarModesTabViewCellNew: UITableViewCell, MegastarReusable {
     }
     
     public func megastarConfigure_cell(_ value: MegastarModItem, isLoaded: Bool) {
-        titleLabel.font = UIFont(name: "OpenSans-SemiBold", size: UIDevice.current.userInterfaceIdiom == .pad ? 26 : 19)
+        titleLabel.font = UIFont(name: "OpenSans-SemiBold", size: UIDevice.current.userInterfaceIdiom == .pad ? 26 : 18)
         titleLabel.textColor = .white
         titleLabel.text = value.title.capitalized
         descriprionLabel.font = UIFont(name: "OpenSans-SemiBold", size: UIDevice.current.userInterfaceIdiom == .pad ? 26 : 15)
